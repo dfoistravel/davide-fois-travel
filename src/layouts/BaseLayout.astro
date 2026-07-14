@@ -63,23 +63,35 @@ const defaultSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(schema ?? defaultSchema)} />
 
   {gaId && (
-    <>
-      <script is:inline>
-        {`window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        window.enableAnalytics = function(){
-          if (window.__gaLoaded) return;
-          window.__gaLoaded = true;
-          const s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=${gaId}';
-          document.head.appendChild(s);
-          gtag('js', new Date());
-          gtag('config', '${gaId}', { anonymize_ip: true });
-        };`}
-      </script>
-    </>
-  )}
+  <script is:inline define:vars={{ gaId }}>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    window.enableAnalytics = function () {
+      if (window.__gaLoaded) return;
+
+      window.__gaLoaded = true;
+
+      const script = document.createElement("script");
+      script.async = true;
+      script.src =
+        "https://www.googletagmanager.com/gtag/js?id=" +
+        encodeURIComponent(gaId);
+
+      document.head.appendChild(script);
+
+      gtag("js", new Date());
+
+      gtag("config", gaId, {
+        anonymize_ip: true,
+        page_path: window.location.pathname
+      });
+    };
+  </script>
+)}
 </head>
 <body>
 <header class="site-header">
