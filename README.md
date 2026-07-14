@@ -1,31 +1,15 @@
-# Davide Fois Travel — Fase 3
+# Davide Fois Travel Consultant — Platinum Final
 
-Aggiornamento dedicato a:
+Versione completa per GitHub Pages con:
 
-- SEO avanzata;
-- dati strutturati Schema.org;
-- Open Graph e Twitter Card;
-- Google Search Console;
-- Google Analytics con consenso;
-- privacy e cookie policy;
-- modulo preventivo migliorato;
-- FAQ con schema FAQPage.
+- Google Analytics corretto;
+- consenso analytics;
+- predisposizione Search Console;
+- sitemap e Schema.org;
+- modulo preventivo;
+- pagina di ringraziamento;
+- eventi di conversione;
+- tracciamento WhatsApp e catalogo Nuovevacanze;
+- privacy e cookie policy.
 
-## Installazione
-
-Carica e sostituisci nel repository:
-
-- `.github`
-- `public`
-- `src`
-- `.env.example`
-- `.gitignore`
-- `astro.config.mjs`
-- `package.json`
-- `README.md`
-- `SEO_PHASE3_CHECKLIST.md`
-- `tsconfig.json`
-
-Il deploy partirà automaticamente.
-
-Leggi `SEO_PHASE3_CHECKLIST.md` per completare Search Console, Analytics e Formspree.
+Leggi `PLATINUM_SETUP.md` prima del deploy finale.
