@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+const {
+  title = 'Davide Fois Travel Consultant',
+  description = 'Viaggi su misura con assistenza personalizzata prima, durante e dopo la partenza.',
+  image = '/og-image.svg'
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0c6b68" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href={import.meta.env.BASE_URL}><span>DF</span> Travel Consultant</a>
+        <nav class="nav-links" aria-label="Navigazione principale">
+          <a href={`${import.meta.env.BASE_URL}chi-sono/`}>Chi sono</a>
+          <a href={`${import.meta.env.BASE_URL}destinazioni/`}>Destinazioni</a>
+          <a href={`${import.meta.env.BASE_URL}blog/`}>Guide</a>
+          <a class="button button-primary" href={`${import.meta.env.BASE_URL}preventivo/`}>Richiedi preventivo</a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <a class="whatsapp" aria-label="Contattami su WhatsApp" href="https://wa.me/39INSERISCI_NUMERO" target="_blank">◉</a>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Davide Fois Travel Consultant</strong>
+          <p>Consulenza di viaggio personalizzata e collegamento alle proposte Nuovevacanze.</p>
+        </div>
+        <div>
+          <strong>Esplora</strong><br />
+          <a href={`${import.meta.env.BASE_URL}destinazioni/`}>Destinazioni</a><br />
+          <a href={`${import.meta.env.BASE_URL}blog/`}>Guide di viaggio</a><br />
+          <a href={`${import.meta.env.BASE_URL}preventivo/`}>Preventivo</a>
+        </div>
+        <div>
+          <strong>Informazioni</strong><br />
+          <a href={`${import.meta.env.BASE_URL}privacy/`}>Privacy</a><br />
+          <a href="https://davidefois.nuovevacanze.it" target="_blank">Catalogo Nuovevacanze</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
