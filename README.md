@@ -1,8 +1,31 @@
-# Homepage Platinum
+# Davide Fois Travel — Fase 3
 
-Carica e sostituisci nel repository le cartelle `.github`, `public`, `src` e i file di root.
+Aggiornamento dedicato a:
 
-Prima di raccogliere contatti:
-- sostituisci `INSERISCI_ID` con l'ID Formspree;
-- completa la privacy policy;
-- verifica il numero WhatsApp.
+- SEO avanzata;
+- dati strutturati Schema.org;
+- Open Graph e Twitter Card;
+- Google Search Console;
+- Google Analytics con consenso;
+- privacy e cookie policy;
+- modulo preventivo migliorato;
+- FAQ con schema FAQPage.
+
+## Installazione
+
+Carica e sostituisci nel repository:
+
+- `.github`
+- `public`
+- `src`
+- `.env.example`
+- `.gitignore`
+- `astro.config.mjs`
+- `package.json`
+- `README.md`
+- `SEO_PHASE3_CHECKLIST.md`
+- `tsconfig.json`
+
+Il deploy partirà automaticamente.
+
+Leggi `SEO_PHASE3_CHECKLIST.md` per completare Search Console, Analytics e Formspree.

@@ -1,5 +1,80 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
+
+const faq = [
+  {
+    question: "Quanto costa richiedere un preventivo?",
+    answer: "La richiesta iniziale è gratuita e non comporta obbligo di prenotazione."
+  },
+  {
+    question: "Posso richiedere un viaggio completamente personalizzato?",
+    answer: "Sì. Periodo, budget, interessi e stile di viaggio vengono utilizzati per costruire una proposta coerente."
+  },
+  {
+    question: "Riceverò assistenza anche dopo la prenotazione?",
+    answer: "Il servizio prevede un referente prima, durante e dopo la partenza."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
 ---
-<BaseLayout title="Destinazioni e viaggi su misura | Davide Fois"><section class="page"><div class="container"><div class="section-head"><p class="kicker">Destinazioni</p><h1>Trova l'ispirazione. Poi costruiamo il viaggio.</h1></div><div class="grid-3"><article class="card" id="giappone"><h2>Giappone</h2><p>Tokyo, Kyoto, Osaka, natura, foliage e hanami.</p><a href={`${base}preventivo/`}>Richiedi una proposta →</a></article><article class="card" id="lituania"><h2>Lituania</h2><p>Vilnius, Trakai, Kaunas e itinerari nei Paesi Baltici.</p><a href={`${base}preventivo/`}>Richiedi una proposta →</a></article><article class="card"><h2>Altre destinazioni</h2><p>Mare, crociere, tour culturali e viaggi di nozze.</p><a href={`${base}preventivo/`}>Parliamo della tua idea →</a></article></div></div></section></BaseLayout>
+<BaseLayout
+  title="Destinazioni e viaggi su misura | Davide Fois"
+  description="Proposte personalizzate per Giappone, Lituania, mare, crociere, tour culturali e viaggi di nozze."
+  schema={schema}>
+<section class="page">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Destinazioni</p>
+      <h1>Trova l'ispirazione. Poi costruiamo il viaggio.</h1>
+    </div>
+
+    <div class="grid-3">
+      <article class="card" id="giappone">
+        <h2>Giappone</h2>
+        <p>Tokyo, Kyoto, Osaka, natura, foliage e hanami.</p>
+        <a href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta →</a>
+      </article>
+
+      <article class="card" id="lituania">
+        <h2>Lituania</h2>
+        <p>Vilnius, Trakai, Kaunas e itinerari nei Paesi Baltici.</p>
+        <a href={`${base}preventivo/?destinazione=Lituania`}>Richiedi una proposta →</a>
+      </article>
+
+      <article class="card">
+        <h2>Altre destinazioni</h2>
+        <p>Mare, crociere, tour culturali e viaggi di nozze.</p>
+        <a href={`${base}preventivo/`}>Parliamo della tua idea →</a>
+      </article>
+    </div>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="kicker">Domande frequenti</p>
+        <h2>Prima di richiedere una proposta.</h2>
+      </div>
+      <div class="grid-3">
+        {faq.map(item => (
+          <article class="card">
+            <h3>{item.question}</h3>
+            <p>{item.answer}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</section>
+</BaseLayout>

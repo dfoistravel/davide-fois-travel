@@ -1,8 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Davide Fois Travel Consultant",
+      "url": new URL(base, Astro.site).href,
+      "inLanguage": "it-IT"
+    },
+    {
+      "@type": "TravelAgency",
+      "name": "Davide Fois Travel Consultant",
+      "url": new URL(base, Astro.site).href,
+      "description": "Consulenza per viaggi su misura in Giappone, Lituania e nel mondo.",
+      "areaServed": "IT",
+      "sameAs": ["https://davidefois.nuovevacanze.it"]
+    }
+  ]
+};
 ---
-<BaseLayout title="Davide Fois | Viaggi su misura e consulenza personale" description="Progetto viaggi su misura in Giappone, Lituania e nel mondo con assistenza personale prima, durante e dopo la partenza.">
+<BaseLayout title="Davide Fois | Viaggi su misura e consulenza personale" description="Progetto viaggi su misura in Giappone, Lituania e nel mondo con assistenza personale prima, durante e dopo la partenza." schema={homeSchema}>
 <section class="hero"><div class="container hero-grid"><div>
 <p class="kicker">Davide Fois Travel Consultant</p><h1>Viaggi su misura creati <span>intorno a te.</span></h1>
 <p class="lead">Dalla prima idea alla partenza: seleziono le soluzioni più adatte, costruisco un progetto chiaro e resto il tuo referente durante tutto il viaggio.</p>
