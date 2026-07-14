@@ -1,23 +1,4 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Richiedi un preventivo di viaggio | Davide Fois" description="Racconta il viaggio che desideri e ricevi una proposta personalizzata, senza impegno.">
-  <section class="section">
-    <div class="container">
-      <div class="section-intro"><span class="badge">Preventivo gratuito</span><h1>Raccontami il viaggio che hai in mente.</h1><p class="lead">Più informazioni inserisci, più precisa potrà essere la prima proposta.</p></div>
-      <form class="card form-grid" action="https://formspree.io/f/INSERISCI_ID" method="POST">
-        <label>Nome e cognome<input name="nome" autocomplete="name" required /></label>
-        <label>Email<input type="email" name="email" autocomplete="email" required /></label>
-        <label>Telefono<input type="tel" name="telefono" autocomplete="tel" /></label>
-        <label>Destinazione<input name="destinazione" required /></label>
-        <label>Periodo indicativo<input name="periodo" placeholder="Es. ottobre 2026" /></label>
-        <label>Numero viaggiatori<input type="number" name="viaggiatori" min="1" /></label>
-        <label>Budget complessivo<input name="budget" placeholder="Es. 3.000 €" /></label>
-        <label>Tipo di viaggio<select name="tipo"><option>Tour culturale</option><option>Mare e relax</option><option>Fly & drive</option><option>Crociera</option><option>Viaggio di nozze</option><option>Altro</option></select></label>
-        <label class="full">Preferenze e richieste<textarea name="messaggio" placeholder="Raccontami cosa non può mancare nel tuo viaggio."></textarea></label>
-        <label class="full"><span><input type="checkbox" required /> Acconsento al trattamento dei dati secondo la privacy policy.</span></label>
-        <div class="full"><button class="button button-primary" type="submit">Invia la richiesta</button><p class="notice">Prima della pubblicazione sostituisci <strong>INSERISCI_ID</strong> con l'identificativo gratuito di Formspree.</p></div>
-      </form>
-    </div>
-  </section>
-</BaseLayout>
+<BaseLayout title="Richiedi un preventivo viaggio | Davide Fois"><section class="page"><div class="container"><div class="section-head"><p class="kicker">Preventivo gratuito</p><h1>Raccontami il viaggio che hai in mente.</h1></div><form class="card form-grid" action="https://formspree.io/f/INSERISCI_ID" method="POST"><label>Nome e cognome<input name="nome" required></label><label>Email<input type="email" name="email" required></label><label>Telefono<input type="tel" name="telefono"></label><label>Destinazione<input name="destinazione" required></label><label>Periodo indicativo<input name="periodo"></label><label>Numero viaggiatori<input type="number" name="viaggiatori" min="1"></label><label>Budget complessivo<input name="budget"></label><label>Tipo di viaggio<select name="tipo"><option>Tour culturale</option><option>Mare e relax</option><option>Crociera</option><option>Viaggio di nozze</option><option>Altro</option></select></label><label class="full">Preferenze<textarea name="messaggio"></textarea></label><div class="full"><button class="button button-dark" type="submit">Invia la richiesta</button></div></form></div></section></BaseLayout>

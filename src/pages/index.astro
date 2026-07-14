@@ -2,71 +2,26 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 ---
-<BaseLayout title="Davide Fois | Consulente di viaggio personale" description="Creo viaggi su misura e ti accompagno dalla prima idea fino al rientro, con assistenza personalizzata.">
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">Viaggi su misura • Assistenza personale</p>
-        <h1>Il viaggio che immagini, organizzato con cura.</h1>
-        <p class="lead">Ti aiuto a scegliere, progettare e prenotare la vacanza più adatta a te, senza perdere tempo tra centinaia di offerte.</p>
-        <div class="actions">
-          <a class="button button-primary" href={`${base}preventivo/`}>Richiedi un preventivo gratuito</a>
-          <a class="button button-secondary" href="https://davidefois.nuovevacanze.it" target="_blank">Esplora le offerte</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <span class="badge">Consulenza umana, non un semplice motore di ricerca</span>
-        <p class="quote">“Parti con un progetto chiaro e un referente che conosce il tuo viaggio.”</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container">
-      <div class="section-intro">
-        <p class="eyebrow">Perché scegliere me</p>
-        <h2>Più serenità, meno confusione.</h2>
-      </div>
-      <div class="grid-3">
-        <article class="card"><div class="icon">🧭</div><h3>Proposta su misura</h3><p>Parto da budget, periodo, interessi e stile di viaggio per selezionare le alternative più adatte.</p></article>
-        <article class="card"><div class="icon">🤝</div><h3>Un referente personale</h3><p>Hai una persona da contattare prima, durante e dopo la partenza.</p></article>
-        <article class="card"><div class="icon">⏱️</div><h3>Tempo risparmiato</h3><p>Eviti ore di ricerche e confronti poco chiari: ricevi una proposta ragionata e comprensibile.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-intro">
-        <p class="eyebrow">Idee di viaggio</p>
-        <h2>Da dove vuoi iniziare?</h2>
-      </div>
-      <div class="destinations">
-        <a class="destination" href={`${base}destinazioni/#giappone`}><small>Asia</small><h3>Giappone</h3></a>
-        <a class="destination" href={`${base}destinazioni/#islanda`}><small>Nord Europa</small><h3>Islanda</h3></a>
-        <a class="destination" href={`${base}destinazioni/#grecia`}><small>Mediterraneo</small><h3>Grecia</h3></a>
-        <a class="destination" href={`${base}destinazioni/#maldive`}><small>Oceano Indiano</small><h3>Maldive</h3></a>
-        <a class="destination" href={`${base}destinazioni/#usa`}><small>Nord America</small><h3>Stati Uniti</h3></a>
-        <a class="destination" href={`${base}destinazioni/#baltici`}><small>Europa</small><h3>Paesi Baltici</h3></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container">
-      <div class="section-intro"><p class="eyebrow">Come funziona</p><h2>Tre passaggi semplici.</h2></div>
-      <div class="steps">
-        <article class="step"><h3>Raccontami il viaggio</h3><p>Compila il modulo con destinazione, periodo, budget e preferenze.</p></article>
-        <article class="step"><h3>Ricevi una proposta</h3><p>Valutiamo insieme le soluzioni più coerenti con ciò che cerchi.</p></article>
-        <article class="step"><h3>Prenota e parti</h3><p>Confermi la soluzione scelta e ricevi assistenza durante tutto il percorso.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container cta">
-      <div><p class="eyebrow">Il prossimo viaggio parte da qui</p><h2>Parliamo della tua idea.</h2><p>La richiesta è gratuita e non ti obbliga alla prenotazione.</p></div>
-      <a class="button button-primary" href={`${base}preventivo/`}>Inizia ora</a>
-    </div>
-  </section>
+<BaseLayout title="Davide Fois | Viaggi su misura e consulenza personale" description="Progetto viaggi su misura in Giappone, Lituania e nel mondo con assistenza personale prima, durante e dopo la partenza.">
+<section class="hero"><div class="container hero-grid"><div>
+<p class="kicker">Davide Fois Travel Consultant</p><h1>Viaggi su misura creati <span>intorno a te.</span></h1>
+<p class="lead">Dalla prima idea alla partenza: seleziono le soluzioni più adatte, costruisco un progetto chiaro e resto il tuo referente durante tutto il viaggio.</p>
+<div class="actions"><a class="button button-primary" href={`${base}preventivo/`}>Richiedi un preventivo</a><a class="button button-ghost" href="https://wa.me/393389028812" target="_blank">Scrivimi su WhatsApp</a></div>
+<div class="trust-row"><span>✓ Preventivo senza impegno</span><span>✓ Assistenza personale</span><span>✓ Powered by Nuovevacanze</span></div>
+</div><div class="hero-visual" aria-hidden="true"><div class="globe"></div><div class="route"></div><div class="plane">✈</div><div class="profile-card"><strong>Davide Fois</strong><span>Il tuo referente per trasformare un'idea di viaggio in un'esperienza organizzata con cura.</span></div></div></div></section>
+<section class="section alt"><div class="container"><div class="section-head"><p class="kicker">Perché scegliere me</p><h2>Più tranquillità, meno ore perse tra mille offerte.</h2><p>Un servizio pensato per chi desidera una proposta comprensibile, personalizzata e accompagnata da una persona reale.</p></div><div class="grid-3">
+<article class="card"><div class="icon">🧭</div><h3>Consulenza personalizzata</h3><p>Periodo, budget, interessi e stile di viaggio diventano la base di ogni proposta.</p></article>
+<article class="card"><div class="icon">🌍</div><h3>Selezione ragionata</h3><p>Non una lista infinita: ricevi soluzioni coerenti e spiegate con chiarezza.</p></article>
+<article class="card"><div class="icon">🤝</div><h3>Assistenza completa</h3><p>Hai un referente prima, durante e dopo la partenza.</p></article>
+</div></div></section>
+<section class="section"><div class="container"><div class="section-head"><p class="kicker">Destinazioni in evidenza</p><h2>Il mondo è grande. Iniziamo da ciò che ti emoziona.</h2></div><div class="dest-grid">
+<a class="dest jp" href={`${base}destinazioni/#giappone`}><div><small>Speciale Asia</small><h2>Giappone</h2><p>Foliage, hanami, cultura, città e itinerari autentici.</p></div></a>
+<a class="dest lt" href={`${base}destinazioni/#lituania`}><div><small>City break</small><h2>Lituania</h2><p>Vilnius, Trakai e natura baltica.</p></div></a>
+<a class="dest world" href={`${base}destinazioni/`}><div><small>Altre esperienze</small><h2>Il mondo</h2><p>Mare, tour, crociere e viaggi personalizzati.</p></div></a>
+</div></div></section>
+<section class="section alt"><div class="container"><div class="section-head"><p class="kicker">Come funziona</p><h2>Un percorso semplice, dall'idea alla partenza.</h2></div><div class="steps">
+<article class="step"><h3>Raccontami il viaggio</h3><p>Destinazione, periodo, budget e desideri.</p></article><article class="step"><h3>Ricevi la proposta</h3><p>Seleziono le opzioni più adatte al tuo profilo.</p></article><article class="step"><h3>Definiamo i dettagli</h3><p>Rivediamo insieme servizi, tappe e condizioni.</p></article><article class="step"><h3>Parti con assistenza</h3><p>Resto il tuo punto di riferimento.</p></article>
+</div></div></section>
+<section class="section"><div class="container quote"><div><p class="kicker">Un servizio umano</p><h2>Non devi diventare esperto di prenotazioni per organizzare bene una vacanza.</h2><p>Il mio compito è semplificare le scelte, chiarire i dubbi e proporti una soluzione coerente con ciò che cerchi davvero.</p></div><div class="quote-card"><blockquote>“Ogni viaggio dovrebbe iniziare con entusiasmo, non con confusione.”</blockquote><strong>Davide Fois</strong><p>Travel Consultant • Powered by Nuovevacanze</p></div></div></section>
+<section class="section"><div class="container cta"><div><p class="kicker">Il prossimo viaggio parte da qui</p><h2>Raccontami la tua idea.</h2><p>La richiesta è gratuita e non comporta obbligo di prenotazione.</p></div><a class="button button-primary" href={`${base}preventivo/`}>Inizia ora</a></div></section>
 </BaseLayout>
