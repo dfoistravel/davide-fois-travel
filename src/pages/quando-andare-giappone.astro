@@ -206,16 +206,106 @@ const schema = {
     </div>
   </section>
 
-  <section class="section">
-    <div class="container cta executive-cta">
-      <div>
-        <p class="kicker">Progettiamo il periodo giusto</p>
-        <h2>Raccontami il Giappone che vuoi vivere.</h2>
-        <p>Ti aiuterò a scegliere date, tappe e durata in base al budget e alle stagioni.</p>
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Continua a esplorare</p>
+
+        <h2>Prepara il tuo viaggio in Giappone passo dopo passo.</h2>
+
+        <p>
+          Approfondisci destinazioni, stagioni e itinerari oppure
+          raccontami direttamente il viaggio che desideri organizzare.
+        </p>
       </div>
-      <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>
-        Richiedi il preventivo gratuito
-      </a>
+
+      <div class="guide-links-grid">
+        <a class="guide-link-card" href={`${base}giappone/`}>
+          <span class="guide-link-icon">🇯🇵</span>
+
+          <div>
+            <small>Guida principale</small>
+            <h3>Viaggio in Giappone</h3>
+            <p>
+              Destinazioni, stagioni, itinerari e consigli per iniziare.
+            </p>
+            <strong>Scopri la guida →</strong>
+          </div>
+        </a>
+
+        <a
+          class="guide-link-card"
+          href={`${base}blog/giappone-in-autunno/`}
+        >
+          <span class="guide-link-icon">🍁</span>
+
+          <div>
+            <small>Guida stagionale</small>
+            <h3>Giappone in autunno</h3>
+            <p>
+              Foliage, destinazioni e periodi consigliati.
+            </p>
+            <strong>Leggi l'articolo →</strong>
+          </div>
+        </a>
+
+        <a class="guide-link-card" href={`${base}destinazioni/`}>
+          <span class="guide-link-icon">🗺️</span>
+
+          <div>
+            <small>Idee di viaggio</small>
+            <h3>Scopri le destinazioni</h3>
+            <p>
+              Esplora Giappone, Lituania e altre proposte personalizzabili.
+            </p>
+            <strong>Vedi le destinazioni →</strong>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container final-conversion">
+      <div class="final-conversion-copy">
+        <p class="kicker">Il tuo viaggio comincia da qui</p>
+
+        <h2>Troviamo insieme il periodo giusto per il tuo Giappone.</h2>
+
+        <p>
+          Raccontami quando vorresti partire, quanti giorni hai a disposizione,
+          il budget indicativo e le esperienze che desideri vivere.
+          Ti aiuterò a costruire una proposta personalizzata.
+        </p>
+
+        <ul class="conversion-benefits">
+          <li>Richiesta gratuita e senza impegno</li>
+          <li>Itinerario basato sulle tue esigenze</li>
+          <li>Assistenza personale prima, durante e dopo il viaggio</li>
+        </ul>
+      </div>
+
+      <div class="final-conversion-actions">
+        <a
+          class="button button-primary"
+          href={`${base}preventivo/?destinazione=Giappone`}
+        >
+          Richiedi il preventivo gratuito
+        </a>
+
+        <a
+          class="button button-light"
+          href="https://wa.me/393389028812?text=Buongiorno%20Davide,%20vorrei%20organizzare%20un%20viaggio%20in%20Giappone."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Scrivimi su WhatsApp
+        </a>
+
+        <small>
+          Ti risponderò personalmente per approfondire la richiesta.
+        </small>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -252,5 +342,149 @@ const schema = {
     .japan-map{min-height:auto;padding:24px}
     .map-line{display:none}
     .map-point{position:relative;top:auto;right:auto;bottom:auto;left:auto;width:100%;margin-bottom:24px}
+  }
+  .guide-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .guide-link-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 12px 34px rgba(11, 31, 58, 0.06);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .guide-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 46px rgba(11, 31, 58, 0.12);
+  }
+
+  .guide-link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: #f7f0d5;
+    font-size: 1.55rem;
+  }
+
+  .guide-link-card small {
+    color: var(--muted);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .guide-link-card h3 {
+    margin: 8px 0;
+  }
+
+  .guide-link-card p {
+    color: var(--muted);
+  }
+
+  .guide-link-card strong {
+    color: var(--navy);
+  }
+
+  .final-conversion {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 44px;
+    align-items: center;
+    padding: 52px;
+    border-radius: 32px;
+    background:
+      radial-gradient(
+        circle at 85% 20%,
+        rgba(241, 207, 84, 0.18),
+        transparent 24%
+      ),
+      linear-gradient(145deg, #0b1f3a, #173c62);
+    color: #fff;
+    box-shadow: 0 28px 70px rgba(11, 31, 58, 0.22);
+  }
+
+  .final-conversion h2 {
+    color: #fff;
+  }
+
+  .final-conversion p {
+    color: #dbe6f2;
+  }
+
+  .conversion-benefits {
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .conversion-benefits li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 28px;
+    color: #fff;
+  }
+
+  .conversion-benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #f1cf54;
+    font-weight: 900;
+  }
+
+  .final-conversion-actions {
+    display: grid;
+    gap: 14px;
+  }
+
+  .final-conversion-actions .button {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .button-light {
+    background: #fff;
+    color: var(--navy);
+  }
+
+  .final-conversion-actions small {
+    color: #cbd8e5;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .guide-links-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .final-conversion {
+      grid-template-columns: 1fr;
+      padding: 36px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .final-conversion {
+      padding: 28px 22px;
+    }
+
+    .guide-link-card {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
