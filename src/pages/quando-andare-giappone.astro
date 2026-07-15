@@ -419,6 +419,102 @@ const schema = {
       </div>
     </div>
   </section>
+    <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Dove andare</p>
+
+        <h2>Dove andare in Giappone in ogni stagione.</h2>
+
+        <p>
+          Il periodo dell'anno influenza molto l'itinerario.
+          Alcune regioni sono particolarmente indicate in base
+          al clima e alle esperienze che vuoi vivere.
+        </p>
+      </div>
+
+      <div class="season-destination-grid">
+        <article class="season-destination-card">
+          <div class="season-symbol">🌸</div>
+
+          <div>
+            <h3>Primavera</h3>
+
+            <p class="season-destination-places">
+              Tokyo • Kyoto • Nara • Osaka
+            </p>
+
+            <p>
+              Ideale per hanami, giardini, templi e passeggiate
+              con temperature generalmente piacevoli.
+            </p>
+          </div>
+        </article>
+
+        <article class="season-destination-card">
+          <div class="season-symbol">☀️</div>
+
+          <div>
+            <h3>Estate</h3>
+
+            <p class="season-destination-places">
+              Hokkaido • Alpi Giapponesi • Tohoku
+            </p>
+
+            <p>
+              Ottima per trekking, natura, festival e regioni
+              dal clima più fresco rispetto alle grandi città.
+            </p>
+          </div>
+        </article>
+
+        <article class="season-destination-card">
+          <div class="season-symbol">🍁</div>
+
+          <div>
+            <h3>Autunno</h3>
+
+            <p class="season-destination-places">
+              Kyoto • Nikko • Takayama • Hakone
+            </p>
+
+            <p>
+              Perfetto per foliage, fotografia, templi,
+              paesaggi montani e itinerari culturali.
+            </p>
+          </div>
+        </article>
+
+        <article class="season-destination-card">
+          <div class="season-symbol">❄️</div>
+
+          <div>
+            <h3>Inverno</h3>
+
+            <p class="season-destination-places">
+              Hokkaido • Nagano • Shirakawa-go
+            </p>
+
+            <p>
+              Ideale per neve, sci, onsen, villaggi innevati
+              e atmosfere più tranquille.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="season-message">
+        <strong>
+          Non esiste un periodo perfetto per tutti.
+        </strong>
+
+        <p>
+          Esiste il periodo più adatto al viaggio che desideri vivere,
+          alle regioni che vuoi visitare e al tuo ritmo personale.
+        </p>
+      </div>
+    </div>
+  </section>
   <section class="section alt">
     <div class="container">
       <div class="section-head">
@@ -798,6 +894,71 @@ const schema = {
 
   @media (max-width: 620px) {
     .warning-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .season-destination-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .season-destination-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: start;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 12px 34px rgba(11, 31, 58, 0.06);
+  }
+
+  .season-destination-card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .season-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: #f7f0d5;
+    font-size: 1.6rem;
+  }
+
+  .season-destination-places {
+    margin-bottom: 12px;
+    font-weight: 800;
+    color: var(--navy);
+  }
+
+  .season-message {
+    margin-top: 28px;
+    padding: 28px 30px;
+    border-left: 5px solid var(--gold);
+    border-radius: 18px;
+    background: #fff8e8;
+  }
+
+  .season-message strong {
+    display: block;
+    margin-bottom: 8px;
+    font-family: Poppins, sans-serif;
+    font-size: 1.2rem;
+    color: var(--navy);
+  }
+
+  .season-message p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 760px) {
+    .season-destination-grid {
       grid-template-columns: 1fr;
     }
   }
