@@ -4,133 +4,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 
 const months = [
-  {
-    mese: "Gennaio",
-    clima: "❄️ Freddo",
-    affluenza: "⭐",
-    prezzi: "€€",
-    ideale: "Neve, onsen, Hokkaido"
-  },
-  {
-    mese: "Febbraio",
-    clima: "❄️ Freddo",
-    affluenza: "⭐",
-    prezzi: "€€",
-    ideale: "Snow Festival, sci"
-  },
-  {
-    mese: "Marzo",
-    clima: "🌸 Mite",
-    affluenza: "⭐⭐⭐",
-    prezzi: "€€€",
-    ideale: "Primi ciliegi e hanami"
-  },
-  {
-    mese: "Aprile",
-    clima: "🌸 Mite",
-    affluenza: "⭐⭐⭐⭐⭐",
-    prezzi: "€€€€",
-    ideale: "Ciliegi in fiore"
-  },
-  {
-    mese: "Maggio",
-    clima: "☀️ Piacevole",
-    affluenza: "⭐⭐⭐",
-    prezzi: "€€€",
-    ideale: "Città, natura e trekking"
-  },
-  {
-    mese: "Giugno",
-    clima: "🌦 Piovoso",
-    affluenza: "⭐",
-    prezzi: "€",
-    ideale: "Budget e città meno affollate"
-  },
-  {
-    mese: "Luglio",
-    clima: "☀️ Caldo",
-    affluenza: "⭐⭐",
-    prezzi: "€€",
-    ideale: "Festival e montagne"
-  },
-  {
-    mese: "Agosto",
-    clima: "☀️ Molto caldo",
-    affluenza: "⭐⭐⭐",
-    prezzi: "€€€",
-    ideale: "Hokkaido, mare e matsuri"
-  },
-  {
-    mese: "Settembre",
-    clima: "🍃 Variabile",
-    affluenza: "⭐⭐",
-    prezzi: "€€",
-    ideale: "Meno folla e fine estate"
-  },
-  {
-    mese: "Ottobre",
-    clima: "🍁 Piacevole",
-    affluenza: "⭐⭐⭐",
-    prezzi: "€€",
-    ideale: "Prime zone di foliage"
-  },
-  {
-    mese: "Novembre",
-    clima: "🍁 Fresco",
-    affluenza: "⭐⭐",
-    prezzi: "€€",
-    ideale: "Momiji e foliage"
-  },
-  {
-    mese: "Dicembre",
-    clima: "❄️ Freddo",
-    affluenza: "⭐",
-    prezzi: "€€",
-    ideale: "Illuminazioni e primi paesaggi innevati"
-  }
+  ["Gennaio","❄️ Freddo","⭐","€€","Neve, onsen, Hokkaido"],
+  ["Febbraio","❄️ Freddo","⭐","€€","Snow Festival, sci"],
+  ["Marzo","🌸 Mite","⭐⭐⭐","€€€","Primi ciliegi e hanami"],
+  ["Aprile","🌸 Mite","⭐⭐⭐⭐⭐","€€€€","Ciliegi in fiore"],
+  ["Maggio","☀️ Piacevole","⭐⭐⭐","€€€","Città, natura e trekking"],
+  ["Giugno","🌦 Piovoso","⭐","€","Budget e città meno affollate"],
+  ["Luglio","☀️ Caldo","⭐⭐","€€","Festival e montagne"],
+  ["Agosto","☀️ Molto caldo","⭐⭐⭐","€€€","Hokkaido, mare e matsuri"],
+  ["Settembre","🍃 Variabile","⭐⭐","€€","Meno folla e fine estate"],
+  ["Ottobre","🍁 Piacevole","⭐⭐⭐","€€","Prime zone di foliage"],
+  ["Novembre","🍁 Fresco","⭐⭐","€€","Momiji e foliage"],
+  ["Dicembre","❄️ Freddo","⭐","€€","Illuminazioni e primi paesaggi innevati"]
 ];
 
 const faq = [
-  {
-    question: "Qual è il mese migliore per andare in Giappone?",
-    answer:
-      "Aprile, maggio, ottobre e novembre sono generalmente tra i mesi più apprezzati. La scelta migliore dipende però dalle regioni visitate, dal budget e dal tipo di esperienza desiderata."
-  },
-  {
-    question: "Quando vedere i ciliegi in fiore?",
-    answer:
-      "Nelle principali città del Giappone centrale la fioritura avviene spesso tra fine marzo e inizio aprile, ma le date cambiano ogni anno e variano tra sud, centro e nord."
-  },
-  {
-    question: "Quando vedere il foliage in Giappone?",
-    answer:
-      "Il foliage inizia nelle regioni settentrionali e montane e raggiunge più tardi città come Kyoto e Tokyo. Novembre è spesso uno dei mesi più indicati per il Giappone centrale."
-  },
-  {
-    question: "Qual è il periodo meno costoso?",
-    answer:
-      "Alcune settimane di gennaio, febbraio, giugno e settembre possono offrire prezzi più convenienti, soprattutto evitando festività, eventi importanti e weekend molto richiesti."
-  },
-  {
-    question: "Quali sono i periodi più affollati?",
-    answer:
-      "Hanami, Golden Week, Obon, Capodanno e foliage nelle località più famose sono tra i periodi con maggiore affluenza e prezzi più elevati."
-  },
-  {
-    question: "Meglio primavera o autunno?",
-    answer:
-      "La primavera è ideale per i ciliegi e l'atmosfera dell'hanami; l'autunno offre temperature piacevoli, foliage e spesso condizioni più stabili."
-  },
-  {
-    question: "Si può visitare il Giappone in estate?",
-    answer:
-      "Sì, ma occorre prepararsi a caldo e umidità. Hokkaido, montagne e regioni più fresche possono rendere il viaggio più confortevole."
-  },
-  {
-    question: "Quanti giorni servono per un primo viaggio?",
-    answer:
-      "Per un primo itinerario completo sono consigliabili almeno 10-14 giorni, così da combinare Tokyo, Kyoto, Osaka e alcune escursioni."
-  }
+  ["Qual è il mese migliore per andare in Giappone?","Aprile, maggio, ottobre e novembre sono generalmente tra i mesi più apprezzati. La scelta migliore dipende però dalle regioni visitate, dal budget e dal tipo di esperienza desiderata."],
+  ["Quando vedere i ciliegi in fiore?","Nelle principali città del Giappone centrale la fioritura avviene spesso tra fine marzo e inizio aprile, ma le date cambiano ogni anno."],
+  ["Quando vedere il foliage in Giappone?","Il foliage inizia nelle regioni settentrionali e montane e raggiunge più tardi città come Kyoto e Tokyo. Novembre è spesso uno dei mesi più indicati."],
+  ["Qual è il periodo meno costoso?","Alcune settimane di gennaio, febbraio, giugno e settembre possono offrire prezzi più convenienti, evitando festività ed eventi importanti."],
+  ["Quali sono i periodi più affollati?","Hanami, Golden Week, Obon, Capodanno e foliage nelle località più famose sono tra i periodi con maggiore affluenza."],
+  ["Meglio primavera o autunno?","La primavera è ideale per i ciliegi; l'autunno offre temperature piacevoli, foliage e spesso condizioni più stabili."],
+  ["Si può visitare il Giappone in estate?","Sì, ma occorre prepararsi a caldo e umidità. Hokkaido e le zone montane sono spesso più confortevoli."],
+  ["Quanti giorni servono per un primo viaggio?","Per un primo itinerario completo sono consigliabili almeno 10-14 giorni."]
 ];
 
 const schema = {
@@ -139,57 +35,18 @@ const schema = {
     {
       "@type": "Article",
       "headline": "Quando andare in Giappone: clima, stagioni e periodo migliore",
-      "description":
-        "Guida completa per scegliere il periodo migliore per visitare il Giappone.",
-      "author": {
-        "@type": "Person",
-        "name": "Davide Fois"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Davide Fois Travel Consultant"
-      },
-      "mainEntityOfPage": new URL(
-        `${base}quando-andare-giappone/`,
-        Astro.site
-      ).href,
+      "description": "Guida completa per scegliere il periodo migliore per visitare il Giappone.",
+      "author": { "@type": "Person", "name": "Davide Fois" },
+      "publisher": { "@type": "Organization", "name": "Davide Fois Travel Consultant" },
+      "mainEntityOfPage": new URL(`${base}quando-andare-giappone/`, Astro.site).href,
       "inLanguage": "it-IT"
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": new URL(base, Astro.site).href
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Giappone",
-          "item": new URL(`${base}giappone/`, Astro.site).href
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Quando andare in Giappone",
-          "item": new URL(
-            `${base}quando-andare-giappone/`,
-            Astro.site
-          ).href
-        }
-      ]
-    },
-    {
       "@type": "FAQPage",
-      "mainEntity": faq.map(item => ({
+      "mainEntity": faq.map(([question, answer]) => ({
         "@type": "Question",
-        "name": item.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.answer
-        }
+        "name": question,
+        "acceptedAnswer": { "@type": "Answer", "text": answer }
       }))
     }
   ]
@@ -205,56 +62,35 @@ const schema = {
     <div class="container hero-grid">
       <div>
         <p class="kicker">Guida Giappone 2026</p>
-
-        <h1>
-          Quando andare in Giappone: scegli il periodo giusto per il tuo viaggio.
-        </h1>
-
+        <h1>Quando andare in Giappone: scegli il periodo giusto per il tuo viaggio.</h1>
         <p class="lead">
-          Sakura, foliage, festival, neve e onsen: ogni stagione offre
-          un Giappone diverso. Questa guida ti aiuta a scegliere il periodo
-          più adatto in base a clima, budget, affollamento ed esperienza.
+          Sakura, foliage, festival, neve e onsen: ogni stagione offre un Giappone diverso.
+          Questa guida ti aiuta a scegliere il periodo più adatto in base a clima, budget,
+          affollamento ed esperienza.
         </p>
-
         <div class="actions">
-          <a
-            class="button button-primary"
-            href={`${base}preventivo/?destinazione=Giappone`}
-          >
+          <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>
             Richiedi un preventivo gratuito
           </a>
-
-          <a class="button button-ghost" href="#calendario">
-            Guarda il calendario
-          </a>
+          <a class="button button-ghost" href="#calendario">Guarda il calendario</a>
         </div>
       </div>
 
       <div class="executive-visual" aria-hidden="true">
         <div class="executive-orbit"></div>
         <div class="executive-plane">✈</div>
-
         <div class="executive-card">
           <span class="badge">Periodo consigliato</span>
-
-          <strong>
-            Primavera e autunno sono i grandi classici.
-          </strong>
-
-          <p>
-            Ma inverno ed estate possono offrire esperienze più autentiche,
-            meno affollate e talvolta più convenienti.
-          </p>
+          <strong>Primavera e autunno sono i grandi classici.</strong>
+          <p>Ma inverno ed estate possono offrire esperienze più autentiche e meno affollate.</p>
         </div>
       </div>
     </div>
   </section>
 
   <nav class="container breadcrumb" aria-label="Breadcrumb">
-    <a href={base}>Home</a>
-    <span>›</span>
-    <a href={`${base}giappone/`}>Giappone</a>
-    <span>›</span>
+    <a href={base}>Home</a><span>›</span>
+    <a href={`${base}giappone/`}>Giappone</a><span>›</span>
     <span>Quando andare</span>
   </nav>
 
@@ -263,49 +99,13 @@ const schema = {
       <div class="section-head">
         <p class="kicker">La risposta in breve</p>
         <h2>Qual è il periodo migliore per visitare il Giappone?</h2>
-        <p>
-          Non esiste una risposta valida per tutti. Il periodo corretto
-          dipende dalle regioni visitate, dal budget e dalle esperienze
-          che desideri vivere.
-        </p>
+        <p>Non esiste una risposta valida per tutti: dipende dalle regioni, dal budget e dalle esperienze desiderate.</p>
       </div>
-
       <div class="grid-3">
-        <article class="card">
-          <div class="icon">🌸</div>
-          <h3>Primavera</h3>
-          <p>
-            Ideale per hanami, ciliegi in fiore, giardini e temperature
-            generalmente miti.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">☀️</div>
-          <h3>Estate</h3>
-          <p>
-            Festival, fuochi d'artificio, montagne, Hokkaido e
-            un'atmosfera più locale.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">🍁</div>
-          <h3>Autunno</h3>
-          <p>
-            Foliage spettacolare, temperature piacevoli e ottime
-            condizioni per città e natura.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">❄️</div>
-          <h3>Inverno</h3>
-          <p>
-            Neve, onsen, sci, paesaggi alpini e generalmente meno
-            visitatori nelle città principali.
-          </p>
-        </article>
+        <article class="card"><div class="icon">🌸</div><h3>Primavera</h3><p>Hanami, ciliegi, giardini e temperature miti.</p></article>
+        <article class="card"><div class="icon">☀️</div><h3>Estate</h3><p>Festival, montagne, Hokkaido e atmosfera locale.</p></article>
+        <article class="card"><div class="icon">🍁</div><h3>Autunno</h3><p>Foliage, clima piacevole e natura.</p></article>
+        <article class="card"><div class="icon">❄️</div><h3>Inverno</h3><p>Neve, onsen, sci e meno visitatori.</p></article>
       </div>
     </div>
   </section>
@@ -315,466 +115,52 @@ const schema = {
       <div class="section-head">
         <p class="kicker">Guida mese per mese</p>
         <h2>Quando andare in Giappone durante l'anno.</h2>
-        <p>
-          Questa tabella ti aiuta a confrontare rapidamente clima,
-          affluenza, prezzi ed esperienze consigliate.
-        </p>
       </div>
-
       <div class="table-wrapper">
         <table class="travel-table">
-          <thead>
-            <tr>
-              <th>Mese</th>
-              <th>Clima</th>
-              <th>Affluenza</th>
-              <th>Prezzi</th>
-              <th>Ideale per</th>
-            </tr>
-          </thead>
-
+          <thead><tr><th>Mese</th><th>Clima</th><th>Affluenza</th><th>Prezzi</th><th>Ideale per</th></tr></thead>
           <tbody>
-            {months.map(item => (
-              <tr>
-                <td><strong>{item.mese}</strong></td>
-                <td>{item.clima}</td>
-                <td>{item.affluenza}</td>
-                <td>{item.prezzi}</td>
-                <td>{item.ideale}</td>
-              </tr>
+            {months.map(([mese, clima, affluenza, prezzi, ideale]) => (
+              <tr><td><strong>{mese}</strong></td><td>{clima}</td><td>{affluenza}</td><td>{prezzi}</td><td>{ideale}</td></tr>
             ))}
           </tbody>
         </table>
       </div>
     </div>
   </section>
+
   <section class="section">
     <div class="container">
       <div class="section-head">
         <p class="kicker">Il riepilogo</p>
-
         <h2>Qual è il periodo migliore per il tuo viaggio?</h2>
-
-        <p>
-          Ogni stagione offre esperienze differenti. Ecco il riepilogo
-          più veloce per scegliere il periodo ideale.
-        </p>
       </div>
-
       <div class="grid-3">
-        <article class="card">
-          <h3>🌸 Hanami</h3>
-
-          <p>
-            Fine marzo – inizio aprile. Ideale per chi sogna i ciliegi
-            in fiore tra Kyoto, Tokyo e Nara.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>🍁 Foliage</h3>
-
-          <p>
-            Ottobre e novembre. Colori spettacolari in tutto il Giappone,
-            dalle Alpi Giapponesi a Kyoto.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>💰 Budget</h3>
-
-          <p>
-            Gennaio, febbraio, giugno e settembre offrono spesso tariffe
-            più convenienti per voli e hotel.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>♨️ Onsen e neve</h3>
-
-          <p>
-            Da gennaio a febbraio. Hokkaido, Nagano e le località termali
-            regalano esperienze uniche.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>☀️ Clima ideale</h3>
-
-          <p>
-            Aprile, maggio e novembre sono generalmente i mesi più
-            equilibrati per visitare il Giappone.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>👨‍💼 Il mio consiglio</h3>
-
-          <p>
-            Per un primo viaggio consiglio ottobre o novembre: clima
-            piacevole, foliage spettacolare e minore affollamento rispetto
-            alla primavera.
-          </p>
-        </article>
+        <article class="card"><h3>🌸 Hanami</h3><p>Fine marzo – inizio aprile, soprattutto tra Tokyo, Kyoto e Nara.</p></article>
+        <article class="card"><h3>🍁 Foliage</h3><p>Ottobre e novembre, dalle Alpi Giapponesi a Kyoto.</p></article>
+        <article class="card"><h3>💰 Budget</h3><p>Gennaio, febbraio, giugno e settembre possono essere più convenienti.</p></article>
+        <article class="card"><h3>♨️ Onsen e neve</h3><p>Gennaio e febbraio per Hokkaido, Nagano e località termali.</p></article>
+        <article class="card"><h3>☀️ Clima ideale</h3><p>Aprile, maggio e novembre sono generalmente molto equilibrati.</p></article>
+        <article class="card"><h3>👨‍💼 Il mio consiglio</h3><p>Per un primo viaggio valuta ottobre o novembre.</p></article>
       </div>
     </div>
   </section>
-    <section class="section alt">
+
+  <section class="section alt">
     <div class="container">
       <div class="section-head">
         <p class="kicker">Dove andare</p>
-
         <h2>Dove andare in Giappone in ogni stagione.</h2>
-
-        <p>
-          Il periodo dell'anno influenza molto l'itinerario.
-          Alcune regioni sono particolarmente indicate in base
-          al clima e alle esperienze che vuoi vivere.
-        </p>
       </div>
-
       <div class="season-destination-grid">
-        <article class="season-destination-card">
-          <div class="season-symbol">🌸</div>
-
-          <div>
-            <h3>Primavera</h3>
-
-            <p class="season-destination-places">
-              Tokyo • Kyoto • Nara • Osaka
-            </p>
-
-            <p>
-              Ideale per hanami, giardini, templi e passeggiate
-              con temperature generalmente piacevoli.
-            </p>
-          </div>
-        </article>
-
-        <article class="season-destination-card">
-          <div class="season-symbol">☀️</div>
-
-          <div>
-            <h3>Estate</h3>
-
-            <p class="season-destination-places">
-              Hokkaido • Alpi Giapponesi • Tohoku
-            </p>
-
-            <p>
-              Ottima per trekking, natura, festival e regioni
-              dal clima più fresco rispetto alle grandi città.
-            </p>
-          </div>
-        </article>
-
-        <article class="season-destination-card">
-          <div class="season-symbol">🍁</div>
-
-          <div>
-            <h3>Autunno</h3>
-
-            <p class="season-destination-places">
-              Kyoto • Nikko • Takayama • Hakone
-            </p>
-
-            <p>
-              Perfetto per foliage, fotografia, templi,
-              paesaggi montani e itinerari culturali.
-            </p>
-          </div>
-        </article>
-
-        <article class="season-destination-card">
-          <div class="season-symbol">❄️</div>
-
-          <div>
-            <h3>Inverno</h3>
-
-            <p class="season-destination-places">
-              Hokkaido • Nagano • Shirakawa-go
-            </p>
-
-            <p>
-              Ideale per neve, sci, onsen, villaggi innevati
-              e atmosfere più tranquille.
-            </p>
-          </div>
-        </article>
+        <article class="season-destination-card"><div class="season-symbol">🌸</div><div><h3>Primavera</h3><p class="season-destination-places">Tokyo • Kyoto • Nara • Osaka</p><p>Hanami, giardini e templi.</p></div></article>
+        <article class="season-destination-card"><div class="season-symbol">☀️</div><div><h3>Estate</h3><p class="season-destination-places">Hokkaido • Alpi Giapponesi • Tohoku</p><p>Trekking, natura e festival.</p></div></article>
+        <article class="season-destination-card"><div class="season-symbol">🍁</div><div><h3>Autunno</h3><p class="season-destination-places">Kyoto • Nikko • Takayama • Hakone</p><p>Foliage e fotografia.</p></div></article>
+        <article class="season-destination-card"><div class="season-symbol">❄️</div><div><h3>Inverno</h3><p class="season-destination-places">Hokkaido • Nagano • Shirakawa-go</p><p>Neve, sci e onsen.</p></div></article>
       </div>
-
       <div class="season-message">
-        <strong>
-          Non esiste un periodo perfetto per tutti.
-        </strong>
-
-        <p>
-          Esiste il periodo più adatto al viaggio che desideri vivere,
-          alle regioni che vuoi visitare e al tuo ritmo personale.
-        </p>
-      </div>
-    </div>
-  </section>
-    .japan-map-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 34px;
-    align-items: stretch;
-  }
-
-  .japan-map {
-    position: relative;
-    min-height: 720px;
-    padding: 38px 30px;
-    border-radius: 30px;
-    background:
-      radial-gradient(
-        circle at 70% 20%,
-        rgba(230, 200, 95, 0.16),
-        transparent 22%
-      ),
-      linear-gradient(145deg, #0b1f3a, #173c62);
-    box-shadow: 0 24px 60px rgba(11, 31, 58, 0.18);
-    overflow: hidden;
-  }
-
-  .map-line {
-    position: absolute;
-    top: 54px;
-    bottom: 54px;
-    left: 50%;
-    width: 5px;
-    border-radius: 999px;
-    background: linear-gradient(
-      to bottom,
-      #f1cf54,
-      #ffffff,
-      #f1cf54
-    );
-    transform: translateX(-50%) rotate(12deg);
-    opacity: 0.75;
-  }
-
-  .map-point {
-    position: absolute;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 14px;
-    align-items: center;
-    width: 220px;
-    color: #fff;
-  }
-
-  .map-point small {
-    display: block;
-    margin-bottom: 3px;
-    color: #f1cf54;
-    font-size: 0.76rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  .map-point h3 {
-    margin: 0 0 3px;
-    color: #fff;
-    font-size: 1.08rem;
-  }
-
-  .map-point p {
-    margin: 0;
-    color: #dbe6f2;
-    font-size: 0.88rem;
-  }
-
-  .map-dot {
-    width: 18px;
-    height: 18px;
-    border: 4px solid #fff;
-    border-radius: 50%;
-    background: #f1cf54;
-    box-shadow: 0 0 0 6px rgba(241, 207, 84, 0.18);
-  }
-
-  .map-point-1 {
-    top: 7%;
-    right: 7%;
-  }
-
-  .map-point-2 {
-    top: 20%;
-    left: 6%;
-  }
-
-  .map-point-3 {
-    top: 34%;
-    right: 3%;
-  }
-
-  .map-point-4 {
-    top: 48%;
-    left: 5%;
-  }
-
-  .map-point-5 {
-    top: 61%;
-    right: 4%;
-  }
-
-  .map-point-6 {
-    top: 75%;
-    left: 4%;
-  }
-
-  .map-point-7 {
-    bottom: 4%;
-    right: 6%;
-  }
-
-  .region-guide {
-    display: grid;
-    gap: 18px;
-  }
-
-  .region-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 18px;
-    align-items: start;
-    padding: 24px;
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    background: #fff;
-    box-shadow: 0 12px 34px rgba(11, 31, 58, 0.06);
-  }
-
-  .region-card > span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 54px;
-    height: 54px;
-    border-radius: 16px;
-    background: #f7f0d5;
-    font-size: 1.5rem;
-  }
-
-  .region-card h3 {
-    margin: 0 0 8px;
-  }
-
-  .region-card p {
-    margin-bottom: 0;
-  }
-
-  .region-note {
-    padding: 28px;
-    border-left: 5px solid var(--gold);
-    border-radius: 20px;
-    background: #fff8e8;
-  }
-
-  .region-note strong {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--navy);
-    font-family: Poppins, sans-serif;
-    font-size: 1.16rem;
-  }
-
-  .region-note p {
-    margin-bottom: 0;
-  }
-
-  @media (max-width: 900px) {
-    .japan-map-layout {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 620px) {
-    .japan-map {
-      min-height: auto;
-      padding: 24px;
-    }
-
-    .map-line {
-      display: none;
-    }
-
-    .map-point {
-      position: relative;
-      top: auto;
-      right: auto;
-      bottom: auto;
-      left: auto;
-      width: 100%;
-      margin-bottom: 24px;
-    }
-
-    .map-point:last-child {
-      margin-bottom: 0;
-    }
-  }
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker">Le quattro stagioni</p>
-        <h2>Ogni stagione offre un'esperienza diversa.</h2>
-      </div>
-
-      <div class="season-detail-grid">
-        <article class="card">
-          <div class="icon">🌸</div>
-          <h3>Primavera: marzo, aprile e maggio</h3>
-          <p>
-            La primavera è famosa per la fioritura dei ciliegi.
-            Tokyo, Kyoto, Osaka e Nara sono tra le destinazioni più richieste.
-          </p>
-          <p>
-            Il clima è generalmente piacevole, ma prezzi e disponibilità
-            possono cambiare rapidamente durante l'hanami e la Golden Week.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">☀️</div>
-          <h3>Estate: giugno, luglio e agosto</h3>
-          <p>
-            Le grandi città possono essere calde e umide, ma l'estate
-            offre festival, fuochi d'artificio e numerosi eventi tradizionali.
-          </p>
-          <p>
-            Hokkaido, montagne e località naturali sono ottime alternative
-            per chi cerca temperature più gradevoli.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">🍁</div>
-          <h3>Autunno: settembre, ottobre e novembre</h3>
-          <p>
-            L'autunno è uno dei periodi migliori per città, natura e fotografia.
-            Il foliage si sposta progressivamente da nord verso sud.
-          </p>
-          <p>
-            Ottobre e novembre sono ideali per Tokyo, Kyoto, Nikko,
-            Hakone e numerose zone montane.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="icon">❄️</div>
-          <h3>Inverno: dicembre, gennaio e febbraio</h3>
-          <p>
-            L'inverno è perfetto per neve, onsen, sci e paesaggi alpini.
-            Hokkaido, Nagano e le Alpi Giapponesi sono protagoniste.
-          </p>
-          <p>
-            Le principali città possono essere meno affollate rispetto
-            ai periodi di punta.
-          </p>
-        </article>
+        <strong>Non esiste un periodo perfetto per tutti.</strong>
+        <p>Esiste il periodo più adatto al viaggio che desideri vivere.</p>
       </div>
     </div>
   </section>
@@ -782,176 +168,40 @@ const schema = {
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <p class="kicker">La scelta più adatta</p>
-        <h2>Scegli il periodo in base al viaggio che vuoi vivere.</h2>
+        <p class="kicker">Il Giappone sulla mappa</p>
+        <h2>Regioni ed esperienze da scegliere in base alla stagione.</h2>
       </div>
 
-      <div class="grid-3">
-        <article class="card">
-          <h3>Per vedere i ciliegi</h3>
-          <p>
-            Valuta indicativamente la fine di marzo e l'inizio di aprile
-            nelle principali città del Giappone centrale.
-          </p>
-        </article>
+      <div class="japan-map-layout">
+        <div class="japan-map" aria-label="Mappa stilizzata del Giappone">
+          <div class="map-line"></div>
+          <article class="map-point map-point-1"><span class="map-dot"></span><div><small>Nord</small><h3>Hokkaido</h3><p>Estate e inverno</p></div></article>
+          <article class="map-point map-point-2"><span class="map-dot"></span><div><small>Nord-est</small><h3>Tohoku</h3><p>Primavera e autunno</p></div></article>
+          <article class="map-point map-point-3"><span class="map-dot"></span><div><small>Centro-est</small><h3>Tokyo e Nikko</h3><p>Primavera e autunno</p></div></article>
+          <article class="map-point map-point-4"><span class="map-dot"></span><div><small>Centro</small><h3>Alpi Giapponesi</h3><p>Estate, autunno e inverno</p></div></article>
+          <article class="map-point map-point-5"><span class="map-dot"></span><div><small>Kansai</small><h3>Kyoto, Osaka e Nara</h3><p>Primavera e autunno</p></div></article>
+          <article class="map-point map-point-6"><span class="map-dot"></span><div><small>Sud-ovest</small><h3>Hiroshima e Miyajima</h3><p>Primavera e autunno</p></div></article>
+          <article class="map-point map-point-7"><span class="map-dot"></span><div><small>Estremo sud</small><h3>Okinawa</h3><p>Primavera ed estate</p></div></article>
+        </div>
 
-        <article class="card">
-          <h3>Per vedere il foliage</h3>
-          <p>
-            Ottobre e novembre offrono numerose possibilità, con periodi
-            differenti tra montagne, nord e grandi città.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Per spendere meno</h3>
-          <p>
-            Considera alcune settimane di gennaio, febbraio, giugno
-            o settembre, evitando festività ed eventi importanti.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Per trovare meno folla</h3>
-          <p>
-            Viaggia lontano dalla Golden Week, dall'Obon e dai momenti
-            di picco della fioritura e del foliage.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Per neve e onsen</h3>
-          <p>
-            Gennaio e febbraio sono ideali per Hokkaido, Nagano,
-            le Alpi Giapponesi e le località termali.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Per festival tradizionali</h3>
-          <p>
-            Luglio e agosto ospitano numerosi matsuri e spettacoli
-            pirotecnici in tutto il Paese.
-          </p>
-        </article>
+        <div class="region-guide">
+          <article class="region-card"><span>❄️</span><div><h3>Hokkaido</h3><p>Estate fresca, neve, sci e festival invernali.</p></div></article>
+          <article class="region-card"><span>🌸</span><div><h3>Tokyo e Kyoto</h3><p>Ciliegi, templi, giardini e hanami.</p></div></article>
+          <article class="region-card"><span>🍁</span><div><h3>Nikko e Alpi Giapponesi</h3><p>Foliage, montagne e fotografia.</p></div></article>
+          <article class="region-card"><span>🌊</span><div><h3>Okinawa</h3><p>Mare tropicale e ritmo più rilassato.</p></div></article>
+          <div class="region-note"><strong>Consiglio di pianificazione</strong><p>Un itinerario può seguire le stagioni da nord a sud o combinare climi differenti.</p></div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section alt">
     <div class="container">
-      <div class="section-head">
-        <p class="kicker">Periodi da valutare con attenzione</p>
-        <h2>Festività, picchi di domanda e settimane più affollate.</h2>
-      </div>
-
-      <div class="warning-grid">
-        <article class="warning-card">
-          <h3>Golden Week</h3>
-          <p>
-            Tra fine aprile e inizio maggio molti giapponesi viaggiano.
-            Treni, hotel e attrazioni possono essere molto affollati.
-          </p>
-        </article>
-
-        <article class="warning-card">
-          <h3>Obon</h3>
-          <p>
-            Intorno alla metà di agosto aumenta la mobilità interna
-            e alcune tratte possono essere particolarmente richieste.
-          </p>
-        </article>
-
-        <article class="warning-card">
-          <h3>Capodanno</h3>
-          <p>
-            Il periodo è suggestivo, ma alcune attività riducono gli orari
-            o chiudono temporaneamente.
-          </p>
-        </article>
-
-        <article class="warning-card">
-          <h3>Picco di sakura e foliage</h3>
-          <p>
-            Le località più famose possono essere molto affollate.
-            Prenotare con anticipo è spesso fondamentale.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container consultant-box">
-      <div>
-        <p class="kicker">Il consiglio del Travel Consultant</p>
-        <h2>Per un primo viaggio scegli equilibrio e flessibilità.</h2>
-        <p>
-          Per un primo itinerario consiglio spesso aprile, maggio,
-          ottobre o novembre. Questi mesi permettono di combinare città,
-          cultura e natura con temperature generalmente piacevoli.
-        </p>
-        <p>
-          Se sogni i ciliegi, aprile resta un'esperienza unica.
-          Se preferisci colori autunnali e clima più stabile,
-          ottobre e novembre sono ottime alternative.
-        </p>
-      </div>
-
-      <div class="consultant-signature">
-        <strong>Davide Fois</strong>
-        <span>Travel Consultant • Powered by Nuovevacanze</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker">Domande frequenti</p>
-        <h2>Le risposte per scegliere con maggiore sicurezza.</h2>
-      </div>
-
+      <div class="section-head"><p class="kicker">Domande frequenti</p><h2>Le risposte per scegliere con maggiore sicurezza.</h2></div>
       <div class="faq-grid">
-        {faq.map(item => (
-          <details class="faq-item">
-            <summary>{item.question}</summary>
-            <p>{item.answer}</p>
-          </details>
+        {faq.map(([question, answer]) => (
+          <details class="faq-item"><summary>{question}</summary><p>{answer}</p></details>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker">Continua a scoprire</p>
-        <h2>Approfondisci il tuo viaggio in Giappone.</h2>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <h3>Giappone Premium</h3>
-          <p>Scopri la pagina principale dedicata al Giappone.</p>
-          <a href={`${base}giappone/`}>Vai alla guida →</a>
-        </article>
-
-        <article class="card">
-          <h3>Giappone in autunno</h3>
-          <p>Scopri foliage, periodi e destinazioni consigliate.</p>
-          <a href={`${base}blog/giappone-in-autunno/`}>
-            Leggi l'articolo →
-          </a>
-        </article>
-
-        <article class="card">
-          <h3>Richiedi un preventivo</h3>
-          <p>Raccontami il viaggio che vuoi organizzare.</p>
-          <a href={`${base}preventivo/?destinazione=Giappone`}>
-            Inizia la richiesta →
-          </a>
-        </article>
       </div>
     </div>
   </section>
@@ -961,16 +211,9 @@ const schema = {
       <div>
         <p class="kicker">Progettiamo il periodo giusto</p>
         <h2>Raccontami il Giappone che vuoi vivere.</h2>
-        <p>
-          Ti aiuterò a scegliere date, tappe e durata in base al budget,
-          alle stagioni e alle esperienze che desideri.
-        </p>
+        <p>Ti aiuterò a scegliere date, tappe e durata in base al budget e alle stagioni.</p>
       </div>
-
-      <a
-        class="button button-primary"
-        href={`${base}preventivo/?destinazione=Giappone`}
-      >
+      <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>
         Richiedi il preventivo gratuito
       </a>
     </div>
@@ -978,390 +221,36 @@ const schema = {
 </BaseLayout>
 
 <style>
-  .breadcrumb {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding-top: 22px;
-    font-size: 0.92rem;
-    color: var(--muted);
-  }
-
-  .breadcrumb a {
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  .table-wrapper {
-    overflow-x: auto;
-    margin-top: 2rem;
-    border-radius: 22px;
-    box-shadow: 0 18px 45px rgba(11, 31, 58, 0.08);
-  }
-
-  .travel-table {
-    width: 100%;
-    min-width: 760px;
-    border-collapse: collapse;
-    background: #fff;
-  }
-
-  .travel-table th {
-    background: #102544;
-    color: #fff;
-    padding: 18px;
-    text-align: left;
-  }
-
-  .travel-table td {
-    padding: 18px;
-    border-bottom: 1px solid #ececec;
-  }
-
-  .travel-table tr:hover {
-    background: #faf6ea;
-  }
-
-  .travel-table tbody tr:last-child td {
-    border-bottom: none;
-  }
-
-  .season-detail-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-  }
-
-  .warning-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-  }
-
-  .warning-card {
-    background: #fff7e8;
-    border: 1px solid #efd9ac;
-    border-radius: 20px;
-    padding: 24px;
-  }
-
-  .warning-card h3 {
-    margin-top: 0;
-    color: #102544;
-  }
-
-  .consultant-box {
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 36px;
-    align-items: end;
-    padding: 42px;
-    border-radius: 30px;
-    background: linear-gradient(145deg, #0b1f3a, #16385e);
-    color: #fff;
-  }
-
-  .consultant-box p {
-    color: #dbe6f2;
-  }
-
-  .consultant-signature {
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  .consultant-signature strong {
-    font-size: 1.35rem;
-  }
-
-  .consultant-signature span {
-    margin-top: 6px;
-    color: #dbe6f2;
-  }
-
-  @media (max-width: 900px) {
-    .season-detail-grid,
-    .consultant-box {
-      grid-template-columns: 1fr;
-    }
-
-    .warning-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media (max-width: 620px) {
-    .warning-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  .season-destination-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-  }
-
-  .season-destination-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 20px;
-    align-items: start;
-    padding: 28px;
-    border: 1px solid var(--line);
-    border-radius: 24px;
-    background: #fff;
-    box-shadow: 0 12px 34px rgba(11, 31, 58, 0.06);
-  }
-
-  .season-destination-card h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-  }
-
-  .season-symbol {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 54px;
-    height: 54px;
-    border-radius: 16px;
-    background: #f7f0d5;
-    font-size: 1.6rem;
-  }
-
-  .season-destination-places {
-    margin-bottom: 12px;
-    font-weight: 800;
-    color: var(--navy);
-  }
-
-  .season-message {
-    margin-top: 28px;
-    padding: 28px 30px;
-    border-left: 5px solid var(--gold);
-    border-radius: 18px;
-    background: #fff8e8;
-  }
-
-  .season-message strong {
-    display: block;
-    margin-bottom: 8px;
-    font-family: Poppins, sans-serif;
-    font-size: 1.2rem;
-    color: var(--navy);
-  }
-
-  .season-message p {
-    margin-bottom: 0;
-  }
-
-  @media (max-width: 760px) {
-    .season-destination-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  .japan-map-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 34px;
-    align-items: stretch;
-  }
-
-  .japan-map {
-    position: relative;
-    min-height: 720px;
-    padding: 38px 30px;
-    border-radius: 30px;
-    background:
-      radial-gradient(
-        circle at 70% 20%,
-        rgba(230, 200, 95, 0.16),
-        transparent 22%
-      ),
-      linear-gradient(145deg, #0b1f3a, #173c62);
-    box-shadow: 0 24px 60px rgba(11, 31, 58, 0.18);
-    overflow: hidden;
-  }
-
-  .map-line {
-    position: absolute;
-    top: 54px;
-    bottom: 54px;
-    left: 50%;
-    width: 5px;
-    border-radius: 999px;
-    background: linear-gradient(
-      to bottom,
-      #f1cf54,
-      #ffffff,
-      #f1cf54
-    );
-    transform: translateX(-50%) rotate(12deg);
-    opacity: 0.75;
-  }
-
-  .map-point {
-    position: absolute;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 14px;
-    align-items: center;
-    width: 220px;
-    color: #fff;
-  }
-
-  .map-point small {
-    display: block;
-    margin-bottom: 3px;
-    color: #f1cf54;
-    font-size: 0.76rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  .map-point h3 {
-    margin: 0 0 3px;
-    color: #fff;
-    font-size: 1.08rem;
-  }
-
-  .map-point p {
-    margin: 0;
-    color: #dbe6f2;
-    font-size: 0.88rem;
-  }
-
-  .map-dot {
-    width: 18px;
-    height: 18px;
-    border: 4px solid #fff;
-    border-radius: 50%;
-    background: #f1cf54;
-    box-shadow: 0 0 0 6px rgba(241, 207, 84, 0.18);
-  }
-
-  .map-point-1 {
-    top: 7%;
-    right: 7%;
-  }
-
-  .map-point-2 {
-    top: 20%;
-    left: 6%;
-  }
-
-  .map-point-3 {
-    top: 34%;
-    right: 3%;
-  }
-
-  .map-point-4 {
-    top: 48%;
-    left: 5%;
-  }
-
-  .map-point-5 {
-    top: 61%;
-    right: 4%;
-  }
-
-  .map-point-6 {
-    top: 75%;
-    left: 4%;
-  }
-
-  .map-point-7 {
-    bottom: 4%;
-    right: 6%;
-  }
-
-  .region-guide {
-    display: grid;
-    gap: 18px;
-  }
-
-  .region-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 18px;
-    align-items: start;
-    padding: 24px;
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    background: #fff;
-    box-shadow: 0 12px 34px rgba(11, 31, 58, 0.06);
-  }
-
-  .region-card > span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 54px;
-    height: 54px;
-    border-radius: 16px;
-    background: #f7f0d5;
-    font-size: 1.5rem;
-  }
-
-  .region-card h3 {
-    margin: 0 0 8px;
-  }
-
-  .region-card p {
-    margin-bottom: 0;
-  }
-
-  .region-note {
-    padding: 28px;
-    border-left: 5px solid var(--gold);
-    border-radius: 20px;
-    background: #fff8e8;
-  }
-
-  .region-note strong {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--navy);
-    font-family: Poppins, sans-serif;
-    font-size: 1.16rem;
-  }
-
-  .region-note p {
-    margin-bottom: 0;
-  }
-
-  @media (max-width: 900px) {
-    .japan-map-layout {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 620px) {
-    .japan-map {
-      min-height: auto;
-      padding: 24px;
-    }
-
-    .map-line {
-      display: none;
-    }
-
-    .map-point {
-      position: relative;
-      top: auto;
-      right: auto;
-      bottom: auto;
-      left: auto;
-      width: 100%;
-      margin-bottom: 24px;
-    }
-
-    .map-point:last-child {
-      margin-bottom: 0;
-    }
+  .breadcrumb{display:flex;gap:10px;align-items:center;padding-top:22px;font-size:.92rem;color:var(--muted)}
+  .breadcrumb a{font-weight:700;text-decoration:none}
+  .table-wrapper{overflow-x:auto;margin-top:2rem;border-radius:22px;box-shadow:0 18px 45px rgba(11,31,58,.08)}
+  .travel-table{width:100%;min-width:760px;border-collapse:collapse;background:#fff}
+  .travel-table th{background:#102544;color:#fff;padding:18px;text-align:left}
+  .travel-table td{padding:18px;border-bottom:1px solid #ececec}
+  .travel-table tr:hover{background:#faf6ea}
+  .season-destination-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .season-destination-card{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:28px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:0 12px 34px rgba(11,31,58,.06)}
+  .season-symbol{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:16px;background:#f7f0d5;font-size:1.6rem}
+  .season-destination-places{font-weight:800;color:var(--navy)}
+  .season-message{margin-top:28px;padding:28px 30px;border-left:5px solid var(--gold);border-radius:18px;background:#fff8e8}
+  .japan-map-layout{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+  .japan-map{position:relative;min-height:720px;padding:38px 30px;border-radius:30px;background:linear-gradient(145deg,#0b1f3a,#173c62);box-shadow:0 24px 60px rgba(11,31,58,.18);overflow:hidden}
+  .map-line{position:absolute;top:54px;bottom:54px;left:50%;width:5px;border-radius:999px;background:linear-gradient(to bottom,#f1cf54,#fff,#f1cf54);transform:translateX(-50%) rotate(12deg);opacity:.75}
+  .map-point{position:absolute;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;width:220px;color:#fff}
+  .map-point small{color:#f1cf54;font-size:.76rem;font-weight:800;text-transform:uppercase}
+  .map-point h3{margin:0;color:#fff;font-size:1.08rem}
+  .map-point p{margin:0;color:#dbe6f2;font-size:.88rem}
+  .map-dot{width:18px;height:18px;border:4px solid #fff;border-radius:50%;background:#f1cf54;box-shadow:0 0 0 6px rgba(241,207,84,.18)}
+  .map-point-1{top:7%;right:7%}.map-point-2{top:20%;left:6%}.map-point-3{top:34%;right:3%}.map-point-4{top:48%;left:5%}.map-point-5{top:61%;right:4%}.map-point-6{top:75%;left:4%}.map-point-7{bottom:4%;right:6%}
+  .region-guide{display:grid;gap:18px}
+  .region-card{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:24px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 12px 34px rgba(11,31,58,.06)}
+  .region-card>span{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:16px;background:#f7f0d5;font-size:1.5rem}
+  .region-note{padding:28px;border-left:5px solid var(--gold);border-radius:20px;background:#fff8e8}
+  @media(max-width:900px){.season-destination-grid,.japan-map-layout{grid-template-columns:1fr}}
+  @media(max-width:620px){
+    .season-destination-grid{grid-template-columns:1fr}
+    .japan-map{min-height:auto;padding:24px}
+    .map-line{display:none}
+    .map-point{position:relative;top:auto;right:auto;bottom:auto;left:auto;width:100%;margin-bottom:24px}
   }
 </style>
