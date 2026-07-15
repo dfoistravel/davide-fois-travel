@@ -1,7 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
 const base = import.meta.env.BASE_URL;
-const homeSchema = {
+
+const faq = [
+  {
+    question: "Quanto costa richiedere un preventivo?",
+    answer: "La richiesta iniziale è gratuita e non comporta alcun obbligo di prenotazione."
+  },
+  {
+    question: "Posso richiedere un viaggio completamente personalizzato?",
+    answer: "Sì. Periodo, budget, interessi, numero di viaggiatori e ritmo vengono utilizzati per costruire una proposta su misura."
+  },
+  {
+    question: "Riceverò assistenza anche dopo la prenotazione?",
+    answer: "Sì. Resto il tuo punto di riferimento prima, durante e dopo il viaggio."
+  },
+  {
+    question: "Organizzi anche viaggi in Giappone?",
+    answer: "Sì. Il Giappone è una delle destinazioni principali del progetto, con guide, itinerari e proposte personalizzate."
+  }
+];
+
+const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -17,30 +38,772 @@ const homeSchema = {
       "description": "Consulenza per viaggi su misura in Giappone, Lituania e nel mondo.",
       "areaServed": "IT",
       "sameAs": ["https://davidefois.nuovevacanze.it"]
+    },
+    {
+      "@type": "Person",
+      "name": "Davide Fois",
+      "jobTitle": "Travel Consultant",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Nuovevacanze"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
     }
   ]
 };
 ---
-<BaseLayout title="Davide Fois | Viaggi su misura e consulenza personale" description="Progetto viaggi su misura in Giappone, Lituania e nel mondo con assistenza personale prima, durante e dopo la partenza." schema={homeSchema}>
-<section class="hero"><div class="container hero-grid"><div>
-<p class="kicker">Davide Fois Travel Consultant</p><h1>Viaggi su misura creati <span>intorno a te.</span></h1>
-<p class="lead">Dalla prima idea alla partenza: seleziono le soluzioni più adatte, costruisco un progetto chiaro e resto il tuo referente durante tutto il viaggio.</p>
-<div class="actions"><a class="button button-primary" href={`${base}preventivo/`}>Richiedi un preventivo</a><a class="button button-ghost" href="https://wa.me/393389028812" target="_blank">Scrivimi su WhatsApp</a></div>
-<div class="trust-row"><span>✓ Preventivo senza impegno</span><span>✓ Assistenza personale</span><span>✓ Powered by Nuovevacanze</span></div>
-</div><div class="hero-visual" aria-hidden="true"><div class="globe"></div><div class="route"></div><div class="plane">✈</div><div class="profile-card"><strong>Davide Fois</strong><span>Il tuo referente per trasformare un'idea di viaggio in un'esperienza organizzata con cura.</span></div></div></div></section>
-<section class="section alt"><div class="container"><div class="section-head"><p class="kicker">Perché scegliere me</p><h2>Più tranquillità, meno ore perse tra mille offerte.</h2><p>Un servizio pensato per chi desidera una proposta comprensibile, personalizzata e accompagnata da una persona reale.</p></div><div class="grid-3">
-<article class="card"><div class="icon">🧭</div><h3>Consulenza personalizzata</h3><p>Periodo, budget, interessi e stile di viaggio diventano la base di ogni proposta.</p></article>
-<article class="card"><div class="icon">🌍</div><h3>Selezione ragionata</h3><p>Non una lista infinita: ricevi soluzioni coerenti e spiegate con chiarezza.</p></article>
-<article class="card"><div class="icon">🤝</div><h3>Assistenza completa</h3><p>Hai un referente prima, durante e dopo la partenza.</p></article>
-</div></div></section>
-<section class="section"><div class="container"><div class="section-head"><p class="kicker">Destinazioni in evidenza</p><h2>Il mondo è grande. Iniziamo da ciò che ti emoziona.</h2></div><div class="dest-grid">
-<a class="dest jp" href={`${base}destinazioni/#giappone`}><div><small>Speciale Asia</small><h2>Giappone</h2><p>Foliage, hanami, cultura, città e itinerari autentici.</p></div></a>
-<a class="dest lt" href={`${base}destinazioni/#lituania`}><div><small>City break</small><h2>Lituania</h2><p>Vilnius, Trakai e natura baltica.</p></div></a>
-<a class="dest world" href={`${base}destinazioni/`}><div><small>Altre esperienze</small><h2>Il mondo</h2><p>Mare, tour, crociere e viaggi personalizzati.</p></div></a>
-</div></div></section>
-<section class="section alt"><div class="container"><div class="section-head"><p class="kicker">Come funziona</p><h2>Un percorso semplice, dall'idea alla partenza.</h2></div><div class="steps">
-<article class="step"><h3>Raccontami il viaggio</h3><p>Destinazione, periodo, budget e desideri.</p></article><article class="step"><h3>Ricevi la proposta</h3><p>Seleziono le opzioni più adatte al tuo profilo.</p></article><article class="step"><h3>Definiamo i dettagli</h3><p>Rivediamo insieme servizi, tappe e condizioni.</p></article><article class="step"><h3>Parti con assistenza</h3><p>Resto il tuo punto di riferimento.</p></article>
-</div></div></section>
-<section class="section"><div class="container quote"><div><p class="kicker">Un servizio umano</p><h2>Non devi diventare esperto di prenotazioni per organizzare bene una vacanza.</h2><p>Il mio compito è semplificare le scelte, chiarire i dubbi e proporti una soluzione coerente con ciò che cerchi davvero.</p></div><div class="quote-card"><blockquote>“Ogni viaggio dovrebbe iniziare con entusiasmo, non con confusione.”</blockquote><strong>Davide Fois</strong><p>Travel Consultant • Powered by Nuovevacanze</p></div></div></section>
-<section class="section"><div class="container cta"><div><p class="kicker">Il prossimo viaggio parte da qui</p><h2>Raccontami la tua idea.</h2><p>La richiesta è gratuita e non comporta obbligo di prenotazione.</p></div><a class="button button-primary" href={`${base}preventivo/`}>Inizia ora</a></div></section>
+
+<BaseLayout
+  title="Davide Fois Travel Consultant | Viaggi su misura in Giappone e nel mondo"
+  description="Organizza il tuo viaggio su misura con Davide Fois Travel Consultant. Itinerari personalizzati, assistenza dedicata e preventivo gratuito."
+  schema={schema}
+>
+  <section class="hero home-hero">
+    <div class="container hero-grid">
+      <div class="home-hero-copy">
+        <p class="kicker">Travel Consultant • Powered by Nuovevacanze</p>
+
+        <h1>Viaggi su misura creati intorno ai tuoi desideri.</h1>
+
+        <p class="lead">
+          Ti aiuto a trasformare un'idea in un viaggio organizzato con cura,
+          selezionando tappe, servizi ed esperienze in base al tuo budget,
+          al periodo e al tuo modo di viaggiare.
+        </p>
+
+        <div class="actions">
+          <a class="button button-primary" href={`${base}preventivo/`}>
+            Richiedi il tuo preventivo gratuito
+          </a>
+
+          <a class="button button-ghost" href={`${base}consulente-viaggi/`}>
+            Scopri come lavoro
+          </a>
+        </div>
+
+        <div class="trust-row">
+          <span>✓ Richiesta senza impegno</span>
+          <span>✓ Referente personale</span>
+          <span>✓ Assistenza prima, durante e dopo</span>
+        </div>
+      </div>
+
+      <div class="home-visual" aria-hidden="true">
+        <div class="home-globe"></div>
+        <div class="home-orbit"></div>
+        <div class="home-plane">✈</div>
+
+        <div class="home-floating-card">
+          <span class="badge">Consulenza personale</span>
+          <strong>Un solo referente per tutto il viaggio.</strong>
+          <p>
+            Più chiarezza nelle scelte, meno tempo perso e una proposta
+            costruita davvero intorno a te.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section home-strip">
+    <div class="container home-stats">
+      <article>
+        <strong>1</strong>
+        <span>referente personale</span>
+      </article>
+
+      <article>
+        <strong>100%</strong>
+        <span>proposte personalizzate</span>
+      </article>
+
+      <article>
+        <strong>3</strong>
+        <span>fasi: ascolto, proposta, partenza</span>
+      </article>
+
+      <article>
+        <strong>0</strong>
+        <span>obblighi sulla prima richiesta</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container home-intro-layout">
+      <div>
+        <p class="kicker">Il servizio</p>
+        <h2>Un consulente di viaggio personale, non un semplice elenco di offerte.</h2>
+
+        <p>
+          Il mio compito è ascoltare le tue esigenze, ridurre la confusione
+          e proporti un percorso coerente con budget, periodo e interessi.
+        </p>
+
+        <a class="text-link" href={`${base}consulente-viaggi/`}>
+          Scopri il servizio di consulenza →
+        </a>
+      </div>
+
+      <div class="home-benefit-grid">
+        <article class="card">
+          <div class="icon">🧭</div>
+          <h3>Consulenza su misura</h3>
+          <p>Ogni proposta parte dal tuo modo di viaggiare.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🤝</div>
+          <h3>Rapporto diretto</h3>
+          <p>Hai una persona reale con cui confrontarti.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">✨</div>
+          <h3>Più semplicità</h3>
+          <p>Meno ricerche dispersive e più chiarezza.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🛟</div>
+          <h3>Assistenza</h3>
+          <p>Supporto prima, durante e dopo la partenza.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Destinazioni in evidenza</p>
+        <h2>Inizia dal luogo che ti emoziona di più.</h2>
+      </div>
+
+      <div class="home-destination-grid">
+        <a class="home-destination japan" href={`${base}giappone/`}>
+          <div>
+            <small>Destinazione principale</small>
+            <h3>Giappone</h3>
+            <p>
+              Tokyo, Kyoto, natura, sakura, foliage e itinerari personalizzati.
+            </p>
+            <strong>Scopri il Giappone →</strong>
+          </div>
+        </a>
+
+        <a class="home-destination baltic" href={`${base}destinazioni/#lituania`}>
+          <div>
+            <small>Europa da scoprire</small>
+            <h3>Lituania</h3>
+            <p>Vilnius, Trakai, Kaunas e city break nei Paesi Baltici.</p>
+            <strong>Scopri la Lituania →</strong>
+          </div>
+        </a>
+
+        <a class="home-destination world" href={`${base}destinazioni/`}>
+          <div>
+            <small>Altre esperienze</small>
+            <h3>Il mondo</h3>
+            <p>Mare, tour, crociere, viaggi di nozze e city break.</p>
+            <strong>Esplora le destinazioni →</strong>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Guide in evidenza</p>
+        <h2>Inizia a progettare il tuo viaggio in Giappone.</h2>
+        <p>
+          Guide pratiche, itinerari e approfondimenti pensati per aiutarti
+          a scegliere periodo, durata e tappe.
+        </p>
+      </div>
+
+      <div class="home-guide-grid">
+        <a class="home-guide-card" href={`${base}quando-andare-giappone/`}>
+          <span class="home-guide-icon">📅</span>
+          <small>Guida stagionale</small>
+          <h3>Quando andare in Giappone</h3>
+          <p>Clima, ciliegi, foliage, mesi migliori e periodi da evitare.</p>
+          <strong>Leggi la guida →</strong>
+        </a>
+
+        <a class="home-guide-card" href={`${base}itinerario-giappone-10-giorni/`}>
+          <span class="home-guide-icon">🔟</span>
+          <small>Itinerario</small>
+          <h3>Giappone in 10 giorni</h3>
+          <p>Tokyo, Kyoto, Osaka e una grande escursione.</p>
+          <strong>Scopri l'itinerario →</strong>
+        </a>
+
+        <a class="home-guide-card" href={`${base}itinerario-giappone-14-giorni/`}>
+          <span class="home-guide-icon">1️⃣4️⃣</span>
+          <small>Itinerario completo</small>
+          <h3>Giappone in 14 giorni</h3>
+          <p>Città, Alpi Giapponesi, Kyoto, Hiroshima e Osaka.</p>
+          <strong>Scopri l'itinerario →</strong>
+        </a>
+
+        <a class="home-guide-card" href={`${base}cosa-vedere-tokyo/`}>
+          <span class="home-guide-icon">🗼</span>
+          <small>Guida città</small>
+          <h3>Cosa vedere a Tokyo</h3>
+          <p>Quartieri, templi, panorami e consigli per il primo viaggio.</p>
+          <strong>Leggi la guida →</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Come funziona</p>
+        <h2>Quattro passaggi semplici, dalla prima idea alla partenza.</h2>
+      </div>
+
+      <div class="home-process">
+        <article class="home-step">
+          <span>01</span>
+          <h3>Raccontami il viaggio</h3>
+          <p>Destinazione, periodo, budget e desideri.</p>
+        </article>
+
+        <article class="home-step">
+          <span>02</span>
+          <h3>Ricevi una proposta</h3>
+          <p>Seleziono le opzioni più coerenti.</p>
+        </article>
+
+        <article class="home-step">
+          <span>03</span>
+          <h3>Definiamo i dettagli</h3>
+          <p>Rivediamo tappe, servizi e priorità.</p>
+        </article>
+
+        <article class="home-step">
+          <span>04</span>
+          <h3>Parti con assistenza</h3>
+          <p>Resto il tuo riferimento durante il percorso.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container home-trust-layout">
+      <div class="home-quote-card">
+        <span class="home-quote">“</span>
+
+        <blockquote>
+          Il viaggio giusto non è quello con più servizi:
+          è quello costruito intorno alla persona che deve viverlo.
+        </blockquote>
+
+        <strong>Davide Fois</strong>
+        <p>Travel Consultant • Powered by Nuovevacanze</p>
+      </div>
+
+      <div>
+        <p class="kicker">Perché scegliere Davide</p>
+        <h2>Chiarezza, ascolto e attenzione ai dettagli.</h2>
+
+        <ul class="home-checklist">
+          <li>Nessuna proposta standard uguale per tutti</li>
+          <li>Budget e priorità sempre al centro</li>
+          <li>Informazioni spiegate in modo semplice</li>
+          <li>Assistenza personale durante tutto il percorso</li>
+        </ul>
+
+        <a class="text-link" href={`${base}consulente-viaggi/`}>
+          Conosci meglio il mio metodo →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Domande frequenti</p>
+        <h2>Le risposte prima di iniziare.</h2>
+      </div>
+
+      <div class="faq-grid">
+        {faq.map(item => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container home-final-cta">
+      <div>
+        <p class="kicker">Il tuo prossimo viaggio</p>
+        <h2>Raccontami la tua idea.</h2>
+
+        <p>
+          Compila la richiesta con destinazione, periodo, budget e numero
+          di viaggiatori. Ti ricontatterò personalmente per approfondire.
+        </p>
+
+        <ul class="home-final-benefits">
+          <li>Richiesta gratuita e senza impegno</li>
+          <li>Proposta costruita sulle tue preferenze</li>
+          <li>Assistenza personale prima, durante e dopo</li>
+        </ul>
+      </div>
+
+      <div class="home-final-actions">
+        <a class="button button-primary" href={`${base}preventivo/`}>
+          Richiedi il preventivo gratuito
+        </a>
+
+        <a
+          class="button button-light"
+          href="https://wa.me/393389028812?text=Buongiorno%20Davide,%20vorrei%20organizzare%20un%20viaggio."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Scrivimi su WhatsApp
+        </a>
+
+        <small>Riceverai una risposta personale, non automatica.</small>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .home-hero {
+    min-height: 760px;
+  }
+
+  .home-visual {
+    position: relative;
+    min-height: 540px;
+  }
+
+  .home-globe {
+    position: absolute;
+    inset: 35px 0 25px 35px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 34% 28%, rgba(255,255,255,.2), transparent 12%),
+      radial-gradient(circle at 60% 70%, rgba(230,200,95,.18), transparent 16%),
+      linear-gradient(145deg, #244d6c, #0a2238 60%, #071522);
+    box-shadow:
+      inset -28px -28px 70px rgba(0,0,0,.28),
+      0 38px 90px rgba(0,0,0,.34);
+  }
+
+  .home-globe::before,
+  .home-globe::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(230,200,95,.45);
+    border-radius: 50%;
+  }
+
+  .home-globe::before {
+    inset: 12% 4%;
+    transform: rotate(22deg);
+  }
+
+  .home-globe::after {
+    inset: 3% 31%;
+    transform: rotate(-18deg);
+  }
+
+  .home-orbit {
+    position: absolute;
+    inset: 75px 35px 75px 20px;
+    border: 3px dashed rgba(230,200,95,.7);
+    border-color: var(--gold-2) transparent transparent var(--gold-2);
+    border-radius: 50%;
+    transform: rotate(-20deg);
+  }
+
+  .home-plane {
+    position: absolute;
+    top: 15%;
+    right: 6%;
+    font-size: 3.4rem;
+    transform: rotate(20deg);
+    filter: drop-shadow(0 12px 20px rgba(0,0,0,.4));
+  }
+
+  .home-floating-card {
+    position: absolute;
+    left: 0;
+    bottom: 18px;
+    max-width: 370px;
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 26px;
+    background: rgba(255,255,255,.13);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+  }
+
+  .home-floating-card strong {
+    display: block;
+    margin: 14px 0 10px;
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .home-floating-card p {
+    color: #d9e3ef;
+  }
+
+  .home-strip {
+    padding: 28px 0;
+    background: #071421;
+    color: #fff;
+  }
+
+  .home-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .home-stats article {
+    padding: 20px 18px;
+    border-left: 1px solid rgba(255,255,255,.16);
+  }
+
+  .home-stats strong {
+    display: block;
+    color: var(--gold-2);
+    font-family: Poppins, sans-serif;
+    font-size: 2rem;
+  }
+
+  .home-stats span {
+    color: #cbd6e1;
+  }
+
+  .home-intro-layout {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 44px;
+    align-items: start;
+  }
+
+  .home-benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .home-destination-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr .9fr;
+    gap: 20px;
+  }
+
+  .home-destination {
+    position: relative;
+    min-height: 390px;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    border-radius: 28px;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+  }
+
+  .home-destination::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 10%, rgba(0,0,0,.78));
+  }
+
+  .home-destination > div {
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-destination.japan {
+    background: linear-gradient(135deg, #9d3042, #151e35);
+  }
+
+  .home-destination.baltic {
+    background: linear-gradient(135deg, #1f695f, #0b2744);
+  }
+
+  .home-destination.world {
+    background: linear-gradient(135deg, #7b5f2b, #263955);
+  }
+
+  .home-destination small {
+    color: #f7e7a7;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  .home-destination h3 {
+    margin: 10px 0;
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .home-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .home-guide-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 12px 34px rgba(11,31,58,.06);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .home-guide-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(11,31,58,.12);
+  }
+
+  .home-guide-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 18px;
+    border-radius: 16px;
+    background: #f7f0d5;
+    font-size: 1.55rem;
+  }
+
+  .home-guide-card small {
+    color: var(--muted);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+
+  .home-guide-card h3 {
+    margin: 10px 0;
+  }
+
+  .home-guide-card p {
+    flex: 1;
+  }
+
+  .home-process {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .home-step {
+    padding: 28px;
+    border-top: 3px solid var(--gold);
+    border-radius: 0 0 22px 22px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgba(11,31,58,.07);
+  }
+
+  .home-step > span {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--gold);
+    font-family: Poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  .home-trust-layout {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .home-quote-card {
+    position: relative;
+    padding: 46px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, var(--navy), var(--navy-2));
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .home-quote-card blockquote {
+    margin: 18px 0 24px;
+    font-family: Poppins, sans-serif;
+    font-size: 1.65rem;
+    line-height: 1.35;
+  }
+
+  .home-quote-card p {
+    color: #cdd8e4;
+  }
+
+  .home-quote {
+    position: absolute;
+    top: 10px;
+    right: 28px;
+    color: rgba(230,200,95,.25);
+    font-family: Georgia, serif;
+    font-size: 5rem;
+  }
+
+  .home-checklist,
+  .home-final-benefits {
+    margin: 24px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .home-checklist li,
+  .home-final-benefits li {
+    position: relative;
+    margin-bottom: 13px;
+    padding-left: 29px;
+  }
+
+  .home-checklist li::before,
+  .home-final-benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 900;
+  }
+
+  .home-final-cta {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 44px;
+    align-items: center;
+    padding: 54px;
+    border-radius: 32px;
+    background:
+      radial-gradient(circle at 84% 18%, rgba(241,207,84,.18), transparent 24%),
+      linear-gradient(145deg, #0b1f3a, #173c62);
+    color: #fff;
+    box-shadow: 0 28px 70px rgba(11,31,58,.22);
+  }
+
+  .home-final-cta h2 {
+    color: #fff;
+  }
+
+  .home-final-cta p {
+    color: #dbe6f2;
+  }
+
+  .home-final-actions {
+    display: grid;
+    gap: 14px;
+  }
+
+  .home-final-actions .button {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .home-final-actions small {
+    color: #cbd8e5;
+    text-align: center;
+  }
+
+  .button-light {
+    background: #fff;
+    color: var(--navy);
+  }
+
+  .text-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-weight: 800;
+  }
+
+  @media (max-width: 1000px) {
+    .home-guide-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .home-stats,
+    .home-process {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .home-intro-layout,
+    .home-trust-layout,
+    .home-final-cta {
+      grid-template-columns: 1fr;
+    }
+
+    .home-destination-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .home-destination.japan {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .home-stats,
+    .home-process,
+    .home-benefit-grid,
+    .home-guide-grid,
+    .home-destination-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .home-destination.japan {
+      grid-column: auto;
+    }
+
+    .home-final-cta {
+      padding: 30px 22px;
+    }
+
+    .home-visual {
+      min-height: 390px;
+    }
+
+    .home-globe {
+      inset: 35px 0 20px;
+    }
+  }
+</style>
