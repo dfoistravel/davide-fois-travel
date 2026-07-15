@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Cosa vedere a Tokyo | Guida completa"
+  description="Scopri cosa vedere a Tokyo: quartieri, templi, panorami, mercati, consigli pratici e itinerario consigliato."
+>
+<section class="hero">
+  <div class="container">
+    <p class="kicker">Guida Tokyo</p>
+    <h1>Cosa vedere a Tokyo: guida completa per il primo viaggio</h1>
+    <p class="lead">
+      Dai templi di Asakusa ai grattacieli di Shinjuku, passando per Shibuya,
+      Ueno e i giardini della città: questa guida ti aiuta a costruire un
+      itinerario equilibrato.
+    </p>
+
+    <a class="button button-primary"
+      href={`${base}preventivo/?destinazione=Giappone`}>
+      Richiedi un preventivo gratuito
+    </a>
+  </div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2>Le attrazioni imperdibili</h2>
+
+<div class="grid-3">
+<article class="card"><h3>Asakusa e Sensō‑ji</h3><p>Il tempio più famoso della città e la tradizionale via Nakamise.</p></article>
+<article class="card"><h3>Shibuya</h3><p>L'iconico attraversamento pedonale e i quartieri dello shopping.</p></article>
+<article class="card"><h3>Shinjuku</h3><p>Grattacieli, osservatori panoramici e vita serale.</p></article>
+<article class="card"><h3>Ueno</h3><p>Parchi, musei e ciliegi in primavera.</p></article>
+<article class="card"><h3>Harajuku</h3><p>Moda, Takeshita Street e santuario Meiji.</p></article>
+<article class="card"><h3>Odaiba</h3><p>Baia di Tokyo, musei interattivi e viste sul Rainbow Bridge.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section alt">
+<div class="container">
+<h2>Itinerario consigliato</h2>
+<ol>
+<li>Asakusa e Ueno</li>
+<li>Shibuya e Harajuku</li>
+<li>Shinjuku e osservatorio panoramico</li>
+<li>Odaiba o escursione fuori città</li>
+</ol>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2>Consigli pratici</h2>
+<ul>
+<li>Acquista una carta IC per i trasporti.</li>
+<li>Evita le ore di punta in metropolitana.</li>
+<li>Prenota con anticipo le attrazioni più richieste.</li>
+</ul>
+
+<p>
+Per organizzare un viaggio personalizzato consulta anche
+<a href={`${base}quando-andare-giappone/`}>Quando andare in Giappone</a> e
+<a href={`${base}itinerario-giappone-14-giorni/`}>Itinerario di 14 giorni</a>.
+</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container cta">
+<h2>Vuoi un itinerario su misura?</h2>
+<p>Posso aiutarti a scegliere quartieri, hotel e tappe in base al periodo e al tuo budget.</p>
+<a class="button button-primary"
+href={`${base}preventivo/?destinazione=Giappone`}>
+Richiedi il preventivo gratuito
+</a>
+</div>
+</section>
+
+</BaseLayout>
