@@ -1,0 +1,675 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const days = [
+  {
+    day: "Giorno 1",
+    title: "Arrivo a Tokyo",
+    text: "Arrivo, sistemazione in hotel e primo orientamento tra quartieri, trasporti e atmosfera della capitale."
+  },
+  {
+    day: "Giorno 2",
+    title: "Tokyo tradizionale",
+    text: "Asakusa, Sensō-ji, Ueno e una passeggiata tra mercati, templi e quartieri storici."
+  },
+  {
+    day: "Giorno 3",
+    title: "Tokyo contemporanea",
+    text: "Shibuya, Harajuku, Omotesandō e Shinjuku per scoprire il volto moderno della città."
+  },
+  {
+    day: "Giorno 4",
+    title: "Escursione da Tokyo",
+    text: "Giornata dedicata a Nikko, Kamakura, Hakone oppure alla zona del Monte Fuji, in base alla stagione."
+  },
+  {
+    day: "Giorno 5",
+    title: "Tokyo → Kyoto",
+    text: "Trasferimento in treno veloce e primo contatto con Kyoto, tra Gion e il centro storico."
+  },
+  {
+    day: "Giorno 6",
+    title: "Kyoto orientale",
+    text: "Kiyomizu-dera, Higashiyama, Yasaka e le strade tradizionali della zona est."
+  },
+  {
+    day: "Giorno 7",
+    title: "Kyoto occidentale",
+    text: "Arashiyama, foresta di bambù, templi e quartieri più tranquilli."
+  },
+  {
+    day: "Giorno 8",
+    title: "Nara e Osaka",
+    text: "Visita a Nara con il Tōdai-ji e proseguimento verso Osaka per la serata."
+  },
+  {
+    day: "Giorno 9",
+    title: "Osaka",
+    text: "Castello, quartieri centrali, mercati e cucina locale tra Dōtonbori e Namba."
+  },
+  {
+    day: "Giorno 10",
+    title: "Partenza o estensione",
+    text: "Rientro oppure estensione verso Hiroshima, Miyajima, Kanazawa o altre regioni."
+  }
+];
+
+const faq = [
+  {
+    question: "Dieci giorni sono sufficienti per il Giappone?",
+    answer: "Sì, per un primo viaggio sono sufficienti per visitare Tokyo, Kyoto, Osaka e una o due escursioni, mantenendo un ritmo abbastanza intenso."
+  },
+  {
+    question: "Meglio arrivare a Tokyo e ripartire da Osaka?",
+    answer: "Quando i voli lo permettono, un itinerario open jaw può ridurre gli spostamenti e rendere il viaggio più lineare."
+  },
+  {
+    question: "Conviene inserire Hiroshima in 10 giorni?",
+    answer: "È possibile, ma richiede un ritmo più veloce. Per molti viaggiatori è preferibile concentrarsi su Tokyo, Kyoto, Osaka e un'escursione."
+  },
+  {
+    question: "Qual è il periodo migliore per questo itinerario?",
+    answer: "Primavera e autunno sono molto richiesti, ma anche inverno ed estate possono essere adatti con una buona pianificazione."
+  },
+  {
+    question: "L'itinerario può essere personalizzato?",
+    answer: "Sì. Tappe, durata, hotel, escursioni e ritmo possono essere adattati a budget e interessi."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Itinerario Giappone 10 giorni: Tokyo, Kyoto e Osaka",
+      "description": "Itinerario completo di 10 giorni in Giappone con Tokyo, Kyoto, Osaka e possibili escursioni.",
+      "author": {
+        "@type": "Person",
+        "name": "Davide Fois"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Davide Fois Travel Consultant"
+      },
+      "mainEntityOfPage": new URL(`${base}itinerario-giappone-10-giorni/`, Astro.site).href,
+      "inLanguage": "it-IT"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": new URL(base, Astro.site).href
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Giappone",
+          "item": new URL(`${base}giappone/`, Astro.site).href
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Itinerario Giappone 10 giorni",
+          "item": new URL(`${base}itinerario-giappone-10-giorni/`, Astro.site).href
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Itinerario Giappone 10 giorni | Tokyo, Kyoto e Osaka"
+  description="Scopri un itinerario di 10 giorni in Giappone tra Tokyo, Kyoto, Osaka e possibili escursioni. Programma personalizzabile e preventivo gratuito."
+  schema={schema}
+>
+  <section class="hero japan-hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="kicker">Itinerario Giappone</p>
+
+        <h1>Giappone in 10 giorni: un primo viaggio intenso e ben organizzato.</h1>
+
+        <p class="lead">
+          Tokyo, Kyoto, Osaka e una selezione di escursioni per vivere
+          il Giappone tra tradizione, modernità, gastronomia e paesaggi.
+        </p>
+
+        <div class="actions">
+          <a
+            class="button button-primary"
+            href={`${base}preventivo/?destinazione=Giappone`}
+          >
+            Richiedi un preventivo gratuito
+          </a>
+
+          <a class="button button-ghost" href="#itinerario">
+            Guarda il programma
+          </a>
+        </div>
+      </div>
+
+      <div class="executive-visual" aria-hidden="true">
+        <div class="executive-orbit"></div>
+        <div class="executive-plane">✈</div>
+
+        <div class="executive-card">
+          <span class="badge">10 giorni</span>
+          <strong>Tokyo, Kyoto, Osaka e una grande escursione.</strong>
+          <p>
+            Un itinerario pensato per chi visita il Giappone per la prima volta.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="container breadcrumb" aria-label="Breadcrumb">
+    <a href={base}>Home</a>
+    <span>›</span>
+    <a href={`${base}giappone/`}>Giappone</a>
+    <span>›</span>
+    <span>Itinerario 10 giorni</span>
+  </nav>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">A chi è adatto</p>
+        <h2>Un itinerario ideale per un primo viaggio.</h2>
+        <p>
+          Dieci giorni permettono di scoprire le tappe principali
+          senza rinunciare a un'escursione e a qualche esperienza locale.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">🏙️</div>
+          <h3>Grandi città</h3>
+          <p>Tokyo e Osaka mostrano il volto dinamico e contemporaneo del Paese.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">⛩️</div>
+          <h3>Tradizione</h3>
+          <p>Kyoto e Nara aggiungono templi, giardini e quartieri storici.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🚄</div>
+          <h3>Spostamenti efficienti</h3>
+          <p>Il percorso segue una logica lineare e riduce i trasferimenti inutili.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="itinerario">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Programma giorno per giorno</p>
+        <h2>Itinerario Giappone di 10 giorni.</h2>
+      </div>
+
+      <div class="timeline">
+        {days.map(item => (
+          <article class="timeline-item">
+            <div class="timeline-day">{item.day}</div>
+
+            <div class="timeline-content">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Le tappe principali</p>
+        <h2>Cosa rende completo questo itinerario.</h2>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Tokyo</h3>
+          <p>Quartieri moderni, templi, mercati, cultura pop e panorami urbani.</p>
+        </article>
+
+        <article class="card">
+          <h3>Kyoto</h3>
+          <p>Templi, santuari, giardini, Gion e atmosfera tradizionale.</p>
+        </article>
+
+        <article class="card">
+          <h3>Osaka</h3>
+          <p>Street food, quartieri vivaci, mercati e vita serale.</p>
+        </article>
+
+        <article class="card">
+          <h3>Nara</h3>
+          <p>Grande Buddha, parco dei cervi e una delle escursioni più amate.</p>
+        </article>
+
+        <article class="card">
+          <h3>Hakone o Nikko</h3>
+          <p>Natura, santuari, onsen e una pausa dalle grandi città.</p>
+        </article>
+
+        <article class="card">
+          <h3>Esperienze locali</h3>
+          <p>Gastronomia, mercati, quartieri tradizionali e momenti personalizzati.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Come personalizzarlo</p>
+        <h2>Lo stesso viaggio può cambiare completamente.</h2>
+      </div>
+
+      <div class="option-grid">
+        <article class="option-card">
+          <span>🌸</span>
+          <h3>Versione primavera</h3>
+          <p>Più parchi, giardini e luoghi adatti all'hanami.</p>
+        </article>
+
+        <article class="option-card">
+          <span>🍁</span>
+          <h3>Versione autunno</h3>
+          <p>Kyoto, Nikko e Hakone con attenzione alle aree di foliage.</p>
+        </article>
+
+        <article class="option-card">
+          <span>🍣</span>
+          <h3>Versione gastronomica</h3>
+          <p>Mercati, street food, ristoranti e specialità regionali.</p>
+        </article>
+
+        <article class="option-card">
+          <span>🎮</span>
+          <h3>Versione anime e tecnologia</h3>
+          <p>Akihabara, Ikebukuro, musei, gaming e quartieri tematici.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Consigli pratici</p>
+        <h2>Come rendere il viaggio più fluido.</h2>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Riduci i cambi hotel</h3>
+          <p>Usa Tokyo e Kyoto come basi per alcune escursioni.</p>
+        </article>
+
+        <article class="card">
+          <h3>Viaggia leggero</h3>
+          <p>Organizza i bagagli per rendere più semplici i trasferimenti.</p>
+        </article>
+
+        <article class="card">
+          <h3>Prenota in anticipo</h3>
+          <p>Durante sakura, foliage e festività la disponibilità può ridursi rapidamente.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container consultant-box">
+      <div>
+        <p class="kicker">Il consiglio del Travel Consultant</p>
+        <h2>Dieci giorni richiedono equilibrio.</h2>
+        <p>
+          Eviterei di inserire troppe città. Meglio visitare bene Tokyo,
+          Kyoto e Osaka, aggiungendo una sola grande escursione coerente
+          con la stagione e i tuoi interessi.
+        </p>
+      </div>
+
+      <div class="consultant-signature">
+        <strong>Davide Fois</strong>
+        <span>Travel Consultant • Powered by Nuovevacanze</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Domande frequenti</p>
+        <h2>Le risposte prima di organizzare il viaggio.</h2>
+      </div>
+
+      <div class="faq-grid">
+        {faq.map(item => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Continua a esplorare</p>
+        <h2>Approfondisci il tuo viaggio in Giappone.</h2>
+      </div>
+
+      <div class="guide-links-grid">
+        <a class="guide-link-card" href={`${base}giappone/`}>
+          <span class="guide-link-icon">🇯🇵</span>
+          <div>
+            <small>Guida principale</small>
+            <h3>Viaggio in Giappone</h3>
+            <p>Destinazioni, stagioni e idee per iniziare.</p>
+            <strong>Scopri la guida →</strong>
+          </div>
+        </a>
+
+        <a class="guide-link-card" href={`${base}quando-andare-giappone/`}>
+          <span class="guide-link-icon">📅</span>
+          <div>
+            <small>Guida stagionale</small>
+            <h3>Quando andare</h3>
+            <p>Clima, mesi migliori, foliage e ciliegi.</p>
+            <strong>Leggi la guida →</strong>
+          </div>
+        </a>
+
+        <a class="guide-link-card" href={`${base}preventivo/?destinazione=Giappone`}>
+          <span class="guide-link-icon">✈️</span>
+          <div>
+            <small>Viaggio su misura</small>
+            <h3>Richiedi una proposta</h3>
+            <p>Trasforma questo itinerario in un viaggio personalizzato.</p>
+            <strong>Inizia la richiesta →</strong>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container final-conversion">
+      <div>
+        <p class="kicker">Il tuo itinerario personale</p>
+        <h2>Partiamo da questi 10 giorni e costruiamo il tuo Giappone.</h2>
+        <p>
+          Periodo, budget, hotel, interessi e ritmo di viaggio:
+          ogni dettaglio può essere adattato alle tue esigenze.
+        </p>
+
+        <ul class="conversion-benefits">
+          <li>Richiesta gratuita e senza impegno</li>
+          <li>Programma costruito sulle tue preferenze</li>
+          <li>Assistenza personale durante tutte le fasi</li>
+        </ul>
+      </div>
+
+      <div class="final-conversion-actions">
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>
+          Richiedi il preventivo gratuito
+        </a>
+
+        <a
+          class="button button-light"
+          href="https://wa.me/393389028812?text=Buongiorno%20Davide,%20vorrei%20informazioni%20per%20un%20itinerario%20di%2010%20giorni%20in%20Giappone."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Scrivimi su WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 22px;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  .breadcrumb a {
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .timeline {
+    position: relative;
+    display: grid;
+    gap: 18px;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 72px;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--gold), var(--navy));
+  }
+
+  .timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .timeline-day {
+    position: relative;
+    z-index: 1;
+    padding: 12px;
+    border-radius: 14px;
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .timeline-content {
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(11, 31, 58, 0.06);
+  }
+
+  .timeline-content h3 {
+    margin-top: 0;
+  }
+
+  .option-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .option-card {
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(11, 31, 58, 0.06);
+  }
+
+  .option-card > span {
+    font-size: 1.7rem;
+  }
+
+  .consultant-box {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 36px;
+    align-items: end;
+    padding: 42px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #0b1f3a, #16385e);
+    color: #fff;
+  }
+
+  .consultant-box p {
+    color: #dbe6f2;
+  }
+
+  .consultant-signature {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .guide-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .guide-link-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 12px 34px rgba(11, 31, 58, 0.06);
+  }
+
+  .guide-link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: #f7f0d5;
+    font-size: 1.55rem;
+  }
+
+  .final-conversion {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 44px;
+    align-items: center;
+    padding: 52px;
+    border-radius: 32px;
+    background: linear-gradient(145deg, #0b1f3a, #173c62);
+    color: #fff;
+    box-shadow: 0 28px 70px rgba(11, 31, 58, 0.22);
+  }
+
+  .final-conversion h2 {
+    color: #fff;
+  }
+
+  .final-conversion p {
+    color: #dbe6f2;
+  }
+
+  .conversion-benefits {
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .conversion-benefits li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 28px;
+  }
+
+  .conversion-benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #f1cf54;
+    font-weight: 900;
+  }
+
+  .final-conversion-actions {
+    display: grid;
+    gap: 14px;
+  }
+
+  .button-light {
+    background: #fff;
+    color: var(--navy);
+  }
+
+  @media (max-width: 900px) {
+    .option-grid,
+    .guide-links-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .consultant-box,
+    .final-conversion {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .timeline::before {
+      display: none;
+    }
+
+    .timeline-item {
+      grid-template-columns: 1fr;
+    }
+
+    .option-grid,
+    .guide-links-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .final-conversion {
+      padding: 28px 22px;
+    }
+  }
+</style>
