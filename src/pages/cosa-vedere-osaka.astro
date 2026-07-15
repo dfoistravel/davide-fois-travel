@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+title="Cosa vedere a Osaka | Guida completa"
+description="Scopri cosa vedere a Osaka: Castello, Dotonbori, Umeda, Shinsekai, Universal Studios e itinerario consigliato."
+>
+
+<section class="hero">
+<div class="container">
+<p class="kicker">Guida Osaka</p>
+<h1>Cosa vedere a Osaka: attrazioni, quartieri e itinerario</h1>
+<p class="lead">
+Osaka è la città più vivace del Kansai, famosa per street food, castelli,
+panorami moderni e divertimento.
+</p>
+
+<div class="actions">
+<a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>
+Richiedi un preventivo gratuito
+</a>
+<a class="button button-ghost" href="#attrazioni">
+Scopri le attrazioni
+</a>
+</div>
+</div>
+</section>
+
+<section class="section" id="attrazioni">
+<div class="container">
+<div class="section-head">
+<p class="kicker">Da non perdere</p>
+<h2>Le migliori attrazioni di Osaka</h2>
+</div>
+
+<div class="grid-3">
+<article class="card"><h3>🏯 Castello di Osaka</h3><p>Il simbolo storico della città con splendidi giardini.</p></article>
+<article class="card"><h3>🌃 Dotonbori</h3><p>Insegne luminose, canali e street food.</p></article>
+<article class="card"><h3>🏙️ Umeda Sky Building</h3><p>Uno dei panorami più belli sullo skyline.</p></article>
+<article class="card"><h3>🎡 Shinsekai</h3><p>Quartiere storico e Torre Tsutenkaku.</p></article>
+<article class="card"><h3>🎢 Universal Studios Japan</h3><p>Parco a tema con Super Nintendo World.</p></article>
+<article class="card"><h3>🦀 Kuromon Market</h3><p>Perfetto per assaggiare la cucina locale.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section alt">
+<div class="container">
+<div class="section-head">
+<p class="kicker">Itinerario</p>
+<h2>Osaka in 2 giorni</h2>
+</div>
+
+<div class="grid-2">
+<div class="card">
+<h3>Giorno 1</h3>
+<ul>
+<li>Castello di Osaka</li>
+<li>Umeda</li>
+<li>Dotonbori</li>
+<li>Namba</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Giorno 2</h3>
+<ul>
+<li>Universal Studios oppure Aquarium Kaiyukan</li>
+<li>Shinsekai</li>
+<li>Kuromon Market</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-head">
+<p class="kicker">Quando visitarla</p>
+<h2>I periodi migliori</h2>
+</div>
+
+<div class="grid-3">
+<article class="card"><h3>🌸 Primavera</h3><p>Clima mite e ciliegi in fiore.</p></article>
+<article class="card"><h3>🍁 Autunno</h3><p>Temperature piacevoli e foliage.</p></article>
+<article class="card"><h3>☀️ Estate</h3><p>Festival ed energia cittadina.</p></article>
+</div>
+
+<p style="margin-top:2rem">
+Approfondisci anche:
+<a href={`${base}quando-andare-giappone/`}>Quando andare in Giappone</a>,
+<a href={`${base}cosa-vedere-kyoto/`}>Cosa vedere a Kyoto</a> e
+<a href={`${base}cosa-vedere-tokyo/`}>Cosa vedere a Tokyo</a>.
+</p>
+</div>
+</section>
+
+<section class="section alt">
+<div class="container">
+<h2>Vuoi inserire Osaka nel tuo itinerario?</h2>
+<p>Ti aiuto a creare un viaggio su misura in Giappone in base al tuo budget e ai tuoi interessi.</p>
+<div class="actions">
+<a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi il preventivo gratuito</a>
+</div>
+</div>
+</section>
+
+</BaseLayout>
