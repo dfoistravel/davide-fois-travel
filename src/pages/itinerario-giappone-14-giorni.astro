@@ -1,0 +1,301 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const days = [
+  { day: "Giorno 1", title: "Arrivo a Tokyo", text: "Arrivo, sistemazione in hotel e primo orientamento tra trasporti, quartieri e atmosfera della capitale." },
+  { day: "Giorno 2", title: "Tokyo tradizionale", text: "Asakusa, Sensō-ji, Ueno e quartieri storici per iniziare con il volto più tradizionale della città." },
+  { day: "Giorno 3", title: "Tokyo contemporanea", text: "Shibuya, Harajuku, Omotesandō e Shinjuku tra tecnologia, design e vita urbana." },
+  { day: "Giorno 4", title: "Escursione da Tokyo", text: "Nikko, Kamakura, Hakone oppure Monte Fuji, in base alla stagione e alle preferenze." },
+  { day: "Giorno 5", title: "Tokyo → Kanazawa", text: "Trasferimento verso Kanazawa e visita al quartiere dei samurai o al giardino Kenroku-en." },
+  { day: "Giorno 6", title: "Kanazawa e Shirakawa-go", text: "Giornata tra tradizione, paesaggi rurali e villaggi storici." },
+  { day: "Giorno 7", title: "Takayama", text: "Mercati mattutini, centro storico e atmosfera delle Alpi Giapponesi." },
+  { day: "Giorno 8", title: "Takayama → Kyoto", text: "Trasferimento a Kyoto e prima passeggiata tra Gion e il centro storico." },
+  { day: "Giorno 9", title: "Kyoto orientale", text: "Kiyomizu-dera, Higashiyama, Yasaka e vie tradizionali della zona est." },
+  { day: "Giorno 10", title: "Kyoto occidentale", text: "Arashiyama, foresta di bambù, templi e quartieri più tranquilli." },
+  { day: "Giorno 11", title: "Nara", text: "Escursione a Nara tra il Tōdai-ji, il parco dei cervi e i principali santuari." },
+  { day: "Giorno 12", title: "Kyoto → Hiroshima", text: "Trasferimento a Hiroshima, visita al Parco della Pace e al museo." },
+  { day: "Giorno 13", title: "Miyajima → Osaka", text: "Escursione a Miyajima e proseguimento verso Osaka per la serata." },
+  { day: "Giorno 14", title: "Osaka e partenza", text: "Ultime visite, shopping o rientro. Possibile estensione in base ai voli." }
+];
+
+const faq = [
+  {
+    question: "Quattordici giorni sono sufficienti per il Giappone?",
+    answer: "Sì. Due settimane permettono di combinare grandi città, aree tradizionali, natura ed escursioni con un ritmo più equilibrato."
+  },
+  {
+    question: "È meglio un itinerario lineare?",
+    answer: "Sì. Arrivare in una città e ripartire da un'altra può ridurre gli spostamenti e rendere il viaggio più efficiente."
+  },
+  {
+    question: "Conviene inserire Kanazawa e Takayama?",
+    answer: "Sono ottime tappe per chi desidera aggiungere tradizione, natura e Alpi Giapponesi al classico itinerario Tokyo-Kyoto-Osaka."
+  },
+  {
+    question: "Hiroshima e Miyajima meritano una visita?",
+    answer: "Sì. Aggiungono storia, memoria, paesaggi e uno dei simboli più famosi del Giappone."
+  },
+  {
+    question: "L'itinerario può essere personalizzato?",
+    answer: "Sì. È possibile modificare tappe, durata, hotel, ritmo, escursioni ed esperienze."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Itinerario Giappone 14 giorni: tour completo tra Tokyo, Kyoto e Hiroshima",
+      "description": "Itinerario completo di 14 giorni in Giappone con Tokyo, Kanazawa, Takayama, Kyoto, Hiroshima, Miyajima e Osaka.",
+      "author": { "@type": "Person", "name": "Davide Fois" },
+      "publisher": { "@type": "Organization", "name": "Davide Fois Travel Consultant" },
+      "mainEntityOfPage": new URL(`${base}itinerario-giappone-14-giorni/`, Astro.site).href,
+      "inLanguage": "it-IT"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Itinerario Giappone 14 giorni | Tour completo su misura"
+  description="Scopri un itinerario di 14 giorni in Giappone tra Tokyo, Kanazawa, Takayama, Kyoto, Hiroshima, Miyajima e Osaka."
+  schema={schema}
+>
+  <section class="hero japan-hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="kicker">Itinerario Giappone</p>
+        <h1>Giappone in 14 giorni: un viaggio completo tra città, tradizione e natura.</h1>
+        <p class="lead">
+          Due settimane per combinare Tokyo, Alpi Giapponesi, Kyoto,
+          Hiroshima, Miyajima e Osaka con un ritmo più equilibrato.
+        </p>
+
+        <div class="actions">
+          <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>
+            Richiedi un preventivo gratuito
+          </a>
+          <a class="button button-ghost" href="#itinerario">Guarda il programma</a>
+        </div>
+      </div>
+
+      <div class="executive-visual" aria-hidden="true">
+        <div class="executive-orbit"></div>
+        <div class="executive-plane">✈</div>
+        <div class="executive-card">
+          <span class="badge">14 giorni</span>
+          <strong>Un itinerario più completo e rilassato.</strong>
+          <p>Ideale per chi vuole scoprire più regioni senza correre troppo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="container breadcrumb" aria-label="Breadcrumb">
+    <a href={base}>Home</a><span>›</span>
+    <a href={`${base}giappone/`}>Giappone</a><span>›</span>
+    <span>Itinerario 14 giorni</span>
+  </nav>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">A chi è adatto</p>
+        <h2>Due settimane per conoscere il Giappone con maggiore profondità.</h2>
+      </div>
+
+      <div class="grid-3">
+        <article class="card"><div class="icon">🏙️</div><h3>Città principali</h3><p>Tokyo, Kyoto, Osaka e Hiroshima.</p></article>
+        <article class="card"><div class="icon">🏔️</div><h3>Natura e tradizione</h3><p>Kanazawa, Takayama e Shirakawa-go.</p></article>
+        <article class="card"><div class="icon">⛩️</div><h3>Esperienze iconiche</h3><p>Templi, giardini, torii, onsen e gastronomia.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="itinerario">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Programma giorno per giorno</p>
+        <h2>Itinerario Giappone di 14 giorni.</h2>
+      </div>
+
+      <div class="timeline">
+        {days.map(item => (
+          <article class="timeline-item">
+            <div class="timeline-day">{item.day}</div>
+            <div class="timeline-content">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Perché scegliere 14 giorni</p>
+        <h2>Più equilibrio, meno rinunce.</h2>
+      </div>
+
+      <div class="grid-3">
+        <article class="card"><h3>Ritmo più sostenibile</h3><p>Più tempo per le città e meno trasferimenti compressi.</p></article>
+        <article class="card"><h3>Più varietà</h3><p>Metropoli, villaggi, montagne, templi e mare interno.</p></article>
+        <article class="card"><h3>Più personalizzazione</h3><p>Spazio per escursioni ed esperienze legate alla stagione.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Come personalizzarlo</p>
+        <h2>Quattro versioni dello stesso itinerario.</h2>
+      </div>
+
+      <div class="option-grid">
+        <article class="option-card"><span>🌸</span><h3>Primavera</h3><p>Hanami, parchi e giardini tra Tokyo, Kyoto e Kanazawa.</p></article>
+        <article class="option-card"><span>🍁</span><h3>Autunno</h3><p>Foliage nelle Alpi, a Kyoto e a Miyajima.</p></article>
+        <article class="option-card"><span>🍣</span><h3>Gastronomico</h3><p>Mercati, specialità regionali e street food.</p></article>
+        <article class="option-card"><span>♨️</span><h3>Relax e onsen</h3><p>Più tempo in ryokan e località termali.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container consultant-box">
+      <div>
+        <p class="kicker">Il consiglio del Travel Consultant</p>
+        <h2>Due settimane sono il miglior compromesso per un primo viaggio completo.</h2>
+        <p>
+          Con 14 giorni puoi vedere molto senza trasformare ogni giornata
+          in una corsa. La chiave è mantenere un percorso lineare e limitare
+          i cambi hotel non necessari.
+        </p>
+      </div>
+      <div class="consultant-signature">
+        <strong>Davide Fois</strong>
+        <span>Travel Consultant • Powered by Nuovevacanze</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Domande frequenti</p>
+        <h2>Le risposte prima di partire.</h2>
+      </div>
+
+      <div class="faq-grid">
+        {faq.map(item => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Continua a esplorare</p>
+        <h2>Altre guide utili per il tuo viaggio.</h2>
+      </div>
+
+      <div class="guide-links-grid">
+        <a class="guide-link-card" href={`${base}giappone/`}>
+          <span class="guide-link-icon">🇯🇵</span>
+          <div><small>Guida principale</small><h3>Viaggio in Giappone</h3><p>Destinazioni, stagioni e consigli.</p><strong>Scopri la guida →</strong></div>
+        </a>
+
+        <a class="guide-link-card" href={`${base}itinerario-giappone-10-giorni/`}>
+          <span class="guide-link-icon">🔟</span>
+          <div><small>Versione più breve</small><h3>Itinerario 10 giorni</h3><p>Un primo viaggio più compatto.</p><strong>Leggi la guida →</strong></div>
+        </a>
+
+        <a class="guide-link-card" href={`${base}quando-andare-giappone/`}>
+          <span class="guide-link-icon">📅</span>
+          <div><small>Guida stagionale</small><h3>Quando andare</h3><p>Clima, foliage e ciliegi.</p><strong>Leggi la guida →</strong></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container final-conversion">
+      <div>
+        <p class="kicker">Il tuo viaggio su misura</p>
+        <h2>Costruiamo insieme il tuo itinerario di 14 giorni.</h2>
+        <p>
+          Possiamo adattare ogni tappa in base a periodo, budget,
+          hotel, interessi e ritmo di viaggio.
+        </p>
+
+        <ul class="conversion-benefits">
+          <li>Richiesta gratuita e senza impegno</li>
+          <li>Programma costruito sulle tue preferenze</li>
+          <li>Assistenza personale prima, durante e dopo</li>
+        </ul>
+      </div>
+
+      <div class="final-conversion-actions">
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>
+          Richiedi il preventivo gratuito
+        </a>
+
+        <a
+          class="button button-light"
+          href="https://wa.me/393389028812?text=Buongiorno%20Davide,%20vorrei%20informazioni%20per%20un%20itinerario%20di%2014%20giorni%20in%20Giappone."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Scrivimi su WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb{display:flex;gap:10px;align-items:center;padding-top:22px;font-size:.92rem;color:var(--muted)}
+  .breadcrumb a{font-weight:700;text-decoration:none}
+  .timeline{position:relative;display:grid;gap:18px}
+  .timeline::before{content:"";position:absolute;top:12px;bottom:12px;left:72px;width:3px;background:linear-gradient(to bottom,var(--gold),var(--navy))}
+  .timeline-item{position:relative;display:grid;grid-template-columns:120px 1fr;gap:24px}
+  .timeline-day{position:relative;z-index:1;padding:12px;border-radius:14px;background:var(--navy);color:#fff;text-align:center;font-weight:800}
+  .timeline-content{padding:24px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 10px 30px rgba(11,31,58,.06)}
+  .option-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .option-card{padding:24px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 10px 30px rgba(11,31,58,.06)}
+  .consultant-box{display:grid;grid-template-columns:1.3fr .7fr;gap:36px;align-items:end;padding:42px;border-radius:30px;background:linear-gradient(145deg,#0b1f3a,#16385e);color:#fff}
+  .consultant-box p{color:#dbe6f2}
+  .consultant-signature{display:flex;flex-direction:column;padding:24px;border-radius:20px;background:rgba(255,255,255,.08)}
+  .guide-links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .guide-link-card{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:28px;border:1px solid var(--line);border-radius:24px;background:#fff;color:inherit;text-decoration:none;box-shadow:0 12px 34px rgba(11,31,58,.06)}
+  .guide-link-icon{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:16px;background:#f7f0d5;font-size:1.55rem}
+  .final-conversion{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center;padding:52px;border-radius:32px;background:linear-gradient(145deg,#0b1f3a,#173c62);color:#fff;box-shadow:0 28px 70px rgba(11,31,58,.22)}
+  .final-conversion h2{color:#fff}
+  .final-conversion p{color:#dbe6f2}
+  .conversion-benefits{margin:24px 0 0;padding:0;list-style:none}
+  .conversion-benefits li{position:relative;margin-bottom:12px;padding-left:28px}
+  .conversion-benefits li::before{content:"✓";position:absolute;left:0;color:#f1cf54;font-weight:900}
+  .final-conversion-actions{display:grid;gap:14px}
+  .button-light{background:#fff;color:var(--navy)}
+  @media(max-width:900px){.option-grid,.guide-links-grid{grid-template-columns:1fr 1fr}.consultant-box,.final-conversion{grid-template-columns:1fr}}
+  @media(max-width:620px){.timeline::before{display:none}.timeline-item{grid-template-columns:1fr}.option-grid,.guide-links-grid{grid-template-columns:1fr}.final-conversion{padding:28px 22px}}
+</style>
