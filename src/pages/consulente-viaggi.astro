@@ -1,0 +1,764 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const faq = [
+  {
+    question: "Quanto costa richiedere una consulenza di viaggio?",
+    answer: "La richiesta iniziale di preventivo è gratuita e non comporta alcun obbligo di prenotazione."
+  },
+  {
+    question: "Posso richiedere un viaggio completamente personalizzato?",
+    answer: "Sì. Periodo, budget, interessi, numero di viaggiatori, ritmo e preferenze vengono utilizzati per costruire una proposta coerente."
+  },
+  {
+    question: "Posso chiedere assistenza anche dopo la prenotazione?",
+    answer: "Sì. Il servizio prevede un referente personale prima, durante e dopo il viaggio."
+  },
+  {
+    question: "Posso richiedere viaggi in Giappone?",
+    answer: "Sì. Il Giappone è una delle destinazioni principali del progetto, con itinerari dedicati a città, stagioni, cultura e natura."
+  },
+  {
+    question: "Come riceverò la proposta?",
+    answer: "Dopo aver raccolto le informazioni principali, riceverai una proposta ragionata e potremo rivedere insieme tappe, servizi e priorità."
+  },
+  {
+    question: "Sono obbligato a prenotare?",
+    answer: "No. La richiesta iniziale serve a valutare le tue esigenze e a preparare una proposta senza impegno."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Davide Fois",
+      "jobTitle": "Travel Consultant",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Nuovevacanze"
+      },
+      "url": new URL(`${base}consulente-viaggi/`, Astro.site).href
+    },
+    {
+      "@type": "Service",
+      "name": "Consulenza viaggi personalizzata",
+      "serviceType": "Travel consulting",
+      "provider": {
+        "@type": "Person",
+        "name": "Davide Fois"
+      },
+      "areaServed": "IT",
+      "description": "Servizio di consulenza per viaggi personalizzati con assistenza prima, durante e dopo la partenza."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Consulente viaggi personale | Davide Fois Travel Consultant"
+  description="Scopri come funziona il servizio di consulenza viaggi personalizzata: ascolto, proposta su misura, assistenza e preventivo gratuito."
+  schema={schema}
+>
+  <section class="hero consultant-hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="kicker">Davide Fois Travel Consultant</p>
+
+        <h1>Un consulente di viaggio personale, dalla prima idea alla partenza.</h1>
+
+        <p class="lead">
+          Ti aiuto a trasformare un desiderio in un viaggio organizzato con cura,
+          selezionando le soluzioni più adatte al tuo budget, al periodo e al tuo modo di viaggiare.
+        </p>
+
+        <div class="actions">
+          <a class="button button-primary" href={`${base}preventivo/`}>
+            Richiedi un preventivo gratuito
+          </a>
+
+          <a
+            class="button button-ghost"
+            href="https://wa.me/393389028812?text=Buongiorno%20Davide,%20vorrei%20informazioni%20sul%20servizio%20di%20consulenza%20viaggi."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Scrivimi su WhatsApp
+          </a>
+        </div>
+
+        <div class="trust-row">
+          <span>✓ Richiesta senza impegno</span>
+          <span>✓ Referente personale</span>
+          <span>✓ Powered by Nuovevacanze</span>
+        </div>
+      </div>
+
+      <div class="consultant-visual" aria-hidden="true">
+        <div class="consultant-globe"></div>
+        <div class="consultant-route"></div>
+
+        <div class="consultant-profile-card">
+          <span class="badge">Consulenza personale</span>
+          <strong>Un solo referente per tutto il viaggio.</strong>
+          <p>
+            Più chiarezza nelle scelte, meno tempo perso e una proposta costruita intorno a te.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section consultant-strip">
+    <div class="container consultant-stats">
+      <article>
+        <strong>1</strong>
+        <span>referente personale</span>
+      </article>
+
+      <article>
+        <strong>100%</strong>
+        <span>proposte personalizzate</span>
+      </article>
+
+      <article>
+        <strong>3</strong>
+        <span>fasi: ascolto, proposta, partenza</span>
+      </article>
+
+      <article>
+        <strong>0</strong>
+        <span>obblighi sulla prima richiesta</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Perché affidarti a un consulente</p>
+        <h2>Non devi confrontare tutto da solo.</h2>
+        <p>
+          Il mio compito è semplificare le scelte, ridurre la confusione
+          e proporti un percorso coerente con le tue esigenze reali.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card consultant-benefit-card">
+          <div class="icon">🧭</div>
+          <h3>Ascolto prima di proporre</h3>
+          <p>
+            Partiamo da periodo, budget, interessi, stile di viaggio
+            e livello di assistenza desiderato.
+          </p>
+        </article>
+
+        <article class="card consultant-benefit-card">
+          <div class="icon">🔎</div>
+          <h3>Selezione ragionata</h3>
+          <p>
+            Non ricevi una lista infinita di opzioni, ma una proposta
+            costruita sulle priorità che hai condiviso.
+          </p>
+        </article>
+
+        <article class="card consultant-benefit-card">
+          <div class="icon">🤝</div>
+          <h3>Assistenza personale</h3>
+          <p>
+            Hai una persona reale con cui confrontarti prima,
+            durante e dopo la partenza.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Come funziona</p>
+        <h2>Un percorso semplice e trasparente.</h2>
+      </div>
+
+      <div class="consultant-process">
+        <article class="consultant-step">
+          <span>01</span>
+          <h3>Raccontami il viaggio</h3>
+          <p>
+            Destinazione, periodo, budget, numero di viaggiatori
+            ed esperienze che non possono mancare.
+          </p>
+        </article>
+
+        <article class="consultant-step">
+          <span>02</span>
+          <h3>Ricevi una proposta</h3>
+          <p>
+            Seleziono le soluzioni più coerenti e organizzo
+            le informazioni in modo chiaro.
+          </p>
+        </article>
+
+        <article class="consultant-step">
+          <span>03</span>
+          <h3>Definiamo i dettagli</h3>
+          <p>
+            Rivediamo insieme tappe, servizi, hotel,
+            escursioni e priorità.
+          </p>
+        </article>
+
+        <article class="consultant-step">
+          <span>04</span>
+          <h3>Parti con assistenza</h3>
+          <p>
+            Resto il tuo punto di riferimento anche dopo la conferma.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container consultant-audience-layout">
+      <div>
+        <p class="kicker">A chi è rivolto</p>
+        <h2>Un servizio pensato per chi desidera più tranquillità.</h2>
+        <p>
+          La consulenza è utile soprattutto quando il viaggio richiede
+          molte scelte, più tappe o un livello elevato di personalizzazione.
+        </p>
+      </div>
+
+      <div class="consultant-audience-grid">
+        <article class="card">
+          <h3>Primo viaggio importante</h3>
+          <p>Per chi vuole partire con maggiore sicurezza e un programma chiaro.</p>
+        </article>
+
+        <article class="card">
+          <h3>Itinerari complessi</h3>
+          <p>Per viaggi con più città, trasferimenti, escursioni e servizi diversi.</p>
+        </article>
+
+        <article class="card">
+          <h3>Poco tempo per organizzare</h3>
+          <p>Per chi non vuole trascorrere settimane confrontando offerte.</p>
+        </article>
+
+        <article class="card">
+          <h3>Esigenze specifiche</h3>
+          <p>Per famiglie, coppie, viaggiatori senior o interessi particolari.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Destinazioni e tipologie</p>
+        <h2>Il viaggio parte dalle tue preferenze.</h2>
+      </div>
+
+      <div class="consultant-destination-grid">
+        <a class="consultant-destination japan" href={`${base}giappone/`}>
+          <div>
+            <small>Destinazione principale</small>
+            <h3>Giappone</h3>
+            <p>Città, cultura, natura, sakura, foliage e itinerari su misura.</p>
+            <strong>Scopri il Giappone →</strong>
+          </div>
+        </a>
+
+        <a class="consultant-destination baltic" href={`${base}destinazioni/#lituania`}>
+          <div>
+            <small>Europa</small>
+            <h3>Lituania e Paesi Baltici</h3>
+            <p>Vilnius, Trakai, Kaunas e city break personalizzati.</p>
+            <strong>Scopri la destinazione →</strong>
+          </div>
+        </a>
+
+        <a class="consultant-destination world" href={`${base}destinazioni/`}>
+          <div>
+            <small>Altre esperienze</small>
+            <h3>Viaggi nel mondo</h3>
+            <p>Mare, crociere, tour culturali, viaggi di nozze e city break.</p>
+            <strong>Esplora le proposte →</strong>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container consultant-trust-layout">
+      <div class="consultant-trust-card">
+        <span class="consultant-quote">“</span>
+        <blockquote>
+          Il viaggio giusto non è quello con più servizi:
+          è quello costruito intorno alla persona che deve viverlo.
+        </blockquote>
+
+        <strong>Davide Fois</strong>
+        <p>Travel Consultant • Powered by Nuovevacanze</p>
+      </div>
+
+      <div>
+        <p class="kicker">Il mio approccio</p>
+        <h2>Chiarezza, ascolto e attenzione ai dettagli.</h2>
+
+        <ul class="consultant-checklist">
+          <li>Nessuna proposta standard uguale per tutti</li>
+          <li>Informazioni spiegate in modo comprensibile</li>
+          <li>Budget e priorità sempre al centro</li>
+          <li>Supporto personale durante il percorso</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Domande frequenti</p>
+        <h2>Le risposte prima di iniziare.</h2>
+      </div>
+
+      <div class="faq-grid">
+        {faq.map(item => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container consultant-final-cta">
+      <div>
+        <p class="kicker">Il tuo prossimo viaggio</p>
+        <h2>Raccontami la tua idea.</h2>
+
+        <p>
+          Compila la richiesta con destinazione, periodo, budget
+          e numero di viaggiatori. Ti ricontatterò personalmente
+          per approfondire le tue esigenze.
+        </p>
+
+        <ul class="consultant-final-benefits">
+          <li>Richiesta gratuita e senza impegno</li>
+          <li>Proposta costruita sulle tue preferenze</li>
+          <li>Assistenza personale durante tutto il percorso</li>
+        </ul>
+      </div>
+
+      <div class="consultant-final-actions">
+        <a class="button button-primary" href={`${base}preventivo/`}>
+          Richiedi il preventivo gratuito
+        </a>
+
+        <a
+          class="button button-light"
+          href="https://wa.me/393389028812?text=Buongiorno%20Davide,%20vorrei%20informazioni%20per%20organizzare%20un%20viaggio."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Scrivimi su WhatsApp
+        </a>
+
+        <small>Riceverai una risposta personale, non automatica.</small>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .consultant-hero {
+    min-height: 720px;
+  }
+
+  .consultant-visual {
+    position: relative;
+    min-height: 520px;
+  }
+
+  .consultant-globe {
+    position: absolute;
+    inset: 30px 10px 20px 35px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 32% 28%, rgba(255,255,255,.22), transparent 12%),
+      linear-gradient(145deg, #244d6c, #0b2238 60%, #071522);
+    box-shadow:
+      inset -28px -28px 70px rgba(0,0,0,.28),
+      0 38px 90px rgba(0,0,0,.34);
+  }
+
+  .consultant-globe::before,
+  .consultant-globe::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(230,200,95,.45);
+    border-radius: 50%;
+  }
+
+  .consultant-globe::before {
+    inset: 12% 4%;
+    transform: rotate(22deg);
+  }
+
+  .consultant-globe::after {
+    inset: 3% 31%;
+    transform: rotate(-18deg);
+  }
+
+  .consultant-route {
+    position: absolute;
+    inset: 70px 30px 70px 25px;
+    border: 3px dashed rgba(230,200,95,.72);
+    border-color: var(--gold-2) transparent transparent var(--gold-2);
+    border-radius: 50%;
+    transform: rotate(-18deg);
+  }
+
+  .consultant-profile-card {
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    max-width: 370px;
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 26px;
+    background: rgba(255,255,255,.13);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+  }
+
+  .consultant-profile-card strong {
+    display: block;
+    margin: 14px 0 10px;
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .consultant-profile-card p {
+    color: #d9e3ef;
+  }
+
+  .consultant-strip {
+    padding: 28px 0;
+    background: #071421;
+    color: #fff;
+  }
+
+  .consultant-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .consultant-stats article {
+    padding: 20px 18px;
+    border-left: 1px solid rgba(255,255,255,.16);
+  }
+
+  .consultant-stats strong {
+    display: block;
+    color: var(--gold-2);
+    font-family: Poppins, sans-serif;
+    font-size: 2rem;
+  }
+
+  .consultant-stats span {
+    color: #cbd6e1;
+  }
+
+  .consultant-benefit-card {
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .consultant-benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(11,31,58,.12);
+  }
+
+  .consultant-process {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .consultant-step {
+    padding: 28px;
+    border-top: 3px solid var(--gold);
+    border-radius: 0 0 22px 22px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgba(11,31,58,.07);
+  }
+
+  .consultant-step > span {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--gold);
+    font-family: Poppins, sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  .consultant-audience-layout {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 44px;
+    align-items: start;
+  }
+
+  .consultant-audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .consultant-destination-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr .9fr;
+    gap: 20px;
+  }
+
+  .consultant-destination {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    border-radius: 28px;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+  }
+
+  .consultant-destination::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 15%, rgba(0,0,0,.76));
+  }
+
+  .consultant-destination > div {
+    position: relative;
+    z-index: 1;
+  }
+
+  .consultant-destination.japan {
+    background: linear-gradient(135deg, #9d3042, #151e35);
+  }
+
+  .consultant-destination.baltic {
+    background: linear-gradient(135deg, #1f695f, #0b2744);
+  }
+
+  .consultant-destination.world {
+    background: linear-gradient(135deg, #7b5f2b, #263955);
+  }
+
+  .consultant-destination small {
+    color: #f7e7a7;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+
+  .consultant-destination h3 {
+    margin: 10px 0;
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .consultant-destination strong {
+    color: #fff;
+  }
+
+  .consultant-trust-layout {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .consultant-trust-card {
+    position: relative;
+    padding: 46px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, var(--navy), var(--navy-2));
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
+
+  .consultant-trust-card blockquote {
+    margin: 18px 0 24px;
+    font-family: Poppins, sans-serif;
+    font-size: 1.65rem;
+    line-height: 1.35;
+  }
+
+  .consultant-trust-card p {
+    color: #cdd8e4;
+  }
+
+  .consultant-quote {
+    position: absolute;
+    top: 10px;
+    right: 28px;
+    color: rgba(230,200,95,.25);
+    font-family: Georgia, serif;
+    font-size: 5rem;
+  }
+
+  .consultant-checklist {
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .consultant-checklist li {
+    position: relative;
+    margin-bottom: 14px;
+    padding-left: 30px;
+  }
+
+  .consultant-checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 900;
+  }
+
+  .consultant-final-cta {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 44px;
+    align-items: center;
+    padding: 54px;
+    border-radius: 32px;
+    background:
+      radial-gradient(circle at 84% 18%, rgba(241,207,84,.18), transparent 24%),
+      linear-gradient(145deg, #0b1f3a, #173c62);
+    color: #fff;
+    box-shadow: 0 28px 70px rgba(11,31,58,.22);
+  }
+
+  .consultant-final-cta h2 {
+    color: #fff;
+  }
+
+  .consultant-final-cta p {
+    color: #dbe6f2;
+  }
+
+  .consultant-final-benefits {
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .consultant-final-benefits li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 28px;
+  }
+
+  .consultant-final-benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #f1cf54;
+    font-weight: 900;
+  }
+
+  .consultant-final-actions {
+    display: grid;
+    gap: 14px;
+  }
+
+  .consultant-final-actions .button {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .consultant-final-actions small {
+    color: #cbd8e5;
+    text-align: center;
+  }
+
+  .button-light {
+    background: #fff;
+    color: var(--navy);
+  }
+
+  @media (max-width: 900px) {
+    .consultant-stats,
+    .consultant-process {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .consultant-audience-layout,
+    .consultant-trust-layout,
+    .consultant-final-cta {
+      grid-template-columns: 1fr;
+    }
+
+    .consultant-destination-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .consultant-destination.japan {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .consultant-stats,
+    .consultant-process,
+    .consultant-audience-grid,
+    .consultant-destination-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .consultant-destination.japan {
+      grid-column: auto;
+    }
+
+    .consultant-final-cta {
+      padding: 30px 22px;
+    }
+
+    .consultant-visual {
+      min-height: 390px;
+    }
+
+    .consultant-globe {
+      inset: 35px 0 20px;
+    }
+  }
+</style>
