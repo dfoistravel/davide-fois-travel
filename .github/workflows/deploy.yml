@@ -36,7 +36,7 @@ jobs:
         env:
           SITE_URL: https://dfoistravel.github.io
           PUBLIC_GA_ID: ${{ secrets.PUBLIC_GA_ID }}
-
+          PUBLIC_SEARCH_CONSOLE_CODE: ${{ secrets.PUBLIC_SEARCH_CONSOLE_CODE }}
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
