@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout
+  title="Richiesta inviata | Davide Fois Travel Consultant"
+  description="La tua richiesta di preventivo è stata inviata correttamente."
+  noindex={true}>
+<section class="page">
+  <div class="container">
+    <article class="article card">
+      <p class="kicker">Richiesta inviata</p>
+      <h1>Grazie, ho ricevuto la tua richiesta.</h1>
+      <p class="lead">
+        Ti ricontatterò appena possibile per approfondire il viaggio e preparare una proposta coerente con le tue esigenze.
+      </p>
+      <div class="actions">
+        <a class="button button-dark" href={base}>Torna alla homepage</a>
+        <a class="button button-secondary" href="https://wa.me/393389028812" target="_blank" rel="noopener noreferrer">Scrivimi su WhatsApp</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<script is:inline>
+  window.trackEvent?.("lead_completed", {
+    page_path: window.location.pathname
+  });
+</script>
+</BaseLayout>

@@ -1,0 +1,200 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'Davide Fois Travel Consultant',
+  description = 'Viaggi su misura con assistenza personale prima, durante e dopo la partenza.',
+  image = `${import.meta.env.BASE_URL}og-image.svg`,
+  noindex = false,
+  schema = null
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const base = import.meta.env.BASE_URL;
+const gaId = import.meta.env.PUBLIC_GA_ID;
+const searchConsoleCode = import.meta.env.PUBLIC_SEARCH_CONSOLE_CODE;
+
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Davide Fois Travel Consultant",
+  "url": new URL(base, Astro.site).href,
+  "description": description,
+  "areaServed": "IT",
+  "sameAs": ["https://davidefois.nuovevacanze.it"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": ["Italian"]
+  }
+};
+---
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#0b1f3a" />
+  {noindex && <meta name="robots" content="noindex,nofollow" />}
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href={`${base}favicon.svg`} />
+
+  {searchConsoleCode && (
+    <meta name="google-site-verification" content={searchConsoleCode} />
+  )}
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={new URL(image, Astro.site)} />
+  <meta property="og:locale" content="it_IT" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+  <title>{title}</title>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema ?? defaultSchema)} />
+
+  {gaId && (
+    <script is:inline define:vars={{ gaId }}>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+
+      window.trackEvent = function (eventName, parameters = {}) {
+        if (typeof gtag === "function") {
+          gtag("event", eventName, parameters);
+        }
+      };
+
+      window.enableAnalytics = function () {
+        if (window.__gaLoaded) return;
+
+        window.__gaLoaded = true;
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src =
+          "https://www.googletagmanager.com/gtag/js?id=" +
+          encodeURIComponent(gaId);
+
+        document.head.appendChild(script);
+
+        gtag("js", new Date());
+        gtag("config", gaId, {
+          anonymize_ip: true,
+          page_path: window.location.pathname,
+          send_page_view: true
+        });
+      };
+    </script>
+  )}
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href={base}>
+      <span class="brand-mark">DF</span>
+      <span class="brand-copy">
+        Davide Fois
+        <small>Travel Consultant • Powered by Nuovevacanze</small>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navigazione principale">
+      <a href={`${base}chi-sono/`}>Chi sono</a>
+      <a href={`${base}destinazioni/`}>Destinazioni</a>
+      <a href={`${base}blog/`}>Guide</a>
+      <a class="button button-dark" href={`${base}preventivo/`}>Richiedi preventivo</a>
+    </nav>
+  </div>
+</header>
+
+<main><slot /></main>
+
+<a
+  class="whatsapp"
+  id="whatsapp-link"
+  aria-label="Contattami su WhatsApp"
+  href="https://wa.me/393389028812?text=Buongiorno%20Davide,%20vorrei%20informazioni%20per%20un%20viaggio."
+  target="_blank"
+  rel="noopener noreferrer"
+>◉</a>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <div>
+    <strong>Cookie e misurazione</strong>
+    <p>Usiamo strumenti di misurazione solo dopo il tuo consenso. Puoi accettare oppure continuare senza analytics.</p>
+  </div>
+  <div class="cookie-actions">
+    <button class="button button-primary" id="accept-analytics">Accetta</button>
+    <button class="button button-secondary" id="reject-analytics">Rifiuta</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Davide Fois Travel Consultant</strong>
+      <p>Consulenza personalizzata e accesso alle proposte Nuovevacanze.</p>
+    </div>
+    <div>
+      <strong>Esplora</strong><br />
+      <a href={`${base}destinazioni/`}>Destinazioni</a><br />
+      <a href={`${base}blog/`}>Guide</a><br />
+      <a href={`${base}preventivo/`}>Preventivo</a>
+    </div>
+    <div>
+      <strong>Informazioni</strong><br />
+      <a href={`${base}privacy/`}>Privacy</a><br />
+      <a href={`${base}cookie-policy/`}>Cookie</a><br />
+      <a id="catalog-link" href="https://davidefois.nuovevacanze.it" target="_blank" rel="noopener noreferrer">Catalogo Nuovevacanze</a>
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+  const banner = document.getElementById("cookie-banner");
+  const savedConsent = localStorage.getItem("analytics-consent");
+
+  if (!savedConsent) banner.hidden = false;
+
+  if (savedConsent === "accepted" && window.enableAnalytics) {
+    window.enableAnalytics();
+  }
+
+  document.getElementById("accept-analytics")?.addEventListener("click", () => {
+    localStorage.setItem("analytics-consent", "accepted");
+    banner.hidden = true;
+    window.enableAnalytics?.();
+  });
+
+  document.getElementById("reject-analytics")?.addEventListener("click", () => {
+    localStorage.setItem("analytics-consent", "rejected");
+    banner.hidden = true;
+  });
+
+  document.getElementById("whatsapp-link")?.addEventListener("click", () => {
+    window.trackEvent?.("click_whatsapp", {
+      link_url: "https://wa.me/393389028812",
+      page_path: window.location.pathname
+    });
+  });
+
+  document.getElementById("catalog-link")?.addEventListener("click", () => {
+    window.trackEvent?.("click_catalogo_nuovevacanze", {
+      link_url: "https://davidefois.nuovevacanze.it",
+      page_path: window.location.pathname
+    });
+  });
+</script>
+</body>
+</html>
