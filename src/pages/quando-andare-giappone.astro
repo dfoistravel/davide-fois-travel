@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const faq = [
+  {
+    question: "Qual è il mese migliore per andare in Giappone?",
+    answer:
+      "Aprile, maggio, ottobre e novembre sono generalmente tra i mesi più apprezzati. La scelta migliore dipende però dalle regioni visitate, dal budget e dalle esperienze desiderate."
+  },
+  {
+    question: "Quando vedere i ciliegi in fiore?",
+    answer:
+      "Nelle principali città del Giappone centrale la fioritura avviene spesso tra fine marzo e inizio aprile, ma le date cambiano ogni anno."
+  },
+  {
+    question: "Quando vedere il foliage in Giappone?",
+    answer:
+      "Il foliage inizia nelle regioni settentrionali e montane e raggiunge più tardi città come Kyoto e Tokyo. Novembre è spesso uno dei mesi più indicati."
+  },
+  {
+    question: "Qual è il periodo meno costoso?",
+    answer:
+      "Alcune settimane di gennaio, febbraio, giugno e settembre possono offrire prezzi più convenienti, evitando festività ed eventi importanti."
+  }
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline":
+        "Quando andare in Giappone: clima, stagioni e periodo migliore",
+      "description":
+        "Guida per scegliere il periodo migliore per visitare il Giappone.",
+      "author": {
+        "@type": "Person",
+        "name": "Davide Fois"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Davide Fois Travel Consultant"
+      },
+      "inLanguage": "it-IT"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": faq.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Quando andare in Giappone | Clima, stagioni e periodo migliore"
+  description="Scopri quando andare in Giappone: clima, ciliegi, foliage, periodi meno affollati e consigli per scegliere la stagione migliore."
+  schema={schema}
+>
+  <section class="hero japan-hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="kicker">Guida Giappone 2026</p>
+
+        <h1>
+          Quando andare in Giappone: scegli il periodo giusto per il tuo viaggio.
+        </h1>
+
+        <p class="lead">
+          Sakura, foliage, festival, neve e onsen: ogni stagione offre
+          un Giappone diverso. Scopri quale periodo scegliere in base
+          al clima, al budget e al tipo di esperienza che desideri.
+        </p>
+
+        <div class="actions">
+          <a
+            class="button button-primary"
+            href={`${base}preventivo/?destinazione=Giappone`}
+          >
+            Richiedi un preventivo gratuito
+          </a>
+
+          <a class="button button-ghost" href="#stagioni">
+            Scopri le stagioni
+          </a>
+        </div>
+      </div>
+
+      <div class="executive-visual" aria-hidden="true">
+        <div class="executive-orbit"></div>
+        <div class="executive-plane">✈</div>
+
+        <div class="executive-card">
+          <span class="badge">Periodo consigliato</span>
+
+          <strong>
+            Primavera e autunno sono i grandi classici.
+          </strong>
+
+          <p>
+            Ma inverno ed estate possono offrire esperienze più autentiche,
+            meno affollate e talvolta più convenienti.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="stagioni">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Le quattro stagioni</p>
+
+        <h2>
+          Qual è il periodo migliore per visitare il Giappone?
+        </h2>
+
+        <p>
+          Non esiste una risposta valida per tutti. Il periodo corretto
+          dipende dalle regioni visitate e dalle esperienze che desideri.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">🌸</div>
+          <h3>Primavera</h3>
+          <p>
+            Ideale per l'hanami, i ciliegi in fiore, i giardini e
+            temperature generalmente miti.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">☀️</div>
+          <h3>Estate</h3>
+          <p>
+            Festival, fuochi d'artificio, montagne, Hokkaido e
+            un'atmosfera più locale.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🍁</div>
+          <h3>Autunno</h3>
+          <p>
+            Foliage spettacolare, temperature piacevoli e ottime
+            condizioni per città e natura.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">❄️</div>
+          <h3>Inverno</h3>
+          <p>
+            Neve, onsen, sci, paesaggi alpini e generalmente meno
+            visitatori nelle città principali.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">La scelta più adatta</p>
+
+        <h2>
+          Scegli il periodo in base al viaggio che vuoi vivere.
+        </h2>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Per vedere i ciliegi</h3>
+          <p>
+            Valuta indicativamente la fine di marzo e l'inizio di aprile
+            nelle principali città del Giappone centrale.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Per vedere il foliage</h3>
+          <p>
+            Ottobre e novembre offrono numerose possibilità, con periodi
+            differenti tra montagne, nord e grandi città.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Per spendere meno</h3>
+          <p>
+            Considera alcune settimane di gennaio, febbraio, giugno
+            o settembre, evitando festività ed eventi importanti.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Per trovare meno folla</h3>
+          <p>
+            Viaggia lontano dalla Golden Week, dall'Obon e dai momenti
+            di picco della fioritura e del foliage.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Per neve e onsen</h3>
+          <p>
+            Gennaio e febbraio sono ideali per Hokkaido, Nagano,
+            le Alpi Giapponesi e le località termali.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Per festival tradizionali</h3>
+          <p>
+            Luglio e agosto ospitano numerosi matsuri e spettacoli
+            pirotecnici in tutto il Paese.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Domande frequenti</p>
+
+        <h2>
+          Le risposte per scegliere con maggiore sicurezza.
+        </h2>
+      </div>
+
+      <div class="faq-grid">
+        {faq.map(item => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta executive-cta">
+      <div>
+        <p class="kicker">Progettiamo il periodo giusto</p>
+
+        <h2>Raccontami il Giappone che vuoi vivere.</h2>
+
+        <p>
+          Ti aiuterò a scegliere date, tappe e durata in base al budget,
+          alle stagioni e alle esperienze che desideri.
+        </p>
+      </div>
+
+      <a
+        class="button button-primary"
+        href={`${base}preventivo/?destinazione=Giappone`}
+      >
+        Richiedi il preventivo gratuito
+      </a>
+    </div>
+  </section>
+</BaseLayout>
