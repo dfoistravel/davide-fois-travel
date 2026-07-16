@@ -1,4 +1,521 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const base = import.meta.env.BASE_URL;
 ---
-<BaseLayout title="Chi sono | Davide Fois Travel Consultant"><section class="page"><article class="article"><p class="kicker">Chi sono</p><h1>Un referente personale per il tuo prossimo viaggio.</h1><p class="lead">Sono Davide Fois e aiuto le persone a trasformare un'idea di vacanza in un progetto chiaro, sostenibile e adatto alle proprie esigenze.</p><h2>Il mio approccio</h2><p>Ascolto prima di proporre. Periodo, budget, interessi, ritmo del viaggio e livello di assistenza sono gli elementi da cui partire per evitare soluzioni generiche.</p></article></section></BaseLayout>
+
+<BaseLayout
+  title="Chi sono | Davide Fois Travel Consultant"
+  description="Conosci Davide Fois, consulente di viaggio. Progetto itinerari personalizzati e ti accompagno nell'organizzazione del tuo viaggio."
+>
+  <main>
+
+    <!-- HERO -->
+    <section class="about-hero">
+      <div class="container about-hero-grid">
+
+        <div class="about-hero-copy">
+          <p class="kicker">CHI SONO</p>
+
+          <h1>
+            Il tuo viaggio comincia
+            dall’ascolto
+          </h1>
+
+          <p class="about-lead">
+            Sono Davide Fois e aiuto le persone a trasformare un’idea di viaggio
+            in un’esperienza organizzata, personale e costruita intorno alle loro
+            esigenze.
+          </p>
+
+          <p>
+            Ogni itinerario nasce dai tuoi interessi, dal periodo disponibile,
+            dal budget e dal modo in cui desideri vivere la destinazione.
+          </p>
+
+          <a
+            href={`${base}consulente-viaggi`}
+            class="about-primary-button"
+          >
+            Raccontami il tuo viaggio →
+          </a>
+        </div>
+
+        <aside class="about-profile-card">
+          <div class="about-profile-symbol">DF</div>
+
+          <p class="about-profile-label">
+            DAVIDE FOIS
+          </p>
+
+          <h2>Travel Consultant</h2>
+
+          <p>
+            Consulenza personalizzata, progettazione dell’itinerario
+            e assistenza dedicata prima della partenza.
+          </p>
+
+          <div class="about-profile-line"></div>
+
+          <p class="about-profile-signature">
+            Il viaggio giusto è quello costruito intorno a te.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- APPROCCIO -->
+    <section class="section">
+      <div class="container about-section-grid">
+
+        <div>
+          <p class="kicker">IL MIO APPROCCIO</p>
+
+          <h2>
+            Non propongo viaggi standard:
+            costruisco soluzioni personali
+          </h2>
+        </div>
+
+        <div class="about-text">
+          <p>
+            Organizzare un viaggio richiede tempo, ricerca e molte decisioni.
+            Il mio compito è rendere questo percorso più semplice, chiaro
+            e piacevole.
+          </p>
+
+          <p>
+            Ti ascolto, raccolgo le tue priorità e seleziono le alternative
+            più coerenti, aiutandoti a evitare itinerari troppo pieni,
+            spostamenti poco pratici e scelte non adatte alle tue esigenze.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VALORI -->
+    <section class="section alt">
+      <div class="container">
+
+        <div class="about-section-heading">
+          <p class="kicker">COSA PUOI ASPETTARTI</p>
+
+          <h2>
+            Un servizio fondato su ascolto,
+            chiarezza e attenzione
+          </h2>
+        </div>
+
+        <div class="about-values-grid">
+
+          <article class="about-value-card">
+            <span>01</span>
+            <h3>Ascolto personale</h3>
+            <p>
+              Partiamo dai tuoi desideri, dal budget, dal periodo
+              e dal tuo modo di viaggiare.
+            </p>
+          </article>
+
+          <article class="about-value-card">
+            <span>02</span>
+            <h3>Proposte ragionate</h3>
+            <p>
+              Ogni soluzione viene selezionata per essere realistica,
+              coerente e sostenibile.
+            </p>
+          </article>
+
+          <article class="about-value-card">
+            <span>03</span>
+            <h3>Organizzazione chiara</h3>
+            <p>
+              Ricevi indicazioni pratiche su tappe, tempi,
+              spostamenti e priorità.
+            </p>
+          </article>
+
+          <article class="about-value-card">
+            <span>04</span>
+            <h3>Assistenza dedicata</h3>
+            <p>
+              Rimango il tuo riferimento durante la preparazione
+              del viaggio.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GIAPPONE -->
+    <section class="section">
+      <div class="container about-japan-box">
+
+        <div>
+          <p class="kicker">VIAGGIARE IN GIAPPONE</p>
+
+          <h2>
+            Una destinazione straordinaria,
+            da progettare con attenzione
+          </h2>
+
+          <p>
+            Il Giappone unisce grandi città, tradizioni, natura,
+            gastronomia e sistemi di trasporto molto efficienti.
+            Proprio per la quantità di possibilità disponibili,
+            un itinerario ben costruito può fare una grande differenza.
+          </p>
+        </div>
+
+        <ul class="about-check-list">
+          <li>Scelta delle tappe più adatte</li>
+          <li>Organizzazione degli spostamenti</li>
+          <li>Quartieri e zone dove soggiornare</li>
+          <li>Equilibrio tra visite e tempo libero</li>
+          <li>Esperienze coerenti con i tuoi interessi</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-final-cta">
+      <div class="container about-final-inner">
+
+        <div>
+          <p class="kicker">IL TUO PROSSIMO VIAGGIO</p>
+
+          <h2>
+            Raccontami la tua idea
+          </h2>
+
+          <p>
+            Destinazione, periodo, numero di viaggiatori e desideri:
+            partiamo da queste informazioni per costruire insieme
+            il progetto più adatto a te.
+          </p>
+        </div>
+
+        <a
+          href={`${base}consulente-viaggi`}
+          class="about-light-button"
+        >
+          Richiedi una consulenza →
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    padding: 100px 24px;
+    background: #fffdf8;
+  }
+
+  .about-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    align-items: center;
+    gap: 72px;
+  }
+
+  .about-hero-copy {
+    max-width: 720px;
+  }
+
+  .about-hero-copy h1 {
+    max-width: 700px;
+    margin: 12px 0 26px;
+    color: var(--navy);
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+  }
+
+  .about-hero-copy p {
+    max-width: 690px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .about-hero-copy .about-lead {
+    color: var(--navy);
+    font-size: 21px;
+    line-height: 1.65;
+  }
+
+  .about-primary-button,
+  .about-light-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 0 30px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .about-primary-button {
+    margin-top: 22px;
+    color: #ffffff;
+    background: var(--navy);
+    box-shadow: 0 14px 30px rgba(11, 31, 58, 0.18);
+  }
+
+  .about-primary-button:hover {
+    color: #ffffff;
+    background: #1f4e79;
+    transform: translateY(-2px);
+  }
+
+  .about-profile-card {
+    padding: 48px;
+    color: #ffffff;
+    background: var(--navy);
+    border-radius: 34px;
+    box-shadow: 0 30px 70px rgba(11, 31, 58, 0.18);
+  }
+
+  .about-profile-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    margin-bottom: 34px;
+    color: var(--navy);
+    background: var(--gold);
+    border-radius: 24px;
+    font-size: 25px;
+    font-weight: 900;
+  }
+
+  .about-profile-label {
+    margin: 0 0 10px;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
+
+  .about-profile-card h2 {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-size: 36px;
+  }
+
+  .about-profile-card p {
+    color: rgba(255, 255, 255, 0.84);
+    line-height: 1.7;
+  }
+
+  .about-profile-line {
+    height: 1px;
+    margin: 32px 0;
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .about-profile-card .about-profile-signature {
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .about-section-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+  }
+
+  .about-section-grid h2,
+  .about-section-heading h2,
+  .about-japan-box h2,
+  .about-final-inner h2 {
+    margin: 12px 0 22px;
+    color: var(--navy);
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+  }
+
+  .about-text p,
+  .about-japan-box p,
+  .about-final-inner p {
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .about-section-heading {
+    max-width: 760px;
+    margin-bottom: 44px;
+  }
+
+  .about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .about-value-card {
+    padding: 32px 26px;
+    background: #ffffff;
+    border-top: 3px solid var(--gold);
+    border-radius: 0 0 22px 22px;
+    box-shadow: 0 18px 45px rgba(11, 31, 58, 0.08);
+  }
+
+  .about-value-card span {
+    color: var(--gold);
+    font-size: 31px;
+    font-weight: 900;
+  }
+
+  .about-value-card h3 {
+    margin: 22px 0 12px;
+    color: var(--navy);
+    font-size: 21px;
+  }
+
+  .about-value-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .about-japan-box {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 72px;
+    align-items: center;
+    padding: 64px;
+    background: #fffdf8;
+    border: 1px solid var(--line);
+    border-radius: 32px;
+  }
+
+  .about-check-list {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .about-check-list li {
+    position: relative;
+    padding: 18px 20px 18px 52px;
+    color: var(--navy);
+    background: #ffffff;
+    border-radius: 16px;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(11, 31, 58, 0.06);
+  }
+
+  .about-check-list li::before {
+    content: "✓";
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    color: var(--gold);
+    font-weight: 900;
+  }
+
+  .about-final-cta {
+    padding: 88px 24px;
+    color: #ffffff;
+    background: var(--navy);
+  }
+
+  .about-final-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .about-final-inner > div {
+    max-width: 760px;
+  }
+
+  .about-final-inner h2 {
+    color: #ffffff;
+  }
+
+  .about-final-inner p {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .about-light-button {
+    flex: 0 0 auto;
+    color: var(--navy);
+    background: #ffffff;
+  }
+
+  .about-light-button:hover {
+    color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.22);
+  }
+
+  @media (max-width: 960px) {
+    .about-hero-grid,
+    .about-section-grid,
+    .about-japan-box {
+      grid-template-columns: 1fr;
+    }
+
+    .about-values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-final-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .about-hero {
+      padding: 72px 20px;
+    }
+
+    .about-hero-copy h1 {
+      font-size: 49px;
+      letter-spacing: -2px;
+    }
+
+    .about-profile-card,
+    .about-japan-box {
+      padding: 32px 24px;
+    }
+
+    .about-values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-primary-button,
+    .about-light-button {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .about-final-cta {
+      padding: 70px 20px;
+    }
+  }
+</style>
