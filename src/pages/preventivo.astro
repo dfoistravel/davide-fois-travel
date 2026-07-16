@@ -66,17 +66,24 @@ Analizzerò personalmente la tua richiesta e ti ricontatterò con una proposta s
         <textarea name="messaggio" placeholder="Raccontami cosa non può mancare nel tuo viaggio."></textarea>
       </label>
 
-      <label class="full">
-        <span>
-          <input type="checkbox" required />
-          Ho letto la privacy policy e acconsento al trattamento dei dati per ricevere risposta alla richiesta.
-        </span>
-      </label>
+      <label class="full preventivo-privacy">
+  <span>
+    <input type="checkbox" required />
+    Ho letto la privacy policy e acconsento al trattamento dei dati
+    per ricevere una risposta alla mia richiesta.
+  </span>
+</label>
 
-      <div class="full">
-        <button class="button button-dark" type="submit">Invia la richiesta</button>
-        
-      </div>
+<div class="full preventivo-submit-area">
+  <button class="preventivo-submit-button" type="submit">
+    Invia la richiesta →
+  </button>
+
+  <div class="preventivo-trust-note">
+    <strong>Richiesta gratuita e senza impegno.</strong>
+    Riceverai una risposta personale, non automatica.
+  </div>
+</div>
     </form>
   </div>
 </section>
@@ -105,4 +112,82 @@ Analizzerò personalmente la tua richiesta e ti ricontatterò con una proposta s
       letter-spacing: -1.5px;
     }
   }
+.preventivo-privacy {
+  padding: 18px 20px;
+  background: #fffaf0;
+  border: 1px solid rgba(201, 155, 33, 0.22);
+  border-radius: 16px;
+}
+
+.preventivo-privacy span {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--navy);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.preventivo-privacy input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+.preventivo-submit-area {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 8px;
+}
+
+.preventivo-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 30px;
+  color: #ffffff;
+  background: var(--navy);
+  border: 0;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(11, 31, 58, 0.18);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.preventivo-submit-button:hover {
+  background: #1f4e79;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(11, 31, 58, 0.24);
+}
+
+.preventivo-trust-note {
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.preventivo-trust-note strong {
+  display: block;
+  color: var(--navy);
+}
+
+@media (max-width: 700px) {
+  .preventivo-submit-area {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .preventivo-submit-button {
+    width: 100%;
+  }
+}
 </style>
