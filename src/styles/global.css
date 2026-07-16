@@ -11,3 +11,14 @@
 .cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
 .seo-note{padding:16px 18px;border-left:4px solid var(--gold);background:#fff8df;border-radius:12px;margin:22px 0}
 @media(max-width:700px){.cookie-banner{flex-direction:column;align-items:flex-start}}
+
+/* Testo introduttivo sezione consulenza */
+.section-intro {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
