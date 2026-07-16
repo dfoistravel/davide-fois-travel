@@ -293,7 +293,9 @@ const schema = {
         <p class="consultant-package-label">ESSENZIALE</p>
 
         <h3>Primo orientamento</h3>
-
+        <p class="consultant-package-price">
+  Preventivo personalizzato
+</p>
         <p class="consultant-package-description">
           Per chiarire le idee e ricevere indicazioni personalizzate
           prima di organizzare il viaggio.
@@ -322,7 +324,9 @@ const schema = {
         <p class="consultant-package-label">PREMIUM</p>
 
         <h3>Itinerario personalizzato</h3>
-
+        <p class="consultant-package-price">
+  Preventivo personalizzato
+</p>
         <p class="consultant-package-description">
           Per ricevere un programma costruito sui tuoi interessi,
           sui giorni disponibili e sul budget.
@@ -348,7 +352,9 @@ const schema = {
         <p class="consultant-package-label">COMPLETE</p>
 
         <h3>Assistenza completa</h3>
-
+        <p class="consultant-package-price">
+  Preventivo personalizzato
+</p>
         <p class="consultant-package-description">
           Per chi desidera un referente dedicato durante tutto
           il percorso di organizzazione.
@@ -1046,5 +1052,23 @@ const schema = {
   .consultant-package-button {
     width: 100%;
   }
+}
+.consultant-package-price {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: -4px 0 20px;
+  padding: 8px 14px;
+  color: var(--navy);
+  background: #f7f1dc;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.consultant-package-featured .consultant-package-price {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
 }
 </style>
