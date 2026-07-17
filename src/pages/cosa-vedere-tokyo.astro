@@ -1,82 +1,260 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
 const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
   title="Cosa vedere a Tokyo | Guida completa"
-  description="Scopri cosa vedere a Tokyo: quartieri, templi, panorami, mercati, consigli pratici e itinerario consigliato."
+  description="Scopri cosa vedere a Tokyo: quartieri, templi, panorami, mercati, consigli pratici e un itinerario consigliato di 3 giorni."
 >
-<section class="hero">
-  <div class="container">
-    <p class="kicker">Guida Tokyo</p>
-    <h1>Cosa vedere a Tokyo: guida completa per il primo viaggio</h1>
-    <p class="lead">
-      Dai templi di Asakusa ai grattacieli di Shinjuku, passando per Shibuya,
-      Ueno e i giardini della città: questa guida ti aiuta a costruire un
-      itinerario equilibrato.
-    </p>
+  <section class="hero">
+    <div class="container">
+      <p class="kicker">Guida Tokyo</p>
 
-    <a class="button button-primary"
-      href={`${base}preventivo/?destinazione=Giappone`}>
-      Richiedi un preventivo gratuito
-    </a>
-  </div>
-</section>
+      <h1>Cosa vedere a Tokyo: guida completa per il primo viaggio</h1>
 
-<section class="section">
-<div class="container">
-<h2>Le attrazioni imperdibili</h2>
+      <p class="lead">
+        Dai templi di Asakusa ai grattacieli di Shinjuku, passando per
+        Shibuya, Harajuku e Odaiba: scopri le attrazioni e le esperienze
+        imperdibili della capitale giapponese.
+      </p>
 
-<div class="grid-3">
-<article class="card"><h3>Asakusa e Sensō‑ji</h3><p>Il tempio più famoso della città e la tradizionale via Nakamise.</p></article>
-<article class="card"><h3>Shibuya</h3><p>L'iconico attraversamento pedonale e i quartieri dello shopping.</p></article>
-<article class="card"><h3>Shinjuku</h3><p>Grattacieli, osservatori panoramici e vita serale.</p></article>
-<article class="card"><h3>Ueno</h3><p>Parchi, musei e ciliegi in primavera.</p></article>
-<article class="card"><h3>Harajuku</h3><p>Moda, Takeshita Street e santuario Meiji.</p></article>
-<article class="card"><h3>Odaiba</h3><p>Baia di Tokyo, musei interattivi e viste sul Rainbow Bridge.</p></article>
-</div>
-</div>
-</section>
+      <a
+        class="button button-primary"
+        href={`${base}preventivo/?destinazione=Giappone`}
+      >
+        Richiedi un preventivo gratuito
+      </a>
+    </div>
+  </section>
 
-<section class="section alt">
-<div class="container">
-<h2>Itinerario consigliato</h2>
-<ol>
-<li>Asakusa e Ueno</li>
-<li>Shibuya e Harajuku</li>
-<li>Shinjuku e osservatorio panoramico</li>
-<li>Odaiba o escursione fuori città</li>
-</ol>
-</div>
-</section>
+  <section class="section">
+    <div class="container">
+      <h2>Tokyo: tradizione e futuro nella stessa città</h2>
 
-<section class="section">
-<div class="container">
-<h2>Consigli pratici</h2>
-<ul>
-<li>Acquista una carta IC per i trasporti.</li>
-<li>Evita le ore di punta in metropolitana.</li>
-<li>Prenota con anticipo le attrazioni più richieste.</li>
-</ul>
+      <p>
+        Tokyo è una metropoli immensa, composta da quartieri molto diversi
+        tra loro. In una sola giornata puoi visitare un antico santuario,
+        passeggiare tra boutique e locali alla moda e osservare la città
+        dall’alto di un grattacielo.
+      </p>
 
-<p>
-Per organizzare un viaggio personalizzato consulta anche
-<a href={`${base}quando-andare-giappone/`}>Quando andare in Giappone</a> e
-<a href={`${base}itinerario-giappone-14-giorni/`}>Itinerario di 14 giorni</a>.
-</p>
-</div>
-</section>
+      <p>
+        Per un primo viaggio consiglio di dedicare almeno tre o quattro
+        giorni alla capitale, organizzando le visite per zone vicine e
+        limitando gli spostamenti inutili.
+      </p>
+    </div>
+  </section>
 
-<section class="section">
-<div class="container cta">
-<h2>Vuoi un itinerario su misura?</h2>
-<p>Posso aiutarti a scegliere quartieri, hotel e tappe in base al periodo e al tuo budget.</p>
-<a class="button button-primary"
-href={`${base}preventivo/?destinazione=Giappone`}>
-Richiedi il preventivo gratuito
-</a>
-</div>
-</section>
+  <section class="section alt">
+    <div class="container">
+      <h2>Le attrazioni imperdibili di Tokyo</h2>
 
+      <div class="grid-3">
+        <article class="card">
+          <h3>Asakusa e Sensō-ji</h3>
+          <p>
+            Il quartiere storico più conosciuto di Tokyo. Visita il tempio
+            Sensō-ji, attraversa la porta Kaminarimon e percorri la vivace
+            Nakamise Street.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Shibuya</h3>
+          <p>
+            Ammira il celebre attraversamento pedonale, la statua di Hachikō
+            e il panorama sulla città dallo Shibuya Sky.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Shinjuku</h3>
+          <p>
+            Grattacieli, osservatori panoramici, insegne luminose e piccoli
+            locali caratterizzano uno dei quartieri più dinamici di Tokyo.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Ueno</h3>
+          <p>
+            Un’area ideale per musei, parchi e passeggiate. In primavera il
+            parco di Ueno è uno dei luoghi più frequentati per l’hanami.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Harajuku e Meiji Jingu</h3>
+          <p>
+            Abbina la visita al santuario Meiji, immerso nel verde, con
+            Takeshita Street e le eleganti boutique di Omotesandō.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Odaiba</h3>
+          <p>
+            L’isola artificiale nella baia di Tokyo offre musei interattivi,
+            centri commerciali e splendide viste sul Rainbow Bridge.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Tokyo Skytree</h3>
+          <p>
+            Una delle torri più alte del mondo, con piattaforme panoramiche
+            dalle quali osservare l’immensa estensione della città.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Akihabara</h3>
+          <p>
+            Il quartiere dedicato a elettronica, manga, anime, videogiochi
+            e cultura pop giapponese.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Ginza</h3>
+          <p>
+            Il quartiere dello shopping elegante, ricco di boutique,
+            grandi magazzini, ristoranti e architetture contemporanee.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Mercato di Toyosu</h3>
+          <p>
+            Il moderno mercato ittico di Tokyo, ideale per osservare le
+            attività del mercato e provare una colazione a base di sushi.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Itinerario di 3 giorni a Tokyo</h2>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Giorno 1: Tokyo tradizionale</h3>
+          <p>
+            Inizia da Asakusa e dal tempio Sensō-ji, prosegui verso Tokyo
+            Skytree e termina la giornata tra il parco e i musei di Ueno.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Giorno 2: quartieri iconici</h3>
+          <p>
+            Visita il santuario Meiji, Harajuku e Omotesandō. Nel pomeriggio
+            raggiungi Shibuya e osserva la città illuminarsi dall’alto.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Giorno 3: Tokyo moderna</h3>
+          <p>
+            Esplora Shinjuku, passeggia tra i grattacieli e dedica la parte
+            finale della giornata a Odaiba e alla baia di Tokyo.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <h2>Consigli pratici per visitare Tokyo</h2>
+
+      <ul>
+        <li>
+          Organizza le giornate raggruppando quartieri vicini tra loro.
+        </li>
+        <li>
+          Utilizza una carta IC ricaricabile per metropolitana, treni e
+          piccoli acquisti.
+        </li>
+        <li>
+          Evita, quando possibile, le ore di punta dei mezzi pubblici.
+        </li>
+        <li>
+          Prenota in anticipo gli osservatori e le attrazioni più richieste.
+        </li>
+        <li>
+          Indossa scarpe comode: durante una giornata a Tokyo si cammina molto.
+        </li>
+        <li>
+          Controlla l’ultima corsa della metropolitana prima di trascorrere
+          la serata lontano dal tuo hotel.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Quando visitare Tokyo</h2>
+
+      <p>
+        La primavera è ideale per i ciliegi in fiore, mentre l’autunno offre
+        temperature piacevoli e splendidi colori nei parchi e nei giardini.
+        Anche l’inverno può essere una buona scelta grazie alle giornate
+        spesso limpide e alla minore affluenza rispetto ai periodi più richiesti.
+      </p>
+
+      <p>
+        Approfondisci la scelta del periodo nella guida
+        <a href={`${base}quando-andare-giappone/`}>
+          Quando andare in Giappone
+        </a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <h2>Inserire Tokyo in un itinerario in Giappone</h2>
+
+      <p>
+        Tokyo può essere il punto di partenza di un viaggio che prosegue verso
+        Hakone, il Monte Fuji, Kyoto, Nara, Osaka e Hiroshima.
+      </p>
+
+      <p>
+        Consulta anche
+        <a href={`${base}itinerario-giappone-10-giorni/`}>
+          l’itinerario in Giappone di 10 giorni
+        </a>
+        oppure
+        <a href={`${base}itinerario-giappone-14-giorni/`}>
+          l’itinerario in Giappone di 14 giorni
+        </a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta">
+      <h2>Vuoi un itinerario su misura?</h2>
+
+      <p>
+        Posso aiutarti a scegliere quartieri, hotel, esperienze e tappe in
+        base al periodo del viaggio, alle tue preferenze e al tuo budget.
+      </p>
+
+      <a
+        class="button button-primary"
+        href={`${base}preventivo/?destinazione=Giappone`}
+      >
+        Richiedi il preventivo gratuito
+      </a>
+    </div>
+  </section>
 </BaseLayout>
