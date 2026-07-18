@@ -164,3 +164,109 @@
     font-size: clamp(2.5rem, 11vw, 4rem);
   }
 }
+/* Mappa attrazioni Tokyo */
+.section-heading--center {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.tokyo-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.85fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.tokyo-map {
+  overflow: hidden;
+  min-height: 560px;
+  border: 1px solid rgba(15, 39, 71, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(15, 39, 71, 0.09);
+}
+
+.tokyo-map iframe {
+  display: block;
+  min-height: 560px;
+}
+
+.tokyo-map-list {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 39, 71, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(15, 39, 71, 0.09);
+}
+
+.tokyo-map-list h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.tokyo-map-list ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: tokyo-map-counter;
+}
+
+.tokyo-map-list li {
+  counter-increment: tokyo-map-counter;
+  position: relative;
+  padding: 14px 0 14px 48px;
+  border-bottom: 1px solid rgba(15, 39, 71, 0.1);
+}
+
+.tokyo-map-list li:last-child {
+  border-bottom: 0;
+}
+
+.tokyo-map-list li::before {
+  content: counter(tokyo-map-counter);
+  position: absolute;
+  top: 13px;
+  left: 0;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  background: #0f2747;
+  border-radius: 50%;
+}
+
+.tokyo-map-list strong,
+.tokyo-map-list span {
+  display: block;
+}
+
+.tokyo-map-list span {
+  margin-top: 3px;
+  color: #5c6b80;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .tokyo-map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tokyo-map,
+  .tokyo-map iframe {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tokyo-map,
+  .tokyo-map iframe {
+    min-height: 360px;
+  }
+
+  .tokyo-map-list {
+    padding: 22px;
+  }
+}
