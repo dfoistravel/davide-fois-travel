@@ -89,6 +89,44 @@ const tokyoAttractions = [
       'Residenza dell’Imperatore del Giappone. I giardini orientali sono visitabili gratuitamente e offrono una pausa dal ritmo della metropoli.',
   },
 ];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanti giorni servono per visitare Tokyo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Per un primo viaggio sono consigliati almeno tre o quattro giorni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual è il periodo migliore per visitare Tokyo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Primavera e autunno sono i periodi migliori grazie al clima piacevole e alla fioritura dei ciliegi o ai colori del foliage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Meglio Tokyo Skytree o Tokyo Tower?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tokyo Skytree offre il panorama più ampio della città, mentre Tokyo Tower è il simbolo storico della capitale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual è il quartiere più famoso di Tokyo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shibuya è il quartiere più iconico grazie al celebre attraversamento pedonale, mentre Shinjuku è famoso per i suoi grattacieli e la vita notturna."
+      }
+    }
+  ]
+};
 ---
 
 <BaseLayout
