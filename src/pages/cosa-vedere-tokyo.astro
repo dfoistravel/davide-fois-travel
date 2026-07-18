@@ -1,7 +1,94 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ImageCard from '../components/ImageCard.astro';
 
 const base = import.meta.env.BASE_URL;
+const tokyoAttractions = [
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Tempio Sensō-ji nel quartiere Asakusa a Tokyo',
+    title: 'Asakusa e Sensō-ji',
+    description:
+      'Il quartiere storico più conosciuto di Tokyo. Visita il tempio Sensō-ji, attraversa la porta Kaminarimon e percorri la vivace Nakamise Street.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Attraversamento pedonale di Shibuya a Tokyo',
+    title: 'Shibuya',
+    description:
+      'Ammira il celebre attraversamento pedonale, la statua di Hachikō e il panorama sulla città dallo Shibuya Sky.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Grattacieli illuminati del quartiere Shinjuku a Tokyo',
+    title: 'Shinjuku',
+    description:
+      'Grattacieli, osservatori panoramici, insegne luminose e piccoli locali caratterizzano uno dei quartieri più dinamici di Tokyo.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Parco di Ueno a Tokyo',
+    title: 'Ueno',
+    description:
+      'Un’area ideale per musei, parchi e passeggiate. In primavera il parco di Ueno è uno dei luoghi più frequentati per l’hanami.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Santuario Meiji e quartiere Harajuku a Tokyo',
+    title: 'Harajuku e Meiji Jingu',
+    description:
+      'Abbina la visita al santuario Meiji, immerso nel verde, con Takeshita Street e le eleganti boutique di Omotesandō.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Rainbow Bridge e baia di Odaiba a Tokyo',
+    title: 'Odaiba',
+    description:
+      'L’isola artificiale nella baia di Tokyo offre musei interattivi, centri commerciali e splendide viste sul Rainbow Bridge.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Tokyo Skytree vista dalla città',
+    title: 'Tokyo Skytree',
+    description:
+      'Una delle torri più alte del mondo, con piattaforme panoramiche dalle quali osservare l’immensa estensione della città.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Insegne luminose nel quartiere Akihabara a Tokyo',
+    title: 'Akihabara',
+    description:
+      'Il quartiere dedicato a elettronica, manga, anime, videogiochi e cultura pop giapponese.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Boutique e palazzi moderni nel quartiere Ginza a Tokyo',
+    title: 'Ginza',
+    description:
+      'Il quartiere dello shopping elegante, ricco di boutique, grandi magazzini, ristoranti e architetture contemporanee.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Mercato ittico di Toyosu a Tokyo',
+    title: 'Mercato di Toyosu',
+    description:
+      'Il moderno mercato ittico di Tokyo, ideale per osservare le attività del mercato e provare una colazione a base di sushi.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Tokyo Tower illuminata durante la sera',
+    title: 'Tokyo Tower',
+    description:
+      'Uno dei simboli della capitale. Salendo sull’osservatorio potrai ammirare un magnifico panorama sulla città, soprattutto al tramonto.',
+  },
+  {
+    image: `${base}og-image.svg`,
+    alt: 'Giardini del Palazzo Imperiale di Tokyo',
+    title: 'Palazzo Imperiale',
+    description:
+      'Residenza dell’Imperatore del Giappone. I giardini orientali sono visitabili gratuitamente e offrono una pausa dal ritmo della metropoli.',
+  },
+];
 ---
 
 <BaseLayout
@@ -53,106 +140,18 @@ const base = import.meta.env.BASE_URL;
       <h2>Le attrazioni imperdibili di Tokyo</h2>
 
       <div class="grid-3">
-        <article class="card">
-          <h3>Asakusa e Sensō-ji</h3>
-          <p>
-            Il quartiere storico più conosciuto di Tokyo. Visita il tempio
-            Sensō-ji, attraversa la porta Kaminarimon e percorri la vivace
-            Nakamise Street.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Shibuya</h3>
-          <p>
-            Ammira il celebre attraversamento pedonale, la statua di Hachikō
-            e il panorama sulla città dallo Shibuya Sky.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Shinjuku</h3>
-          <p>
-            Grattacieli, osservatori panoramici, insegne luminose e piccoli
-            locali caratterizzano uno dei quartieri più dinamici di Tokyo.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Ueno</h3>
-          <p>
-            Un’area ideale per musei, parchi e passeggiate. In primavera il
-            parco di Ueno è uno dei luoghi più frequentati per l’hanami.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Harajuku e Meiji Jingu</h3>
-          <p>
-            Abbina la visita al santuario Meiji, immerso nel verde, con
-            Takeshita Street e le eleganti boutique di Omotesandō.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Odaiba</h3>
-          <p>
-            L’isola artificiale nella baia di Tokyo offre musei interattivi,
-            centri commerciali e splendide viste sul Rainbow Bridge.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Tokyo Skytree</h3>
-          <p>
-            Una delle torri più alte del mondo, con piattaforme panoramiche
-            dalle quali osservare l’immensa estensione della città.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Akihabara</h3>
-          <p>
-            Il quartiere dedicato a elettronica, manga, anime, videogiochi
-            e cultura pop giapponese.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Ginza</h3>
-          <p>
-            Il quartiere dello shopping elegante, ricco di boutique,
-            grandi magazzini, ristoranti e architetture contemporanee.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Mercato di Toyosu</h3>
-          <p>
-            Il moderno mercato ittico di Tokyo, ideale per osservare le
-            attività del mercato e provare una colazione a base di sushi.
-          </p>
-        </article>
-        <article class="card">
-  <h3>Tokyo Tower</h3>
-
-  <p>
-    Uno dei simboli della capitale. Salendo sull'osservatorio potrai
-    ammirare un magnifico panorama sulla città, soprattutto al tramonto e
-    dopo il calare della sera.
-  </p>
-</article>
-
-<article class="card">
-  <h3>Palazzo Imperiale</h3>
-
-  <p>
-    Residenza dell'Imperatore del Giappone. I giardini orientali sono
-    visitabili gratuitamente e rappresentano una piacevole pausa dal ritmo
-    frenetico della metropoli.
-  </p>
-</article>
-      </div>
+      {
+  tokyoAttractions.map((attraction) => (
+    <ImageCard
+      image={attraction.image}
+      alt={attraction.alt}
+      title={attraction.title}
+      description={attraction.description}
+    />
+  ))
+}
+        
+       </div>
     </div>
   </section>
 
