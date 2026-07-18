@@ -95,8 +95,19 @@ const tokyoAttractions = [
   title="Cosa vedere a Tokyo | Guida completa"
   description="Scopri cosa vedere a Tokyo: quartieri, templi, panorami, mercati, consigli pratici e un itinerario consigliato di 3 giorni."
 >
-  <section class="hero">
-    <div class="container">
+  <section
+  class="hero hero--image"
+  style={`background-image:
+    linear-gradient(
+      90deg,
+      rgba(8, 31, 59, 0.94) 0%,
+      rgba(8, 31, 59, 0.76) 48%,
+      rgba(8, 31, 59, 0.28) 100%
+    ),
+    url('${base}images/tokyo/hero-tokyo.webp');`}
+>
+  <div class="container">
+    <div class="hero__content">
       <p class="kicker">Guida Tokyo</p>
 
       <h1>Cosa vedere a Tokyo: guida completa per il primo viaggio</h1>
@@ -114,7 +125,8 @@ const tokyoAttractions = [
         Richiedi un preventivo gratuito
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="section">
     <div class="container">
