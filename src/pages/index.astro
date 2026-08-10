@@ -69,16 +69,17 @@ const schema = {
   schema={schema}
 >
   <section class="hero home-hero">
+    <div class="home-hero-backdrop" aria-hidden="true"></div>
     <div class="container hero-grid">
       <div class="home-hero-copy">
         <p class="kicker">Travel Consultant • Powered by Nuovevacanze</p>
 
-        <h1>Viaggi su misura creati intorno ai tuoi desideri.</h1>
+        <h1>Il mondo è pieno di luoghi. <span>Troviamo quello giusto per te.</span></h1>
 
         <p class="lead">
-          Ti aiuto a trasformare un'idea in un viaggio organizzato con cura,
-          selezionando tappe, servizi ed esperienze in base al tuo budget,
-          al periodo e al tuo modo di viaggiare.
+          Dalla prima idea alla partenza: creo viaggi su misura con tappe,
+          esperienze e servizi scelti intorno al tuo tempo, al tuo budget
+          e al tuo modo di vivere il mondo.
         </p>
 
         <div class="actions">
@@ -98,24 +99,23 @@ const schema = {
         </div>
       </div>
 
-      <div class="home-visual" aria-hidden="true">
-        <div class="home-globe"></div>
-        <div class="home-orbit"></div>
-        <div class="home-plane">✈</div>
-
-        <div class="home-floating-card">
-          <span class="badge">Consulenza personale</span>
-          <strong>Un solo referente per tutto il viaggio.</strong>
-          <p>
-            Più chiarezza nelle scelte, meno tempo perso e una proposta
-            costruita davvero intorno a te.
-          </p>
+      <div class="home-visual">
+        <div class="home-photo-frame">
+          <img src={`${base}images/tokyo/hero-tokyo.webp`} alt="Tokyo illuminata al tramonto" width="800" height="600" loading="eager" fetchpriority="high" />
+          <div class="home-photo-caption"><span>Destinazione protagonista</span><strong>Giappone</strong></div>
         </div>
+        <a class="home-floating-card" href={`${base}preventivo/?destinazione=Giappone`}>
+          <span class="badge">Partenza 31 ottobre 2026</span>
+          <strong>Foliage in Giappone</strong>
+          <p>Tokyo, Hakone e Kyoto · 13 notti · da 2.352 €</p>
+          <span class="home-card-link">Richiedi informazioni →</span>
+        </a>
       </div>
     </div>
+    <a class="home-scroll-cue" href="#scopri" aria-label="Scorri per scoprire il sito"><span>Scopri</span><i aria-hidden="true"></i></a>
   </section>
 
-  <section class="section home-strip">
+  <section class="section home-strip" id="scopri">
     <div class="container home-stats">
       <article>
         <strong>1</strong>
@@ -446,6 +446,20 @@ Dalla prima idea fino al rientro, ti accompagno nella pianificazione del tuo via
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const revealItems = document.querySelectorAll('.section-head, .home-intro-layout, .home-destination, .home-guide-card, .home-step, .home-trust-layout, .faq-item, .home-final-cta');
+  revealItems.forEach((item) => item.classList.add('reveal'));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealItems.forEach((item) => observer.observe(item));
+</script>
 
 <style>
   .home-hero {
@@ -859,5 +873,55 @@ Dalla prima idea fino al rientro, ti accompagno nella pianificazione del tuo via
     .home-globe {
       inset: 35px 0 20px;
     }
+  }
+
+  /* Homepage Experience 2026 */
+  .home-hero {
+    min-height: calc(100svh - 78px);
+    background: #061321;
+  }
+  .home-hero::before { z-index: 1; opacity: .08; }
+  .home-hero-backdrop {
+    position: absolute; inset: 0; z-index: -2;
+    background: linear-gradient(90deg, rgba(4,16,30,.98) 0%, rgba(6,22,39,.92) 44%, rgba(6,22,39,.42) 72%, rgba(6,22,39,.62) 100%), url('/davide-fois-travel/images/tokyo/hero-tokyo.webp') center / cover;
+    transform: scale(1.03);
+  }
+  .home-hero-backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 65%, #061321 100%); }
+  .home-hero .hero-grid { position: relative; z-index: 2; min-height: calc(100svh - 78px); padding: 64px 0 100px; }
+  .home-hero-copy h1 { max-width: 760px; font-size: clamp(3.2rem,6.4vw,6.6rem); text-wrap: balance; }
+  .home-hero-copy h1 span { display: block; color: var(--gold-2); }
+  .home-hero-copy .lead { max-width: 650px; }
+  .home-visual { min-height: 560px; }
+  .home-photo-frame { position: absolute; inset: 18px 0 46px 32px; overflow: hidden; border: 1px solid rgba(255,255,255,.22); border-radius: 180px 180px 30px 30px; box-shadow: 0 40px 100px rgba(0,0,0,.48); }
+  .home-photo-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 52%,rgba(3,13,24,.9)); }
+  .home-photo-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+  .home-photo-frame:hover img { transform: scale(1.04); }
+  .home-photo-caption { position: absolute; right: 30px; bottom: 28px; z-index: 1; text-align: right; }
+  .home-photo-caption span { display: block; color: var(--gold-2); font-size: .72rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+  .home-photo-caption strong { font: 800 2rem/1.1 Poppins,sans-serif; }
+  .home-floating-card { color: #fff; text-decoration: none; transition: transform .25s ease,background .25s ease; }
+  .home-floating-card:hover { transform: translateY(-6px); background: rgba(255,255,255,.19); }
+  .home-card-link { color: var(--gold-2); font-weight: 900; }
+  .home-scroll-cue { position: absolute; bottom: 22px; left: 50%; z-index: 3; display: grid; justify-items: center; gap: 7px; color: rgba(255,255,255,.72); font-size: .69rem; font-weight: 800; letter-spacing: .15em; text-decoration: none; text-transform: uppercase; transform: translateX(-50%); }
+  .home-scroll-cue i { width: 1px; height: 25px; background: var(--gold-2); animation: scrollPulse 1.8s ease-in-out infinite; }
+  @keyframes scrollPulse { 0%,100% { transform: scaleY(.45); transform-origin: top; opacity: .4; } 50% { transform: scaleY(1); transform-origin: top; opacity: 1; } }
+  .reveal { opacity: 0; transform: translateY(34px); transition: opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1); }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  @media (max-width: 900px) {
+    .home-hero .hero-grid { grid-template-columns: 1fr; }
+    .home-hero-backdrop { background: linear-gradient(180deg,rgba(4,16,30,.8),rgba(4,16,30,.96)),url('/davide-fois-travel/images/tokyo/hero-tokyo.webp') center / cover; }
+    .home-visual { min-height: 480px; }
+  }
+  @media (max-width: 620px) {
+    .home-hero-copy h1 { font-size: clamp(2.8rem,13vw,4.4rem); }
+    .home-hero .hero-grid { padding-top: 52px; }
+    .home-visual { min-height: 400px; }
+    .home-photo-frame { inset: 0 0 40px; border-radius: 110px 110px 24px 24px; }
+    .home-floating-card { left: 14px; right: 14px; max-width: none; padding: 20px; }
+    .home-scroll-cue { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .home-scroll-cue i { animation: none; }
   }
 </style>
