@@ -74,7 +74,7 @@ const schema = {
       <div class="home-hero-copy">
         <p class="kicker">Travel Consultant • Powered by Nuovevacanze</p>
 
-        <h1>Il mondo è pieno di luoghi. <span>Troviamo quello giusto per te.</span></h1>
+        <h1>Il viaggio che immagini. <span>Creato intorno a te.</span></h1>
 
         <p class="lead">
           Dalla prima idea alla partenza: creo viaggi su misura con tappe,
@@ -101,8 +101,7 @@ const schema = {
 
       <div class="home-visual">
         <div class="home-photo-frame">
-          <img src={`${base}images/tokyo/hero-tokyo.webp`} alt="Tokyo illuminata al tramonto" width="800" height="600" loading="eager" fetchpriority="high" />
-          <div class="home-photo-caption"><span>Destinazione protagonista</span><strong>Giappone</strong></div>
+          <img src={`${base}images/tokyo/asakusa.webp`} alt="Il tempio Sensō-ji nel quartiere di Asakusa a Tokyo" width="800" height="600" loading="eager" fetchpriority="high" />
         </div>
         <a class="home-floating-card" href={`${base}preventivo/?destinazione=Giappone`}>
           <span class="badge">Partenza 31 ottobre 2026</span>
@@ -883,25 +882,25 @@ Dalla prima idea fino al rientro, ti accompagno nella pianificazione del tuo via
   .home-hero::before { z-index: 1; opacity: .08; }
   .home-hero-backdrop {
     position: absolute; inset: 0; z-index: -2;
-    background: linear-gradient(90deg, rgba(4,16,30,.98) 0%, rgba(6,22,39,.92) 44%, rgba(6,22,39,.42) 72%, rgba(6,22,39,.62) 100%), url('/davide-fois-travel/images/tokyo/hero-tokyo.webp') center / cover;
+    background: linear-gradient(90deg, rgba(4,16,30,.9) 0%, rgba(6,22,39,.74) 42%, rgba(6,22,39,.12) 74%, rgba(6,22,39,.2) 100%), url('/davide-fois-travel/images/tokyo/shibuya.webp') center / cover;
     transform: scale(1.03);
   }
-  .home-hero-backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 65%, #061321 100%); }
+  .home-hero-backdrop::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,18,32,.05) 55%, rgba(5,18,32,.62) 100%); }
   .home-hero .hero-grid { position: relative; z-index: 2; min-height: calc(100svh - 78px); padding: 64px 0 100px; }
-  .home-hero-copy h1 { max-width: 760px; font-size: clamp(3.2rem,6.4vw,6.6rem); text-wrap: balance; }
+  .home-hero-copy h1 { max-width: 680px; font-size: clamp(3.1rem,4.7vw,5.15rem); line-height: .98; text-wrap: balance; }
   .home-hero-copy h1 span { display: block; color: var(--gold-2); }
   .home-hero-copy .lead { max-width: 650px; }
   .home-visual { min-height: 560px; }
   .home-photo-frame { position: absolute; inset: 18px 0 46px 32px; overflow: hidden; border: 1px solid rgba(255,255,255,.22); border-radius: 180px 180px 30px 30px; box-shadow: 0 40px 100px rgba(0,0,0,.48); }
-  .home-photo-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 52%,rgba(3,13,24,.9)); }
+  .home-photo-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 68%,rgba(3,13,24,.35)); }
   .home-photo-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
   .home-photo-frame:hover img { transform: scale(1.04); }
-  .home-photo-caption { position: absolute; right: 30px; bottom: 28px; z-index: 1; text-align: right; }
-  .home-photo-caption span { display: block; color: var(--gold-2); font-size: .72rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
-  .home-photo-caption strong { font: 800 2rem/1.1 Poppins,sans-serif; }
-  .home-floating-card { color: #fff; text-decoration: none; transition: transform .25s ease,background .25s ease; }
-  .home-floating-card:hover { transform: translateY(-6px); background: rgba(255,255,255,.19); }
-  .home-card-link { color: var(--gold-2); font-weight: 900; }
+  .home-photo-caption { display: none; }
+  .home-floating-card { color: var(--navy); text-decoration: none; background: rgba(255,253,248,.94); border-color: rgba(230,200,95,.75); box-shadow: 0 22px 65px rgba(0,0,0,.34); transition: transform .25s ease,background .25s ease; }
+  .home-floating-card:hover { transform: translateY(-6px); background: #fffdf8; }
+  .home-floating-card p { color: #4f5d6d; }
+  .home-floating-card .badge { color: #9b7100; font-weight: 900; }
+  .home-card-link { color: #9b7100; font-weight: 900; }
   .home-scroll-cue { position: absolute; bottom: 22px; left: 50%; z-index: 3; display: grid; justify-items: center; gap: 7px; color: rgba(255,255,255,.72); font-size: .69rem; font-weight: 800; letter-spacing: .15em; text-decoration: none; text-transform: uppercase; transform: translateX(-50%); }
   .home-scroll-cue i { width: 1px; height: 25px; background: var(--gold-2); animation: scrollPulse 1.8s ease-in-out infinite; }
   @keyframes scrollPulse { 0%,100% { transform: scaleY(.45); transform-origin: top; opacity: .4; } 50% { transform: scaleY(1); transform-origin: top; opacity: 1; } }
@@ -909,7 +908,7 @@ Dalla prima idea fino al rientro, ti accompagno nella pianificazione del tuo via
   .reveal.is-visible { opacity: 1; transform: none; }
   @media (max-width: 900px) {
     .home-hero .hero-grid { grid-template-columns: 1fr; }
-    .home-hero-backdrop { background: linear-gradient(180deg,rgba(4,16,30,.8),rgba(4,16,30,.96)),url('/davide-fois-travel/images/tokyo/hero-tokyo.webp') center / cover; }
+    .home-hero-backdrop { background: linear-gradient(180deg,rgba(4,16,30,.48),rgba(4,16,30,.9)),url('/davide-fois-travel/images/tokyo/shibuya.webp') center / cover; }
     .home-visual { min-height: 480px; }
   }
   @media (max-width: 620px) {
