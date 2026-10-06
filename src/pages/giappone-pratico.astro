@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const topics = [
+  { id: 'ritmo', title: 'Meno trasferimenti, più viaggio', text: 'Scegli alcune basi e usa le escursioni per esplorare i dintorni. Nel conteggio delle giornate considera anche bagagli, stazioni, trasferimenti e check-in. Lascia spazio per fermarti o cambiare programma.', chapter: 'Capitoli 2 e 6' },
+  { id: 'budget', title: 'Un budget che comprende tutto', text: 'Valuta insieme voli, alloggi, trasporti, pasti, esperienze e una riserva per gli imprevisti. Le cifre vanno costruite sul tuo periodo e sulle disponibilità: un itinerario chiaro aiuta a decidere dove spendere e dove risparmiare.', chapter: 'Capitolo 3' },
+  { id: 'trasporti', title: 'Trasporti scelti sul percorso', text: 'Definisci le tappe prima di scegliere biglietti e pass. Confronta le soluzioni sull’itinerario effettivo e considera anche gli spostamenti urbani e la posizione degli hotel. Organizza il primo trasferimento dall’aeroporto prima di partire.', chapter: 'Capitoli 5 e 13' },
+  { id: 'connessione', title: 'Connessione pronta all’arrivo', text: 'Confronta eSIM, SIM fisica e Wi-Fi portatile in base al telefono e al numero di persone. Controlla la compatibilità del dispositivo, prepara le mappe e raccogli le prenotazioni in una cartella accessibile anche offline.', chapter: 'Capitolo 12' },
+  { id: 'esperienze', title: 'Città, sapori e incontri', text: 'Alterna luoghi famosi, quartieri da esplorare e tempo libero. Scegli le tappe anche in base a ciò che ti interessa: cultura, natura, gastronomia o vita urbana. Le parole di cortesia e il rispetto delle abitudini locali fanno parte dell’esperienza.', chapter: 'Capitoli 7–11 e 14' }
+];
+---
+<BaseLayout title="Giappone pratico: consigli dalla guida di Davide Fois" description="Organizza il tuo viaggio in Giappone: itinerari, ritmo, budget, trasporti e checklist. Una sintesi pratica dai temi di Il Giappone da Vivere.">
+<section class="page"><div class="container article">
+  <nav class="breadcrumbs" aria-label="Percorso"><a href={`${base}destinazioni/asia/`}>Asia</a><span aria-hidden="true">/</span><a href={`${base}giappone/`}>Giappone</a><span aria-hidden="true">/</span><span>Guida pratica</span></nav>
+  <p class="kicker">Dalla mia guida · Il Giappone da Vivere</p><h1>Preparare il viaggio, un passo alla volta.</h1>
+  <p class="lead">Una selezione di consigli rielaborati per il sito dai temi della mia guida. Partiamo da durata e interessi, poi organizziamo tappe e dettagli pratici.</p>
+  <nav class="continent-tabs" aria-label="Argomenti della guida"><a href="#durata">Itinerari</a>{topics.map(topic => <a href={`#${topic.id}`}>{topic.id === 'ritmo' ? 'Ritmo' : topic.id === 'connessione' ? 'Internet' : topic.id === 'esperienze' ? 'Esperienze' : topic.id === 'trasporti' ? 'Trasporti' : 'Budget'}</a>)}<a href="#checklist">Checklist</a></nav>
+  <section class="guide-block" id="durata"><p class="kicker">Capitolo 6 · itinerari di riferimento</p><h2>Quanto tempo hai?</h2><p>Questi schemi contano i giorni del percorso in Giappone. Voli internazionali, orari di arrivo e rientro vanno aggiunti e valutati prima di fissare le notti.</p>
+    <details class="faq-item"><summary>7 giorni · primo incontro</summary><p>Tokyo nei primi tre giorni, una giornata per Hakone o la zona del Monte Fuji e tre giorni a Kyoto. È un programma intenso da adattare agli orari dei trasferimenti.</p></details>
+    <details class="faq-item"><summary>10 giorni · il grande classico</summary><p>Tokyo 4 giorni, Hakone 1, Kyoto 3, Nara 1 e Osaka 1. Nara può essere un’escursione dalla base scelta.</p><a href={`${base}itinerario-giappone-10-giorni/`}>Confronta l’itinerario dettagliato già presente sul sito →</a></details>
+    <details class="faq-item"><summary>14 giorni · città e cultura</summary><p>Tokyo 4 giorni, Hakone 1, Kyoto 3, Nara 1, Osaka 2, Hiroshima 1, Miyajima 1 e un ultimo giorno per il rientro o tempo libero. Le giornate di escursione non implicano un cambio hotel.</p><a href={`${base}itinerario-giappone-14-giorni/`}>Esplora anche la variante di 14 giorni già presente sul sito →</a></details>
+    <details class="faq-item"><summary>21 giorni · oltre il percorso classico</summary><p>Al percorso principale puoi aggiungere alcune tappe come Kanazawa, Takayama, Shirakawa-go, Nikko, Kobe o Himeji. Scegliamo quelle coerenti con i tuoi interessi, lasciando margine tra città e natura.</p></details>
+    <a class="button button-dark" href={`${base}preventivo/?destinazione=Giappone`}>Adattiamo l’itinerario al tuo viaggio</a>
+  </section>
+  {topics.map(topic => <section class="guide-block" id={topic.id}><p class="kicker">{topic.chapter}</p><h2>{topic.title}</h2><p>{topic.text}</p></section>)}
+  <section class="guide-block" id="checklist"><p class="kicker">Capitoli 12 e 15</p><h2>La checklist prima di partire.</h2><p>Usala come promemoria. Le spunte restano visibili durante questa visita alla pagina.</p><div class="travel-checklist">{['Verificare documenti e procedure d’ingresso sulle fonti ufficiali', 'Raccogliere voli, hotel, biglietti e contatti in un’unica cartella', 'Valutare assicurazione e servizi inclusi nelle prenotazioni', 'Preparare il percorso dall’aeroporto al primo hotel', 'Controllare connessione, caricatore, power bank e adattatore', 'Prevedere pagamenti e copie dei documenti accessibili offline', 'Lasciare spazio per riposo e imprevisti nell’itinerario'].map((item, i) => <label for={`check-${i}`}><input id={`check-${i}`} type="checkbox" />{item}</label>)}</div></section>
+  <div class="seo-note"><strong>La guida come punto di partenza</strong><p>Questa pagina sintetizza i temi della guida, senza riprodurre il libro completo. Disponibilità, tariffe e condizioni dei servizi si verificano quando prepariamo la proposta.</p></div>
+  <div class="actions"><a class="button button-dark" href={`${base}preventivo/?destinazione=Giappone`}>Parliamo del tuo Giappone</a><a href={`${base}giappone/`}>Torna a tutte le guide →</a></div>
+</div></section>
+</BaseLayout>

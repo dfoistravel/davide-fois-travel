@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <BaseLayout
   title="Richiedi un preventivo viaggio personalizzato | Davide Fois"
@@ -36,11 +37,15 @@ Analizzerò personalmente la tua richiesta e ti ricontatterò con una proposta s
       </label>
 
       <label>Destinazione
-        <input name="destinazione" required />
+        <input name="destinazione" placeholder="Es. Australia, oppure aiutami a scegliere" required />
       </label>
 
       <label>Periodo indicativo
         <input name="periodo" placeholder="Es. ottobre 2026" />
+      </label>
+
+      <label>Città o aeroporto di partenza
+        <input name="partenza" placeholder="Es. Milano" />
       </label>
 
       <label>Numero viaggiatori
@@ -53,9 +58,12 @@ Analizzerò personalmente la tua richiesta e ti ricontatterò con una proposta s
 
       <label>Tipo di viaggio
         <select name="tipo">
+          <option value="">Seleziona o lasciati consigliare</option>
           <option>Tour culturale</option>
           <option>Mare e relax</option>
-          <option>Fly & drive</option>
+          <option>Fly &amp; drive</option>
+          <option>Natura e avventura</option>
+          <option>Weekend e città</option>
           <option>Crociera</option>
           <option>Viaggio di nozze</option>
           <option>Altro</option>
@@ -68,8 +76,8 @@ Analizzerò personalmente la tua richiesta e ti ricontatterò con una proposta s
 
       <label class="full preventivo-privacy">
   <span>
-    <input type="checkbox" required />
-    Ho letto la privacy policy e acconsento al trattamento dei dati
+    <input type="checkbox" name="consenso_privacy" value="accettato" required />
+    Ho letto la <a href={`${base}privacy/`}>privacy policy</a> e acconsento al trattamento dei dati
     per ricevere una risposta alla mia richiesta.
   </span>
 </label>
@@ -191,3 +199,15 @@ Analizzerò personalmente la tua richiesta e ti ricontatterò con una proposta s
   }
 }
 </style>
+
+<script>
+  const parameters = new URLSearchParams(window.location.search);
+  const destination = document.querySelector<HTMLInputElement>('input[name="destinazione"]');
+  const type = document.querySelector<HTMLSelectElement>('select[name="tipo"]');
+  const selectedDestination = parameters.get('destinazione');
+  if (destination && selectedDestination) destination.value = selectedDestination.slice(0, 150);
+  const selectedType = parameters.get('tipo');
+  if (type && selectedType && Array.from(type.options).some(option => option.value === selectedType)) type.value = selectedType;
+</script>
+
+<style>.preventivo-privacy span {display:block}.preventivo-privacy input {vertical-align:middle;margin:0 10px 0 0}</style>

@@ -1,0 +1,14 @@
+---
+import { continents } from '../data/continents';
+const base = import.meta.env.BASE_URL;
+---
+<div class="continent-grid">
+  {continents.map((continent, i) => (
+    <a class={`continent-card continent-${continent.slug}`} href={`${base}destinazioni/${continent.slug}/`}>
+      <span class="continent-number" aria-hidden="true">0{i + 1}</span>
+      <p class="continent-subtitle">{continent.subtitle}</p><h3>{continent.name}</h3>
+      <p>{continent.countries.slice(0, 3).join(' · ')} e altre mete</p>
+      <strong>Esplora {continent.name} <span aria-hidden="true">↗</span></strong>
+    </a>
+  ))}
+</div>

@@ -1,4 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const guides = [
+ { name: 'Giappone: guide e itinerari', area: 'Asia', text: 'Stagioni, Tokyo, Kyoto, Osaka e itinerari da personalizzare.', path: 'giappone/' },
+ { name: 'Giappone pratico', area: 'Asia · dalla mia guida', text: 'Durata, budget, trasporti, Internet e checklist di partenza.', path: 'giappone-pratico/' },
+ { name: 'Giappone in autunno', area: 'Asia', text: 'Ispirazioni e tappe per un viaggio tra i colori autunnali.', path: 'blog/giappone-in-autunno/' },
+ { name: 'Weekend a Vilnius', area: 'Europa', text: 'Centro storico, Užupis e Trakai.', path: 'blog/weekend-a-vilnius/' }
+];
 ---
-<BaseLayout title="Guide di viaggio | Davide Fois"><section class="page"><div class="container"><div class="section-head"><p class="kicker">Guide di viaggio</p><h1>Informazioni utili prima di partire.</h1></div><div class="grid-3"><article class="card"><h2>Giappone in autunno</h2><p>Periodi, tappe e consigli per il foliage.</p></article><article class="card"><h2>Weekend a Vilnius</h2><p>Centro storico, Užupis e Trakai.</p></article></div></div></section></BaseLayout>
+<BaseLayout title="Guide e ispirazioni di viaggio | Davide Fois" description="Le guide disponibili per iniziare a organizzare il viaggio e un accesso alle destinazioni nel mondo.">
+<section class="page"><div class="container"><div class="section-head"><p class="kicker">Guide di viaggio</p><h1>Informazioni utili prima di partire.</h1><p>Qui trovi gli approfondimenti già disponibili. Per esplorare tutte le aree e chiedere una proposta, parti dalle destinazioni.</p></div><div class="grid-3">{guides.map(guide => <article class="card"><p class="kicker">{guide.area}</p><h2 style="font-size:1.7rem">{guide.name}</h2><p>{guide.text}</p><a href={`${base}${guide.path}`}>Leggi la guida →</a></article>)}</div><div class="actions"><a class="button button-dark" href={`${base}destinazioni/`}>Esplora tutti i continenti</a></div></div></section>
+</BaseLayout>

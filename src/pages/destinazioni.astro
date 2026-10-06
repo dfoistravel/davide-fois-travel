@@ -1,80 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ContinentGrid from '../components/ContinentGrid.astro';
 const base = import.meta.env.BASE_URL;
-
-const faq = [
-  {
-    question: "Quanto costa richiedere un preventivo?",
-    answer: "La richiesta iniziale è gratuita e non comporta obbligo di prenotazione."
-  },
-  {
-    question: "Posso richiedere un viaggio completamente personalizzato?",
-    answer: "Sì. Periodo, budget, interessi e stile di viaggio vengono utilizzati per costruire una proposta coerente."
-  },
-  {
-    question: "Riceverò assistenza anche dopo la prenotazione?",
-    answer: "Il servizio prevede un referente prima, durante e dopo la partenza."
-  }
-];
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faq.map(item => ({
-    "@type": "Question",
-    "name": item.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": item.answer
-    }
-  }))
-};
 ---
-<BaseLayout
-  title="Destinazioni e viaggi su misura | Davide Fois"
-  description="Proposte personalizzate per Giappone, Lituania, mare, crociere, tour culturali e viaggi di nozze."
-  schema={schema}>
-<section class="page">
-  <div class="container">
-    <div class="section-head">
-      <p class="kicker">Destinazioni</p>
-      <h1>Trova l'ispirazione. Poi costruiamo il viaggio.</h1>
-    </div>
-
+<BaseLayout title="Viaggi nel mondo: scegli il continente | Davide Fois" description="Esplora Asia, Europa, Africa, Americhe e Oceania. Racconta a Davide Fois la tua idea e richiedi una proposta di viaggio su misura.">
+  <section class="page"><div class="container">
+    <div class="section-head"><p class="kicker">Destinazioni nel mondo</p><h1>Da dove vuoi cominciare?</h1><p>Scegli un continente, trova una meta e raccontami il viaggio che immagini. Puoi chiedere una proposta anche per una destinazione che non trovi nell’elenco.</p></div>
+    <ContinentGrid />
+    <div class="world-help"><div><h2>Hai il desiderio, ma non la meta?</h2><p>Partiamo da periodo, budget e interessi. Ti aiuto a valutare le possibilità.</p></div><a class="button button-dark" href={`${base}preventivo/?destinazione=Da%20scegliere`}>Aiutami a scegliere</a></div>
     <div class="grid-3">
-      <article class="card" id="giappone">
-        <h2>Giappone</h2>
-        <p>Tokyo, Kyoto, Osaka, natura, foliage e hanami.</p>
-        <a href="/davide-fois-travel/giappone/">Scopri il Giappone →</a>
-      </article>
-
-      <article class="card" id="lituania">
-        <h2>Lituania</h2>
-        <p>Vilnius, Trakai, Kaunas e itinerari nei Paesi Baltici.</p>
-        <a href={`${base}preventivo/?destinazione=Lituania`}>Richiedi una proposta →</a>
-      </article>
-
-      <article class="card">
-        <h2>Altre destinazioni</h2>
-        <p>Mare, crociere, tour culturali e viaggi di nozze.</p>
-        <a href={`${base}preventivo/`}>Parliamo della tua idea →</a>
-      </article>
+      <article class="card" id="giappone"><p class="kicker">Asia · guide e itinerari</p><h3>Giappone</h3><p>La sezione dedicata, con città, itinerari e consigli dalla mia guida.</p><a href={`${base}giappone/`}>Esplora il Giappone →</a></article>
+      <article class="card" id="lituania"><p class="kicker">Europa · ispirazioni</p><h3>Lituania</h3><p>Scopri l’articolo su Vilnius o richiedi una proposta personalizzata.</p><a href={`${base}blog/weekend-a-vilnius/`}>Leggi la guida a Vilnius →</a></article>
+      <article class="card"><p class="kicker">Il tuo modo di viaggiare</p><h3>Mare, tour o crociera?</h3><p>La consulenza parte dalle tue esigenze, anche per viaggi di nozze e combinazioni di più Paesi.</p><a href={`${base}preventivo/`}>Raccontami la tua idea →</a></article>
     </div>
-
-    <section class="section">
-      <div class="section-head">
-        <p class="kicker">Domande frequenti</p>
-        <h2>Prima di richiedere una proposta.</h2>
-      </div>
-      <div class="grid-3">
-        {faq.map(item => (
-          <article class="card">
-            <h3>{item.question}</h3>
-            <p>{item.answer}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-  </div>
-</section>
+  </div></section>
 </BaseLayout>

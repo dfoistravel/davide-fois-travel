@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ContinentGrid from '../components/ContinentGrid.astro';
 
 const base = import.meta.env.BASE_URL;
 
@@ -18,7 +19,7 @@ const faq = [
   },
   {
     question: "Posso richiedere viaggi in Giappone?",
-    answer: "Sì. Il Giappone è una delle destinazioni principali del progetto, con itinerari dedicati a città, stagioni, cultura e natura."
+    answer: "Sì. Il Giappone ha una sezione dedicata, con itinerari dedicati a città, stagioni, cultura e natura."
   },
   {
     question: "Come riceverò la proposta?",
@@ -391,34 +392,7 @@ const schema = {
         <h2>Il viaggio parte dalle tue preferenze.</h2>
       </div>
 
-      <div class="consultant-destination-grid">
-        <a class="consultant-destination japan" href={`${base}giappone/`}>
-          <div>
-            <small>Destinazione principale</small>
-            <h3>Giappone</h3>
-            <p>Città, cultura, natura, sakura, foliage e itinerari su misura.</p>
-            <strong>Scopri il Giappone →</strong>
-          </div>
-        </a>
-
-        <a class="consultant-destination baltic" href={`${base}destinazioni/#lituania`}>
-          <div>
-            <small>Europa</small>
-            <h3>Lituania e Paesi Baltici</h3>
-            <p>Vilnius, Trakai, Kaunas e city break personalizzati.</p>
-            <strong>Scopri la destinazione →</strong>
-          </div>
-        </a>
-
-        <a class="consultant-destination world" href={`${base}destinazioni/`}>
-          <div>
-            <small>Altre esperienze</small>
-            <h3>Viaggi nel mondo</h3>
-            <p>Mare, crociere, tour culturali, viaggi di nozze e city break.</p>
-            <strong>Esplora le proposte →</strong>
-          </div>
-        </a>
-      </div>
+      <ContinentGrid />
     </div>
   </section>
 

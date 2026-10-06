@@ -58,7 +58,7 @@ const schema = {
   <section class="hero japan-hero">
     <div class="container hero-grid">
       <div>
-        <p class="kicker">Giappone Premium</p>
+        <p class="kicker"><a href={`${base}destinazioni/asia/`}>Asia</a> · Giappone</p>
 
         <h1>Scopri il Giappone con un viaggio costruito intorno a te.</h1>
 
@@ -69,7 +69,7 @@ const schema = {
         </p>
 
         <div class="actions">
-          <a class="button button-primary" href={`${base}preventivo/`}>
+          <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>
             Richiedi un preventivo gratuito
           </a>
 
@@ -94,6 +94,7 @@ const schema = {
     </div>
   </section>
 
+  <section class="section"><div class="container"><div class="section-head"><p class="kicker">Il Giappone da Vivere</p><h2>Trova subito quello che ti serve.</h2><p>Dai temi della mia guida: un percorso pratico per scegliere tappe, organizzare i trasporti e preparare la partenza.</p></div><nav class="experience-links" aria-label="Guide per organizzare il Giappone"><a href={`${base}quando-andare-giappone/`}>Quando partire →</a><a href="#itinerari">Scegliere la durata →</a><a href={`${base}giappone-pratico/#budget`}>Budget →</a><a href={`${base}giappone-pratico/#trasporti`}>Trasporti →</a><a href={`${base}giappone-pratico/#connessione`}>Internet e app →</a><a href={`${base}giappone-pratico/#checklist`}>Checklist →</a><a href={`${base}cosa-vedere-tokyo/`}>Tokyo →</a><a href={`${base}cosa-vedere-kyoto/`}>Kyoto →</a><a href={`${base}cosa-vedere-osaka/`}>Osaka →</a></nav></div></section>
   <section class="section alt">
     <div class="container">
       <div class="section-head">
@@ -236,26 +237,26 @@ const schema = {
       <div class="grid-3">
         <article class="card">
           <h3>7 giorni</h3>
-          <p>Tokyo e Kyoto, con ritmi intensi e tappe essenziali.</p>
+          <p>Tokyo e Kyoto, con una giornata per Hakone o Monte Fuji. Ritmo intenso.</p><a href={`${base}giappone-pratico/#durata`}>Schema dalla guida →</a>
         </article>
 
         <article class="card">
           <h3>10 giorni</h3>
-          <p>Tokyo, Kyoto, Osaka e una prima escursione.</p>
+          <p>Tokyo, Hakone, Kyoto, Nara e Osaka.</p><a href={`${base}giappone-pratico/#durata`}>Schema dalla guida →</a><br /><a href={`${base}itinerario-giappone-10-giorni/`}>Itinerario dettagliato →</a>
         </article>
 
         <article class="card">
           <h3>14 giorni</h3>
           <p>
-            Tokyo, Kyoto, Osaka, Nara, Hiroshima, Miyajima e Hakone.
-          </p>
+            Tokyo, Hakone, Kyoto, Nara, Osaka, Hiroshima e Miyajima.
+          </p><a href={`${base}giappone-pratico/#durata`}>Schema dalla guida →</a><br /><a href={`${base}itinerario-giappone-14-giorni/`}>Variante dettagliata →</a>
         </article>
 
         <article class="card">
           <h3>21 giorni</h3>
           <p>
-            Un viaggio completo con regioni meno conosciute e ritmi più rilassati.
-          </p>
+            Tappe classiche con alcune estensioni tra borghi, città e natura, scelte sui tuoi interessi.
+          </p><a href={`${base}giappone-pratico/#durata`}>Idee dalla guida →</a>
         </article>
       </div>
     </div>
@@ -290,7 +291,7 @@ const schema = {
         </p>
       </div>
 
-      <a class="button button-primary" href={`${base}preventivo/`}>
+      <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>
         Richiedi il preventivo gratuito
       </a>
     </div>
