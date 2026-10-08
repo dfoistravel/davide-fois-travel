@@ -1,4 +1,5 @@
 ---
+import JapanPhoto from '../components/JapanPhoto.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL;
@@ -79,18 +80,7 @@ const schema = {
         </div>
       </div>
 
-      <div class="executive-visual" aria-hidden="true">
-        <div class="executive-orbit"></div>
-        <div class="executive-plane">✈</div>
-        <div class="executive-card">
-          <span class="badge">Viaggio su misura</span>
-          <strong>Tradizione, natura e innovazione.</strong>
-          <p>
-            Un itinerario pensato per il tuo modo di viaggiare,
-            non un pacchetto standard.
-          </p>
-        </div>
-      </div>
+      <JapanPhoto photo="miyajima" variant="hero" eager caption="Miyajima · fotografia di Davide Fois" />
     </div>
   </section>
 
@@ -194,19 +184,25 @@ const schema = {
       </div>
 
       <div class="grid-3">
-        <article class="card">
+        <article class="card japan-destination-card">
+          <JapanPhoto photo="shibuya" />
           <h3>Tokyo</h3>
           <p>Quartieri futuristici, templi, musei e vita urbana.</p>
+        <a class="text-link" href={`${base}cosa-vedere-tokyo/`}>Scopri di più →</a>
         </article>
 
-        <article class="card">
+        <article class="card japan-destination-card">
+          <JapanPhoto photo="kinkakuji" />
           <h3>Kyoto</h3>
           <p>Templi, giardini zen, Gion e tradizioni secolari.</p>
+        <a class="text-link" href={`${base}cosa-vedere-kyoto/`}>Scopri di più →</a>
         </article>
 
-        <article class="card">
+        <article class="card japan-destination-card">
+          <JapanPhoto photo="osaka-castello" />
           <h3>Osaka</h3>
           <p>Atmosfera vivace, street food e cultura gastronomica.</p>
+        <a class="text-link" href={`${base}cosa-vedere-osaka/`}>Scopri di più →</a>
         </article>
 
         <article class="card">
@@ -214,19 +210,29 @@ const schema = {
           <p>Il Grande Buddha e i celebri cervi del parco.</p>
         </article>
 
-        <article class="card">
+        <article class="card japan-destination-card">
+          <JapanPhoto photo="fuji" />
           <h3>Monte Fuji e Hakone</h3>
           <p>Laghi, funivie, onsen e panorami iconici.</p>
+        <a class="text-link" href={`${base}giappone-pratico/#durata`}>Scopri di più →</a>
         </article>
 
-        <article class="card">
+        <article class="card japan-destination-card">
+          <JapanPhoto photo="hiroshima" />
           <h3>Hiroshima e Miyajima</h3>
           <p>Storia, memoria e uno dei torii più famosi del Giappone.</p>
+        <a class="text-link" href={`${base}itinerario-giappone-14-giorni/`}>Scopri di più →</a>
         </article>
       </div>
     </div>
   </section>
 
+  <section class="section"><div class="container"><div class="section-head"><p class="kicker">Fotografie dai miei viaggi</p><h2>Il Giappone, attraverso il mio sguardo.</h2><p>Templi, giardini e vita quotidiana: alcuni luoghi che ho fotografato durante il mio viaggio.</p></div><div class="japan-photo-grid">
+    <JapanPhoto photo="sensoji" caption="Tokyo · il tempio Sensō-ji" />
+    <JapanPhoto photo="giardino" caption="La quiete di un giardino giapponese" />
+    <JapanPhoto photo="dotonbori" caption="Osaka · il canale di Dotonbori" />
+    <JapanPhoto photo="odaiba" caption="Tokyo · la baia da Odaiba" />
+  </div></div></section>
   <section class="section" id="itinerari">
     <div class="container">
       <div class="section-head">

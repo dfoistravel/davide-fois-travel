@@ -272,6 +272,10 @@
 }
 
 /* Worldwide destination navigation and consultation flow */
+/* Personal photographs: responsive crops and captions */
+.japan-photo{margin:0;min-width:0}.japan-photo img{display:block;width:100%;height:auto;border-radius:20px;object-fit:cover}.japan-photo--card img{aspect-ratio:4/3}.japan-photo--wide img{aspect-ratio:4/3}.japan-photo--hero img{aspect-ratio:3/4;max-height:560px}.japan-photo figcaption{margin-top:12px;font-size:.85rem;line-height:1.5;color:var(--muted)}.hero .japan-photo figcaption{color:#e5eaf0}.japan-city-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:48px;align-items:center;padding:70px 0}.japan-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.japan-destination-card .japan-photo{margin-bottom:22px}.japan-destination-card .text-link{display:inline-block;margin-top:18px}.country-card .japan-photo{margin-bottom:18px}.japan-feature .japan-photo img{height:auto}
+@media(max-width:900px){.japan-city-hero{grid-template-columns:1fr;gap:30px;padding:48px 0}.japan-photo--hero img{aspect-ratio:4/3;max-height:none}}
+@media(max-width:600px){.japan-photo-grid{grid-template-columns:1fr}.japan-photo figcaption{font-size:.8rem}}
 :where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #b38715;outline-offset:5px}
 [id]{scroll-margin-top:110px}
 .skip-link{position:absolute;top:-80px;left:16px;z-index:150;background:white;padding:12px 20px}.skip-link:focus{top:8px}

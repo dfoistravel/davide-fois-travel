@@ -1,4 +1,5 @@
 ---
+import JapanPhoto from '../components/JapanPhoto.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 ---
@@ -9,7 +10,7 @@ description="Scopri cosa vedere a Osaka: Castello, Dotonbori, Umeda, Shinsekai, 
 >
 
 <section class="hero">
-<div class="container">
+<div class="container japan-city-hero"><div>
 <p class="kicker">Guida Osaka</p>
 <h1>Cosa vedere a Osaka: attrazioni, quartieri e itinerario</h1>
 <p class="lead">
@@ -25,6 +26,7 @@ Richiedi un preventivo gratuito
 Scopri le attrazioni
 </a>
 </div>
+</div><JapanPhoto photo="osaka-castello" variant="hero" eager caption="Osaka · fotografia di Davide Fois" />
 </div>
 </section>
 
@@ -37,7 +39,7 @@ Scopri le attrazioni
 
 <div class="grid-3">
 <article class="card"><h3>🏯 Castello di Osaka</h3><p>Il simbolo storico della città con splendidi giardini.</p></article>
-<article class="card"><h3>🌃 Dotonbori</h3><p>Insegne luminose, canali e street food.</p></article>
+<article class="card japan-destination-card"><JapanPhoto photo="dotonbori" /><h3>🌃 Dotonbori</h3><p>Insegne luminose, canali e street food.</p></article>
 <article class="card"><h3>🏙️ Umeda Sky Building</h3><p>Uno dei panorami più belli sullo skyline.</p></article>
 <article class="card"><h3>🎡 Shinsekai</h3><p>Quartiere storico e Torre Tsutenkaku.</p></article>
 <article class="card"><h3>🎢 Universal Studios Japan</h3><p>Parco a tema con Super Nintendo World.</p></article>
