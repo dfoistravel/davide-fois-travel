@@ -1,4 +1,5 @@
 export const japanPhotos = {
+  "nara": {"alt": "Cervi nel parco di Nara", "width": 1280, "height": 853, "position": "30% 50%"},
   "miyajima": {
     "alt": "Il torii di Itsukushima sul mare a Miyajima",
     "width": 1536,
