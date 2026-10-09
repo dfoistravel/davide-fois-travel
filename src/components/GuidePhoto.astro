@@ -1,0 +1,16 @@
+---
+import { guidePhotos, type GuidePhotoKey } from '../data/guidePhotos';
+interface Props { photo: GuidePhotoKey; variant?: 'card' | 'hero' | 'wide' | 'panorama'; }
+const { photo, variant = 'card' } = Astro.props;
+const item = guidePhotos[photo];
+const base = import.meta.env.BASE_URL;
+const high = `${base}images/${item.path}-${item.width}.webp`;
+---
+<figure class={`guide-photo guide-photo--${variant}`}>
+ <img src={high} srcset={`${base}images/${item.path}-640.webp 640w, ${high} ${item.width}w`} sizes={variant === 'card' ? '(max-width: 700px) 92vw, 560px' : variant === 'panorama' ? '92vw' : '(max-width: 900px) 92vw, 600px'} width={item.width} height={item.height} alt={item.alt} loading={variant === 'hero' ? 'eager' : 'lazy'} fetchpriority={variant === 'hero' ? 'high' : 'auto'} decoding="async" style={`object-position:${item.position};object-fit:${item.height > item.width && variant === 'card' ? 'contain' : 'cover'}`} />
+ <figcaption><span class="photo-subject">{item.alt}.</span> <a href={item.source}>{item.author} / Wikimedia Commons</a> · <a href={item.licenseUrl}>{item.license}</a> · ridimensionata e adattata al formato</figcaption>
+</figure>
+<style>
+.guide-photo{margin:0 0 22px;min-width:0}.guide-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:16px;background:#edf1f4}.guide-photo figcaption{margin-top:9px;font-size:.75rem;line-height:1.5;color:var(--muted);overflow-wrap:anywhere}.guide-photo figcaption a{color:inherit}.photo-subject{display:block;margin-bottom:3px}.guide-photo--hero{margin:0}.guide-photo--hero img{aspect-ratio:4/5;max-height:560px}.guide-photo--hero figcaption{color:#e5eaf0}.guide-photo--wide img{aspect-ratio:16/9}.guide-photo--panorama img{aspect-ratio:auto;object-fit:contain}
+@media(max-width:900px){.guide-photo--hero img{aspect-ratio:4/3;max-height:none}}
+</style>
