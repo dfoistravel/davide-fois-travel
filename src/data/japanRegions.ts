@@ -243,6 +243,11 @@ export const japanRegions = [
         "name": "Nara",
         "slug": "cosa-vedere-nara",
         "photo": "nara"
+      },
+      {
+        "name": "Kobe",
+        "slug": "cosa-vedere-kobe",
+        "photo": "kobe-port"
       }
     ],
     "source": "https://www.japan.travel/en/destinations/kansai/"

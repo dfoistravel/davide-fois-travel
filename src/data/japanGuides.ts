@@ -519,5 +519,107 @@ export const japanGuides = [
       }
     ]
   },
+  {
+    "slug": "cosa-vedere-kobe",
+    "name": "Kobe",
+    "title": "Kobe: porto, quartieri storici e giardini tra mare e montagne",
+    "intro": "Kobe è una tappa diversa dalle classiche Kyoto, Osaka e Nara: un porto moderno, case storiche sulle colline, vie della cucina internazionale e verde raggiungibile dalla città. Per una prima visita scegli un itinerario compatto tra waterfront e quartieri, oppure fermati una notte per goderti la sera.",
+    "photo": "kobe-port",
+    "duration": "Una giornata da Osaka; 1–2 notti se aggiungi Nunobiki e il panorama serale",
+    "fit": "Per chi ama città di mare, architettura, gastronomia e una pausa nella natura.",
+    "places": [
+      {
+        "title": "Meriken Park e Port Tower",
+        "text": "Una passeggiata sul lungomare per conoscere la storia portuale e l’architettura contemporanea di Kobe. Il memoriale del terremoto del 1995 invita a una sosta rispettosa: non trattarlo soltanto come scenario fotografico.",
+        "photo": "kobe-port"
+      },
+      {
+        "title": "Kitano Ijinkan: le case straniere sulle colline",
+        "text": "Nel quartiere Kitano restano residenze in stile occidentale legate alla storia internazionale della città. Scegli uno o due edifici da visitare, anziché acquistare ingressi per tutte le case; le strade sono in salita.",
+        "photo": "kobe-kitano"
+      },
+      {
+        "title": "Nankinmachi: Chinatown e sapori di Kobe",
+        "text": "Tra porte decorate e stradine animate, Nankinmachi è un buon punto per una pausa gastronomica. Le bancarelle cambiano per orari e giorni: assaggia con calma, rispettando la circolazione pedonale.",
+        "photo": "kobe-nankinmachi"
+      },
+      {
+        "title": "Nunobiki Herb Gardens e panorami verdi",
+        "text": "La funivia conduce verso giardini botanici e vedute sulla città. Prevedi tempo per salire e scendere e controlla meteo, aperture e disponibilità dell’impianto prima della visita.",
+        "photo": "kobe-nunobiki"
+      },
+      {
+        "title": "Harborland: Kobe illuminata la sera",
+        "text": "L’area commerciale sul porto offre passeggiate, ristoranti e vista sulle luci del waterfront. È adatta alla parte finale della giornata, senza impegnarsi in spostamenti lunghi.",
+        "photo": "kobe-harborland"
+      }
+    ],
+    "days": [
+      {
+        "title": "Una giornata · Porto, centro e Kitano",
+        "text": "Mattina nel quartiere Kitano oppure Nunobiki, pranzo a Nankinmachi, pomeriggio tra Meriken Park e Harborland. Non cercare di visitare tutti gli interni in un giorno.",
+        "photo": null
+      },
+      {
+        "title": "Una notte · Vivere il lungomare",
+        "text": "Dedica il primo giorno ai quartieri storici e al porto; il giorno seguente a Nunobiki o a una visita più lenta del centro. La sera resta sul waterfront.",
+        "photo": null
+      },
+      {
+        "title": "Dall’area di Osaka o Kyoto",
+        "text": "Valuta Kobe come escursione ferroviaria, controllando il percorso tra la stazione d’arrivo e il primo luogo scelto. Le stazioni principali non coincidono sempre con il porto.",
+        "photo": null
+      }
+    ],
+    "stay": [
+      {
+        "title": "Sannomiya",
+        "text": "Comoda per ristoranti, collegamenti e spostamenti tra Kitano, Chinatown e il porto; confronta gli accessi reali alle diverse linee.",
+        "photo": null
+      },
+      {
+        "title": "Motomachi",
+        "text": "Una base pratica vicino a Chinatown e al centro, da valutare se ami passeggiare anche alla sera.",
+        "photo": null
+      },
+      {
+        "title": "Harborland e waterfront",
+        "text": "Per chi preferisce la vista sul porto e un’atmosfera serale, verificando la distanza effettiva dalla stazione e il budget.",
+        "photo": null
+      }
+    ],
+    "tips": [
+      "La zona portuale è piacevole a piedi, ma Kitano è collinare: abbina le visite con attenzione alle distanze e al caldo.",
+      "Per il manzo di Kobe scegli locali con informazioni trasparenti su certificazione, menù e costi: non ogni locale che propone “Kobe beef” offre la stessa esperienza.",
+      "Nunobiki dipende dal meteo e dalla funivia: tieni un’alternativa in centro in caso di pioggia o vento.",
+      "Per una giornata da Osaka, il treno è spesso la scelta più pratica; verifica tratte e stazioni in relazione all’hotel."
+    ],
+    "sources": [
+      [
+        "Kobe · JNTO",
+        "https://www.japan.travel/en/destinations/kansai/hyogo/kobe-and-around/"
+      ],
+      [
+        "Kobe Tourism",
+        "https://www.feel-kobe.jp/en/"
+      ],
+      [
+        "Nunobiki Herb Gardens",
+        "https://www.kobeherb.com/en/"
+      ]
+    ],
+    "faq": [
+      {
+        "title": "Kobe merita una notte?",
+        "text": "Se vuoi vivere Harborland di sera o dedicare tempo a Nunobiki, una notte aiuta. Se hai pochi giorni, una gita selettiva da Osaka può essere sufficiente.",
+        "photo": null
+      },
+      {
+        "title": "Meglio Kobe o Himeji?",
+        "text": "Kobe privilegia porto, quartieri e gastronomia; Himeji è una scelta per il grande castello e i giardini. La scelta dipende dagli interessi e dalle tappe già previste.",
+        "photo": null
+      }
+    ]
+  },
   ...kantoGuides
 ] as const;
