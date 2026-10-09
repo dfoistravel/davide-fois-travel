@@ -1,6 +1,104 @@
 import { kantoGuides } from "./kantoGuides";
 export const japanGuides = [
   {
+    "slug": "cosa-vedere-lago-biwa",
+    "name": "Lago Biwa",
+    "title": "Lago Biwa: castelli, borghi storici e panorami vicino a Kyoto",
+    "intro": "Il lago Biwa, nella prefettura di Shiga, offre un Giappone diverso dalle grandi città: castelli, canali, santuari e ampi paesaggi d’acqua. Da Kyoto puoi raggiungere alcune località in giornata, mentre due giorni permettono visite più tranquille.",
+    "photo": "biwa-panorama",
+    "duration": "1 giorno per Hikone o Omihachiman; 2 giorni per combinare più località",
+    "fit": "Per chi ama cultura, architettura, passeggiate sul lago e destinazioni meno affollate.",
+    "places": [
+      {
+        "title": "Hikone: il castello e il giardino Genkyu-en",
+        "text": "Sulla riva orientale del lago, Hikone conserva uno dei castelli storici più importanti del Giappone. Abbina il castello al giardino Genkyu-en, prevedendo tempi per le scale e le visite interne.",
+        "photo": "biwa-hikone"
+      },
+      {
+        "title": "Shirahige-jinja e il torii sul lago",
+        "text": "La porta torii nelle acque è un’immagine simbolo della sponda occidentale. Osservala solo dai punti autorizzati: attraversare la strada costiera può essere pericoloso.",
+        "photo": "biwa-shirahige"
+      },
+      {
+        "title": "Omihachiman: canali e antiche case mercantili",
+        "text": "Una passeggiata tra il canale Hachiman-bori e il centro storico racconta il passato commerciale della zona. L’escursione in barca, quando operativa, va verificata in anticipo.",
+        "photo": "biwa-omihachiman"
+      },
+      {
+        "title": "Il lago visto dall’alto",
+        "text": "Il lago Biwa è il più grande lago del Giappone. Per apprezzarne le dimensioni cerca uno dei punti panoramici ben raggiungibili, valutando con cura i collegamenti.",
+        "photo": "biwa-panorama"
+      }
+    ],
+    "days": [
+      {
+        "title": "Giorno 1 · Hikone",
+        "text": "Visita del castello, giardino Genkyu-en e una passeggiata nel centro; organizza il ritorno in treno senza aggiungere troppe tappe.",
+        "photo": null
+      },
+      {
+        "title": "Giorno 2 · Omihachiman o costa occidentale",
+        "text": "Scegli Omihachiman per storia e canali, oppure un itinerario sulla costa occidentale per Shirahige. Sono alternative che richiedono collegamenti differenti.",
+        "photo": null
+      },
+      {
+        "title": "Gita da Kyoto · Una scelta sola",
+        "text": "Se parti in giornata, scegli una sola area principale. Tempi e costi dipendono dal treno e dagli autobus locali.",
+        "photo": null
+      }
+    ],
+    "stay": [
+      {
+        "title": "Kyoto come base",
+        "text": "Comoda se il lago è una gita nel contesto di un viaggio nel Kansai. Controlla gli orari di rientro.",
+        "photo": null
+      },
+      {
+        "title": "Hikone",
+        "text": "Utile per dedicare una giornata al castello e per esplorare il lato orientale del lago.",
+        "photo": null
+      },
+      {
+        "title": "Otsu",
+        "text": "Base vicina a Kyoto per affacci sul lago, con posizione da scegliere secondo la stazione e gli spostamenti.",
+        "photo": null
+      }
+    ],
+    "tips": [
+      "Il lago è molto esteso: non pianificare il giro completo in una sola giornata.",
+      "Verifica treni JR e autobus locali: i collegamenti delle zone occidentali possono essere meno frequenti.",
+      "Sulle rive del lago meteo e vento possono cambiare le condizioni delle attività in barca.",
+      "Presso Shirahige-jinja osserva il torii dai punti consentiti e non attraversare la strada per scattare foto.",
+      "Per le esperienze stagionali controlla calendario, ingressi e orari ufficiali poco prima della partenza."
+    ],
+    "sources": [
+      [
+        "JNTO · Shiga e il lago Biwa",
+        "https://www.japan.travel/en/destinations/kansai/shiga/"
+      ],
+      [
+        "Hikone Castle · sito ufficiale",
+        "https://hikonecastle.com/"
+      ],
+      [
+        "Biwako Visitors Bureau",
+        "https://www.biwako-visitors.jp/"
+      ]
+    ],
+    "faq": [
+      {
+        "title": "Si può visitare il lago Biwa da Kyoto?",
+        "text": "Sì, alcune destinazioni sono adatte a un’escursione in giornata. Scegli prima il luogo specifico, non genericamente il lago.",
+        "photo": null
+      },
+      {
+        "title": "Meglio un giorno o due?",
+        "text": "Un giorno è adatto a una località come Hikone; due giorni consentono un programma più vario con meno fretta.",
+        "photo": null
+      }
+    ]
+  },
+  {
     "slug": "cosa-vedere-kumano-kodo",
     "name": "Kumano Kodo",
     "title": "Kumano Kodo: cammini sacri, santuari e foreste della penisola di Kii",
