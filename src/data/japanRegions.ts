@@ -218,7 +218,8 @@ export const japanRegions = [
       "Osaka",
       "Nara",
       "Kobe",
-      "Himeji"
+      "Himeji",
+      "Koyasan"
     ],
     "nature": [
       "Koyasan",
@@ -253,6 +254,11 @@ export const japanRegions = [
         "name": "Himeji",
         "slug": "cosa-vedere-himeji",
         "photo": "himeji-castle"
+      },
+      {
+        "name": "Koyasan",
+        "slug": "cosa-vedere-koyasan",
+        "photo": "koyasan-okunoin"
       }
     ],
     "source": "https://www.japan.travel/en/destinations/kansai/"

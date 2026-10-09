@@ -1,6 +1,98 @@
 import { kantoGuides } from "./kantoGuides";
 export const japanGuides = [
   {
+    "slug": "cosa-vedere-koyasan",
+    "name": "Koyasan",
+    "title": "Koyasan: templi, foreste sacre e una notte in monastero",
+    "intro": "Tra i monti della prefettura di Wakayama, Koyasan è uno dei luoghi centrali del buddhismo Shingon. Sentieri di cedri, pagode e templi invitano a rallentare: una notte in monastero consente di cogliere anche l’atmosfera del mattino.",
+    "photo": "koyasan-okunoin",
+    "duration": "1 giornata per i luoghi principali; consigliate 2 giornate e 1 notte per uno shukubo",
+    "fit": "Per chi ama cultura, spiritualità, architettura sacra e passeggiate nel verde.",
+    "places": [
+      {
+        "title": "Okunoin: il sentiero tra i cedri",
+        "text": "Lungo il percorso monumentale di Okunoin si attraversano secoli di storia, tombe e memoriali immersi nella foresta. Cammina rispettando il carattere sacro del luogo e le regole per le fotografie, soprattutto vicino al mausoleo di Kobo Daishi.",
+        "photo": "koyasan-okunoin"
+      },
+      {
+        "title": "Danjo Garan e la pagoda Konpon Daito",
+        "text": "Il grande complesso cerimoniale riunisce edifici fondamentali della tradizione Shingon. La pagoda vermiglia è un riferimento visivo del luogo; prima di entrare verifica aperture e regole per le visite.",
+        "photo": "koyasan-garan"
+      },
+      {
+        "title": "Kongobu-ji: il tempio principale",
+        "text": "La sede principale della scuola Shingon consente di approfondire la storia religiosa di Koyasan. Dedica tempo agli ambienti accessibili e ai giardini, senza considerarla una visita rapida.",
+        "photo": "koyasan-kongobuji"
+      },
+      {
+        "title": "Soggiornare in uno shukubo",
+        "text": "Dormire in una foresteria di tempio può includere cucina buddhista vegetariana (shojin ryori) e attività religiose, secondo la struttura. Ogni monastero ha regole e orari propri: controlla servizi, bagno, accessibilità e partecipazione alle cerimonie prima della prenotazione.",
+        "photo": null
+      }
+    ],
+    "days": [
+      {
+        "title": "Giornata singola · Essenziale",
+        "text": "Arriva di buon mattino e scegli Okunoin e un solo complesso tra Garan e Kongobu-ji. Il viaggio di andata e ritorno occupa parte importante della giornata.",
+        "photo": null
+      },
+      {
+        "title": "Giorno 1 · Templi e pernottamento",
+        "text": "Trasferimento verso Koyasan, visita a Danjo Garan e Kongobu-ji; check-in in shukubo e cena secondo gli orari della struttura.",
+        "photo": null
+      },
+      {
+        "title": "Giorno 2 · Okunoin e rientro",
+        "text": "Cerimonia mattutina se offerta dal monastero, poi camminata a Okunoin e ritorno verso Osaka o altra tappa.",
+        "photo": null
+      }
+    ],
+    "stay": [
+      {
+        "title": "Shukubo nel centro di Koyasan",
+        "text": "Consigliato a chi cerca un’esperienza culturale e spirituale. Alcune camere hanno servizi condivisi e orari rigidi: verifica tutto prima di confermare.",
+        "photo": null
+      },
+      {
+        "title": "Osaka come base per una gita",
+        "text": "Possibile se non desideri cambiare alloggio, ma prevedi una giornata lunga tra treno, funicolare, autobus e visite.",
+        "photo": null
+      }
+    ],
+    "tips": [
+      "Da Osaka il percorso abituale usa treni Nankai fino a Gokurakubashi, funicolare e autobus: verifica orari e pass disponibili.",
+      "Koyasan è in quota: anche nelle mezze stagioni porta uno strato caldo e scarpe adatte.",
+      "I luoghi di culto non sono scenografie: rispetta silenzio, zone vietate e regole per le fotografie.",
+      "Prenota in anticipo lo shukubo nei periodi richiesti e comunica eventuali necessità alimentari direttamente alla struttura."
+    ],
+    "sources": [
+      [
+        "Koyasan · JNTO",
+        "https://www.japan.travel/en/destinations/kansai/wakayama/koyasan-and-around/"
+      ],
+      [
+        "Koyasan · sito ufficiale",
+        "https://www.koyasan.or.jp/en/"
+      ],
+      [
+        "Nankai Railway · accesso a Koyasan",
+        "https://www.nankai.co.jp/en/"
+      ]
+    ],
+    "faq": [
+      {
+        "title": "Koyasan merita una notte?",
+        "text": "Sì, soprattutto se desideri vivere un monastero e visitare con calma Okunoin e gli altri templi.",
+        "photo": null
+      },
+      {
+        "title": "Si può andare in giornata da Osaka?",
+        "text": "Sì, ma scegli poche visite e controlla gli ultimi collegamenti di ritorno.",
+        "photo": null
+      }
+    ]
+  },
+  {
     "slug": "cosa-vedere-kyoto",
     "name": "Kyoto",
     "title": "Kyoto: templi, giardini e quartieri da vivere con calma",
