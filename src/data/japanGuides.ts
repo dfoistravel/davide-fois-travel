@@ -1,6 +1,110 @@
 import { kantoGuides } from "./kantoGuides";
 export const japanGuides = [
   {
+    "slug": "cosa-vedere-kinosaki-onsen",
+    "name": "Kinosaki Onsen",
+    "title": "Kinosaki Onsen: terme, ryokan e vicoli storici nel nord del Kansai",
+    "intro": "Nella prefettura di Hyogo, Kinosaki Onsen è un borgo termale dove il viaggio rallenta: canali, ponticelli, ryokan e bagni pubblici formano un’esperienza da vivere con calma. Una notte è la scelta più interessante per passeggiare in yukata e godersi le terme senza correre.",
+    "photo": "kinosaki-centro",
+    "duration": "Consigliata 1 notte / 2 giorni; una giornata è possibile ma più impegnativa",
+    "fit": "Per chi cerca relax, tradizioni giapponesi, ryokan, piccoli borghi e terme.",
+    "places": [
+      {
+        "title": "Il centro storico e i canali",
+        "text": "Passeggia lungo il fiume Otani, tra ponti, salici, botteghe e piccoli ristoranti. La parte migliore della visita è l’atmosfera del borgo, specialmente nel tardo pomeriggio e dopo cena.",
+        "photo": "kinosaki-centro"
+      },
+      {
+        "title": "I sette bagni pubblici (sotoyu)",
+        "text": "Kinosaki è famosa per il giro dei bagni termali pubblici. Ogni struttura ha caratteristiche proprie e periodi di chiusura: verifica il calendario ufficiale e le regole di accesso, incluse quelle relative a tatuaggi e condizioni di salute.",
+        "photo": "kinosaki-gosho"
+      },
+      {
+        "title": "Passeggiare in yukata e alloggiare in un ryokan",
+        "text": "Molti ryokan forniscono yukata e calzature tradizionali per uscire a piedi tra le terme. Se scegli una sistemazione con cena, verifica gli orari di check-in e il servizio pasti: fanno parte dell’esperienza.",
+        "photo": "kinosaki-vie"
+      },
+      {
+        "title": "Genbudo: una deviazione tra rocce vulcaniche",
+        "text": "Le grotte di Genbudo, nell’area di Toyooka, mostrano imponenti colonne di basalto. Sono un’escursione da organizzare con attenzione ai collegamenti; controlla aperture, disponibilità dei mezzi e accessibilità.",
+        "photo": "kinosaki-genbudo"
+      }
+    ],
+    "days": [
+      {
+        "title": "Giorno 1 · Arrivo e terme",
+        "text": "Arrivo in tarda mattinata o nel primo pomeriggio. Deposita il bagaglio, esplora i canali e dedica il pomeriggio a una o due terme. Cena in ryokan e passeggiata serale nel centro.",
+        "photo": null
+      },
+      {
+        "title": "Giorno 2 · Mattina lenta",
+        "text": "Colazione e un’ultima passeggiata tra botteghe e ponticelli. In alternativa, per chi dispone di più tempo e collegamenti adatti, visita Genbudo prima di ripartire.",
+        "photo": null
+      },
+      {
+        "title": "Variante · Una sola giornata",
+        "text": "Se parti da Kyoto o Osaka, controlla bene treni e coincidenze prima di scegliere questa soluzione: la visita in giornata lascia meno spazio all’esperienza termale.",
+        "photo": null
+      }
+    ],
+    "stay": [
+      {
+        "title": "Ryokan nel centro del borgo",
+        "text": "È la scelta più caratteristica: permette di raggiungere a piedi le terme, cenare sul posto e passeggiare in yukata. Valuta inclusione di cena, colazione e accesso ai sotoyu.",
+        "photo": null
+      },
+      {
+        "title": "Vicino alla stazione Kinosaki Onsen",
+        "text": "Pratico per chi arriva con bagagli pesanti o resta una sola notte. Confronta comunque la distanza reale dai bagni e dai ristoranti.",
+        "photo": null
+      },
+      {
+        "title": "Struttura con bagno privato",
+        "text": "Valuta un ryokan con vasca privata o prenotabile se preferisci maggiore privacy. Verifica disponibilità e condizioni al momento della prenotazione.",
+        "photo": null
+      }
+    ],
+    "tips": [
+      "Da Kyoto e Osaka si arriva generalmente in treno espresso con tempi dell’ordine di 2,5–3 ore, variabili in base a servizio e partenza: verifica gli orari aggiornati.",
+      "Prenota il ryokan con anticipo nei weekend, in autunno e durante le festività: le sistemazioni con cena possono esaurirsi.",
+      "Per i bagni pubblici controlla chiusure, accessi, regole sui tatuaggi e condizioni di utilizzo; non dare per scontato che tutte le strutture siano aperte.",
+      "Prima di usare acqua termale molto calda, valuta le tue condizioni fisiche e rispetta le indicazioni del personale.",
+      "Scarpe comode sono utili anche se vuoi indossare lo yukata: i pavimenti e le strade possono essere scivolosi con pioggia o neve.",
+      "Non inserire Genbudo e altre deviazioni nella stessa mezza giornata se vuoi dedicare tempo alle terme."
+    ],
+    "sources": [
+      [
+        "Kinosaki Onsen · sito turistico ufficiale",
+        "https://visitkinosaki.com/"
+      ],
+      [
+        "Hyogo · guida JNTO",
+        "https://www.japan.travel/en/destinations/kansai/hyogo/"
+      ],
+      [
+        "Visit Kinosaki · accesso e bagni",
+        "https://visitkinosaki.com/"
+      ]
+    ],
+    "faq": [
+      {
+        "title": "Quante notti servono?",
+        "text": "Una notte è ideale per apprezzare le terme, la cena in ryokan e l’atmosfera del borgo. Due notti sono consigliabili per una pausa più rilassante.",
+        "photo": null
+      },
+      {
+        "title": "Posso visitarla da Kyoto o Osaka?",
+        "text": "Sì, ma il viaggio richiede diverse ore tra andata e ritorno. Per godere delle terme conviene generalmente pernottare.",
+        "photo": null
+      },
+      {
+        "title": "Qual è il periodo migliore?",
+        "text": "Autunno e primavera sono gradevoli per passeggiare. In inverno l’atmosfera è suggestiva ma il clima può essere freddo o nevoso; verifica meteo e trasporti.",
+        "photo": null
+      }
+    ]
+  },
+  {
     "slug": "cosa-vedere-lago-biwa",
     "name": "Lago Biwa",
     "title": "Lago Biwa: castelli, borghi storici e panorami vicino a Kyoto",

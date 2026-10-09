@@ -230,6 +230,7 @@ export const japanRegions = [
     "culture": "Templi e quartieri di Kyoto, patrimonio di Nara, castello di Himeji e luoghi spirituali di Wakayama.",
     "planning": "Le escursioni non sostituiscono il tempo nelle città. Koyasan, terme e cammini meritano scelte specifiche e talvolta notti dedicate.",
     "guides": [
+      {"name": "Kinosaki Onsen", "slug": "cosa-vedere-kinosaki-onsen", "photo": "kinosaki-centro"},
       {"name": "Lago Biwa", "slug": "cosa-vedere-lago-biwa", "photo": "biwa-panorama"},
       {
         "name": "Kyoto",
