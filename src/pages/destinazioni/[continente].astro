@@ -1,4 +1,5 @@
 ---
+import IndonesiaPhoto from '../../components/IndonesiaPhoto.astro';
 import ThailandPhoto from '../../components/ThailandPhoto.astro';
 import JapanPhoto from '../../components/JapanPhoto.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -19,8 +20,9 @@ const base = import.meta.env.BASE_URL;
       <article class="card country-card" data-country={country}>
         {country === 'Giappone' && <JapanPhoto photo="miyajima" />}
         {country === 'Thailandia' && <ThailandPhoto photo="samui" />}
+        {country === 'Indonesia' && <IndonesiaPhoto photo="komodo" />}
         <p class="kicker">{continent.name}</p><h2>{country}</h2>
-        {country === 'Giappone' ? <><p>Guide alle città, itinerari e strumenti pratici per preparare il viaggio.</p><a class="text-link" href={`${base}giappone/`}>Guide e itinerari →</a></> : country === 'Thailandia' ? <><p>Bangkok, il nord e le isole: esperienze e tre idee di viaggio da personalizzare.</p><a class="text-link" href={`${base}thailandia/`}>Scopri la Thailandia →</a></> : <p>Una proposta da costruire insieme, in base a periodo, durata, budget e interessi.</p>}
+        {country === 'Giappone' ? <><p>Guide alle città, itinerari e strumenti pratici per preparare il viaggio.</p><a class="text-link" href={`${base}giappone/`}>Guide e itinerari →</a></> : country === 'Thailandia' ? <><p>Bangkok, il nord e le isole: esperienze e tre idee di viaggio da personalizzare.</p><a class="text-link" href={`${base}thailandia/`}>Scopri la Thailandia →</a></> : country === 'Indonesia' ? <><p>Giava, Bali e le altre isole: cultura, natura e mare per un viaggio su misura.</p><a class="text-link" href={`${base}indonesia/`}>Scopri l’Indonesia →</a></> : <p>Una proposta da costruire insieme, in base a periodo, durata, budget e interessi.</p>}
         {country === 'Lituania' && <a class="text-link" href={`${base}blog/weekend-a-vilnius/`}>Leggi la guida a Vilnius →</a>}
         <a class="button button-dark" href={`${base}preventivo/?destinazione=${encodeURIComponent(country)}`}>Richiedi una proposta</a>
       </article>

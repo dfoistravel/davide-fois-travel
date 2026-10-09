@@ -1,0 +1,15 @@
+---
+import { indonesiaPhotos, type IndonesiaPhotoKey } from '../data/indonesiaPhotos';
+interface Props { photo: IndonesiaPhotoKey; variant?: 'card' | 'hero' | 'wide'; }
+const { photo, variant = 'card' } = Astro.props;
+const item = indonesiaPhotos[photo];
+const base = import.meta.env.BASE_URL;
+---
+<figure class={`indonesia-photo indonesia-photo--${variant}`}>
+ <img src={`${base}images/indonesia/${photo}-1280.webp`} srcset={`${base}images/indonesia/${photo}-640.webp 640w, ${base}images/indonesia/${photo}-1280.webp 1280w`} sizes={variant === 'card' ? '(max-width: 900px) 92vw, 380px' : '(max-width: 900px) 92vw, 600px'} width={item.width} height={item.height} alt={item.alt} loading={variant === 'hero' ? 'eager' : 'lazy'} fetchpriority={variant === 'hero' ? 'high' : 'auto'} decoding="async" style={`object-position:${item.position}`} />
+ <figcaption><a href={item.source}>{item.author} / Wikimedia Commons</a> · <a href={item.licenseUrl}>{item.license}</a> · formato adattato</figcaption>
+</figure>
+<style>
+.indonesia-photo{margin:0 0 22px;min-width:0}.indonesia-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:20px}.indonesia-photo figcaption{font-size:.75rem;line-height:1.55;color:var(--muted);margin-top:10px;overflow-wrap:anywhere}.indonesia-photo figcaption a{color:inherit}.indonesia-photo--hero{margin:0}.indonesia-photo--hero img{aspect-ratio:4/5;max-height:560px}.indonesia-photo--hero figcaption{color:#e5eaf0}.indonesia-photo--wide{margin:0}.indonesia-photo--wide img{aspect-ratio:16/9}
+@media(max-width:900px){.indonesia-photo--hero img{aspect-ratio:4/3;max-height:none}}
+</style>
