@@ -289,17 +289,17 @@ export const kantoGuides = [
       {
         "title": "Scegliere il sentiero",
         "text": "I percorsi hanno caratteristiche diverse. Non scegliere soltanto dal nome o dalla fotografia: verifica lunghezza, fondo, dislivello e condizioni. Il sentiero principale può essere una scelta da valutare, ma comprende comunque cammino in salita.",
-        "photo": null
+        "photo": "takao-sentiero"
       },
       {
         "title": "Impianti e cima",
         "text": "Funicolare o seggiovia possono ridurre una parte della salita. Restano tratti da percorrere a piedi; orari e operatività vanno verificati. I panorami dalla cima dipendono dal meteo e la vista del Fuji non è garantita.",
-        "photo": null
+        "photo": "takao-funicolare"
       },
       {
         "title": "Alla base della montagna",
         "text": "La zona di Takaosanguchi e il Takao 599 Museum possono completare la giornata. Se le energie sono limitate, una visita più corta può essere preferibile a una salita affrontata con fretta.",
-        "photo": null
+        "photo": "takao-museo"
       }
     ],
     "days": [
