@@ -259,6 +259,11 @@ export const japanRegions = [
         "name": "Koyasan",
         "slug": "cosa-vedere-koyasan",
         "photo": "koyasan-okunoin"
+      },
+      {
+        "name": "Kumano Kodo",
+        "slug": "cosa-vedere-kumano-kodo",
+        "photo": "kumano-daimonzaka"
       }
     ],
     "source": "https://www.japan.travel/en/destinations/kansai/"

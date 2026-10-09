@@ -1,6 +1,120 @@
 import { kantoGuides } from "./kantoGuides";
 export const japanGuides = [
   {
+    "slug": "cosa-vedere-kumano-kodo",
+    "name": "Kumano Kodo",
+    "title": "Kumano Kodo: cammini sacri, santuari e foreste della penisola di Kii",
+    "intro": "Kumano Kodo è una rete di antichi itinerari di pellegrinaggio tra i monti della penisola di Kii, non un singolo sentiero. Dai boschi di Nakahechi ai tre grandi santuari di Kumano Sanzan, è un viaggio che unisce spiritualità, natura e piccoli villaggi. Per assaporarlo davvero, scegli poche tappe coerenti con le tue capacità.",
+    "photo": "kumano-daimonzaka",
+    "duration": "2–3 giorni per una selezione di cammini e santuari; 4–6 o più giorni per tappe a piedi su più giornate",
+    "fit": "Per chi ama escursionismo, paesaggi, storia dei pellegrinaggi e esperienze lontane dalle grandi città.",
+    "places": [
+      {
+        "title": "Daimonzaka: l’antico cammino tra i cedri",
+        "text": "La scalinata lastricata nel bosco conduce verso l’area sacra di Nachi ed è una delle immagini più evocative del Kumano Kodo. Il percorso comprende gradini e fondo che può diventare scivoloso dopo la pioggia.",
+        "photo": "kumano-daimonzaka"
+      },
+      {
+        "title": "Kumano Nachi Taisha e cascata Nachi",
+        "text": "Il santuario di Nachi, il tempio Seiganto-ji e la grande cascata costituiscono una delle tappe più suggestive. Tieni conto dei dislivelli, dei collegamenti locali e del tempo per più visite.",
+        "photo": "kumano-nachi"
+      },
+      {
+        "title": "Kumano Hongu Taisha e il grande torii di Oyunohara",
+        "text": "Hongu è il cuore spirituale di molti itinerari Nakahechi. Non perdere l’area dell’antico santuario a Oyunohara, distinta dal complesso attuale. È una buona base per esplorare i dintorni e le terme di Yunomine Onsen.",
+        "photo": null
+      },
+      {
+        "title": "Kumano Hayatama Taisha e Shingu",
+        "text": "Il terzo santuario dei Kumano Sanzan si trova a Shingu. Puoi collegarlo alla costa e, con una pianificazione adeguata, alla visita di Nachi e Katsuura.",
+        "photo": "kumano-hayatama"
+      },
+      {
+        "title": "Nakahechi: le tappe classiche a piedi",
+        "text": "La via Nakahechi attraversa villaggi, santuari minori e foreste. Tratti come Takijiri-oji–Chikatsuyu o Hosshinmon-oji–Hongu richiedono preparazione e controllo di distanze, dislivelli, meteo e mezzi. Non sono equivalenti come difficoltà.",
+        "photo": null
+      },
+      {
+        "title": "Yunomine Onsen e Kawayu Onsen",
+        "text": "Due località termali utili per recuperare le energie durante un itinerario a tappe. La disponibilità degli alloggi e gli orari dei bus condizionano la pianificazione: prenota con anticipo nei periodi richiesti.",
+        "photo": null
+      }
+    ],
+    "days": [
+      {
+        "title": "Giorno 1 · Tanabe e accesso a Nakahechi",
+        "text": "Raggiungi Kii-Tanabe e dirigiti alla località scelta per l’inizio del cammino. Se arrivi tardi, evita trekking impegnativi nella stessa giornata.",
+        "photo": null
+      },
+      {
+        "title": "Giorno 2 · Cammino e Hongu",
+        "text": "Scegli un tratto di Nakahechi commisurato all’esperienza del gruppo, con arrivo a Hongu o trasferimento verso la base termale.",
+        "photo": null
+      },
+      {
+        "title": "Giorno 3 · Nachi e Shingu",
+        "text": "Dedica tempo alla scalinata di Daimonzaka, all’area sacra di Nachi e, se i collegamenti lo permettono, a Shingu. Meglio separare le due località quando non vuoi correre.",
+        "photo": null
+      }
+    ],
+    "stay": [
+      {
+        "title": "Kii-Tanabe e Takahara / Chikatsuyu",
+        "text": "Basi strategiche per iniziare un itinerario Nakahechi, utili se prevedi tappe a piedi e trasferimento bagagli organizzato.",
+        "photo": null
+      },
+      {
+        "title": "Hongu, Yunomine o Kawayu",
+        "text": "Per visitare Hongu e rilassarti alle terme. Confronta corse dei bus e distanze effettive da ogni struttura.",
+        "photo": null
+      },
+      {
+        "title": "Kii-Katsuura o Shingu",
+        "text": "Più pratiche per Nachi, la costa e Hayatama Taisha, con possibilità di collegamenti ferroviari regionali.",
+        "photo": null
+      }
+    ],
+    "tips": [
+      "Kumano Kodo comprende più itinerari: scegli la via e la tappa esatta prima di prenotare gli alloggi.",
+      "Scarica mappe ufficiali e tracce del percorso e verifica eventuali chiusure, frane o deviazioni prima della partenza.",
+      "Porta scarpe da trekking già collaudate, acqua, protezione dalla pioggia e luce adeguata; alcuni tratti sono isolati.",
+      "Le corse degli autobus possono essere rare: controlla l’ultimo collegamento e considera il rientro prima di iniziare.",
+      "In estate il caldo umido è intenso e possono verificarsi piogge molto forti; in inverno alcune tappe possono richiedere precauzioni aggiuntive.",
+      "Un’escursione breve a Daimonzaka non equivale a più giorni di trekking sul Nakahechi."
+    ],
+    "sources": [
+      [
+        "Kumano Travel · portale ufficiale locale",
+        "https://www.kumano-travel.com/en"
+      ],
+      [
+        "Tanabe City Kumano Tourism Bureau · itinerari e mappe",
+        "https://www.tb-kumano.jp/en/"
+      ],
+      [
+        "JNTO · Kumano Kodo",
+        "https://www.japan.travel/en/spot/1116/"
+      ]
+    ],
+    "faq": [
+      {
+        "title": "Si può visitare senza essere escursionisti esperti?",
+        "text": "Sì, scegliendo una visita ai santuari e un tratto breve come Daimonzaka; per camminare per più giorni su Nakahechi è opportuno valutare dislivelli, esperienza e condizioni.",
+        "photo": null
+      },
+      {
+        "title": "Quanto tempo serve?",
+        "text": "Un assaggio richiede almeno due o tre giorni con spostamenti ben organizzati. Un cammino a tappe necessita in genere di più giorni e pernottamenti intermedi.",
+        "photo": null
+      },
+      {
+        "title": "Meglio fare base a Osaka?",
+        "text": "Per un itinerario a piedi e la visita dei tre santuari è preferibile dormire nella penisola di Kii. Le distanze e le coincidenze rendono poco pratico un programma completo in giornata.",
+        "photo": null
+      }
+    ]
+  },
+  {
     "slug": "cosa-vedere-koyasan",
     "name": "Koyasan",
     "title": "Koyasan: templi, foreste sacre e una notte in monastero",
