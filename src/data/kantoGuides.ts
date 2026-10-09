@@ -460,17 +460,17 @@ export const kantoGuides = [
       {
         "title": "La passeggiata verso Sainokawara",
         "text": "Le strade e il parco ampliano la visita oltre il centro. I bagni e le altre esperienze hanno accessi e condizioni propri: scegli prima quali attività ti interessano e verifica l’operatività.",
-        "photo": null
+        "photo": "kusatsu-sainokawara"
       },
       {
         "title": "Il ryokan: parte della destinazione",
         "text": "Una struttura tradizionale può dare spazio a cena, riposo e onsen. Controlla tipo di camera, pasti, orario d’arrivo e regole dei bagni. Chiedi informazioni su tatuaggi, bambini e disponibilità di bagni privati.",
-        "photo": null
+        "photo": "kusatsu-ryokan"
       },
       {
         "title": "Non ogni soggiorno è un’escursione in quota",
         "text": "L’area montana cambia con la stagione e gli accessi possono essere limitati. La visita del paese e un percorso montano sono programmi diversi: non aggiungere trekking senza verificarne condizioni e fattibilità.",
-        "photo": null
+        "photo": "kusatsu-shirane"
       }
     ],
     "days": [
