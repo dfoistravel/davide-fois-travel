@@ -236,17 +236,17 @@ export const japanGuides = [
       {
         "title": "Nigatsu-do: una salita con una pausa",
         "text": "Dopo il complesso principale puoi raggiungere Nigatsu-do, con gradini e affacci sulla zona. È una deviazione da scegliere in base a energie e mobilità: con passeggini o difficoltà di cammino verifica il percorso praticabile.",
-        "photo": null
+        "photo": "nara-nigatsudo"
       },
       {
         "title": "Kasuga Taisha e i percorsi nel bosco",
         "text": "Il santuario e le lanterne offrono un’atmosfera diversa dal grande tempio. La passeggiata è una buona ragione per rallentare. Non aspettarti che tutte le lanterne siano sempre illuminate: aperture speciali ed eventi vanno controllati.",
-        "photo": null
+        "photo": "nara-kasuga"
       },
       {
         "title": "Naramachi: chiudere la visita in città",
         "text": "Se resta tempo, spostati verso le vie di Naramachi per osservare case, botteghe e caffè. Può sostituire un’ulteriore visita religiosa quando desideri una parte della giornata più urbana e informale.",
-        "photo": null
+        "photo": "nara-naramachi"
       }
     ],
     "days": [
