@@ -17,12 +17,12 @@ export const japanGuides = [
       {
         "title": "Higashiyama e Kiyomizu-dera",
         "text": "Le strade in salita, le botteghe e le case tradizionali rendono questa zona una passeggiata oltre che una visita al tempio. Parti dal Kiyomizu-dera e lascia tempo alle vie circostanti: le scarpe comode contano più di una lista lunga di soste.",
-        "photo": null
+        "photo": "kyoto-kiyomizu"
       },
       {
         "title": "Gion: un quartiere abitato",
         "text": "Gion invita a osservare facciate, vicoli e atmosfera serale. È anche un luogo di vita e lavoro: rispetta i divieti di accesso alle strade private, non inseguire maiko e geiko e chiedi il consenso prima di fotografare persone. Una passeggiata tranquilla vale più della ricerca di una fotografia a ogni costo.",
-        "photo": null
+        "photo": "kyoto-gion"
       },
       {
         "title": "Fushimi Inari: scegli quanto camminare",
@@ -32,12 +32,12 @@ export const japanGuides = [
       {
         "title": "Arashiyama: oltre i bambù",
         "text": "Il bosco di bambù è solo una parte della visita. Il fiume, il ponte Togetsukyo e i giardini della zona meritano una mezza giornata o più. Scegli pochi luoghi vicini e considera il tempo del trasferimento verso questo settore occidentale della città.",
-        "photo": null
+        "photo": "kyoto-arashiyama"
       },
       {
         "title": "Nishiki e il centro",
         "text": "Il mercato è una tappa per conoscere ingredienti e piccoli assaggi, da abbinare al centro e alle vie commerciali. Consuma il cibo dove consentito e lascia liberi i passaggi. È un’alternativa utile quando vuoi alternare templi, cucina e vita quotidiana.",
-        "photo": null
+        "photo": "kyoto-nishiki"
       }
     ],
     "days": [
