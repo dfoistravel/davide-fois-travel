@@ -372,17 +372,17 @@ export const kantoGuides = [
       {
         "title": "Il fiume: passeggiata o attività",
         "text": "Le uscite in barca sono una possibilità distinta dalla visita a piedi. Dipendono da operatività, livello dell’acqua e meteo: controlla condizioni e requisiti, senza considerarle sempre disponibili.",
-        "photo": null
+        "photo": "nagatoro-barca"
       },
       {
         "title": "Chichibu: templi e vita locale",
         "text": "La città offre una prospettiva diversa dal fiume, con luoghi di culto e tradizioni. Puoi selezionare alcune visite e lasciare tempo al centro. Un pellegrinaggio completo non è una normale aggiunta a una gita di giornata.",
-        "photo": null
+        "photo": "chichibu-santuario"
       },
       {
         "title": "Hitsujiyama e Hodosan",
         "text": "Le fioriture di Hitsujiyama sono stagionali. Nell’area di Nagatoro, Hodosan aggiunge santuario e montagna: scegli le attività secondo periodo e tempi, evitando di inseguire tutte le fotografie della zona.",
-        "photo": null
+        "photo": "hitsujiyama-fiori"
       }
     ],
     "days": [
