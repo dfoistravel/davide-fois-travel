@@ -129,22 +129,22 @@ export const japanGuides = [
       {
         "title": "Umeda e la città dall’alto",
         "text": "La zona settentrionale riunisce grandi stazioni, negozi e punti panoramici come Umeda Sky Building. È una scelta per chi ama architettura e skyline. Tieni un margine per orientarti nei passaggi della stazione e prenota le esperienze che lo richiedono.",
-        "photo": null
+        "photo": "osaka-umeda"
       },
       {
         "title": "Shinsekai e Tennoji",
         "text": "Shinsekai offre un’altra atmosfera, legata alle insegne e ai locali intorno alla torre Tsutenkaku. Abbinala a Tennoji per una giornata concentrata a sud, anziché attraversare la città più volte.",
-        "photo": null
+        "photo": "osaka-shinsekai"
       },
       {
         "title": "Kuromon: una sosta gastronomica",
         "text": "Può completare una passeggiata nell’area di Namba. Scegli pochi assaggi e osserva le regole dei negozi sul consumo del cibo. Non serve trasformare ogni pasto in una tappa obbligata: lascia spazio anche ai piccoli locali trovati lungo il cammino.",
-        "photo": null
+        "photo": "osaka-kuromon"
       },
       {
         "title": "Universal Studios Japan o la baia",
         "text": "Universal Studios Japan richiede una giornata dedicata, con biglietti e condizioni di accesso da verificare sul sito ufficiale. L’acquario Kaiyukan e la zona della baia sono un’alternativa distinta: non un’aggiunta automatica dopo il parco.",
-        "photo": null
+        "photo": "osaka-kaiyukan"
       }
     ],
     "days": [
