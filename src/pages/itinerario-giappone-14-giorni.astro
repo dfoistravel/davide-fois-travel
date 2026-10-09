@@ -48,8 +48,8 @@ const schema = {
   "@graph": [
     {
       "@type": "Article",
-      "headline": "Itinerario Giappone 14 giorni: tour completo tra Tokyo, Kyoto e Hiroshima",
-      "description": "Itinerario completo di 14 giorni in Giappone con Tokyo, Kanazawa, Takayama, Kyoto, Hiroshima, Miyajima e Osaka.",
+      "headline": "Itinerario Giappone 14 giorni: percorso con più tappe tra Tokyo, Kyoto e Hiroshima",
+      "description": "Variante di 14 giorni in Giappone con Tokyo, Kanazawa, Takayama, Kyoto, Hiroshima, Miyajima e Osaka.",
       "author": { "@type": "Person", "name": "Davide Fois" },
       "publisher": { "@type": "Organization", "name": "Davide Fois Travel Consultant" },
       "mainEntityOfPage": new URL(`${base}itinerario-giappone-14-giorni/`, Astro.site).href,
@@ -68,15 +68,16 @@ const schema = {
 ---
 
 <BaseLayout
-  title="Itinerario Giappone 14 giorni | Tour completo su misura"
+  title="Giappone 14 giorni con Kanazawa e Takayama | Davide Fois"
   description="Scopri un itinerario di 14 giorni in Giappone tra Tokyo, Kanazawa, Takayama, Kyoto, Hiroshima, Miyajima e Osaka."
   schema={schema}
 >
-  <section class="hero japan-hero">
+  <section class="section"><div class="container"><div class="seo-note"><strong>Confronta il ritmo prima di scegliere.</strong><p>Questo è un percorso con diverse tappe e trasferimenti. Per un primo viaggio con meno cambi, leggi anche la <a href={`${base}primo-viaggio-giappone/#percorsi`}>proposta classica con giorni e notti spiegati</a>. Non sommare le due combinazioni: scegliamo quella adatta al tempo disponibile.</p></div></div></section>
+<section class="hero japan-hero">
     <div class="container hero-grid">
       <div>
         <p class="kicker">Itinerario Giappone</p>
-        <h1>Giappone in 14 giorni: un viaggio completo tra città, tradizione e natura.</h1>
+        <h1>Giappone in 14 giorni: la variante con Kanazawa e Takayama.</h1>
         <p class="lead">
           Due settimane per combinare Tokyo, Alpi Giapponesi, Kyoto,
           Hiroshima, Miyajima e Osaka con un ritmo più equilibrato.
@@ -95,8 +96,8 @@ const schema = {
         <div class="executive-plane">✈</div>
         <div class="executive-card">
           <span class="badge">14 giorni</span>
-          <strong>Un itinerario più completo e rilassato.</strong>
-          <p>Ideale per chi vuole scoprire più regioni senza correre troppo.</p>
+          <strong>Più regioni, più trasferimenti.</strong>
+          <p>Da scegliere se preferisci varietà e accetti un ritmo più intenso.</p>
         </div>
       </div>
     </div>
@@ -152,7 +153,7 @@ const schema = {
       </div>
 
       <div class="grid-3">
-        <article class="card"><h3>Ritmo più sostenibile</h3><p>Più tempo per le città e meno trasferimenti compressi.</p></article>
+        <article class="card"><h3>Un ritmo da personalizzare</h3><p>Diverse tappe richiedono una selezione delle visite e attenzione ai tempi di spostamento.</p></article>
         <article class="card"><h3>Più varietà</h3><p>Metropoli, villaggi, montagne, templi e mare interno.</p></article>
         <article class="card"><h3>Più personalizzazione</h3><p>Spazio per escursioni ed esperienze legate alla stagione.</p></article>
       </div>
@@ -179,11 +180,9 @@ const schema = {
     <div class="container consultant-box">
       <div>
         <p class="kicker">Il consiglio del Travel Consultant</p>
-        <h2>Due settimane sono il miglior compromesso per un primo viaggio completo.</h2>
+        <h2>Due settimane richiedono comunque di scegliere le priorità.</h2>
         <p>
-          Con 14 giorni puoi vedere molto senza trasformare ogni giornata
-          in una corsa. La chiave è mantenere un percorso lineare e limitare
-          i cambi hotel non necessari.
+          Questa variante attraversa più regioni e comporta diversi cambi hotel. Se desideri più tempo nelle città, riduciamo le tappe o prolunghiamo il viaggio.
         </p>
       </div>
       <div class="consultant-signature">

@@ -1,5 +1,5 @@
 ---
-import { japanPhotos, type JapanPhotoKey } from '../data/japanPhotos';
+import { japanPhotos, japanPhotoCredits, type JapanPhotoKey } from '../data/japanPhotos';
 interface Props {
   photo: JapanPhotoKey;
   variant?: 'hero' | 'card' | 'wide';
@@ -8,6 +8,7 @@ interface Props {
 }
 const { photo, variant = 'card', eager = false, caption } = Astro.props;
 const item = japanPhotos[photo];
+const credit = japanPhotoCredits[photo];
 const base = import.meta.env.BASE_URL;
 ---
 <figure class={`japan-photo japan-photo--${variant}`}>
@@ -17,5 +18,5 @@ const base = import.meta.env.BASE_URL;
     width={item.width} height={item.height} alt={item.alt}
     loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async"
     style={`object-position: ${item.position};`} />
-  {caption && <figcaption>{caption}</figcaption>}
+  {credit ? <figcaption><a href={credit.source}>Foto: {credit.author}</a> · <a href={credit.licenseUrl}>{credit.license}</a><br />{credit.changes}</figcaption> : caption && <figcaption>{caption}</figcaption>}
 </figure>

@@ -13,7 +13,7 @@ const faq = [
   {
     question: "Quanti giorni servono per un primo viaggio?",
     answer:
-      "Per un primo viaggio consiglio almeno 10-14 giorni, così da visitare Tokyo, Kyoto, Osaka e inserire una o due escursioni."
+      "Per un primo viaggio consiglio 10–14 giorni, scegliendo le tappe in base al ritmo: Tokyo e Kyoto come basi, poi escursioni o estensioni secondo il tempo disponibile."
   },
   {
     question: "È possibile creare un itinerario personalizzato?",
@@ -70,8 +70,8 @@ const schema = {
         </p>
 
         <div class="actions">
-          <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>
-            Richiedi un preventivo gratuito
+          <a class="button button-primary" href={`${base}primo-viaggio-giappone/`}>
+            Inizia a conoscere il Giappone
           </a>
 
           <a class="button button-ghost" href="#itinerari">
@@ -84,7 +84,7 @@ const schema = {
     </div>
   </section>
 
-  <section class="section"><div class="container"><div class="section-head"><p class="kicker">Il Giappone da Vivere</p><h2>Trova subito quello che ti serve.</h2><p>Dai temi della mia guida: un percorso pratico per scegliere tappe, organizzare i trasporti e preparare la partenza.</p></div><nav class="experience-links" aria-label="Guide per organizzare il Giappone"><a href={`${base}quando-andare-giappone/`}>Quando partire →</a><a href="#itinerari">Scegliere la durata →</a><a href={`${base}giappone-pratico/#budget`}>Budget →</a><a href={`${base}giappone-pratico/#trasporti`}>Trasporti →</a><a href={`${base}giappone-pratico/#connessione`}>Internet e app →</a><a href={`${base}giappone-pratico/#checklist`}>Checklist →</a><a href={`${base}cosa-vedere-tokyo/`}>Tokyo →</a><a href={`${base}cosa-vedere-kyoto/`}>Kyoto →</a><a href={`${base}cosa-vedere-osaka/`}>Osaka →</a></nav></div></section>
+  <section class="section"><div class="container"><div class="section-head"><p class="kicker">Il Giappone da Vivere</p><h2>Trova subito quello che ti serve.</h2><p>Dai temi della mia guida: un percorso pratico per scegliere tappe, organizzare i trasporti e preparare la partenza.</p></div><nav class="experience-links" aria-label="Guide per organizzare il Giappone"><a href={`${base}quando-andare-giappone/`}>Quando partire →</a><a href="#itinerari">Scegliere la durata →</a><a href={`${base}giappone-pratico/#budget`}>Budget →</a><a href={`${base}giappone-pratico/#trasporti`}>Trasporti →</a><a href={`${base}giappone-pratico/#connessione`}>Internet e app →</a><a href={`${base}giappone-pratico/#checklist`}>Checklist →</a><a href={`${base}cosa-vedere-tokyo/`}>Tokyo →</a><a href={`${base}cosa-vedere-kyoto/`}>Kyoto →</a><a href={`${base}cosa-vedere-osaka/`}>Osaka →</a><a href={`${base}cosa-vedere-nara/`}>Nara →</a><a href={`${base}monte-fuji-hakone/`}>Fuji e Hakone →</a><a href={`${base}hiroshima-miyajima/`}>Hiroshima e Miyajima →</a><a href={`${base}primo-viaggio-giappone/`}>Il primo viaggio →</a></nav></div></section>
   <section class="section alt">
     <div class="container">
       <div class="section-head">
@@ -209,21 +209,21 @@ const schema = {
           <JapanPhoto photo="nara" />
           <h3>Nara</h3>
           <p>Il Grande Buddha e i celebri cervi del parco.</p>
-        <a class="text-link" href={`${base}itinerario-giappone-14-giorni/`}>Scopri di più →</a>
+        <a class="text-link" href={`${base}cosa-vedere-nara/`}>Scopri di più →</a>
         </article>
 
         <article class="card japan-destination-card">
           <JapanPhoto photo="fuji" />
           <h3>Monte Fuji e Hakone</h3>
           <p>Laghi, funivie, onsen e panorami iconici.</p>
-        <a class="text-link" href={`${base}giappone-pratico/#durata`}>Scopri di più →</a>
+        <a class="text-link" href={`${base}monte-fuji-hakone/`}>Scopri di più →</a>
         </article>
 
         <article class="card japan-destination-card">
           <JapanPhoto photo="hiroshima" />
           <h3>Hiroshima e Miyajima</h3>
           <p>Storia, memoria e uno dei torii più famosi del Giappone.</p>
-        <a class="text-link" href={`${base}itinerario-giappone-14-giorni/`}>Scopri di più →</a>
+        <a class="text-link" href={`${base}hiroshima-miyajima/`}>Scopri di più →</a>
         </article>
       </div>
     </div>
@@ -246,19 +246,19 @@ const schema = {
       <div class="grid-3">
         <article class="card">
           <h3>7 giorni</h3>
-          <p>Tokyo e Kyoto, con una giornata per Hakone o Monte Fuji. Ritmo intenso.</p><a href={`${base}giappone-pratico/#durata`}>Schema dalla guida →</a>
+          <p>Tokyo oppure Kyoto con escursioni vicine. Con due città, gli orari dei voli incidono molto sul tempo di visita.</p><a href={`${base}primo-viaggio-giappone/#percorsi`}>Confronta durata e ritmo →</a>
         </article>
 
         <article class="card">
           <h3>10 giorni</h3>
-          <p>Tokyo, Hakone, Kyoto, Nara e Osaka.</p><a href={`${base}giappone-pratico/#durata`}>Schema dalla guida →</a><br /><a href={`${base}itinerario-giappone-10-giorni/`}>Itinerario dettagliato →</a>
+          <p>Tokyo e Kyoto, con una giornata per Nara oppure Osaka. Per aggiungere altre tappe, scegli cosa ridurre.</p><a href={`${base}primo-viaggio-giappone/#percorsi`}>Confronta durata e ritmo →</a><br /><a href={`${base}itinerario-giappone-10-giorni/`}>Itinerario dettagliato →</a>
         </article>
 
         <article class="card">
           <h3>14 giorni</h3>
           <p>
-            Tokyo, Hakone, Kyoto, Nara, Osaka, Hiroshima e Miyajima.
-          </p><a href={`${base}giappone-pratico/#durata`}>Schema dalla guida →</a><br /><a href={`${base}itinerario-giappone-14-giorni/`}>Variante dettagliata →</a>
+            Tokyo, una pausa a Hakone oppure Kawaguchiko, Kyoto, Nara, Hiroshima e Miyajima; Osaka prima del rientro.
+          </p><a href={`${base}primo-viaggio-giappone/#percorsi`}>Confronta durata e ritmo →</a><br /><a href={`${base}itinerario-giappone-14-giorni/`}>Variante con Kanazawa e Takayama →</a>
         </article>
 
         <article class="card">
