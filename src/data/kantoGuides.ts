@@ -196,17 +196,17 @@ export const kantoGuides = [
       {
         "title": "Red Brick Warehouse e Yamashita Park",
         "text": "Gli edifici in mattoni e il parco sul porto danno una continuità alla passeggiata urbana. Sono luoghi da abbinare per conoscere il rapporto tra la città e il mare, alternando cammino e pause.",
-        "photo": null
+        "photo": "yokohama-redbrick"
       },
       {
         "title": "Chinatown",
         "text": "Il quartiere è una tappa per atmosfera e cucina. Scegli dove mangiare in base ai tuoi gusti e verifica gli ingredienti se hai esigenze alimentari. Non è necessario trasformare la visita in una serie di assaggi obbligati.",
-        "photo": null
+        "photo": "yokohama-chinatown"
       },
       {
         "title": "Sankeien: un’altra parte della città",
         "text": "Il giardino ospita edifici storici e percorsi verdi. È fuori dal nucleo centrale del lungomare: includilo come visita dedicata, tenendo conto dell’accesso, anziché aggiungerlo a fine giornata.",
-        "photo": null
+        "photo": "yokohama-sankeien"
       }
     ],
     "days": [
