@@ -1,0 +1,14 @@
+---
+interface Props { photo: 'samui' | 'bangkok' | 'chiang-mai'; hero?: boolean; }
+const { photo, hero = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const height = { samui: 960, bangkok: 1918, 'chiang-mai': 853 };
+const alt = { samui: 'Barca tradizionale su una spiaggia di Koh Samui', bangkok: 'Stupa decorati del tempio Wat Pho a Bangkok', 'chiang-mai': 'Mura storiche e fossato di Chiang Mai' };
+---
+<figure class={`thailand-photo ${hero ? 'thailand-photo--hero' : ''}`}>
+  <img src={`${base}images/thailandia/${photo}-1280.webp`} srcset={`${base}images/thailandia/${photo}-640.webp 640w, ${base}images/thailandia/${photo}-1280.webp 1280w`} sizes={hero ? '(max-width: 900px) 92vw, 580px' : '(max-width: 900px) 92vw, 380px'} width="1280" height={height[photo]} alt={alt[photo]} loading={hero ? 'eager' : 'lazy'} fetchpriority={hero ? 'high' : 'auto'} decoding="async" />
+</figure>
+<style>
+.thailand-photo{margin:0 0 20px;min-width:0}.thailand-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:20px}.thailand-photo--hero{margin:0}.thailand-photo--hero img{aspect-ratio:4/5;max-height:560px}
+@media(max-width:900px){.thailand-photo--hero img{aspect-ratio:4/3;max-height:none}}
+</style>
