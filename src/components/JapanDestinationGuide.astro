@@ -2,16 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import JapanPhoto from './JapanPhoto.astro';
 import { japanGuides } from '../data/japanGuides';
+import { japanRegions } from '../data/japanRegions';
 import type { JapanPhotoKey } from '../data/japanPhotos';
 interface Props { guide: (typeof japanGuides)[number] }
 const { guide: g } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const region = japanRegions.find(r => r.guides.some(x => x.slug === g.slug));
+const related = japanGuides.filter(x => x.slug !== g.slug && (!region || region.guides.some(y => y.slug === x.slug))).slice(0,6);
 const caption = (photo: string) => photo === 'nara' ? 'Nara · Balon Greyjoy, CC0 · Wikimedia Commons' : `${g.name} · Fotografia di Davide Fois`;
 const schema = { '@context': 'https://schema.org', '@type': 'Article', headline: g.title, description: g.intro, author: { '@type': 'Person', name: 'Davide Fois' }, inLanguage: 'it' };
 ---
 <BaseLayout title={`${g.title} | Davide Fois Travel`} description={g.intro} schema={schema}>
 <section class="hero"><div class="container jp-guide-hero"><div>
-<p class="kicker"><a href={`${base}giappone/`}>Giappone</a> · Guida per il primo viaggio</p><h1>{g.title}</h1><p class="lead">{g.intro}</p>
+<p class="kicker"><a href={`${base}giappone/`}>Giappone</a> · {region ? <a href={`${base}giappone/regioni/${region.slug}/`}>{region.name}</a> : "Guida di viaggio"}</p><h1>{g.title}</h1><p class="lead">{g.intro}</p>
 <div class="actions"><a class="button button-primary" href="#luoghi">Esplora i luoghi</a><a class="button button-ghost" href="#programma">Come organizzare la visita</a></div>
 </div><JapanPhoto photo={g.photo} variant="hero" eager caption={caption(g.photo)} /></div></section>
 <section class="section jp-summary"><div class="container jp-two"><article class="card"><p class="kicker">Il tempo da prevedere</p><h2>{g.duration}</h2><p>Indicazione di viaggio proposta da Davide: considera separatamente arrivi, partenze e tempi di trasferimento.</p></article><article class="card"><p class="kicker">A chi la consiglio</p><h2>Quale esperienza cerchi?</h2><p>{g.fit}</p><a href={`${base}quando-andare-giappone/`}>Scegli il periodo del viaggio →</a></article></div></section>
@@ -21,7 +24,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'Article', headline:
 <section class="section" id="dormire"><div class="container"><div class="section-head"><p class="kicker">Scegliere la base</p><h2>Dove dormire: le zone da confrontare</h2><p>La scelta dell’hotel parte dal percorso: posizione, accesso con i bagagli e serate contano quanto la camera.</p></div><div class="grid-3">{g.stay.map(s => <article class="card"><h3>{s.title}</h3><p>{s.text}</p></article>)}</div></div></section>
 <section class="section alt" id="consigli"><div class="container jp-two"><div><p class="kicker">Prima di partire</p><h2>Consigli per una visita più piacevole</h2><ul class="jp-tips">{g.tips.map(t => <li>{t}</li>)}</ul></div><aside class="card"><h3>Trasporti, budget e preparativi</h3><p>Dopo aver scelto i luoghi, valuta spostamenti, bagagli, connessione e budget dell’intero viaggio.</p><a href={`${base}giappone-pratico/`}>Leggi la guida pratica →</a><p><a href={`${base}primo-viaggio-giappone/`}>Costruisci il tuo primo itinerario →</a></p></aside></div></section>
 <section class="section" id="domande"><div class="container"><h2>Le domande prima di scegliere</h2>{g.faq.map(f => <details class="jp-faq"><summary>{f.title}</summary><p>{f.text}</p></details>)}<div class="jp-sources"><h3>Fonti e verifiche per la partenza</h3><p>Informazioni sui luoghi verificate il 9 ottobre 2026. Durate, sequenze e zone di soggiorno sono suggerimenti di Davide. Per orari, biglietti, accessi e servizi consulta i siti ufficiali vicino alla partenza.</p><ul>{g.sources.map(s => <li><a href={s[1]} target="_blank" rel="noopener noreferrer">{s[0]}</a></li>)}</ul>{g.photo === 'nara' && <p>Foto di Nara: <a href="https://commons.wikimedia.org/wiki/File:20190121_Nara_deer-3.jpg">Balon Greyjoy · CC0</a>.</p>}</div></div></section>
-<section class="section alt"><div class="container"><div class="section-head"><p class="kicker">Continua il viaggio</p><h2>Le altre tappe del Giappone</h2></div><div class="jp-related"><a class="card" href={`${base}cosa-vedere-tokyo/`}>Tokyo →</a>{japanGuides.filter(x => x.slug !== g.slug).map(x => <a class="card" href={`${base}${x.slug}/`}>{x.name} →</a>)}</div></div></section>
+<section class="section alt"><div class="container"><div class="section-head"><p class="kicker">Continua il viaggio</p><h2>Continua a conoscere il territorio</h2></div><div class="jp-related"><a class="card" href={`${base}cosa-vedere-tokyo/`}>Tokyo →</a>{related.map(x => <a class="card" href={`${base}${x.slug}/`}>{x.name} →</a>)}</div></div></section>
 <section class="section"><div class="container"><div class="cta"><div><p class="kicker">Dalle idee al tuo viaggio</p><h2>Quali tappe senti più tue?</h2><p>Raccontami periodo, giorni disponibili, partecipanti e luoghi che ti hanno colpito. Costruirò una proposta con un ritmo adatto a te.</p></div><a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone&tipo=Tour%20culturale`}>Richiedi la tua proposta</a></div></div></section>
 </BaseLayout>
 <style>

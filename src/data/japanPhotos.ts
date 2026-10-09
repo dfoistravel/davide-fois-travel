@@ -1,72 +1,160 @@
 export const japanPhotos = {
-  "fushimi": {"alt": "Il torii d’ingresso a Fushimi Inari, Kyoto", "width": 1280, "height": 758, "position": "50% 50%"},
-  "todaiji": {"alt": "La grande sala del tempio Todai-ji a Nara", "width": 1280, "height": 960, "position": "50% 50%"},
-  "hakone": {"alt": "Il lago Ashi e il Monte Fuji a Hakone in una giornata limpida", "width": 1280, "height": 960, "position": "50% 50%"},
-
-  "nara": {"alt": "Cervi nel parco di Nara", "width": 1280, "height": 853, "position": "30% 50%"},
+  "fushimi": {
+    "alt": "Il torii d’ingresso a Fushimi Inari, Kyoto",
+    "width": 1280,
+    "height": 758,
+    "position": "50% 50%",
+    "fileWidth": 1280
+  },
+  "todaiji": {
+    "alt": "La grande sala del tempio Todai-ji a Nara",
+    "width": 1280,
+    "height": 960,
+    "position": "50% 50%",
+    "fileWidth": 1280
+  },
+  "hakone": {
+    "alt": "Il lago Ashi e il Monte Fuji a Hakone in una giornata limpida",
+    "width": 1280,
+    "height": 960,
+    "position": "50% 50%",
+    "fileWidth": 1280
+  },
+  "nara": {
+    "alt": "Cervi nel parco di Nara",
+    "width": 1280,
+    "height": 853,
+    "position": "30% 50%",
+    "fileWidth": 1280
+  },
   "miyajima": {
     "alt": "Il torii di Itsukushima sul mare a Miyajima",
     "width": 1536,
     "height": 2048,
-    "position": "50% 40%"
+    "position": "50% 40%",
+    "fileWidth": 1280
   },
   "kinkakuji": {
     "alt": "Il Padiglione d’Oro Kinkaku-ji riflesso nello stagno a Kyoto",
     "width": 1536,
     "height": 2048,
-    "position": "50% 40%"
+    "position": "50% 40%",
+    "fileWidth": 1280
   },
   "shibuya": {
     "alt": "Shibuya illuminata di notte vista dall’alto",
     "width": 1221,
     "height": 2048,
-    "position": "50% 50%"
+    "position": "50% 50%",
+    "fileWidth": 1280
   },
   "osaka-castello": {
     "alt": "Il castello di Osaka tra gli alberi",
     "width": 1536,
     "height": 2048,
-    "position": "50% 40%"
+    "position": "50% 40%",
+    "fileWidth": 1280
   },
   "dotonbori": {
     "alt": "Il canale di Dotonbori e le insegne di Osaka",
     "width": 1536,
     "height": 2048,
-    "position": "50% 50%"
+    "position": "50% 50%",
+    "fileWidth": 1280
   },
   "sensoji": {
     "alt": "La porta Hozomon del tempio Sensō-ji a Tokyo",
     "width": 2048,
     "height": 1536,
-    "position": "50% 40%"
+    "position": "50% 40%",
+    "fileWidth": 1280
   },
   "fuji": {
     "alt": "Il Monte Fuji tra nuvole e foreste",
     "width": 1440,
     "height": 1440,
-    "position": "50% 50%"
+    "position": "50% 50%",
+    "fileWidth": 1280
   },
   "giardino": {
     "alt": "Un giardino giapponese con stagno e rocce",
     "width": 2048,
     "height": 1536,
-    "position": "50% 50%"
+    "position": "50% 50%",
+    "fileWidth": 1280
   },
   "hiroshima": {
     "alt": "La Cupola della bomba atomica a Hiroshima",
     "width": 2048,
     "height": 1536,
-    "position": "50% 50%"
+    "position": "50% 50%",
+    "fileWidth": 1280
   },
   "odaiba": {
     "alt": "Il Rainbow Bridge e la baia di Tokyo da Odaiba",
     "width": 2048,
     "height": 1536,
-    "position": "50% 50%"
+    "position": "50% 50%",
+    "fileWidth": 1280
+  },
+  "kamakura": {
+    "alt": "Il Grande Buddha del tempio Kotoku-in a Kamakura",
+    "width": 1280,
+    "height": 928,
+    "position": "50% 50%",
+    "fileWidth": 1280
+  },
+  "nikko": {
+    "alt": "Il torii e la porta Yomeimon del santuario Toshogu a Nikko",
+    "width": 1280,
+    "height": 853,
+    "position": "50% 50%",
+    "fileWidth": 1280
+  },
+  "yokohama": {
+    "alt": "Il lungomare illuminato di Yokohama",
+    "width": 1280,
+    "height": 720,
+    "position": "50% 50%",
+    "fileWidth": 1280
+  },
+  "takao": {
+    "alt": "Un edificio del tempio Yakuoin sul monte Takao",
+    "width": 1280,
+    "height": 960,
+    "position": "50% 50%",
+    "fileWidth": 1280
+  },
+  "nagatoro": {
+    "alt": "Le rocce Iwadatami e il fiume Arakawa a Nagatoro",
+    "width": 1024,
+    "height": 768,
+    "position": "50% 50%",
+    "fileWidth": 1024
+  },
+  "kusatsu": {
+    "alt": "Lo Yubatake nella località termale di Kusatsu",
+    "width": 1280,
+    "height": 853,
+    "position": "50% 50%",
+    "fileWidth": 1280
+  },
+  "sawara": {
+    "alt": "Una barca e gli edifici storici lungo il canale di Sawara",
+    "width": 1280,
+    "height": 960,
+    "position": "50% 50%",
+    "fileWidth": 1280
+  },
+  "mito": {
+    "alt": "Veduta del lago Senba nell’area di Kairakuen a Mito",
+    "width": 1280,
+    "height": 720,
+    "position": "50% 50%",
+    "fileWidth": 1280
   }
 } as const;
 export type JapanPhotoKey = keyof typeof japanPhotos;
-
 export const japanPhotoCredits: Partial<Record<JapanPhotoKey, {author:string; license:string; licenseUrl:string; source:string; changes:string}>> = {
   "fushimi": {
     "author": "Balon Greyjoy",
@@ -94,6 +182,62 @@ export const japanPhotoCredits: Partial<Record<JapanPhotoKey, {author:string; li
     "license": "CC0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "source": "https://commons.wikimedia.org/wiki/File:20190121_Nara_deer-3.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  "kamakura": {
+    "author": "RobMyersAI",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kamakura_Buddha.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  "nikko": {
+    "author": "Koichi Sato",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nikko_toshogu_shrine.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  "yokohama": {
+    "author": "Matthide127",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:20250102_Yokohama_night_205010.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  "takao": {
+    "author": "Rob Young from United Kingdom",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Takao_-_Yakuo-in_Temple_%289409445148%29.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  "nagatoro": {
+    "author": "NY066",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nagatoro_Iwadatami.JPG",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  "kusatsu": {
+    "author": "おにく",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Yubatake_%28Kusatsu_Onsen%29.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  "sawara": {
+    "author": "ブルーノ・プラス",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Little_Edo_Sawara_Boat_Tour.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  "mito": {
+    "author": "七巫こ",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Kairakuen_lake_senba_2021.jpg",
     "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
   }
 };

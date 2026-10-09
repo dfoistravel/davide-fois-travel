@@ -1,3 +1,4 @@
+import { kantoGuides } from "./kantoGuides";
 export const japanGuides = [
   {
     "slug": "cosa-vedere-kyoto",
@@ -517,5 +518,6 @@ export const japanGuides = [
         "photo": null
       }
     ]
-  }
+  },
+  ...kantoGuides
 ] as const;

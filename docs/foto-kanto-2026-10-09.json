@@ -1,0 +1,98 @@
+[
+  {
+    "key": "kamakura",
+    "alt": "Il Grande Buddha del tempio Kotoku-in a Kamakura",
+    "width": 1280,
+    "height": 928,
+    "position": "50% 50%",
+    "author": "RobMyersAI",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kamakura_Buddha.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  {
+    "key": "nikko",
+    "alt": "Il torii e la porta Yomeimon del santuario Toshogu a Nikko",
+    "width": 1280,
+    "height": 853,
+    "position": "50% 50%",
+    "author": "Koichi Sato",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nikko_toshogu_shrine.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  {
+    "key": "yokohama",
+    "alt": "Il lungomare illuminato di Yokohama",
+    "width": 1280,
+    "height": 720,
+    "position": "50% 50%",
+    "author": "Matthide127",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:20250102_Yokohama_night_205010.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  {
+    "key": "takao",
+    "alt": "Un edificio del tempio Yakuoin sul monte Takao",
+    "width": 1280,
+    "height": 960,
+    "position": "50% 50%",
+    "author": "Rob Young from United Kingdom",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Takao_-_Yakuo-in_Temple_%289409445148%29.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  {
+    "key": "nagatoro",
+    "alt": "Le rocce Iwadatami e il fiume Arakawa a Nagatoro",
+    "width": 1024,
+    "height": 768,
+    "position": "50% 50%",
+    "author": "NY066",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nagatoro_Iwadatami.JPG",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  {
+    "key": "kusatsu",
+    "alt": "Lo Yubatake nella località termale di Kusatsu",
+    "width": 1280,
+    "height": 853,
+    "position": "50% 50%",
+    "author": "おにく",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Yubatake_%28Kusatsu_Onsen%29.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  {
+    "key": "sawara",
+    "alt": "Una barca e gli edifici storici lungo il canale di Sawara",
+    "width": 1280,
+    "height": 960,
+    "position": "50% 50%",
+    "author": "ブルーノ・プラス",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Little_Edo_Sawara_Boat_Tour.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  },
+  {
+    "key": "mito",
+    "alt": "Veduta del lago Senba nell’area di Kairakuen a Mito",
+    "width": 1280,
+    "height": 720,
+    "position": "50% 50%",
+    "author": "七巫こ",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Kairakuen_lake_senba_2021.jpg",
+    "changes": "Ridimensionamento e conversione WebP; ritaglio di visualizzazione tramite CSS."
+  }
+]

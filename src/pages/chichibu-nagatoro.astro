@@ -1,0 +1,6 @@
+---
+import JapanDestinationGuide from "../components/JapanDestinationGuide.astro";
+import { japanGuides } from "../data/japanGuides";
+const guide = japanGuides.find(g => g.slug === "chichibu-nagatoro");
+---
+<JapanDestinationGuide guide={guide!} />
