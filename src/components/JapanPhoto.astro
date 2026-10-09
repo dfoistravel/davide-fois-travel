@@ -11,10 +11,11 @@ const item = japanPhotos[photo];
 const credit = japanPhotoCredits[photo];
 const base = import.meta.env.BASE_URL;
 const highWidth = item.fileWidth;
+const externalUrl = "externalUrl" in item ? item.externalUrl : null;
 ---
 <figure class={`japan-photo japan-photo--${variant}`}>
-  <img src={`${base}images/giappone/${photo}-${highWidth}.webp`}
-    srcset={`${base}images/giappone/${photo}-640.webp 640w, ${base}images/giappone/${photo}-${highWidth}.webp ${highWidth}w`}
+  <img src={externalUrl || `${base}images/giappone/${photo}-${highWidth}.webp`}
+    srcset={externalUrl ? undefined : `${base}images/giappone/${photo}-640.webp 640w, ${base}images/giappone/${photo}-${highWidth}.webp ${highWidth}w`}
     sizes={variant === 'card' ? '(max-width: 900px) 92vw, 380px' : '(max-width: 900px) 92vw, 600px'}
     width={item.width} height={item.height} alt={item.alt}
     loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async"

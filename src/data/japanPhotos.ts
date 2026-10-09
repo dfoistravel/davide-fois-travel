@@ -153,9 +153,15 @@ export const japanPhotos = {
     "position": "50% 50%",
     "fileWidth": 1280
   }
+  "hasedera": {"alt": "Veduta della costa di Kamakura dal tempio Hasedera", "width": 1280, "height": 853, "position": "50% 50%", "fileWidth": 1280, "externalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/1993-11-23_View_from_Hasedera_(Kamakura).jpg"},
+  "tsurugaoka": {"alt": "Santuario Tsurugaoka Hachimangu a Kamakura", "width": 1280, "height": 853, "position": "50% 50%", "fileWidth": 1280, "externalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tsurugaoka_Hachimangu_001.jpg"},
+  "enoshima": {"alt": "Isola di Enoshima vista dalla spiaggia di Kugenuma", "width": 1280, "height": 853, "position": "50% 50%", "fileWidth": 1280, "externalUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Enoshima_view_from_Kugenuma_beach.jpg"},
 } as const;
 export type JapanPhotoKey = keyof typeof japanPhotos;
 export const japanPhotoCredits: Partial<Record<JapanPhotoKey, {author:string; license:string; licenseUrl:string; source:string; changes:string}>> = {
+  "hasedera": {"author": "Ik T", "license": "CC BY 2.0", "licenseUrl": "https://creativecommons.org/licenses/by/2.0/", "source": "https://commons.wikimedia.org/wiki/File:1993-11-23_View_from_Hasedera_(Kamakura).jpg", "changes": "Foto visualizzata da Wikimedia Commons; ritaglio CSS sul sito."},
+  "tsurugaoka": {"author": "Ocdp", "license": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/", "source": "https://commons.wikimedia.org/wiki/File:Tsurugaoka_Hachimangu_001.jpg", "changes": "Foto visualizzata da Wikimedia Commons; ritaglio CSS sul sito."},
+  "enoshima": {"author": "Quercus acuta", "license": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/", "source": "https://commons.wikimedia.org/wiki/File:Enoshima_view_from_Kugenuma_beach.jpg", "changes": "Foto visualizzata da Wikimedia Commons; ritaglio CSS sul sito."},
   "fushimi": {
     "author": "Balon Greyjoy",
     "license": "CC0",

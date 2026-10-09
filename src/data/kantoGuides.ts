@@ -16,17 +16,17 @@ export const kantoGuides = [
       {
         "title": "Hasedera: giardino e affaccio sul mare",
         "text": "Vicino alla zona del Grande Buddha, Hasedera unisce architettura religiosa, giardino e vedute sulla costa. Il percorso comprende dislivelli: valuta il ritmo e le esigenze di chi viaggia con te.",
-        "photo": null
+        "photo": "hasedera"
       },
       {
         "title": "Tsurugaoka Hachimangu e Komachi-dori",
         "text": "Il santuario e la strada commerciale sono una seconda parte della visita. Alterna i luoghi religiosi a una pausa per pranzo e botteghe, senza attraversare ogni quartiere nello stesso pomeriggio.",
-        "photo": null
+        "photo": "tsurugaoka"
       },
       {
         "title": "Kita-Kamakura ed Enoshima: due estensioni diverse",
         "text": "Kita-Kamakura dà spazio ad altri templi; Enoshima alla costa e all’isola. Scegli in base ai tuoi interessi. Aggiungere entrambe a Hase e al centro rende la giornata molto concentrata.",
-        "photo": null
+        "photo": "enoshima"
       }
     ],
     "days": [
