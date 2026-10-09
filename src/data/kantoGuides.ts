@@ -104,17 +104,17 @@ export const kantoGuides = [
       {
         "title": "Il complesso dei templi e santuari",
         "text": "Rinnoji e Futarasan ampliano la conoscenza dell’area. Scegli quali ingressi effettuare e lascia pause tra le visite. Il ponte Shinkyo è un altro riferimento del paesaggio, con condizioni di accesso da verificare.",
-        "photo": null
+        "photo": "nikko-shinkyo"
       },
       {
         "title": "Lago Chuzenji e cascata Kegon",
         "text": "Più in quota, il lago e la cascata offrono un’esperienza diversa. Per raggiungerli serve un trasferimento aggiuntivo: pianifica il tempo sul posto e il rientro, invece di comprimerli dopo un’intera giornata nei santuari.",
-        "photo": null
+        "photo": "nikko-chuzenji"
       },
       {
         "title": "Oku-Nikko: natura da scegliere per stagione",
         "text": "Passeggiate e ambienti montani richiedono scarpe adatte, meteo favorevole e informazioni aggiornate sui percorsi. Questa è una scelta da sviluppare in funzione della tua esperienza, non una promessa di trekking semplice in ogni periodo.",
-        "photo": null
+        "photo": "nikko-senjogahara"
       }
     ],
     "days": [
