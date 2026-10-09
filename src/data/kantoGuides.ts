@@ -636,7 +636,7 @@ export const kantoGuides = [
       {
         "title": "Kairakuen: il giardino di Mito",
         "text": "Il giardino è noto soprattutto per i susini, ma la visita va letta nel suo paesaggio e nei percorsi. Non tutte le aree offrono la stessa scena in ogni stagione. Controlla aperture e accessi agli edifici prima di scegliere la giornata.",
-        "photo": null
+        "photo": "kairakuen"
       },
       {
         "title": "Il lago Senba e la città",
@@ -646,12 +646,12 @@ export const kantoGuides = [
       {
         "title": "Hitachi Seaside Park",
         "text": "Il parco cambia aspetto con fioriture e vegetazione: nemophila e kochia sono tra le immagini più conosciute. Il momento dei colori varia con l’anno. Consulta gli aggiornamenti ufficiali e scegli quali aree visitare, prevedendo camminate e pause.",
-        "photo": null
+        "photo": "hitachi-nemophila"
       },
       {
         "title": "Scegliere la stagione, non promettere il colore",
         "text": "Una fotografia è una possibilità, non una garanzia. Se il parco è il motivo principale del viaggio, mantieni flessibilità e valuta una notte vicina. In caso contrario scegli Mito per un programma più centrato sulla città e sul giardino.",
-        "photo": null
+        "photo": "hitachi-kochia"
       }
     ],
     "days": [
