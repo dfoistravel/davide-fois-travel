@@ -548,17 +548,17 @@ export const kantoGuides = [
       {
         "title": "Naritasan Shinsho-ji",
         "text": "Il complesso religioso è la visita principale di Narita. Dedica tempo agli edifici e agli spazi circostanti, verificando le aree aperte. Non confondere una visita in città con un’attività dentro l’aeroporto.",
-        "photo": null
+        "photo": "naritasan"
       },
       {
         "title": "Omotesando e il parco di Narita",
         "text": "La strada verso il tempio invita a fermarsi tra negozi e ristoranti. Il parco può completare la visita: alterna cultura e cammino, adattando il percorso a energie e tempo.",
-        "photo": null
+        "photo": "narita-omotesando"
       },
       {
         "title": "Festival e giardini stagionali",
         "text": "Sawara ha tradizioni legate ai festival e ai paesaggi d’acqua. Se viaggi per un evento o una fioritura, controlla calendario e condizioni aggiornate: le fotografie stagionali non descrivono ogni mese dell’anno.",
-        "photo": null
+        "photo": "sawara-festival"
       }
     ],
     "days": [
