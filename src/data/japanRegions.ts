@@ -248,6 +248,11 @@ export const japanRegions = [
         "name": "Kobe",
         "slug": "cosa-vedere-kobe",
         "photo": "kobe-port"
+      },
+      {
+        "name": "Himeji",
+        "slug": "cosa-vedere-himeji",
+        "photo": "himeji-castle"
       }
     ],
     "source": "https://www.japan.travel/en/destinations/kansai/"

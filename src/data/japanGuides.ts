@@ -621,5 +621,93 @@ export const japanGuides = [
       }
     ]
   },
+  {
+    "slug": "cosa-vedere-himeji",
+    "name": "Himeji",
+    "title": "Himeji: il Castello dell’Airone Bianco, giardini e monte Shosha",
+    "intro": "Himeji è una delle migliori escursioni culturali del Kansai. Dal castello dalle mura bianche si raggiungono i giardini Koko-en, mentre sulle colline il tempio Engyō-ji offre un’atmosfera più raccolta. La scelta tra una giornata e un pernottamento dipende dal tempo da dedicare a ogni luogo.",
+    "photo": "himeji-castle",
+    "duration": "Una giornata per castello e Koko-en; una notte o una giornata lunga per includere il monte Shosha",
+    "fit": "Per chi ama castelli storici, giardini giapponesi, templi e passeggiate nella natura.",
+    "places": [
+      {
+        "title": "Castello di Himeji: il simbolo della città",
+        "text": "Patrimonio mondiale UNESCO, il castello conserva un articolato sistema di porte, passaggi e strutture difensive. All’interno sono presenti scale ripide e tratti con gradini: considera il tempo per la visita e verifica eventuali ingressi contingentati nelle giornate più affollate.",
+        "photo": "himeji-castle"
+      },
+      {
+        "title": "Koko-en: nove giardini accanto al castello",
+        "text": "Una sequenza di giardini recintati, con stagni, ponticelli e paesaggi stagionali, a breve distanza dal castello. È un’ottima seconda visita per rallentare il ritmo; verifica se è disponibile un biglietto combinato.",
+        "photo": "himeji-kokoen"
+      },
+      {
+        "title": "Monte Shosha ed Engyō-ji",
+        "text": "Un complesso di templi immerso nel verde sulle colline fuori dal centro. Per raggiungerlo occorrono trasporto urbano, funivia e un tratto a piedi o servizi locali: è una visita da pianificare, non un’aggiunta veloce al castello.",
+        "photo": "himeji-shosha"
+      }
+    ],
+    "days": [
+      {
+        "title": "Una giornata · Castello e Koko-en",
+        "text": "Mattina dedicata al castello, pausa pranzo e pomeriggio nei giardini. Rientro in serata verso Osaka, Kyoto o Kobe.",
+        "photo": null
+      },
+      {
+        "title": "Due giorni · Himeji con il monte Shosha",
+        "text": "Primo giorno centro storico, castello e Koko-en; secondo giorno escursione al monte Shosha con tempi comodi.",
+        "photo": null
+      },
+      {
+        "title": "Una sosta sulla linea ferroviaria",
+        "text": "Puoi valutare Himeji nel percorso tra Kansai e Hiroshima, ma programma con attenzione custodia bagagli, orari e coincidenze.",
+        "photo": null
+      }
+    ],
+    "stay": [
+      {
+        "title": "Area della stazione di Himeji",
+        "text": "La soluzione più comoda per muoversi in treno, gestire i bagagli e scegliere ristoranti nelle vicinanze.",
+        "photo": null
+      },
+      {
+        "title": "Centro verso il castello",
+        "text": "Comodo per passeggiate serali e per raggiungere il castello a piedi; confronta bene distanza dalla stazione e accessibilità.",
+        "photo": null
+      }
+    ],
+    "tips": [
+      "Dal piazzale della stazione il castello si raggiunge con una passeggiata lungo Otemae-dori o con autobus locali.",
+      "All’interno del castello alcune scale sono molto ripide: scegli calzature comode e verifica le indicazioni ufficiali per l’accessibilità.",
+      "In primavera e nei periodi festivi l’afflusso può essere elevato: prevedi margine per eventuali attese.",
+      "Per Engyō-ji verifica orari della funivia, collegamenti in autobus e condizioni dei sentieri prima di partire.",
+      "Non combinare castello, Koko-en ed Engyō-ji in poche ore: meglio selezionare due luoghi e goderseli."
+    ],
+    "sources": [
+      [
+        "Himeji Castle · JNTO",
+        "https://www.japan.travel/en/spot/1030/"
+      ],
+      [
+        "Himeji Castle · sito ufficiale",
+        "https://www.himejicastle.jp/en/"
+      ],
+      [
+        "Koko-en · informazioni turistiche",
+        "https://www.himeji-kanko.jp/"
+      ]
+    ],
+    "faq": [
+      {
+        "title": "Himeji si visita in giornata da Osaka o Kyoto?",
+        "text": "Sì: per castello e Koko-en una giornata è una buona base. Parti presto se desideri anche esplorare il centro.",
+        "photo": null
+      },
+      {
+        "title": "Vale la pena aggiungere il monte Shosha?",
+        "text": "Sì se cerchi un’esperienza più spirituale e nel verde, ma richiede tempo e trasferimenti aggiuntivi: meglio con una notte o una giornata dedicata.",
+        "photo": null
+      }
+    ]
+  },
   ...kantoGuides
 ] as const;
