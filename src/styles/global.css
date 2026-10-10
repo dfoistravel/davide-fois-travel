@@ -327,3 +327,30 @@
 .whatsapp:hover{transform:scale(1.07)}
 @media(max-width:900px){.tropical-hero:after{width:100%;opacity:.35}.tropical-hero .world-hero-grid{grid-template-columns:1fr;gap:32px;padding:55px 0 70px}.tropical-hero .world-start{max-width:600px}}
 @media(max-width:650px){.tropical-hero h1{font-size:clamp(2.5rem,10vw,3.5rem)}.tropical-hero .world-start{padding:23px}.tropical-inspire-grid{grid-template-columns:1fr}.tropical-inspire-card{min-height:200px}.whatsapp{width:60px;height:60px}}
+
+
+/* WORLD FULLSCREEN - home only, layered over Tropical V2 */
+.world-fullscreen-hero{min-height:calc(100svh - 78px);background:#253343;color:#fff;isolation:isolate}
+.world-fullscreen-hero:before,.world-fullscreen-hero:after{content:none!important;display:none!important}
+.world-slideshow,.world-photo-overlay{position:absolute;inset:0;pointer-events:none}
+.world-slideshow{z-index:-2}
+.world-slide{position:absolute;inset:0;background-position:center 47%;background-size:cover;background-repeat:no-repeat;opacity:0;transform:scale(1.035);transition:opacity 1.35s ease,transform 7s ease;filter:saturate(1.12) brightness(1.08)}
+.world-slide.is-active{opacity:1;transform:scale(1)}
+/* Il velo è concentrato sul testo, non sulla fotografia intera */
+.world-photo-overlay{z-index:-1;background:linear-gradient(90deg,rgba(12,19,29,.67) 0%,rgba(12,19,29,.45) 30%,rgba(12,19,29,.14) 59%,rgba(12,19,29,.09) 100%),linear-gradient(0deg,rgba(12,19,29,.20),transparent 25%)}
+.world-fullscreen-hero .world-hero-grid{position:relative;z-index:1;min-height:calc(100svh - 78px);padding:80px 0 116px;grid-template-columns:minmax(0,1.24fr) minmax(300px,.76fr);gap:clamp(26px,5vw,72px)}
+.world-fullscreen-hero h1{text-shadow:0 3px 15px #09111fb0}
+.world-fullscreen-hero .lead{text-shadow:0 2px 11px #09111fc4}
+.world-fullscreen-hero .world-start{background:rgba(255,252,246,.89);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid #ffffffc7;box-shadow:0 15px 45px #0c192b55;padding:28px}
+.world-fullscreen-hero .world-start h2{font-size:clamp(1.5rem,2vw,1.95rem)}
+.world-fullscreen-hero .world-start input,.world-fullscreen-hero .world-start select{min-height:48px}
+.world-fullscreen-hero .world-start form{gap:12px}
+.world-fullscreen-hero .world-start .button-dark{min-height:50px}
+.world-slide-selector{position:absolute;z-index:3;bottom:23px;left:50%;transform:translateX(-50%);display:flex;gap:8px;justify-content:center;max-width:calc(100% - 24px)}
+.world-slide-button{appearance:none;cursor:pointer;background:rgba(14,25,37,.62);color:white;padding:10px 17px;border-radius:99px;border:1px solid #ffffffa1;backdrop-filter:blur(8px);font-weight:750;transition:background .2s,color .2s}
+.world-slide-button.is-active{background:#ffd14e;color:#182434;border-color:#ffd14e}
+.world-slide-button:focus-visible{outline:3px solid white;outline-offset:3px}
+.world-slide-caption{position:absolute;right:26px;bottom:86px;z-index:2;background:#14233896;color:white;padding:8px 15px;border-radius:50px;font-weight:700;font-size:.85rem}
+@media(max-width:900px){.world-fullscreen-hero .world-hero-grid{grid-template-columns:1fr;min-height:0;padding:58px 0 108px;gap:25px}.world-fullscreen-hero .world-start{max-width:570px}.world-photo-overlay{background:linear-gradient(180deg,rgba(12,19,29,.57),rgba(12,19,29,.37) 55%,rgba(12,19,29,.23))}}
+@media(max-width:560px){.world-fullscreen-hero .world-hero-grid{padding:44px 0 103px}.world-fullscreen-hero .world-start{padding:22px}.world-slide-selector{gap:4px;bottom:14px;width:calc(100% - 20px)}.world-slide-button{padding:9px 8px;font-size:.7rem}.world-slide-caption{display:none}.world-slide{background-position:center center}}
+@media(prefers-reduced-motion:reduce){.world-slide{transition:none;transform:none!important}}
