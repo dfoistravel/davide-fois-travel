@@ -423,3 +423,60 @@
   .mobile-trip-card .button-dark{width:100%;justify-content:center;min-height:50px;background:#ec684c;color:#fff;border-radius:13px}
   .mobile-trip-note{font-size:.83rem;color:#60717b;margin:15px 0 0}
 }
+
+
+/* Homepage aggiornata: hero fotografica con carrellata di destinazioni e form separato */
+.world-fullscreen-hero .world-hero-grid{
+  min-height:calc(100svh - 78px);
+  display:grid;
+  grid-template-columns:minmax(0, 1fr);
+  align-items:center;
+  padding:72px 0 156px;
+}
+.world-fullscreen-hero .world-copy-only{max-width:48rem}
+.world-fullscreen-hero .world-copy-only .lead{max-width:42rem}
+.world-fullscreen-hero .world-photo-overlay{
+  background:linear-gradient(90deg,rgba(9,23,34,.52) 0%,rgba(9,23,34,.28) 47%,rgba(9,23,34,.08) 100%),
+             linear-gradient(180deg,rgba(9,23,34,.08),transparent 50%,rgba(9,23,34,.22));
+}
+.world-fullscreen-hero .world-slide{background-position:center center;filter:saturate(1.15) contrast(1.05) brightness(1.18)}
+.world-slide-selector{width:min(1100px,calc(100% - 48px));justify-content:center;gap:10px;flex-wrap:wrap}
+.world-slide-button{background:rgba(255,255,255,.17);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28)}
+.world-slide-button.is-active{background:rgba(255,255,255,.92);color:#143446;border-color:rgba(255,255,255,.92)}
+.world-slide-caption{
+  position:absolute;left:24px;bottom:32px;z-index:2;display:inline-flex;align-items:center;gap:8px;
+  background:rgba(9,23,34,.46);color:#fff;border-radius:999px;padding:10px 16px;
+  font-size:.92rem;font-weight:600;letter-spacing:.01em;backdrop-filter:blur(6px)
+}
+.trip-planner-section{background:#fff7ed;padding:58px 0 64px}
+.trip-planner-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:32px;align-items:start}
+.trip-planner-copy{padding-top:8px}
+.trip-planner-copy h2{font-size:clamp(2rem,3vw,2.85rem);line-height:1.08;margin:10px 0 16px;color:#102d3d}
+.trip-planner-copy p{font-size:1.04rem;line-height:1.72;color:#49606c;max-width:44rem}
+.trip-planner-points{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:11px;color:#243f4d;font-weight:600}
+.trip-planner-points li{position:relative;padding-left:22px}
+.trip-planner-points li:before{content:'✦';position:absolute;left:0;top:0;color:#dc6242}
+.trip-planner-card{background:#fffdf8;border:1px solid #f2dfcb;border-radius:28px;padding:28px;box-shadow:0 16px 38px rgba(26,43,55,.09);color:#102d3d}
+.trip-planner-card form{display:grid;gap:16px}
+.trip-planner-card label{display:grid;gap:8px;font-weight:650;font-size:.95rem}
+.trip-planner-card input,.trip-planner-card select{width:100%;min-height:50px;background:#fff;color:#102d3d;border:1px solid #cbd9dd;border-radius:12px;padding:11px 13px;font:inherit}
+.trip-planner-card input:focus-visible,.trip-planner-card select:focus-visible{outline:2px solid #e16c4d;outline-offset:2px}
+.trip-planner-card .button-dark{width:100%;justify-content:center;min-height:50px;background:#ec684c;color:#fff;border-radius:14px}
+.trip-planner-note{margin:16px 0 0;color:#61737d;font-size:.92rem}
+@media (max-width:1024px){
+  .trip-planner-grid{grid-template-columns:1fr;gap:22px}
+  .trip-planner-copy p{max-width:none}
+}
+@media (max-width:600px){
+  .world-fullscreen-hero .world-hero-grid{padding:34px 0 134px;min-height:calc(100svh - 72px)}
+  .world-fullscreen-hero .world-copy-only{max-width:100%}
+  .world-fullscreen-hero .world-photo-overlay{background:linear-gradient(90deg,rgba(9,23,34,.58) 0%,rgba(9,23,34,.34) 54%,rgba(9,23,34,.12) 100%)}
+  .world-slide-selector{width:calc(100% - 20px);bottom:56px;gap:6px}
+  .world-slide-button{font-size:.7rem;min-height:34px;padding:6px 9px}
+  .world-slide-caption{left:12px;right:12px;bottom:16px;justify-content:center;text-align:center;font-size:.8rem;padding:8px 12px}
+  .trip-planner-section{padding:36px 0 42px}
+  .trip-planner-card{padding:24px 20px;border-radius:24px}
+  .trip-planner-copy h2{font-size:clamp(1.7rem,7vw,2.15rem)}
+  .trip-planner-copy p{font-size:.96rem;line-height:1.62}
+  .trip-planner-points{gap:9px;font-size:.92rem}
+}
