@@ -480,3 +480,8 @@
   .trip-planner-copy p{font-size:.96rem;line-height:1.62}
   .trip-planner-points{gap:9px;font-size:.92rem}
 }
+
+/* Didascalia fisicamente associata allo slide; anche durante la transizione resta sincronizzata */
+.world-slide-location{position:absolute;z-index:2;bottom:30px;left:22px;background:rgba(6,24,40,.66);padding:10px 16px;border-radius:999px;color:white;font-weight:700;font-size:.93rem;backdrop-filter:blur(7px)}
+.world-slide-caption{display:none!important}
+@media(max-width:600px){.world-slide-location{bottom:16px;left:12px;font-size:.8rem;padding:8px 12px}}

@@ -4,26 +4,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ContinentGrid from '../components/ContinentGrid.astro';
 const base = import.meta.env.BASE_URL;
 const slides = [
-  { continent: 'Asia', place: 'Kyoto, Giappone', image: 'https://source.unsplash.com/1600x900/?kyoto,japan,travel', fallback: 'asia.webp' },
-  { continent: 'Europa', place: 'Santorini, Grecia', image: 'https://source.unsplash.com/1600x900/?santorini,greece,travel', fallback: 'europa.webp' },
-  { continent: 'Africa', place: 'Serengeti, Tanzania', image: 'https://source.unsplash.com/1600x900/?serengeti,tanzania,safari', fallback: 'africa.webp' },
-  { continent: 'Americhe', place: 'Machu Picchu, Perù', image: 'https://source.unsplash.com/1600x900/?machu-picchu,peru,travel', fallback: 'americhe.webp' },
-  { continent: 'Oceania', place: 'Sydney, Australia', image: 'https://source.unsplash.com/1600x900/?sydney,australia,travel', fallback: 'oceania.webp' },
-  { continent: 'Asia', place: 'Bali, Indonesia', image: 'https://source.unsplash.com/1600x900/?bali,indonesia,travel', fallback: 'asia.webp' },
-  { continent: 'Europa', place: 'Dolomiti, Italia', image: 'https://source.unsplash.com/1600x900/?dolomites,italy,travel', fallback: 'europa.webp' },
-  { continent: 'Africa', place: 'Zanzibar, Tanzania', image: 'https://source.unsplash.com/1600x900/?zanzibar,tanzania,beach', fallback: 'africa.webp' },
-  { continent: 'Americhe', place: 'New York, Stati Uniti', image: 'https://source.unsplash.com/1600x900/?new-york,usa,travel', fallback: 'americhe.webp' },
-  { continent: 'Oceania', place: 'Milford Sound, Nuova Zelanda', image: 'https://source.unsplash.com/1600x900/?milford-sound,new-zealand,travel', fallback: 'oceania.webp' },
-  { continent: 'Asia', place: 'Ha Long Bay, Vietnam', image: 'https://source.unsplash.com/1600x900/?halong-bay,vietnam,travel', fallback: 'asia.webp' },
-  { continent: 'Europa', place: 'Parigi, Francia', image: 'https://source.unsplash.com/1600x900/?paris,france,travel', fallback: 'europa.webp' },
-  { continent: 'Africa', place: 'Sahara, Marocco', image: 'https://source.unsplash.com/1600x900/?sahara,morocco,travel', fallback: 'africa.webp' },
-  { continent: 'Americhe', place: 'Banff, Canada', image: 'https://source.unsplash.com/1600x900/?banff,canada,travel', fallback: 'americhe.webp' },
-  { continent: 'Oceania', place: 'Bora Bora, Polinesia Francese', image: 'https://source.unsplash.com/1600x900/?bora-bora,french-polynesia,travel', fallback: 'oceania.webp' },
-  { continent: 'Asia', place: 'Phi Phi, Thailandia', image: 'https://source.unsplash.com/1600x900/?phi-phi,thailand,travel', fallback: 'asia.webp' },
-  { continent: 'Europa', place: 'Lofoten, Norvegia', image: 'https://source.unsplash.com/1600x900/?lofoten,norway,travel', fallback: 'europa.webp' },
-  { continent: 'Africa', place: 'Città del Capo, Sudafrica', image: 'https://source.unsplash.com/1600x900/?cape-town,south-africa,travel', fallback: 'africa.webp' },
-  { continent: 'Americhe', place: 'Iguazú, Argentina e Brasile', image: 'https://source.unsplash.com/1600x900/?iguazu-falls,travel', fallback: 'americhe.webp' },
-  { continent: 'Oceania', place: 'Grande Barriera Corallina, Australia', image: 'https://source.unsplash.com/1600x900/?great-barrier-reef,australia,travel', fallback: 'oceania.webp' },
+  { continent: 'Asia', fallback: 'asia.webp' },
+  { continent: 'Europa', fallback: 'europa.webp' },
+  { continent: 'Africa', fallback: 'africa.webp' },
+  { continent: 'Americhe', fallback: 'americhe.webp' },
+  { continent: 'Oceania', fallback: 'oceania.webp' },
 ];
 const continents = ['Asia', 'Europa', 'Africa', 'Americhe', 'Oceania'];
 const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'Weekend e città', 'Viaggio di nozze', 'Crociera'];
@@ -31,7 +16,7 @@ const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'We
 <BaseLayout title="Davide Fois Travel Consultant | Viaggi su misura nel mondo" description="Consulenza personale per viaggi in Asia, Europa, Africa, Americhe e Oceania. Scegli una destinazione o lasciati aiutare: richiedi un preventivo gratuito.">
   <section class="hero world-hero tropical-hero world-fullscreen-hero" aria-label="Viaggi nei cinque continenti">
     <div class="world-slideshow" aria-hidden="true">
-      {slides.map((slide, i) => <div class:list={['world-slide', { 'is-active': i === 0 }]} data-continent={slide.continent} data-place={slide.place} style={`background-image: url('${slide.image}'), url('${base}images/world-hero/${slide.fallback}')`}></div>)}
+      {slides.map((slide, i) => <div class:list={['world-slide', { 'is-active': i === 0 }]} data-continent={slide.continent} style={`background-image: url('${base}images/world-hero/${slide.fallback}')`}><span class="world-slide-location">Esplora {slide.continent}</span></div>)}
     </div>
     <div class="world-photo-overlay" aria-hidden="true"></div>
     <div class="container world-hero-grid">
@@ -49,7 +34,7 @@ const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'We
     <nav class="world-slide-selector" aria-label="Seleziona il continente da visualizzare">
       {continents.map((continent, i) => <button class:list={['world-slide-button', { 'is-active': i === 0 }]} type="button" aria-pressed={i === 0 ? 'true' : 'false'} data-world-target={continent}>{continent}</button>)}
     </nav>
-    <span class="world-slide-caption" aria-live="polite">Asia · Kyoto, Giappone</span>
+
   </section>
 
   <section class="trip-planner-section" id="trip-form" aria-labelledby="trip-form-title">
@@ -96,7 +81,6 @@ const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'We
     if (!hero) return;
     const slides = Array.from(hero.querySelectorAll('.world-slide'));
     const buttons = Array.from(hero.querySelectorAll('.world-slide-button'));
-    const caption = hero.querySelector('.world-slide-caption');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     let active = 0;
     let timer;
@@ -110,16 +94,13 @@ const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'We
         button.classList.toggle('is-active', isCurrent);
         button.setAttribute('aria-pressed', String(isCurrent));
       });
-      if (caption) {
-        const place = current?.dataset.place || '';
-        caption.textContent = currentContinent && place ? `${currentContinent} · ${place}` : place || currentContinent;
-      }
+
     };
     const stop = () => { if (timer) window.clearInterval(timer); timer = undefined; };
     const play = () => {
       stop();
       if (reduced.matches || document.hidden) return;
-      timer = window.setInterval(() => setSlide(active + 1), 5600);
+      timer = window.setInterval(() => setSlide(active + 1), 7000);
     };
     buttons.forEach((button) => button.addEventListener('click', () => {
       const target = button.dataset.worldTarget;
