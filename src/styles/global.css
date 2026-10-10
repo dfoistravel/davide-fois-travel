@@ -392,3 +392,34 @@
   .world-fullscreen-hero h1{font-size:1.94rem}
   .world-fullscreen-hero .tropical-copy .actions .button{font-size:.82rem;padding-inline:12px}
 }
+
+
+/* Mobile: le immagini dello slideshow rimangono libere; il preventivo è sotto la hero.
+   Nessuna modifica ai layout desktop e tablet. */
+.mobile-form-link,.mobile-trip-section{display:none}
+@media (max-width:600px){
+  .world-fullscreen-hero .world-start{display:none}
+  .world-fullscreen-hero .tropical-copy .actions > a.button-primary:not(.mobile-form-link){display:none}
+  .world-fullscreen-hero .tropical-copy .actions .mobile-form-link{display:inline-flex}
+  .world-fullscreen-hero{min-height:calc(100svh - 72px)}
+  .world-fullscreen-hero .world-hero-grid{
+    min-height:calc(100svh - 72px);
+    justify-content:center;
+    padding:32px 0 100px;
+    gap:0;
+  }
+  .world-fullscreen-hero .world-photo-overlay{
+    background:linear-gradient(90deg,rgba(9,23,34,.57) 0%,rgba(9,23,34,.34) 54%,rgba(9,23,34,.12) 100%);
+  }
+  .mobile-trip-section{display:block;background:#fff7ed;padding:34px 0 42px;scroll-margin-top:80px}
+  .mobile-trip-card{background:#fffdf8;border:1px solid #f2dfcb;border-radius:24px;padding:24px 20px;box-shadow:0 12px 32px rgba(26,43,55,.09);color:#102d3d}
+  .mobile-trip-card .kicker{font-size:.69rem;color:#dc6242;letter-spacing:.07em}
+  .mobile-trip-card h2{font-size:clamp(1.5rem,6vw,1.9rem);line-height:1.2;margin:9px 0 12px}
+  .mobile-trip-intro{font-size:.95rem;line-height:1.55;color:#47606d;margin-bottom:20px}
+  .mobile-trip-card form{display:grid;gap:15px}
+  .mobile-trip-card label{display:grid;gap:7px;font-weight:650;font-size:.92rem}
+  .mobile-trip-card input,.mobile-trip-card select{width:100%;min-width:0;min-height:49px;background:white;color:#102d3d;border:1px solid #cbd9dd;border-radius:12px;padding:10px 12px;font:inherit}
+  .mobile-trip-card input:focus-visible,.mobile-trip-card select:focus-visible{outline:2px solid #e16c4d;outline-offset:2px}
+  .mobile-trip-card .button-dark{width:100%;justify-content:center;min-height:50px;background:#ec684c;color:#fff;border-radius:13px}
+  .mobile-trip-note{font-size:.83rem;color:#60717b;margin:15px 0 0}
+}
