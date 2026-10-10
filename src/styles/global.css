@@ -354,3 +354,41 @@
 @media(max-width:900px){.world-fullscreen-hero .world-hero-grid{grid-template-columns:1fr;min-height:0;padding:58px 0 108px;gap:25px}.world-fullscreen-hero .world-start{max-width:570px}.world-photo-overlay{background:linear-gradient(180deg,rgba(12,19,29,.57),rgba(12,19,29,.37) 55%,rgba(12,19,29,.23))}}
 @media(max-width:560px){.world-fullscreen-hero .world-hero-grid{padding:44px 0 103px}.world-fullscreen-hero .world-start{padding:22px}.world-slide-selector{gap:4px;bottom:14px;width:calc(100% - 20px)}.world-slide-button{padding:9px 8px;font-size:.7rem}.world-slide-caption{display:none}.world-slide{background-position:center center}}
 @media(prefers-reduced-motion:reduce){.world-slide{transition:none;transform:none!important}}
+
+
+/* World Travel — mobile layout only. Desktop styles remain unchanged. */
+.intro-mobile{display:none}
+@media (max-width: 600px){
+  .site-header .nav{min-height:64px;gap:10px;flex-wrap:wrap;padding-block:8px}
+  .site-header .brand{gap:9px;font-size:1rem;min-width:0}
+  .site-header .brand-mark{width:39px;height:39px;border-radius:12px;font-size:.9rem}
+  .site-header .brand-copy{font-size:1.02rem}
+  .site-header .menu-toggle{padding:9px 13px;border-radius:12px;font-size:.95rem}
+  .world-fullscreen-hero{min-height:0}
+  .world-fullscreen-hero .world-hero-grid{display:flex;flex-direction:column;gap:23px;padding:30px 0 110px;min-height:0}
+  .world-fullscreen-hero .tropical-copy{width:100%;min-width:0}
+  .world-fullscreen-hero .tropical-copy .kicker{font-size:.66rem;letter-spacing:.095em;margin-bottom:12px;line-height:1.35}
+  .world-fullscreen-hero h1{font-size:clamp(2rem,8.5vw,2.85rem);line-height:1.11;letter-spacing:-.045em;margin-bottom:15px;max-width:100%;text-wrap:balance}
+  .world-fullscreen-hero .lead{font-size:.99rem;line-height:1.53;margin-bottom:15px;max-width:36rem}
+  .intro-desktop{display:none}
+  .intro-mobile{display:inline}
+  .world-fullscreen-hero .actions{gap:9px;margin-top:18px;align-items:stretch}
+  .world-fullscreen-hero .tropical-copy .actions .button{padding:11px 15px;min-height:46px;font-size:.89rem;line-height:1.3;white-space:normal}
+  .world-fullscreen-hero .trust-row{margin-top:18px;gap:6px 13px;font-size:.74rem;line-height:1.4}
+  .world-fullscreen-hero .trust-row span:before{margin-right:4px}
+  .world-fullscreen-hero .world-start{width:100%;max-width:none;padding:21px 18px 19px;border-radius:22px;background:rgba(255,252,246,.95)}
+  .world-fullscreen-hero .world-start h2{font-size:1.5rem;line-height:1.15}
+  .world-fullscreen-hero .world-start .kicker{font-size:.64rem;letter-spacing:.08em}
+  .world-fullscreen-hero .world-start .tropical-form-intro{font-size:.86rem;margin-bottom:12px}
+  .world-fullscreen-hero .world-start input,.world-fullscreen-hero .world-start select{min-height:45px}
+  .world-fullscreen-hero .world-start .button-dark{min-height:45px}
+  .world-photo-overlay{background:linear-gradient(90deg,rgba(12,19,29,.48),rgba(12,19,29,.20) 72%,rgba(12,19,29,.12)),linear-gradient(180deg,rgba(12,19,29,.18),transparent 55%,rgba(12,19,29,.32))}
+  .world-fullscreen-hero .world-slide{background-position:50% 42%;filter:saturate(1.12) brightness(1.14)}
+  .world-slide-selector{width:calc(100% - 24px);bottom:20px;gap:5px;flex-wrap:wrap}
+  .world-slide-button{font-size:.71rem;min-height:36px;padding:7px 10px}
+  .whatsapp{width:53px;height:53px;right:12px;bottom:15px;border-width:2px}
+}
+@media(max-width:375px){
+  .world-fullscreen-hero h1{font-size:1.94rem}
+  .world-fullscreen-hero .tropical-copy .actions .button{font-size:.82rem;padding-inline:12px}
+}
