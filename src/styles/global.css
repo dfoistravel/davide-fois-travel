@@ -294,3 +294,36 @@
 @media(max-width:760px){.world-hero-grid,.japan-feature{grid-template-columns:1fr}.world-hero-grid{padding:52px 0}.world-hero h1{font-size:clamp(2.6rem,8vw,3.7rem)}.world-start{padding:26px}.experience-links{grid-template-columns:repeat(2,minmax(0,1fr))}.world-help{align-items:flex-start;flex-direction:column}.japan-feature{gap:28px}.japan-feature img{height:260px}}
 @media(max-width:520px){.continent-grid,.experience-links{grid-template-columns:1fr}.continent-card{min-height:235px}.nav{min-height:72px}.nav-links{flex-direction:column;align-items:stretch}.nav-links a{padding:10px}.section{padding:58px 0}.world-start{padding:22px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.continent-card,.button{transition:none}.continent-card:hover,.button:hover{transform:none}}
+
+/* Tropical Travel V2 — homepage only */
+.tropical-hero{background:linear-gradient(114deg,#066f91 0%,#04acaa 52%,#65d9b7 100%);isolation:isolate}
+.tropical-hero:before{opacity:0}
+.tropical-hero:after{content:"";position:absolute;z-index:-1;right:0;top:0;bottom:0;width:56%;background:linear-gradient(90deg,rgba(2,147,164,.88),rgba(3,159,161,.18) 50%,rgba(14,88,127,.28)),url('/images/giappone/miyajima-1280.webp') center/cover no-repeat;filter:saturate(1.35)}
+.tropical-hero .world-hero-grid{padding:96px 0 108px;grid-template-columns:minmax(0,1.24fr) minmax(330px,.76fr);gap:64px}
+.tropical-hero .kicker{color:#fff1a0;font-size:.8rem;letter-spacing:.14em}
+.tropical-hero h1{font-size:clamp(3rem,5vw,5rem);line-height:1.08;letter-spacing:-.048em;text-shadow:0 4px 20px #00527266}
+.tropical-hero h1 span{color:#ffdf5c}
+.tropical-hero .lead{color:white;line-height:1.75;text-shadow:0 2px 10px #00557477;max-width:640px}
+.tropical-hero .button-primary{background:#ffcd38;color:#073b52;box-shadow:0 10px 28px #b57a2866}
+.tropical-hero .button-ghost{border:2px solid white;background:#ffffff22;color:white}
+.tropical-hero .trust-row{color:white;font-size:.85rem;gap:15px 22px}
+.tropical-hero .trust-row span:before{content:'✓';color:#ffdf5c;font-weight:900;margin-right:8px}
+.tropical-hero .world-start{background:#fffdf8;color:#102d3d;border:4px solid #ffffff44;box-shadow:0 25px 65px #005b6b66;padding:34px}
+.tropical-hero .world-start .kicker{color:#e45b32;font-size:.7rem}
+.tropical-hero .world-start h2{font-size:clamp(1.55rem,2.3vw,2rem)}
+.tropical-hero .world-start .tropical-form-intro{font-size:.93rem;color:#506b75;line-height:1.6;margin:0 0 18px}
+.tropical-hero .world-start input,.tropical-hero .world-start select{border:2px solid #d8ebe9;min-height:54px}
+.tropical-hero .world-start input:focus,.tropical-hero .world-start select:focus{outline:2px solid #00bdb0;outline-offset:2px}
+.tropical-hero .world-start .button-dark{background:linear-gradient(110deg,#fb6048,#ff8f42);border-radius:14px;min-height:54px;box-shadow:0 8px 20px #fa705044}
+.tropical-inspire{background:#fff9ec}
+.tropical-inspire .kicker{color:#ec6349}
+.tropical-inspire-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tropical-inspire-card{position:relative;display:flex;align-items:flex-end;min-height:260px;overflow:hidden;border-radius:24px;color:white;text-decoration:none;box-shadow:0 12px 30px #045b6b28}
+.tropical-inspire-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#061b2dc9,transparent 75%)}
+.tropical-inspire-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+.tropical-inspire-card:hover img{transform:scale(1.04)}
+.tropical-inspire-card span{position:relative;z-index:1;font-size:1.35rem;font-weight:850;padding:24px}
+.whatsapp{background:#25d366;border:3px solid white;width:66px;height:66px;box-shadow:0 8px 24px #0018;transition:transform .2s}
+.whatsapp:hover{transform:scale(1.07)}
+@media(max-width:900px){.tropical-hero:after{width:100%;opacity:.35}.tropical-hero .world-hero-grid{grid-template-columns:1fr;gap:32px;padding:55px 0 70px}.tropical-hero .world-start{max-width:600px}}
+@media(max-width:650px){.tropical-hero h1{font-size:clamp(2.5rem,10vw,3.5rem)}.tropical-hero .world-start{padding:23px}.tropical-inspire-grid{grid-template-columns:1fr}.tropical-inspire-card{min-height:200px}.whatsapp{width:60px;height:60px}}
