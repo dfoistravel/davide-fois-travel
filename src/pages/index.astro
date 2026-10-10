@@ -4,11 +4,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ContinentGrid from '../components/ContinentGrid.astro';
 const base = import.meta.env.BASE_URL;
 const slides = [
-  { continent: 'Asia', fallback: 'asia.webp' },
-  { continent: 'Europa', fallback: 'europa.webp' },
-  { continent: 'Africa', fallback: 'africa.webp' },
-  { continent: 'Americhe', fallback: 'americhe.webp' },
-  { continent: 'Oceania', fallback: 'oceania.webp' },
+  { continent: 'Asia', place: 'Monte Fuji, Giappone', image: `${base}images/giappone/fuji-1280.webp` },
+  { continent: 'Europa', place: 'Tour Eiffel, Parigi', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Vue%20de%20la%20Tour%20Eiffel.jpg' },
+  { continent: 'Africa', place: 'Table Mountain, Sudafrica', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/CapeTownFromTableMountain.jpg' },
+  { continent: 'Americhe', place: 'Machu Picchu, Perù', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Panorama%20of%20Machu%20Picchu.jpg' },
+  { continent: 'Oceania', place: 'Sydney Opera House, Australia', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Sydney%20Harbour%20Bridge%20and%20Sydney%20Opera%20House%20panorama.jpg' },
 ];
 const continents = ['Asia', 'Europa', 'Africa', 'Americhe', 'Oceania'];
 const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'Weekend e città', 'Viaggio di nozze', 'Crociera'];
@@ -16,7 +16,7 @@ const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'We
 <BaseLayout title="Davide Fois Travel Consultant | Viaggi su misura nel mondo" description="Consulenza personale per viaggi in Asia, Europa, Africa, Americhe e Oceania. Scegli una destinazione o lasciati aiutare: richiedi un preventivo gratuito.">
   <section class="hero world-hero tropical-hero world-fullscreen-hero" aria-label="Viaggi nei cinque continenti">
     <div class="world-slideshow" aria-hidden="true">
-      {slides.map((slide, i) => <div class:list={['world-slide', { 'is-active': i === 0 }]} data-continent={slide.continent} style={`background-image: url('${base}images/world-hero/${slide.fallback}')`}><span class="world-slide-location">Esplora {slide.continent}</span></div>)}
+      {slides.map((slide, i) => <div class:list={['world-slide', { 'is-active': i === 0 }]} data-continent={slide.continent} style={`background-image: url('${slide.image}')`}><span class="world-slide-location">{slide.continent} · {slide.place}</span></div>)}
     </div>
     <div class="world-photo-overlay" aria-hidden="true"></div>
     <div class="container world-hero-grid">
