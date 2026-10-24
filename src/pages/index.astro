@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ContinentGrid from '../components/ContinentGrid.astro';
 const base = import.meta.env.BASE_URL;
 const slides = [
-  { continent: 'Asia', place: 'Shibuya, Tokyo', image: `${base}images/tokyo/shibuya.webp` },
+  { continent: 'Asia', place: 'Tokyo, Giappone · Panorama della città', image: `${base}images/world-hero/tokyo-panorama-1920.webp` },
   { continent: 'Europa', place: 'Santorini, Grecia', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Blue-dome-Santorini.JPG/1280px-Blue-dome-Santorini.JPG' },
   { continent: 'Africa', place: 'Table Mountain, Sudafrica', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/CapeTownFromTableMountain.jpg' },
   { continent: 'Americhe', place: 'Machu Picchu, Perù', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Panorama%20of%20Machu%20Picchu.jpg' },
@@ -15,7 +15,7 @@ const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'We
 ---
 <BaseLayout title="Davide Fois Travel Consultant | Viaggi su misura nel mondo" description="Consulenza personale per viaggi in Asia, Europa, Africa, Americhe e Oceania. Scegli una destinazione o lasciati aiutare: richiedi un preventivo gratuito.">
   <section class="hero world-hero tropical-hero world-fullscreen-hero" aria-label="Viaggi nei cinque continenti">
-    <div class="world-slideshow" aria-hidden="true">
+    <div class="world-slideshow" aria-hidden="true" style={`--tokyo-mobile-photo: url('${base}images/world-hero/tokyo-panorama-960.webp')`}>
       {slides.map((slide, i) => <div class:list={['world-slide', { 'is-active': i === 0 }]} data-continent={slide.continent} style={`background-image: url('${slide.image}')`}><span class="world-slide-location">{slide.continent} · {slide.place}</span></div>)}
     </div>
     <div class="world-photo-overlay" aria-hidden="true"></div>
@@ -37,8 +37,7 @@ const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'We
 
   </section>
 
-  <p style="font-size:.72rem;text-align:center;margin:4px 12px 8px;color:#536572">Foto Santorini: <a href="https://commons.wikimedia.org/wiki/File:Blue-dome-Santorini.JPG" rel="noopener noreferrer" target="_blank">Hhss8228</a> · <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener noreferrer" target="_blank">CC BY 3.0</a> · ridimensionata per la visualizzazione.</p>
-
+  <p class="photo-credit-santorini" id="photo-credit-santorini" hidden>Foto Santorini: <a href="https://commons.wikimedia.org/wiki/File:Blue-dome-Santorini.JPG" rel="noopener noreferrer" target="_blank">Hhss8228</a> · <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener noreferrer" target="_blank">CC BY 3.0</a> · ridimensionata per la visualizzazione.</p>
   <section class="trip-planner-section" id="trip-form" aria-labelledby="trip-form-title">
     <div class="container trip-planner-grid">
       <div class="trip-planner-copy">
@@ -84,6 +83,7 @@ const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'We
     const slides = Array.from(hero.querySelectorAll('.world-slide'));
     const buttons = Array.from(hero.querySelectorAll('.world-slide-button'));
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const santoriniCredit = document.getElementById('photo-credit-santorini');
     let active = 0;
     let timer;
     const setSlide = (next) => {
@@ -91,6 +91,7 @@ const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'We
       slides.forEach((s, i) => s.classList.toggle('is-active', i === active));
       const current = slides[active];
       const currentContinent = current?.dataset.continent || '';
+      if (santoriniCredit) santoriniCredit.hidden = currentContinent !== 'Europa';
       buttons.forEach((button) => {
         const isCurrent = button.dataset.worldTarget === currentContinent;
         button.classList.toggle('is-active', isCurrent);

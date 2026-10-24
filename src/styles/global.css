@@ -485,3 +485,9 @@
 .world-slide-location{position:absolute;z-index:2;bottom:30px;left:22px;background:rgba(6,24,40,.66);padding:10px 16px;border-radius:999px;color:white;font-weight:700;font-size:.93rem;backdrop-filter:blur(7px)}
 .world-slide-caption{display:none!important}
 @media(max-width:600px){.world-slide-location{bottom:16px;left:12px;font-size:.8rem;padding:8px 12px}}
+
+/* Tokyo HD e credito Santorini contestuale */
+.photo-credit-santorini{font-size:.72rem;text-align:center;margin:4px 12px 8px;color:#536572}
+.photo-credit-santorini[hidden]{display:none!important}
+.world-fullscreen-hero .world-slide:first-child{background-position:center 48%}
+@media(max-width:600px){.world-fullscreen-hero .world-slide:first-child{background-image:var(--tokyo-mobile-photo)!important;background-position:center 50%}}
