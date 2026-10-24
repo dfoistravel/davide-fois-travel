@@ -86,9 +86,9 @@ export const hokkaidoPlaces = [
     "area": "Hokkaido settentrionale",
     "days": "2–4 giorni",
     "summary": "Montagne, escursioni, gole e panorami alpini nel cuore dell’isola.",
-    "photo": null,
-    "credit": "MaedaAkihiko",
-    "license": "Verificare i termini sulla pagina Wikimedia Commons",
+    "photo": "Asahidake.JPG",
+    "credit": "Geomr~commonswiki",
+    "license": "CC BY-SA / GFDL; verificare versione e termini nella pagina Wikimedia Commons",
     "spots": [
       [
         "Asahikawa",
@@ -140,9 +140,9 @@ export const hokkaidoPlaces = [
     "area": "Hokkaido orientale",
     "days": "3–5 giorni",
     "summary": "Penisola remota, fauna selvatica, laghi forestali e ghiaccio marino stagionale.",
-    "photo": null,
-    "credit": "欅 (Keyaki)",
-    "license": "Immagine segnaposto da sostituire: non rappresenta Shiretoko",
+    "photo": "Shiretoko Five Lakes - ShiretokoFiveLakes7962.jpg",
+    "credit": "lumoplank",
+    "license": "CC0 / pubblico dominio dedicato; verificare i termini nella pagina Wikimedia Commons",
     "spots": [
       [
         "Shiretoko Five Lakes",
@@ -167,9 +167,9 @@ export const hokkaidoPlaces = [
     "area": "Hokkaido orientale",
     "days": "3–5 giorni",
     "summary": "Zone umide, laghi vulcanici, gru della Manciuria e luoghi della cultura ainu.",
-    "photo": null,
-    "credit": "MaedaAkihiko",
-    "license": "Immagine segnaposto da sostituire: non rappresenta Akan-Mashu",
+    "photo": "Mashu-ko Lake.jpg",
+    "credit": "Fe-Taq",
+    "license": "Pubblico dominio; verificare i termini nella pagina Wikimedia Commons",
     "spots": [
       [
         "Kushiro Shitsugen",
@@ -194,9 +194,9 @@ export const hokkaidoPlaces = [
     "area": "Hokkaido occidentale e nord estremo",
     "days": "3–6 giorni per una sola zona",
     "summary": "Montagne e sci a Niseko; isole remote, fiori alpini e mare nel nord estremo.",
-    "photo": null,
-    "credit": "Kentagon",
-    "license": "Immagine segnaposto da sostituire: non rappresenta Niseko o le isole",
+    "photo": "Mt Rishiri.jpg",
+    "credit": "Japanexperterna.se",
+    "license": "CC BY-SA 3.0; verificare i termini nella pagina Wikimedia Commons",
     "spots": [
       [
         "Niseko",
