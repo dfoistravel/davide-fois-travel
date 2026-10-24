@@ -491,3 +491,22 @@
 .photo-credit-santorini[hidden]{display:none!important}
 .world-fullscreen-hero .world-slide:first-child{background-position:center 48%}
 @media(max-width:600px){.world-fullscreen-hero .world-slide:first-child{background-image:var(--tokyo-mobile-photo)!important;background-position:center 50%}}
+
+/* Homepage: velo localizzato per proteggere la leggibilità senza oscurare le fotografie */
+.world-fullscreen-hero .world-photo-overlay {
+  background: linear-gradient(90deg,rgba(6,22,34,.68) 0%,rgba(6,22,34,.54) 22%,rgba(6,22,34,.28) 43%,rgba(6,22,34,.05) 70%,transparent 100%);
+}
+@media (max-width:600px) {
+  .world-fullscreen-hero .world-photo-overlay { background:linear-gradient(90deg,rgba(6,22,34,.62),rgba(6,22,34,.28) 72%,rgba(6,22,34,.08)); }
+}
+.travel-social-section {background:#fff7ed;padding:34px 0 42px;border-top:1px solid #f0e6d8;}
+.travel-social-wrap {display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.travel-social-wrap h2{font-size:clamp(1.4rem,2.3vw,2rem);margin:4px 0 7px;color:#102d3d;}
+.travel-social-wrap p{color:#526675;max-width:640px;margin:0;}
+.travel-social-links{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+.travel-social-link{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:11px 17px;border-radius:999px;background:#fff;color:#162c3d;border:1px solid #e3d6c8;text-decoration:none;font-weight:750;box-shadow:0 6px 20px rgba(20,43,57,.06);}
+.travel-social-link svg{width:22px;height:22px;flex-shrink:0;}
+.travel-social-link.instagram{color:#9f3470;}
+.travel-social-link.instagram:hover{background:#fff0f7;}
+.travel-social-link.pending{color:#626d76;background:#f1f1ee;border-style:dashed;cursor:default;box-shadow:none;}
+@media(max-width:600px){.travel-social-section{padding:28px 0 34px}.travel-social-links{width:100%}.travel-social-link{justify-content:center;flex:1;white-space:nowrap;font-size:.85rem;padding-inline:9px}}

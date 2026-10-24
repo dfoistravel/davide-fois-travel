@@ -68,6 +68,23 @@ const experiences = ['Mare e relax', 'Tour culturale', 'Natura e avventura', 'We
     </div>
   </section>
 
+<section class="travel-social-section" aria-label="Seguimi sui social">
+  <div class="container travel-social-wrap">
+    <div>
+      <p class="kicker">Seguimi nel mondo</p>
+      <h2>Idee di viaggio, fotografie e video</h2>
+      <p>Scopri nuovi luoghi e lasciati ispirare dai racconti e dai video di D. Fois Travel.</p>
+    </div>
+    <div class="travel-social-links">
+      <a class="travel-social-link instagram" href="https://www.instagram.com/davidefois.travel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram D. Fois Travel, apre una nuova scheda">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram
+      </a>
+      <span class="travel-social-link pending" title="Collegamento al canale in attesa di conferma">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor" opacity=".8"/><path d="m10 9 5 3-5 3V9Z" fill="#fff"/></svg>YouTube · link da inserire
+      </span>
+    </div>
+  </div>
+</section>
 <section class="section" id="continenti"><div class="container"><div class="section-head"><p class="kicker">Scegli un continente</p><h2>Cinque porte sul mondo.</h2><p>Esplora le mete e chiedi una proposta. Ogni viaggio prende forma intorno a te.</p></div><ContinentGrid /></div></section>
   <section class="section alt"><div class="container japan-feature"><JapanPhoto photo="miyajima" variant="wide" caption="Miyajima · fotografia dal mio viaggio in Giappone" /><div><p class="kicker">Destinazione in evidenza · Giappone</p><h2>Giappone, molto più di un viaggio.</h2><p>Templi millenari, metropoli futuristiche, villaggi tradizionali e sentieri tra le montagne. Scopri le guide dedicate alle regioni del Giappone e lasciati ispirare per costruire un itinerario davvero tuo.</p><div class="actions"><a class="button button-dark" href={`${base}giappone/`}>Esplora il Giappone</a><a class="text-link" href={`${base}giappone-pratico/`}>Consigli dalla guida →</a></div></div></div></section>
   <section class="section alt"><div class="container"><div class="section-head"><p class="kicker">Scegli un’esperienza</p><h2>Che cosa vuoi dal tuo prossimo viaggio?</h2></div><div class="experience-links">{experiences.map(experience => <a href={`${base}preventivo/?tipo=${encodeURIComponent(experience)}`}>{experience} <span aria-hidden="true">↗</span></a>)}</div></div></section>
