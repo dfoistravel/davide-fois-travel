@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { hokurikuPlaces } from '../../data/hokurikuPlaces';
+export function getStaticPaths(){return hokurikuPlaces.map(place=>({params:{slug:place.slug},props:{place}}));}
+const {place}=Astro.props;
+const base=import.meta.env.BASE_URL;
+const photoUrl=(filename:string)=>`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=1280`;
+---
+<BaseLayout title={`${place.name}: cosa vedere in Hokuriku–Shinetsu | D. Fois Travel`} description={`${place.summary} Luoghi, stagioni e spostamenti.`}>
+<section class="hero"><div class="container hs-detail"><div><p class="kicker"><a href={`${base}hokuriku-shinetsu/`}>Hokuriku–Shinetsu</a> · {place.area}</p><h1>{place.name}</h1><p class="lead">{place.summary}</p><div class="actions"><a class="button button-primary" href="#luoghi">Cosa vedere</a><a class="button button-ghost" href={`${base}hokuriku-shinetsu/`}>Tutte le guide</a></div></div><figure><img src={photoUrl(place.photo)} alt={place.name} loading="eager" decoding="async"/><figcaption>Foto: {place.credit} · {place.license} · <a href={`https://commons.wikimedia.org/wiki/File:${encodeURIComponent(place.photo)}`} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption></figure></div></section>
+<section class="section" id="luoghi"><div class="container"><div class="section-head"><p class="kicker">Punti di interesse</p><h2>Tre esperienze da considerare</h2></div><div class="grid-3">{place.spots.map(spot=><article class="card"><h3>{spot[0]}</h3><p>{spot[1]}</p></article>)}</div></div></section>
+<section class="section alt"><div class="container hs-tips"><article class="card"><h3>Quanto tempo dedicare</h3><p>{place.days}</p><h3>Quando andare</h3><p>{place.season}</p></article><article class="card"><h3>Come organizzarsi</h3><p>{place.tip}</p></article></div></section>
+<section class="section"><div class="container"><div class="cta"><div><p class="kicker">Itinerario su misura</p><h2>Vuoi visitare {place.name}?</h2><p>Troviamo un percorso adatto a periodo, budget e spostamenti.</p></div><a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a></div><p><a href={`${base}hokuriku-shinetsu/`}>← Torna alle guide</a></p></div></section>
+</BaseLayout>
+<style>.hs-detail{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:62px 0;align-items:center}.hs-detail figure{margin:0}.hs-detail img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px}.hs-detail figcaption{font-size:.78rem;color:var(--muted);margin-top:8px}.hs-tips{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:800px){.hs-detail,.hs-tips{grid-template-columns:1fr}.hs-detail{padding:40px 0}}</style>
