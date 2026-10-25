@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { hokurikuPlaces } from '../../data/hokurikuPlaces';
+import MatsumotoGuide from '../../components/MatsumotoGuide.astro';
 export function getStaticPaths(){return hokurikuPlaces.map(place=>({params:{slug:place.slug},props:{place}}));}
 const {place}=Astro.props;
 const base=import.meta.env.BASE_URL;
@@ -17,7 +18,9 @@ const attractions = [
 ];
 ---
 <BaseLayout title={`${place.name}: cosa vedere in Hokuriku–Shinetsu | D. Fois Travel`} description={`${place.summary} Luoghi, stagioni e spostamenti.`}>
-{kanazawa ? (
+{place.slug === 'matsumoto' ? (
+<MatsumotoGuide />
+) : kanazawa ? (
 <>
 <section class="hero"><div class="container kz-hero"><div><p class="kicker"><a href={`${base}hokuriku-shinetsu/`}>Hokuriku–Shinetsu</a> · Ishikawa</p><h1>Kanazawa: cosa vedere, tra giardini e quartieri storici</h1><p class="lead">Un Giappone elegante e raccolto: giardini, cultura samurai, antiche case da tè e sapori del Mare del Giappone. Una guida fotografica per scoprire Kanazawa con calma.</p><div class="actions"><a class="button button-primary" href="#cosa-vedere">Scopri i luoghi da visitare</a><a class="button button-ghost" href="#itinerario">Organizza le giornate</a></div></div><figure><img src={photoUrl('Kanazawa, Kenroku-en gardens.jpg')} alt="Giardino Kenrokuen a Kanazawa" loading="eager" decoding="async"/><figcaption>Kenrokuen · foto sergejf · <a href="https://commons.wikimedia.org/wiki/File:Kanazawa,_Kenroku-en_gardens.jpg" target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption></figure></div></section>
 <section class="section" id="cosa-vedere"><div class="container"><div class="section-head"><p class="kicker">Guida fotografica della città</p><h2>Sette luoghi da non perdere a Kanazawa</h2><p>Una selezione ragionata: ogni attrazione ha una descrizione concreta e un tempo indicativo. Non sono orari ufficiali, ma suggerimenti utili per organizzare la visita.</p></div><div class="kz-grid">{attractions.map((item,i)=><article class="card kz-card">{item.photo && <figure><img src={photoUrl(item.photo)} alt={`${item.title}, Kanazawa`} loading="lazy" decoding="async"/><figcaption>Foto {item.author} · <a href={`https://commons.wikimedia.org/wiki/File:${encodeURIComponent(item.photo)}`} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption></figure>}<div class="kz-cardbody"><p class="kicker">Tappa {i+1} · {item.time}</p><h3>{item.title}</h3><p class="kz-subtitle">{item.subtitle}</p><p>{item.description}</p></div></article>)}</div></div></section>
