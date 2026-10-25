@@ -1,17 +1,202 @@
 ---
-const base=import.meta.env.BASE_URL;
-const image=(file:string)=>`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=1280`;
+const base = import.meta.env.BASE_URL;
+const image = (file: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=1280`;
+const fileLink = (file: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}`;
+
 const stops = [
-  {name:'Castello di Matsumoto',tag:'Simbolo della città',time:'1,5–2 ore',photo:'Matsumoto castle.JPG',credit:'Boberger / Bengt Oberger',description:'Il castello, con il suo mastio nero circondato dal fossato, è uno dei grandi tesori storici del Giappone. Durante la visita interna si percorrono scale ripide: prevedi scarpe comode e un po’ di tempo anche per fotografarlo dall’esterno.'},
-  {name:'Nakamachi-dori',tag:'Botteghe e magazzini tradizionali',time:'45–90 minuti',photo:'Nakamachi street Matsumoto Nagano pref Japan01s3.jpg',credit:'663highland',description:'Una strada caratteristica con edifici kura, facciate bianche a graticcio scuro, piccoli negozi e laboratori. Una passeggiata piacevole per scoprire artigianato, caffè e atmosfera della città vecchia.'},
-  {name:'Ex scuola Kaichi',tag:'Architettura dell’epoca Meiji',time:'45–75 minuti',photo:'Former Kaichi School.jpg',credit:'Mnd',description:'La storica scuola è un interessante esempio dell’architettura del Giappone che si modernizzava. È a breve distanza dal castello: prima di visitarla, controlla l’accessibilità degli interni e gli orari.'},
-  {name:'Parco e fossato del castello',tag:'Scorci e passeggiate',time:'30–60 minuti',photo:'Matsumoto-Castle-M7912.jpg',credit:'Fg2',description:'Cammina intorno al fossato e osserva il castello da diverse angolazioni. La luce mattutina e il tardo pomeriggio sono ottimi per le fotografie; la fioritura primaverile può rendere l’area particolarmente suggestiva.'}
+  {
+    name: 'Castello di Matsumoto',
+    tag: 'Simbolo della città',
+    time: '1,5–2 ore',
+    photo: 'Matsumoto castle.JPG',
+    credit: 'Boberger / Bengt Oberger',
+    description:
+      'Il castello, con il suo mastio nero circondato dal fossato, è uno dei grandi tesori storici del Giappone. Durante la visita interna si percorrono scale ripide: prevedi scarpe comode e un po’ di tempo anche per fotografarlo dall’esterno.',
+  },
+  {
+    name: 'Nakamachi-dori',
+    tag: 'Botteghe e magazzini tradizionali',
+    time: '45–90 minuti',
+    photo: 'Nakamachi street Matsumoto Nagano pref Japan01s3.jpg',
+    credit: '663highland',
+    description:
+      'Una strada caratteristica con edifici kura, facciate bianche a graticcio scuro, piccoli negozi e laboratori. Una passeggiata piacevole per scoprire artigianato, caffè e atmosfera della città vecchia.',
+  },
+  {
+    name: 'Ex scuola Kaichi',
+    tag: 'Architettura dell’epoca Meiji',
+    time: '45–75 minuti',
+    photo: 'Former Kaichi School.jpg',
+    credit: 'Mnd',
+    description:
+      'La storica scuola è un interessante esempio dell’architettura del Giappone che si modernizzava. È a breve distanza dal castello: prima di visitarla, controlla l’accessibilità degli interni e gli orari.',
+  },
+  {
+    name: 'Parco e fossato del castello',
+    tag: 'Scorci e passeggiate',
+    time: '30–60 minuti',
+    photo: 'Matsumoto-Castle-M7912.jpg',
+    credit: 'Fg2',
+    description:
+      'Cammina intorno al fossato e osserva il castello da diverse angolazioni. La luce mattutina e il tardo pomeriggio sono ottimi per le fotografie; la fioritura primaverile può rendere l’area particolarmente suggestiva.',
+  },
+];
+
+const extraStops = [
+  {
+    name: 'Nawate-dori',
+    tag: 'Via pedonale e atmosfera locale',
+    time: '30–60 minuti',
+    photo: 'Nawate01s1740.jpg',
+    credit: '663highland',
+    description:
+      'Piccola via pedonale vicino al fiume Metoba, conosciuta per negozi, dolci e decorazioni a tema rana. È una tappa ideale da abbinare a Nakamachi per una passeggiata tra botteghe e scorci cittadini.',
+  },
+  {
+    name: 'Museo d’arte della città',
+    tag: 'Matsumoto tra arte e design',
+    time: '1–1,5 ore',
+    photo: 'Matsumoto city museum of art01nt3200.jpg',
+    credit: '663highland',
+    description:
+      'Una tappa per chi ama l’arte contemporanea e vuole approfondire il legame di Matsumoto con Yayoi Kusama. Prima della visita verifica mostre temporanee, eventuali prenotazioni e orari aggiornati.',
+  },
+  {
+    name: 'Asama Onsen',
+    tag: 'Pausa termale ai margini della città',
+    time: '1–2 ore o una notte',
+    photo: 'Asama Onsen.jpg',
+    credit: 'Thesoulofjapan',
+    description:
+      'Quartiere termale ai margini della città, adatto a chi desidera una pausa più lenta o una notte in ryokan. Più che una semplice tappa veloce, è perfetto per inserire un momento di relax nell’itinerario.',
+  },
 ];
 ---
-<section class="hero"><div class="container ms-hero"><div><p class="kicker"><a href={`${base}hokuriku-shinetsu/`}>Hokuriku–Shinetsu</a> · Prefettura di Nagano</p><h1>Matsumoto: il castello nero e le porte delle Alpi giapponesi</h1><p class="lead">Un centro storico da scoprire con calma, tra l’imponente castello, botteghe tradizionali, architetture Meiji e panorami montani. Una guida fotografica per organizzare uno o due giorni a Matsumoto.</p><div class="actions"><a class="button button-primary" href="#matsumoto-luoghi">Cosa vedere</a><a class="button button-ghost" href="#matsumoto-itinerari">Itinerari consigliati</a></div></div><figure><img src={image('Matsumoto castle.JPG')} alt="Castello di Matsumoto con il fossato" loading="eager" decoding="async"/><figcaption>Fotografia: Boberger / Bengt Oberger · <a href="https://commons.wikimedia.org/wiki/File:Matsumoto_castle.JPG" target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption></figure></div></section>
-<section class="section" id="matsumoto-luoghi"><div class="container"><div class="section-head"><p class="kicker">Guida fotografica</p><h2>Le tappe da non perdere a Matsumoto</h2><p>Tempi indicativi per orientarti, non orari ufficiali. Le fotografie si riferiscono ai luoghi descritti.</p></div><div class="ms-grid">{stops.map((s,i)=><article class="card ms-card"><figure><img src={image(s.photo)} alt={`${s.name}, Matsumoto`} loading="lazy" decoding="async"/><figcaption>Foto: {s.credit} · <a href={`https://commons.wikimedia.org/wiki/File:${encodeURIComponent(s.photo)}`} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption></figure><div class="ms-body"><p class="kicker">Tappa {i+1} · {s.time}</p><h3>{s.name}</h3><p><strong>{s.tag}</strong></p><p>{s.description}</p></div></article>)}</div><div class="grid-3 ms-more"><article class="card"><h3>Nawate-dori</h3><p>Piccola via pedonale vicino al fiume Metoba, conosciuta per negozi, dolci e decorazioni a tema rana. Da abbinare a Nakamachi.</p></article><article class="card"><h3>Museo d’arte della città</h3><p>Una tappa per chi ama l’arte contemporanea e vuole approfondire il legame di Matsumoto con Yayoi Kusama. Verifica mostre e apertura.</p></article><article class="card"><h3>Asama Onsen</h3><p>Quartiere termale ai margini della città. Interessante per una pausa più lenta o una notte in ryokan, senza considerarlo una semplice visita al centro.</p></article></div></div></section>
-<section class="section alt" id="matsumoto-itinerari"><div class="container"><div class="section-head"><p class="kicker">Organizzare le giornate</p><h2>Come visitare Matsumoto senza correre</h2></div><div class="grid-3"><article class="card"><h3>Un giorno · Il centro storico</h3><p>Mattina al castello e nel parco; pausa pranzo tra Nakamachi e Nawate; nel pomeriggio scegli tra la scuola Kaichi e il museo d’arte.</p></article><article class="card"><h3>Due giorni · Con calma</h3><p>Dedica il primo giorno al centro e il secondo a musei, botteghe, terme o escursioni vicine, scegliendo in base a stagione e trasporti.</p></article><article class="card"><h3>Matsumoto + Kamikochi</h3><p>Kamikochi non è nel centro di Matsumoto: richiede un trasferimento dedicato e un giorno a parte. Verifica sempre la stagione di apertura e i collegamenti pubblici.</p></article></div></div></section>
-<section class="section"><div class="container"><div class="ms-practical"><article class="card"><h3>Come arrivare</h3><p>Matsumoto si raggiunge in treno da Nagano e da Tokyo, secondo il percorso scelto. Per muoversi nel centro storico molte tappe sono raggiungibili a piedi o con autobus urbani.</p></article><article class="card"><h3>Dove soggiornare</h3><p>La zona della stazione è comoda per chi prosegue in treno; l’area tra castello e Nakamachi è piacevole per chi vuole passeggiare tra i luoghi d’interesse.</p></article><article class="card"><h3>Quando andare</h3><p>Primavera per ciliegi e passeggiate, estate per una base verso la montagna, autunno per il foliage. In inverno le temperature possono essere rigide.</p></article></div><div class="cta"><div><p class="kicker">Il tuo viaggio in Giappone</p><h2>Vuoi inserire Matsumoto nel tuo itinerario?</h2><p>Possiamo combinarla con Nagano, Kanazawa, Takayama e Kamikochi, valutando distanze e giorni disponibili.</p></div><a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a></div><p class="ms-back"><a href={`${base}hokuriku-shinetsu/`}>← Torna alle guide di Hokuriku–Shinetsu</a></p></div></section>
+
+<section class="hero">
+  <div class="container ms-hero">
+    <div>
+      <p class="kicker"><a href={`${base}hokuriku-shinetsu/`}>Hokuriku–Shinetsu</a> · Prefettura di Nagano</p>
+      <h1>Matsumoto: il castello nero e le porte delle Alpi giapponesi</h1>
+      <p class="lead">Un centro storico da scoprire con calma, tra l’imponente castello, botteghe tradizionali, architetture Meiji e panorami montani. Una guida fotografica per organizzare uno o due giorni a Matsumoto.</p>
+      <div class="actions">
+        <a class="button button-primary" href="#matsumoto-luoghi">Cosa vedere</a>
+        <a class="button button-ghost" href="#matsumoto-itinerari">Itinerari consigliati</a>
+      </div>
+    </div>
+    <figure>
+      <img src={image('Matsumoto castle.JPG')} alt="Castello di Matsumoto con il fossato" loading="eager" decoding="async" />
+      <figcaption>
+        Fotografia: Boberger / Bengt Oberger ·
+        <a href="https://commons.wikimedia.org/wiki/File:Matsumoto_castle.JPG" target="_blank" rel="noopener noreferrer">fonte e licenza</a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="matsumoto-luoghi">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Guida fotografica</p>
+      <h2>Le tappe da non perdere a Matsumoto</h2>
+      <p>Tempi indicativi per orientarti, non orari ufficiali. Le fotografie si riferiscono ai luoghi descritti.</p>
+    </div>
+
+    <div class="ms-grid">
+      {stops.map((s, i) => (
+        <article class="card ms-card">
+          <figure>
+            <img src={image(s.photo)} alt={`${s.name}, Matsumoto`} loading="lazy" decoding="async" />
+            <figcaption>
+              Foto: {s.credit} ·
+              <a href={fileLink(s.photo)} target="_blank" rel="noopener noreferrer">fonte e licenza</a>
+            </figcaption>
+          </figure>
+          <div class="ms-body">
+            <p class="kicker">Tappa {i + 1} · {s.time}</p>
+            <h3>{s.name}</h3>
+            <p><strong>{s.tag}</strong></p>
+            <p>{s.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="grid-3 ms-more">
+      {extraStops.map((s, i) => (
+        <article class="card ms-card">
+          <figure>
+            <img src={image(s.photo)} alt={`${s.name}, Matsumoto`} loading="lazy" decoding="async" />
+            <figcaption>
+              Foto: {s.credit} ·
+              <a href={fileLink(s.photo)} target="_blank" rel="noopener noreferrer">fonte e licenza</a>
+            </figcaption>
+          </figure>
+          <div class="ms-body">
+            <p class="kicker">Tappa {i + 5} · {s.time}</p>
+            <h3>{s.name}</h3>
+            <p><strong>{s.tag}</strong></p>
+            <p>{s.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="matsumoto-itinerari">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Organizzare le giornate</p>
+      <h2>Come visitare Matsumoto senza correre</h2>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <h3>Un giorno · Il centro storico</h3>
+        <p>Mattina al castello e nel parco; pausa pranzo tra Nakamachi e Nawate; nel pomeriggio scegli tra la scuola Kaichi e il museo d’arte.</p>
+      </article>
+      <article class="card">
+        <h3>Due giorni · Con calma</h3>
+        <p>Dedica il primo giorno al centro e il secondo a musei, botteghe, terme o escursioni vicine, scegliendo in base a stagione e trasporti.</p>
+      </article>
+      <article class="card">
+        <h3>Matsumoto + Kamikochi</h3>
+        <p>Kamikochi non è nel centro di Matsumoto: richiede un trasferimento dedicato e un giorno a parte. Verifica sempre la stagione di apertura e i collegamenti pubblici.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="ms-practical">
+      <article class="card">
+        <h3>Come arrivare</h3>
+        <p>Matsumoto si raggiunge in treno da Nagano e da Tokyo, secondo il percorso scelto. Per muoversi nel centro storico molte tappe sono raggiungibili a piedi o con autobus urbani.</p>
+      </article>
+      <article class="card">
+        <h3>Dove soggiornare</h3>
+        <p>La zona della stazione è comoda per chi prosegue in treno; l’area tra castello e Nakamachi è piacevole per chi vuole passeggiare tra i luoghi d’interesse.</p>
+      </article>
+      <article class="card">
+        <h3>Quando andare</h3>
+        <p>Primavera per ciliegi e passeggiate, estate per una base verso la montagna, autunno per il foliage. In inverno le temperature possono essere rigide.</p>
+      </article>
+    </div>
+
+    <div class="cta">
+      <div>
+        <p class="kicker">Il tuo viaggio in Giappone</p>
+        <h2>Vuoi inserire Matsumoto nel tuo itinerario?</h2>
+        <p>Possiamo combinarla con Nagano, Kanazawa, Takayama e Kamikochi, valutando distanze e giorni disponibili.</p>
+      </div>
+      <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a>
+    </div>
+
+    <p class="ms-back"><a href={`${base}hokuriku-shinetsu/`}>← Torna alle guide di Hokuriku–Shinetsu</a></p>
+  </div>
+</section>
+
 <style>
 .ms-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:34px;padding:62px 0}
 .ms-hero figure,.ms-card figure{margin:0}
