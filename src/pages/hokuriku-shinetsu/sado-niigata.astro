@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const image = (filename: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=1280`;
+const source = (filename: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(filename)}`;
+
+const places = [
+  {
+    name: 'Ponte Bandai · Niigata',
+    label: 'Il simbolo della città sul fiume Shinano',
+    duration: '30–60 minuti',
+    photo: 'Bandai Bridge 20250612 184846.jpg',
+    author: 'Mateuser',
+    description: 'Il grande ponte storico sul fiume Shinano è uno dei simboli di Niigata. Una passeggiata sui lungofiume è un buon modo per cominciare a scoprire la città prima dell’imbarco verso Sado.'
+  },
+  {
+    name: 'Furumachi · Niigata',
+    label: 'Strade commerciali, botteghe e atmosfera locale',
+    duration: '1–2 ore',
+    photo: 'Niigata-Furumachi-area.JPG',
+    author: 'autore indicato nella pagina Wikimedia Commons',
+    description: 'Uno dei quartieri storici di Niigata: percorsi urbani, negozi e locali dove scoprire una città di porto e mercanti. Combinalo con una passeggiata verso il fiume e una sosta gastronomica.'
+  },
+  {
+    name: 'Miniere d’oro di Sado · Dōyū no Warito',
+    label: 'Il paesaggio minerario e la storia dell’isola',
+    duration: '1,5–2,5 ore',
+    photo: 'Sadokinzan-doyunowareto 01.JPG',
+    author: 'Muramasa',
+    description: 'L’imponente taglio nella montagna racconta secoli di estrazione di oro e argento. I siti minerari di Sado sono stati iscritti nel Patrimonio mondiale UNESCO nel 2024. Il percorso storico comprende anche vicende complesse legate al lavoro in miniera, da approfondire nelle esposizioni.'
+  },
+  {
+    name: 'Impianto di Kitazawa · Sado',
+    label: 'Archeologia industriale tra verde e cemento',
+    duration: '45–75 minuti',
+    photo: 'Kitazawa Flotation Plant ac (1).jpg',
+    author: 'Asturio Cantabrio',
+    description: 'Le gradinate e le strutture dell’antico impianto di flottazione sono diventate uno degli scorci più suggestivi di Sado. Il sito mostra un capitolo più recente della produzione mineraria, diverso dalle gallerie storiche.'
+  },
+  {
+    name: 'Shukunegi · Sado',
+    label: 'Il villaggio dei maestri d’ascia e dei marinai',
+    duration: '1–1,5 ore',
+    photo: 'Sado Shukunegi.jpg',
+    author: 'autore indicato nella pagina Wikimedia Commons',
+    description: 'Un piccolo borgo di case tradizionali, vicoli stretti e architetture legate alla costruzione navale. Passeggia rispettando la tranquillità dei residenti e gli ingressi alle proprietà private.'
+  },
+  {
+    name: 'Tarai-bune · Porto di Ogi',
+    label: 'Le caratteristiche barche rotonde dell’isola',
+    duration: '30–60 minuti',
+    photo: 'Taraibune in Sado Ogi.jpg',
+    author: 'fotografo indicato nella pagina Wikimedia Commons',
+    description: 'Le tradizionali imbarcazioni circolari, un tempo utilizzate nelle acque costiere, sono oggi una delle esperienze più particolari di Sado. Il giro turistico dipende da condizioni del mare e disponibilità degli operatori.'
+  },
+  {
+    name: 'Baia di Senkakuwan · Sado',
+    label: 'Scogliere e panorami sul Mare del Giappone',
+    duration: '1–2 ore',
+    photo: 'Senkakuwan 20170416-2.jpg',
+    author: 'autore indicato nella pagina Wikimedia Commons',
+    description: 'L’erosione marina ha creato una costa frastagliata con isolotti e promontori. Fermati nei punti panoramici autorizzati e considera che barche turistiche e attrazioni possono essere sospese in caso di maltempo.'
+  },
+  {
+    name: 'Costa di Futatsugame · Sado',
+    label: 'Due scogli gemelli all’estremo nord',
+    duration: '45–90 minuti',
+    photo: '二ツ亀.jpg',
+    author: 'autore indicato nella pagina Wikimedia Commons',
+    description: 'Un promontorio spettacolare all’estremità settentrionale dell’isola. È una tappa consigliata per chi dedica più giorni a Sado e ha un mezzo adatto: le distanze sull’isola sono maggiori di quanto sembri.'
+  }
+];
+---
+
+<BaseLayout
+  title="Niigata e isola di Sado: guida fotografica | D. Fois Travel"
+  description="Guida fotografica a Niigata e Sado: Bandai Bridge, miniere d’oro, Kitazawa, Shukunegi, barche tarai-bune e coste panoramiche. Itinerari di 3–5 giorni, traghetti e consigli pratici."
+>
+  <section class="hero">
+    <div class="container sd-hero">
+      <div>
+        <p class="kicker"><a href={`${base}hokuriku-shinetsu/`}>Hokuriku–Shinetsu</a> · Prefettura di Niigata</p>
+        <h1>Niigata e isola di Sado: tra mare, villaggi e antiche miniere</h1>
+        <p class="lead">Una città di porto e un’isola dal carattere unico: panorami costieri, tradizioni marinare, borghi di legno e testimonianze della storia mineraria del Giappone.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#sado-luoghi">Scopri le 8 tappe</a>
+          <a class="button button-ghost" href="#sado-itinerari">Itinerari consigliati</a>
+        </div>
+      </div>
+      <figure>
+        <img src={image('Senkakuwan 20170416-2.jpg')} alt="Scogliere e acque della baia di Senkakuwan sull’isola di Sado" loading="eager" decoding="async" />
+        <figcaption>Baia di Senkakuwan · <a href={source('Senkakuwan 20170416-2.jpg')} target="_blank" rel="noopener noreferrer">fotografia e licenza Wikimedia Commons</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="sado-luoghi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Guida fotografica</p>
+        <h2>Otto luoghi da non perdere</h2>
+        <p>Ogni tappa ha una fotografia dedicata. I tempi si riferiscono alla visita sul posto, senza includere gli spostamenti: sull’isola alcuni tragitti richiedono parecchio tempo.</p>
+      </div>
+      <div class="sd-grid">
+        {places.map((place, i) => (
+          <article class="card sd-card">
+            <figure>
+              <img src={image(place.photo)} alt={`${place.name}, Giappone`} loading="lazy" decoding="async" />
+              <figcaption>Foto: {place.author} · <a href={source(place.photo)} target="_blank" rel="noopener noreferrer">fonte, autore e licenza</a></figcaption>
+            </figure>
+            <div class="sd-cardbody">
+              <p class="kicker">Tappa {i + 1} · {place.duration}</p>
+              <h3>{place.name}</h3>
+              <p class="sd-subtitle">{place.label}</p>
+              <p>{place.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="sado-itinerari">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Idee di viaggio</p>
+        <h2>Tre itinerari per scoprire Niigata e Sado</h2>
+        <p>Concentrati su poche zone al giorno. Un pernottamento a Sado è preferibile alla visita frettolosa in giornata, soprattutto se vuoi vedere sia la costa sia le miniere.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>3 giorni · Prima visita</h3>
+          <p>Giorno 1: Niigata, ponte Bandai e Furumachi. Giorno 2: traghetto per Ryotsu, Aikawa, miniere d’oro e Kitazawa. Giorno 3: rientro o una seconda visita sull’isola secondo il traghetto prenotato.</p>
+        </article>
+        <article class="card">
+          <h3>4 giorni · Borghi e tradizioni</h3>
+          <p>Un giorno a Niigata e tre a Sado: miniere di Aikawa, villaggio di Shukunegi e area di Ogi con le barche tarai-bune. La distribuzione delle tappe dipende dal porto di arrivo.</p>
+        </article>
+        <article class="card">
+          <h3>5 giorni · Giro panoramico</h3>
+          <p>Dedica almeno tre notti a Sado: oltre ai siti storici potrai esplorare la baia di Senkakuwan e la costa settentrionale di Futatsugame, meteo e viabilità permettendo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sd-info">
+        <article class="card">
+          <h3>Traghetti per Sado</h3>
+          <p>La rotta principale collega <strong>Niigata a Ryotsu</strong>: il jetfoil impiega circa 65–70 minuti, il traghetto auto circa 2 ore e 30 minuti. Esiste anche la rotta <strong>Naoetsu–Ogi</strong>, con disponibilità stagionale. Orari e corse possono cambiare.</p>
+        </article>
+        <article class="card">
+          <h3>Come muoversi</h3>
+          <p>A Sado non esiste una rete ferroviaria. Autobus e collegamenti locali sono utili, ma per toccare molte aree distanti può essere più comodo un veicolo a noleggio, rispettando le norme di guida in Giappone.</p>
+        </article>
+        <article class="card">
+          <h3>Dove soggiornare</h3>
+          <p>Niigata città è la base per il porto; sull’isola valuta Ryotsu per la praticità all’arrivo, Aikawa per le miniere o la zona di Ogi per i villaggi marinari. Per una visita completa prevedi almeno due notti sull’isola.</p>
+        </article>
+      </div>
+      <div class="sd-note">
+        <h3>Prima di partire</h3>
+        <p>Controlla meteo e condizioni del mare: le corse possono essere cancellate o modificate. Alcuni musei e siti richiedono prenotazione. Primavera e autunno sono piacevoli per i paesaggi; l’estate si presta alle attività sul mare, mentre l’inverno può avere navigazione più difficile.</p>
+        <p>Verifiche ufficiali: <a href="https://www.sadokisen.co.jp/en/" target="_blank" rel="noopener noreferrer">Sado Kisen (traghetti)</a>, <a href="https://www.sado-kinzan.com/en/" target="_blank" rel="noopener noreferrer">Sado Gold Mine</a>, <a href="https://www.japan.travel/en/world-heritage/sado-island-gold-mines-unesco/" target="_blank" rel="noopener noreferrer">JNTO (patrimonio UNESCO)</a>.</p>
+      </div>
+      <div class="cta">
+        <div>
+          <p class="kicker">Viaggio su misura</p>
+          <h2>Vuoi scoprire anche l’isola di Sado?</h2>
+          <p>Possiamo inserirla in un itinerario tra Tokyo, Niigata e il Giappone meno conosciuto, organizzando traghetti e pernottamenti.</p>
+        </div>
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a>
+      </div>
+      <p class="sd-back"><a href={`${base}hokuriku-shinetsu/`}>← Torna alle guide di Hokuriku–Shinetsu</a></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.sd-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:34px;padding:62px 0}
+.sd-hero figure,.sd-card figure{margin:0}
+.sd-hero img,.sd-card img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.sd-hero img{border-radius:18px}
+.sd-hero figcaption,.sd-card figcaption{font-size:.75rem;color:var(--muted);margin-top:8px}
+.sd-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.sd-card{padding:0;overflow:hidden}
+.sd-card figcaption{padding:0 18px}
+.sd-cardbody{padding:22px}
+.sd-cardbody .kicker{margin-bottom:8px}
+.sd-subtitle{font-weight:700}
+.sd-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:28px}
+.sd-note{padding:26px 30px;border:1px solid #d9dfe5;border-radius:18px;margin-bottom:32px}
+.sd-back{margin-top:25px}
+@media(max-width:800px){.sd-hero,.sd-grid,.sd-info{grid-template-columns:1fr}.sd-hero{padding:40px 0}}
+</style>
