@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const image = (filename: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=1280`;
+const commons = (filename: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(filename)}`;
+
+const luoghi = [
+  {
+    title: 'Tempio Eihei-ji',
+    subtitle: 'Il cuore dello Zen Sōtō tra i boschi',
+    time: '1,5–2 ore',
+    photo: 'Eiheiji.jpg',
+    author: 'Douglaspperkins',
+    description: 'Fondato nel XIII secolo da Dōgen, Eihei-ji è uno dei principali complessi monastici dello Zen Sōtō. Cammina tra padiglioni, corridoi coperti e alberi secolari, rispettando i luoghi di preghiera e le eventuali limitazioni alle fotografie.'
+  },
+  {
+    title: 'Scogliere di Tōjinbō',
+    subtitle: 'La costa rocciosa sul Mare del Giappone',
+    time: '1–1,5 ore',
+    photo: 'Tojinbo cliffs, Fukui Prefecture; September 2019 (05).jpg',
+    author: '雷太',
+    description: 'Una costa di imponenti colonne rocciose modellate dal mare. Osserva i panorami dai punti sicuri: vento forte, onde e terreno irregolare rendono pericoloso avvicinarsi ai bordi delle scogliere.'
+  },
+  {
+    title: 'Castello di Maruoka',
+    subtitle: 'Uno dei dodici torrioni storici originali',
+    time: '1–1,5 ore',
+    photo: 'Maruoka-jo Sakura.JPG',
+    author: 'autore indicato su Wikimedia Commons',
+    description: 'Un piccolo castello celebre per il suo torrione storico. La visita permette di apprezzare l’architettura difensiva giapponese; all’interno possono esserci scale molto ripide. In primavera il parco si colora con i ciliegi.'
+  },
+  {
+    title: 'Rovine di Ichijōdani',
+    subtitle: 'L’antica città del clan Asakura',
+    time: '1,5–2,5 ore',
+    photo: 'Fukugen-madhinami of Ichijodani Asakura Family Historic Ruins12s5s4500.jpg',
+    author: '663highland',
+    description: 'Il sito conserva le testimonianze della città fortificata degli Asakura, distrutta nel 1573. Tra fondamenta e strade ricostruite si scopre la vita urbana del Giappone del XVI secolo.'
+  },
+  {
+    title: 'Museo dei dinosauri di Fukui',
+    subtitle: 'Fossili e grandi ricostruzioni',
+    time: '2–3 ore',
+    photo: 'Fukui Prefectural Dinosaur Museum 20231217.jpg',
+    author: 'Totti',
+    description: 'A Katsuyama, questo museo è una delle attrazioni più note della prefettura. Tra fossili, scheletri ed esposizioni interattive è particolarmente interessante per famiglie e appassionati. Controlla prenotazioni e giorni di apertura.'
+  },
+  {
+    title: 'Santuario Kehi Jingū',
+    subtitle: 'Un grande torii a Tsuruga',
+    time: '45–75 minuti',
+    photo: '150228 Kehi-jingu Tsuruga Fukui pref Japan10n.jpg',
+    author: '663highland',
+    description: 'Nel centro di Tsuruga, il santuario è un luogo importante della tradizione locale. Ammira il portale torii, i viali e il complesso religioso, con una visita tranquilla e rispettosa.'
+  },
+  {
+    title: 'Giardini storici di Ichijōdani',
+    subtitle: 'Paesaggi legati alla storia degli Asakura',
+    time: '30–60 minuti',
+    photo: 'Nanyoji-ato Garden of Ichijodani Asakura Family Historic Ruins01n4592.jpg',
+    author: '663highland',
+    description: 'Tra le testimonianze dell’antica Ichijōdani si trovano giardini di pregio storico e paesaggistico. Questa tappa completa la visita alle rovine, con scorci verdi e un’atmosfera raccolta.'
+  }
+];
+---
+
+<BaseLayout title="Fukui ed Eiheiji: guida fotografica e itinerari | D. Fois Travel" description="Scopri Fukui ed Eiheiji: templi zen, scogliere di Tojinbo, castello di Maruoka, Ichijodani e museo dei dinosauri. Fotografie, itinerari e consigli pratici.">
+  <section class="hero">
+    <div class="container fk-hero">
+      <div>
+        <p class="kicker"><a href={`${base}hokuriku-shinetsu/`}>Hokuriku–Shinetsu</a> · Prefettura di Fukui</p>
+        <h1>Fukui ed Eiheiji: templi zen, castelli e scogliere sul mare</h1>
+        <p class="lead">Una regione del Giappone sorprendente e meno affollata: monasteri immersi nei boschi, castelli storici, paesaggi costieri e luoghi ricchi di storia.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#fukui-luoghi">Scopri i luoghi</a>
+          <a class="button button-ghost" href="#fukui-itinerari">Organizza il viaggio</a>
+        </div>
+      </div>
+      <figure>
+        <img src={image('Eiheiji.jpg')} alt="Sentieri e padiglioni del tempio Eiheiji tra i boschi" loading="eager" decoding="async" />
+        <figcaption>Foto: Douglaspperkins · <a href={commons('Eiheiji.jpg')} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="fukui-luoghi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Guida fotografica</p>
+        <h2>7 luoghi da non perdere a Fukui</h2>
+        <p>Fotografie specifiche per ciascuna tappa, tempi indicativi di visita e indicazioni per scegliere le esperienze più adatte al tuo viaggio.</p>
+      </div>
+      <div class="fk-grid">
+        {luoghi.map((luogo, index) => (
+          <article class="card fk-card">
+            <figure>
+              <img src={image(luogo.photo)} alt={`${luogo.title}, prefettura di Fukui`} loading="lazy" decoding="async" />
+              <figcaption>Foto: {luogo.author} · <a href={commons(luogo.photo)} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+            </figure>
+            <div class="fk-cardbody">
+              <p class="kicker">Tappa {index + 1} · {luogo.time}</p>
+              <h3>{luogo.title}</h3>
+              <p class="fk-subtitle">{luogo.subtitle}</p>
+              <p>{luogo.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="fukui-itinerari">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Itinerari consigliati</p>
+        <h2>Come organizzare 1, 2 o 3 giorni</h2>
+        <p>Le attrazioni sono distribuite in diverse località: non cercare di visitarle tutte nello stesso giorno.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Un giorno · Spiritualità e storia</h3>
+          <p>Parti dalla città di Fukui e dedica la mattina al tempio Eihei-ji. Nel pomeriggio visita Ichijōdani e le sue testimonianze storiche, verificando in anticipo i collegamenti.</p>
+        </article>
+        <article class="card">
+          <h3>Due giorni · Dai templi alla costa</h3>
+          <p>Il primo giorno esplora Eihei-ji e Ichijōdani. Il secondo raggiungi il castello di Maruoka e le scogliere di Tōjinbō, con soste panoramiche e tempo per il mare.</p>
+        </article>
+        <article class="card">
+          <h3>Tre giorni · Fukui più completa</h3>
+          <p>Aggiungi una giornata dedicata al Museo dei dinosauri di Katsuyama oppure raggiungi Tsuruga per visitare Kehi Jingū. Sono due alternative in aree differenti.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="fk-practical">
+        <article class="card">
+          <h3>Come arrivare</h3>
+          <p>Fukui è collegata a Kanazawa e a Tokyo con l’Hokuriku Shinkansen. Da Kyoto e Osaka si utilizzano collegamenti ferroviari con cambio a Tsuruga. Per Eihei-ji, Tōjinbō e Katsuyama servono ulteriori mezzi locali.</p>
+        </article>
+        <article class="card">
+          <h3>Dove soggiornare</h3>
+          <p>La zona della stazione di Fukui è una base comoda per escursioni in più direzioni. Valuta una seconda base vicino alla costa o a Katsuyama solo se hai un itinerario più lungo.</p>
+        </article>
+        <article class="card">
+          <h3>Periodo migliore</h3>
+          <p>Primavera e autunno sono piacevoli per templi e luoghi storici. In inverno il clima può essere freddo e nevoso, mentre sulla costa vento e mareggiate richiedono prudenza in ogni stagione.</p>
+        </article>
+      </div>
+      <div class="fk-note">
+        <h3>Da sapere prima di partire</h3>
+        <p>Controlla sempre orari e disponibilità dei trasporti locali, soprattutto nei fine settimana e nei festivi. Per la visita di Eihei-ji rispetta il silenzio, le indicazioni dei monaci e le eventuali aree in cui non è permesso fotografare. Le fotografie delle schede provengono da Wikimedia Commons e riportano il collegamento alla pagina con attribuzione e licenza.</p>
+        <p>Per ulteriori informazioni: <a href="https://www.japan.travel/it/destinations/hokuriku-shinetsu/fukui/" target="_blank" rel="noopener noreferrer">Ente Nazionale del Turismo Giapponese – Fukui</a>.</p>
+      </div>
+      <div class="cta">
+        <div>
+          <p class="kicker">Giappone su misura</p>
+          <h2>Vuoi scoprire il Giappone meno conosciuto?</h2>
+          <p>Possiamo inserire Fukui in un itinerario tra Kanazawa, Kyoto e le Alpi giapponesi, scegliendo tempi e spostamenti realistici.</p>
+        </div>
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a>
+      </div>
+      <p class="fk-back"><a href={`${base}hokuriku-shinetsu/`}>← Torna alle guide di Hokuriku–Shinetsu</a></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .fk-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:34px;padding:62px 0}
+  .fk-hero figure,.fk-card figure{margin:0}
+  .fk-hero img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px}
+  .fk-hero figcaption,.fk-card figcaption{font-size:.75rem;color:var(--muted);margin-top:8px}
+  .fk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .fk-card{padding:0;overflow:hidden}
+  .fk-card figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .fk-card figcaption{padding:8px 18px 0}
+  .fk-cardbody{padding:22px}
+  .fk-cardbody .kicker{margin-bottom:9px}
+  .fk-subtitle{font-weight:700}
+  .fk-practical{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:28px}
+  .fk-note{padding:26px 30px;border:1px solid #d9dfe5;border-radius:18px;margin-bottom:32px}
+  .fk-back{margin-top:24px}
+  @media(max-width:800px){.fk-hero,.fk-grid,.fk-practical{grid-template-columns:1fr}.fk-hero{padding:40px 0}}
+</style>
