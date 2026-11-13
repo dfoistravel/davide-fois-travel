@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const photo = (file: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=1280`;
+const creditUrl = (file: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}`;
+const stops = [
+  {name:'Costa di Jōgasaki e ponte Kadowaki',area:'Itō · costa orientale',time:'1,5–2,5 ore',file:'Jogasaki Coast 20111016 b.jpg',author:'Batholith',description:'Un tratto spettacolare di costa vulcanica con sentieri, scogliere e il ponte sospeso Kadowaki. Indossa scarpe adatte e rimani sui percorsi segnalati: il mare e il vento possono rendere rischiosi i punti esposti.'},
+  {name:'Monte Ōmuro',area:'Itō · entroterra orientale',time:'1–2 ore',file:'Mount Omuro in spring.jpg',author:'autore indicato su Wikimedia Commons',description:'Un cono vulcanico dalla forma regolare che domina il paesaggio di Izu Kōgen. Una seggiovia permette normalmente di raggiungere la sommità, dove si può percorrere il bordo del cratere. Verifica le sospensioni per vento o maltempo.'},
+  {name:'Tempio Shuzenji e centro termale',area:'Izu · zona centrale',time:'1,5–2,5 ore',file:'181124 Shuzenji Izu Shizuoka pref Japan01s3.jpg',author:'663highland',description:'Tra vicoli tranquilli, ponticelli, onsen e il tempio storico, Shuzenji è una delle tappe più piacevoli della penisola. Puoi abbinarla a una passeggiata nel vicino boschetto di bambù, senza confonderla con la stazione ferroviaria omonima.'},
+  {name:'Cascate Jōren',area:'Izu · zona montana',time:'45–90 minuti',file:'Izu Joren-Wasserfall 01.jpg',author:'Zairon',description:'La cascata si trova nella parte montana della penisola, lungo l’itinerario verso Amagi. La discesa al belvedere comprende gradini: verifica l’accessibilità e considera il tempo per risalire.'},
+  {name:'Cascate di Kawazu Nanadaru',area:'Kawazu · sud-est',time:'2–3 ore',file:'Kawazu7daru Odaru.jpg',author:'Captain76',description:'Un insieme di sette cascate lungo una valle verde, con tratti pedonali e piccoli ponti. La foto mostra la cascata Ōdaru; l’accesso alle singole cascate e a eventuali strutture può dipendere da condizioni e orari.'},
+  {name:'Perry Road, Shimoda',area:'Shimoda · costa meridionale',time:'45–90 minuti',file:'Perry Road, Shimoda, Shizuoka, Japan.JPG',author:'Shoestring',description:'Una breve passeggiata storica tra canali, ponticelli e vecchi edifici legati al porto di Shimoda. La zona ricorda i contatti fra il Giappone e l’Occidente a metà Ottocento e si combina bene con una visita al centro.'},
+  {name:'Capo Irōzaki',area:'Minamiizu · estremità sud',time:'1–1,5 ore',file:'Cape Irozaki.jpg',author:'Shift',description:'All’estremità meridionale di Izu, il promontorio offre scogliere, oceano e panorami aperti. Informati sugli autobus, sui sentieri accessibili e sulle condizioni del vento, soprattutto quando il mare è mosso.'},
+  {name:'Costa di Dōgashima',area:'Nishiizu · costa occidentale',time:'1,5–2,5 ore',file:'Dogashima 20121019.jpg',author:'Batholith',description:'Scogli e isolette caratterizzano questo tratto della costa occidentale. Le escursioni in barca verso le grotte marine dipendono dalle condizioni del mare; la zona è suggestiva anche dai punti panoramici a terra.'}
+];
+---
+<BaseLayout title="Penisola di Izu: guida fotografica, itinerari e spiagge | D. Fois Travel" description="Otto attrazioni fotografiche della Penisola di Izu: Jogasaki, monte Omuro, Shuzenji, Joren, Kawazu, Shimoda, Irozaki e Dogashima. Itinerari e trasporti.">
+  <section class="hero">
+    <div class="container izu-hero">
+      <div>
+        <p class="kicker"><a href={`${base}giappone/regioni/tokai/`}>Regione Tōkai</a> · Prefettura di Shizuoka</p>
+        <h1>Penisola di Izu: scogliere, terme e villaggi tra mare e montagne</h1>
+        <p class="lead">Il Giappone della natura e delle tradizioni costiere: sentieri panoramici, cascate, onsen e piccole cittadine da esplorare senza fretta.</p>
+        <div class="actions"><a class="button button-primary" href="#izu-luoghi">Cosa vedere</a><a class="button button-ghost" href="#izu-itinerari">Itinerari consigliati</a></div>
+      </div>
+      <figure>
+        <img src={photo('Jogasaki Coast 20111016 b.jpg')} alt="Ponte sospeso sulla costa di Jogasaki, Penisola di Izu" loading="eager" decoding="async"/>
+        <figcaption>Foto: Batholith · <a href={creditUrl('Jogasaki Coast 20111016 b.jpg')} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="izu-luoghi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Guida fotografica</p>
+        <h2>8 attrazioni da scoprire a Izu</h2>
+        <p>Le fotografie sono specifiche dei luoghi descritti. I tempi indicati si riferiscono alle visite e non includono gli spostamenti tra le zone della penisola.</p>
+      </div>
+      <div class="izu-grid">
+        {stops.map((item, i) => (
+          <article class="card izu-card">
+            <figure>
+              <img src={photo(item.file)} alt={`${item.name}, Penisola di Izu`} loading="lazy" decoding="async"/>
+              <figcaption>Foto: {item.author} · <a href={creditUrl(item.file)} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+            </figure>
+            <div class="izu-cardbody">
+              <p class="kicker">Tappa {i+1} · {item.area} · {item.time}</p>
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="izu-itinerari">
+    <div class="container">
+      <div class="section-head"><p class="kicker">Organizzare il percorso</p><h2>Tre itinerari da uno a quattro giorni</h2><p>La penisola è ampia e montuosa: non è realistico raggiungere tutti i luoghi in una sola giornata.</p></div>
+      <div class="grid-3">
+        <article class="card"><h3>1 giorno · Izu orientale</h3><p>Scegli la zona di Itō e Izu Kōgen, con costa di Jōgasaki e monte Ōmuro. È l'opzione più semplice come escursione dalle stazioni della costa orientale, controllando gli autobus.</p></article>
+        <article class="card"><h3>2 giorni · Terme e cascate</h3><p>Dedica il primo giorno a Shuzenji e al suo quartiere termale; il secondo alle cascate Jōren e, se i collegamenti lo permettono, a una parte della valle di Kawazu Nanadaru.</p></article>
+        <article class="card"><h3>3–4 giorni · Izu completa</h3><p>Dividi il soggiorno tra costa orientale, Shimoda e la zona occidentale di Dōgashima. Aggiungi Irōzaki se i tempi lo consentono. L’auto può aiutare, ma servono verifiche su percorrenze, parcheggi e condizioni delle strade.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="izu-practical">
+        <article class="card"><h3>Come arrivare</h3><p>Da Tokyo puoi raggiungere Atami e Mishima con la ferrovia; la costa orientale è servita dai collegamenti via Itō e Izukyū verso Shimoda. Per Shuzenji è utile la linea da Mishima. Altri luoghi richiedono autobus locali.</p></article>
+        <article class="card"><h3>Dove dormire</h3><p>Itō o Izu Kōgen sono basi comode per la costa orientale, Shuzenji per un soggiorno termale e Shimoda per il sud. Per esplorare anche Dōgashima considera una notte aggiuntiva o una seconda base.</p></article>
+        <article class="card"><h3>Quando andare</h3><p>Primavera e autunno offrono temperature piacevoli per le passeggiate; l'estate attira per le spiagge ma può essere umida, mentre le zone costiere sono esposte a vento e mareggiate. Il meteo può influire su sentieri e barche.</p></article>
+      </div>
+      <div class="izu-note">
+        <h3>Prima di partire</h3>
+        <p>Verifica la frequenza degli autobus, gli orari dei sentieri e le eventuali sospensioni delle escursioni in barca. Evita i bordi delle scogliere e rispetta le chiusure temporanee. La Penisola di Izu e i Cinque Laghi del Fuji appartengono a zone diverse: non considerarli una sola escursione.</p>
+        <p>Approfondisci le informazioni sui <a href="https://www.japan.travel/it/destinations/tokai/shizuoka/izu-and-around/" target="_blank" rel="noopener noreferrer">luoghi di Izu (JNTO)</a> e sui <a href="https://b-izu.com/en/access/" target="_blank" rel="noopener noreferrer">collegamenti locali</a>.</p>
+      </div>
+      <div class="cta"><div><p class="kicker">Giappone su misura</p><h2>Vuoi aggiungere Izu al tuo viaggio?</h2><p>Possiamo combinare Tokyo, la Penisola di Izu e altre destinazioni valutando pernottamenti e spostamenti realistici.</p></div><a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a></div>
+      <p class="izu-back"><a href={`${base}giappone/regioni/tokai/`}>← Torna alla regione Tōkai</a></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.izu-hero{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:62px 0}
+.izu-hero figure,.izu-card figure{margin:0}
+.izu-hero img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px}
+.izu-hero figcaption,.izu-card figcaption{font-size:.75rem;color:var(--muted);margin-top:8px}
+.izu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.izu-card{overflow:hidden;padding:0}
+.izu-card img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.izu-card figcaption{padding:0 18px}
+.izu-cardbody{padding:22px}
+.izu-practical{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:24px}
+.izu-note{padding:24px 30px;border:1px solid var(--line);border-radius:18px;margin-bottom:30px}
+.izu-back{margin-top:24px}
+@media(max-width:800px){.izu-hero,.izu-grid,.izu-practical{grid-template-columns:1fr}.izu-hero{padding:40px 0}}
+</style>
