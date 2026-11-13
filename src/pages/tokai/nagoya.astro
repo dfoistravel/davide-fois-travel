@@ -191,4 +191,21 @@ const places = [
 .ng-note{padding:26px 30px;border:1px solid #d9dfe5;border-radius:18px;margin-bottom:32px}
 .ng-back{margin-top:24px}
 @media(max-width:800px){.ng-hero,.ng-grid,.ng-practical{grid-template-columns:1fr}.ng-hero{padding:40px 0}}
+
+/* Titoli delle guide turistiche: proporzioni equilibrate tra testo e foto */
+.ng-hero h1{
+  font-size:clamp(2.1rem,3.1vw,3.375rem);
+  line-height:1.16;
+  letter-spacing:-.025em;
+  text-wrap:balance;
+}
+.section-head h2{
+  font-size:clamp(1.8rem,2.5vw,2.375rem);
+  line-height:1.2;
+  text-wrap:balance;
+}
+@media(max-width:620px){
+  .ng-hero h1{font-size:clamp(2rem,7.5vw,2.65rem)}
+  .section-head h2{font-size:clamp(1.7rem,5.5vw,2.1rem)}
+}
 </style>
