@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const image = (filename: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=1280`;
+const source = (filename: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(filename)}`;
+
+const places = [
+  {
+    name: 'Castello di Nagoya',
+    subtitle: 'Il simbolo della città e gli shachihoko dorati',
+    duration: '1–1,5 ore per il parco e gli esterni',
+    photo: 'Nagoya Castle (1).JPG',
+    author: 'Gryffindor',
+    description: 'Il grande castello voluto da Tokugawa Ieyasu all’inizio del Seicento è il simbolo di Nagoya. Ammira il torrione ricostruito, i fossati e le fortificazioni; il torrione principale non è visitabile all’interno per motivi di sicurezza, ma il parco e altre aree del complesso sono accessibili.'
+  },
+  {
+    name: 'Palazzo Honmaru',
+    subtitle: 'Ambienti decorati e cultura del periodo Edo',
+    duration: '1–1,5 ore',
+    photo: 'Inside view of Hommaru Palace of Nagoya Castle 1.JPG',
+    author: 'autore indicato su Wikimedia Commons',
+    description: 'All’interno dell’area del castello, il palazzo ricostruito racconta l’arte e la rappresentanza dei signori feudali: sale con tatami, paraventi e decorazioni ricche di dettagli. Controlla le regole di accesso e le limitazioni per le fotografie prima di entrare.'
+  },
+  {
+    name: 'Santuario Atsuta Jingū',
+    subtitle: 'Un luogo sacro tra alberi secolari',
+    duration: '1–1,5 ore',
+    photo: 'Atsuta Shrine.jpg',
+    author: 'Bariston',
+    description: 'Uno dei più importanti santuari shintoisti del Giappone, immerso in un’area verde dall’atmosfera tranquilla. Percorri i viali alberati, osserva i torii e rispetta i momenti di preghiera dei visitatori.'
+  },
+  {
+    name: 'Giardino Tokugawa-en',
+    subtitle: 'Un lago e un paesaggio daimyō',
+    duration: '1–1,5 ore',
+    photo: 'Ryusen Lake of Tokugawa Garden in Nagoya City.jpg',
+    author: 'WikiTaro',
+    description: 'Un elegante giardino paesaggistico con sentieri, piccoli ponti, cascate e un lago centrale. È ideale per rallentare il ritmo dopo i musei; nelle vicinanze si trova anche il Museo d’arte Tokugawa.'
+  },
+  {
+    name: 'Tempio Ōsu Kannon',
+    subtitle: 'Spiritualità nel cuore della città',
+    duration: '30–60 minuti',
+    photo: 'Osu Kannon 1.jpg',
+    author: 'Gryffindor',
+    description: 'Un tempio buddhista vivace e facilmente raggiungibile in metropolitana, perfetto come punto di partenza per scoprire il quartiere di Ōsu. La piazza e l’architettura rossa creano un contrasto affascinante con la città moderna.'
+  },
+  {
+    name: 'Shopping district di Ōsu',
+    subtitle: 'Gallerie commerciali, street food e cultura pop',
+    duration: '1,5–2,5 ore',
+    photo: 'Main shopping street (Osu in Nagoya, Japan).jpg',
+    author: 'autore indicato su Wikimedia Commons',
+    description: 'Fra gallerie coperte, negozi indipendenti e piccoli locali, Ōsu è uno dei quartieri più divertenti da esplorare a piedi. Combina la visita con il tempio Ōsu Kannon e concediti una pausa per assaggiare le specialità locali.'
+  },
+  {
+    name: 'SCMAGLEV and Railway Park',
+    subtitle: 'Shinkansen e treni che hanno cambiato il Giappone',
+    duration: '2–3 ore',
+    photo: 'SCMaglev and Railway Park.JPG',
+    author: 'Abasaa',
+    description: 'Un museo ferroviario dedicato all’evoluzione dei treni giapponesi, inclusi Shinkansen e convogli a levitazione magnetica. Si trova a Kinjo-futo, fuori dal centro: prevedi il trasferimento sulla linea Aonami e verifica eventuali prenotazioni per esperienze speciali.'
+  },
+  {
+    name: 'Museo della Scienza di Nagoya',
+    subtitle: 'Esperimenti, scoperte e il grande planetario',
+    duration: '2–3 ore',
+    photo: 'Nagoya City Science Museum VLux5 hdsr 06.jpg',
+    author: 'Hyppolyte de Saint-Rambert',
+    description: 'Un museo ricco di esposizioni interattive, riconoscibile per l’imponente cupola del planetario. È una tappa particolarmente adatta alle famiglie. Gli spettacoli del planetario possono richiedere biglietti o prenotazioni separate.'
+  }
+];
+---
+
+<BaseLayout title="Nagoya: guida fotografica, 8 luoghi e itinerari | D. Fois Travel" description="Guida fotografica a Nagoya: castello e Palazzo Honmaru, Atsuta Jingū, Tokugawa-en, Ōsu, museo ferroviario e museo della scienza. Itinerari e consigli pratici.">
+  <section class="hero">
+    <div class="container ng-hero">
+      <div>
+        <p class="kicker"><a href={`${base}giappone/regioni/tokai/`}>Tōkai</a> · Prefettura di Aichi</p>
+        <h1>Nagoya: castelli, tradizioni e innovazione giapponese</h1>
+        <p class="lead">Una città sorprendente fra il patrimonio dei Tokugawa, grandi santuari, quartieri pieni di vita e musei dedicati alla tecnologia. Scopri come visitarla in uno, due o tre giorni.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#nagoya-luoghi">Cosa vedere</a>
+          <a class="button button-ghost" href="#nagoya-itinerari">Itinerari consigliati</a>
+        </div>
+      </div>
+      <figure>
+        <img src={image('Nagoya Castle (1).JPG')} alt="Il castello di Nagoya nella prefettura di Aichi" loading="eager" decoding="async" />
+        <figcaption>Foto: Gryffindor · <a href={source('Nagoya Castle (1).JPG')} target="_blank" rel="noopener noreferrer">Wikimedia Commons, fonte e licenza</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="nagoya-luoghi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Guida fotografica</p>
+        <h2>8 luoghi da non perdere a Nagoya</h2>
+        <p>Ogni luogo ha una fotografia dedicata e tempi indicativi. I trasferimenti non sono inclusi nelle durate di visita.</p>
+      </div>
+      <div class="ng-grid">
+        {places.map((place, index) => (
+          <article class="card ng-card">
+            <figure>
+              <img src={image(place.photo)} alt={`${place.name}, Nagoya, Giappone`} loading="lazy" decoding="async" />
+              <figcaption>Foto: {place.author} · <a href={source(place.photo)} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+            </figure>
+            <div class="ng-cardbody">
+              <p class="kicker">Tappa {index + 1} · {place.duration}</p>
+              <h3>{place.name}</h3>
+              <p class="ng-subtitle">{place.subtitle}</p>
+              <p>{place.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="nagoya-itinerari">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Organizza il viaggio</p>
+        <h2>Itinerari di 1, 2 e 3 giorni</h2>
+        <p>La città è ampia: raggruppare le visite per zona consente di evitare spostamenti inutili.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Un giorno · Nagoya classica</h3>
+          <p>Mattina al castello e al Palazzo Honmaru. Pomeriggio al santuario Atsuta Jingū, con una sosta serale nel quartiere di Ōsu se i tempi lo consentono.</p>
+        </article>
+        <article class="card">
+          <h3>Due giorni · Cultura e quartieri</h3>
+          <p>Primo giorno: castello, Honmaru e giardino Tokugawa-en. Secondo giorno: Atsuta Jingū, tempio Ōsu Kannon e shopping district di Ōsu, con una pausa gastronomica.</p>
+        </article>
+        <article class="card">
+          <h3>Tre giorni · Con i musei</h3>
+          <p>Aggiungi una giornata dedicata allo SCMAGLEV and Railway Park oppure al Museo della Scienza. Per visitarli entrambi considera tempi di apertura e trasferimenti.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="ng-practical">
+        <article class="card">
+          <h3>Come arrivare e muoversi</h3>
+          <p>Nagoya è sulla linea Tōkaidō Shinkansen tra Tokyo e Kyoto/Osaka. Per visitare la città usa metropolitana, treni e autobus. Lo SCMAGLEV and Railway Park si raggiunge con la linea Aonami fino a Kinjo-futo.</p>
+        </article>
+        <article class="card">
+          <h3>Dove soggiornare</h3>
+          <p>La zona della stazione JR Nagoya è comoda per treni e gite. Sakae è pratica per ristoranti, shopping e spostamenti in città. Scegli in base all’itinerario e ai collegamenti.</p>
+        </article>
+        <article class="card">
+          <h3>Quando andare</h3>
+          <p>Primavera e autunno sono generalmente piacevoli. In estate il caldo e l’umidità possono rendere più faticose le visite all’aperto; in inverno sono utili i musei e gli itinerari urbani.</p>
+        </article>
+      </div>
+      <div class="ng-note">
+        <h3>Attenzione al castello</h3>
+        <p><strong>Il torrione principale non è attualmente accessibile all’interno.</strong> La visita al Palazzo Honmaru è distinta e può essere effettuata secondo gli orari e le regole ufficiali. Verifica eventuali chiusure prima di partire sul <a href="https://www.nagoyajo.city.nagoya.jp/en/" target="_blank" rel="noopener noreferrer">sito ufficiale del castello di Nagoya</a>.</p>
+      </div>
+      <div class="cta">
+        <div>
+          <p class="kicker">Giappone su misura</p>
+          <h2>Vuoi inserire Nagoya nel tuo itinerario?</h2>
+          <p>Possiamo combinarla con Takayama, Shirakawa-go, Kyoto o Tokyo, scegliendo collegamenti e giornate adatti al tuo viaggio.</p>
+        </div>
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a>
+      </div>
+      <p class="ng-back"><a href={`${base}giappone/regioni/tokai/`}>← Torna alla regione Tōkai</a></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.ng-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:34px;padding:62px 0}
+.ng-hero figure,.ng-card figure{margin:0}
+.ng-hero img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px}
+.ng-hero figcaption,.ng-card figcaption{font-size:.75rem;color:var(--muted);margin-top:8px}
+.ng-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.ng-card{padding:0;overflow:hidden}
+.ng-card figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.ng-card figcaption{padding:8px 18px 0}
+.ng-cardbody{padding:22px}
+.ng-cardbody .kicker{margin-bottom:9px}
+.ng-subtitle{font-weight:700}
+.ng-practical{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:28px}
+.ng-note{padding:26px 30px;border:1px solid #d9dfe5;border-radius:18px;margin-bottom:32px}
+.ng-back{margin-top:24px}
+@media(max-width:800px){.ng-hero,.ng-grid,.ng-practical{grid-template-columns:1fr}.ng-hero{padding:40px 0}}
+</style>
