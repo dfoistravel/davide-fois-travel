@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const img = (file: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=1280`;
+const src = (file: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}`;
+const places = [
+  {title:'Ise Jingū – Gekū (santuario esterno)',location:'Ise',time:'60–90 minuti',photo:'外宮 Geku Ise Jingu (26913293813).jpg',credit:'nobu3withfoxy',desc:'Il Gekū è dedicato a Toyouke Ōmikami. I sentieri tra gli alberi accompagnano a un importante luogo di culto shintoista: la visita è tradizionalmente la prima delle due tappe del pellegrinaggio a Ise. Si trova a distanza percorribile a piedi dalla stazione di Iseshi.'},
+  {title:'Ise Jingū – Naikū (santuario interno)',location:'Ise',time:'90–120 minuti',photo:'Ise Jingu 02.jpg',credit:'Douglas Perkins',desc:'Il Naikū è dedicato ad Amaterasu Ōmikami ed è immerso in un vasto bosco sacro. Il cuore del santuario è un luogo di raccoglimento: segui i percorsi indicati e rispetta i divieti di fotografia nelle aree rituali.'},
+  {title:'Ponte Uji (Ujibashi)',location:'Ise',time:'20–40 minuti',photo:'Ise Ise-jingu Ujibashi Bridge 1.jpg',credit:'Zairon',desc:'L’elegante ponte di legno sul fiume Isuzu segna l’ingresso all’area del Naikū. La vista del ponte, dei torii e della vegetazione è uno degli scorci più riconoscibili di Ise, specialmente nelle ore tranquille.'},
+  {title:'Okage Yokochō e Oharaimachi',location:'Ise',time:'1–2 ore',photo:'Okage Yokocho 30.jpg',credit:'Autore e licenza indicati su Wikimedia Commons',desc:'Poco fuori dal Naikū si apre una zona di strade tradizionali, botteghe e locali. È una sosta perfetta per provare specialità della prefettura di Mie e osservare l’architettura commerciale ispirata al Giappone storico.'},
+  {title:'Meoto Iwa – le rocce sposate',location:'Futami',time:'30–60 minuti',photo:'Meoto-iwa.jpg',credit:'Alpsdake',desc:'Le due rocce unite da una corda sacra shimenawa emergono dal mare presso Futami. Sono un importante simbolo spirituale: il paesaggio cambia con la luce, le maree e le condizioni del mare.'},
+  {title:'Santuario Futami Okitama',location:'Futami',time:'30–60 minuti',photo:'Ryugusha Futami Okitama Shrine.JPG',credit:'Alpsdake',desc:'Il santuario lungo la costa è strettamente legato al paesaggio delle Meoto Iwa e ai rituali di purificazione. Il percorso sul lungomare offre scorci suggestivi, ma in caso di vento e onde forti occorre prestare particolare attenzione.'},
+  {title:'Mikimoto Pearl Island',location:'Toba',time:'1,5–2,5 ore',photo:'View of Mikimoto Pearl Island.jpg',credit:'Aguhiyorifan20',desc:'Un’isoletta-museo dedicata alla storia delle perle coltivate e all’attività di Kōkichi Mikimoto. Unisce cultura, artigianato e storia marittima della zona: verifica le dimostrazioni previste e gli orari del giorno.'},
+  {title:'Acquario di Toba',location:'Toba',time:'2–3 ore',photo:'Toba Aquarium front view 2019.jpg',credit:'Miyuki Meinaka',desc:'Un grande acquario dedicato agli ambienti acquatici e alla fauna marina. È adatto anche alle famiglie ed è una buona alternativa nelle giornate di pioggia. Controlla in anticipo le aperture e gli eventuali biglietti.'},
+];
+---
+<BaseLayout title="Ise e dintorni: santuari, Meoto Iwa e Toba | D. Fois Travel" description="Guida fotografica a Ise, Futami e Toba: Naiku, Geku, ponte Uji, Okage Yokocho, Meoto Iwa, Pearl Island e acquario. Itinerari e consigli pratici.">
+  <section class="hero">
+    <div class="container is-hero">
+      <div>
+        <p class="kicker"><a href={`${base}giappone/regioni/tokai/`}>Regione Tōkai</a> · Prefettura di Mie</p>
+        <h1>Ise e dintorni: spiritualità, tradizioni e paesaggi sul mare</h1>
+        <p class="lead">Dai boschi sacri di Ise Jingū alle rocce Meoto Iwa, fino alla cultura delle perle di Toba. Un percorso fotografico da organizzare con calma, tra templi, borghi e costa.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#ise-luoghi">Cosa vedere</a>
+          <a class="button button-ghost" href="#ise-itinerari">Itinerari consigliati</a>
+        </div>
+      </div>
+      <figure>
+        <img src={img('Ise Ise-jingu Ujibashi Bridge 1.jpg')} alt="Il ponte Uji all'ingresso del santuario Naiku a Ise" loading="eager" decoding="async" />
+        <figcaption>Foto: Zairon · <a href={src('Ise Ise-jingu Ujibashi Bridge 1.jpg')} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="section" id="ise-luoghi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Guida fotografica</p>
+        <h2>Otto luoghi da scoprire tra Ise, Futami e Toba</h2>
+        <p>Fotografie dei singoli luoghi e tempi indicativi della visita. Gli spostamenti tra località richiedono tempo aggiuntivo.</p>
+      </div>
+      <div class="is-grid">
+        {places.map((p,i)=>(
+          <article class="card is-card">
+            <figure>
+              <img src={img(p.photo)} alt={`${p.title} nella prefettura di Mie, Giappone`} loading="lazy" decoding="async" />
+              <figcaption>Foto: {p.credit} · <a href={src(p.photo)} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+            </figure>
+            <div class="is-body">
+              <p class="kicker">Tappa {i+1} · {p.location} · {p.time}</p>
+              <h3>{p.title}</h3>
+              <p>{p.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section alt" id="ise-itinerari">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Come organizzare le giornate</p>
+        <h2>Tre itinerari realistici</h2>
+        <p>Gekū e Naikū sono due aree diverse. La sequenza tradizionale prevede prima Gekū e poi Naikū, con trasferimento in autobus o altro mezzo tra i due santuari.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card"><h3>Un giorno · Ise essenziale</h3><p>Mattino al Gekū, trasferimento al Naikū e passeggiata sul ponte Uji. Dedica il pomeriggio a Okage Yokochō e alle vie vicine. Evita di aggiungere Toba nello stesso giorno se vuoi visitare con calma.</p></article>
+        <article class="card"><h3>Due giorni · Santuari e mare</h3><p>Primo giorno dedicato a Ise Jingū e al quartiere storico. Il secondo visita Futami, le Meoto Iwa e il santuario costiero, proseguendo eventualmente verso Toba per l'isola delle perle.</p></article>
+        <article class="card"><h3>Tre giorni · Ise, Futami e Toba</h3><p>Un giorno intero a Ise, uno per Futami e la costa, e un terzo per Mikimoto Pearl Island e l'Acquario di Toba, con margine per gli orari e i collegamenti.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="is-details">
+        <article class="card"><h3>Come arrivare</h3><p>Ise è collegata in treno a Nagoya e ad altre città del Giappone centrale. Le stazioni Iseshi e Ujiyamada sono utili per la visita. Per raggiungere il Naikū, Futami e Toba combina treni e autobus locali secondo il percorso.</p></article>
+        <article class="card"><h3>Dove soggiornare</h3><p>La zona della stazione Iseshi è pratica per chi visita i santuari, mentre Toba è una base comoda per la costa e le attrazioni marine. Con due notti puoi distribuire le visite senza fretta.</p></article>
+        <article class="card"><h3>Consigli pratici</h3><p>Verifica orari stagionali, trasporti e regole di visita sui siti ufficiali. Nei santuari mantieni un comportamento rispettoso e non fotografare dove è vietato. In riva al mare presta attenzione a vento e onde.</p></article>
+      </div>
+      <p class="is-source">Per informazioni aggiornate: <a href="https://www.isejingu.or.jp/en/" target="_blank" rel="noopener noreferrer">Ise Jingū ufficiale</a> · <a href="https://www.japan.travel/en/" target="_blank" rel="noopener noreferrer">Japan National Tourism Organization</a>.</p>
+      <div class="cta">
+        <div>
+          <p class="kicker">Giappone su misura</p>
+          <h2>Vuoi includere Ise nel tuo viaggio?</h2>
+          <p>Possiamo combinare Nagoya, Ise, Futami e Toba in un itinerario equilibrato, con spostamenti e pernottamenti adatti ai giorni disponibili.</p>
+        </div>
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a>
+      </div>
+      <p class="is-back"><a href={`${base}giappone/regioni/tokai/`}>← Torna alla regione Tōkai</a></p>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .is-hero{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;padding:62px 0}
+  .is-hero figure,.is-card figure{margin:0}
+  .is-hero figure img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px}
+  .is-hero figcaption,.is-card figcaption{font-size:.76rem;color:var(--muted);margin-top:8px}
+  .is-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .is-card{overflow:hidden;padding:0}
+  .is-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .is-card figcaption{padding:0 18px}
+  .is-body{padding:22px}
+  .is-details{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:22px}
+  .is-source{margin-bottom:24px}
+  .is-back{margin-top:24px}
+  @media(max-width:800px){.is-hero,.is-grid,.is-details{grid-template-columns:1fr}.is-hero{padding:40px 0}}
+</style>
