@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const image = (filename: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=1280`;
+const source = (filename: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(filename)}`;
+
+const stops = [
+  {
+    title: 'Sanmachi Suji · Il centro storico di Takayama',
+    area: 'Takayama',
+    detail: 'Facciate in legno e botteghe tradizionali',
+    time: '1–2 ore',
+    photo: '071124 Sanmachi Takayama Japan01s3.jpg',
+    author: '663highland',
+    description: 'Le vie di Sanmachi conservano l’atmosfera del Giappone mercantile, con edifici scuri in legno, piccoli negozi, laboratori e produttori di sakè. Passeggia al mattino presto, quando il quartiere è più tranquillo, e dedica il giusto tempo alle soste.'
+  },
+  {
+    title: 'Takayama Jinya',
+    area: 'Takayama',
+    detail: 'L’antico centro dell’amministrazione locale',
+    time: '60–90 minuti',
+    photo: 'Takayama Jinya.jpg',
+    author: 'autore e licenza nella pagina Wikimedia Commons',
+    description: 'Una storica sede amministrativa del periodo Edo, conservata e visitabile in diverse sezioni. Gli ambienti in tatami, i corridoi, i cortili e le sale permettono di comprendere la vita istituzionale dell’epoca. Controlla orari e biglietti.'
+  },
+  {
+    title: 'Hida no Sato · Villaggio folcloristico',
+    area: 'Takayama',
+    detail: 'Architetture rurali della regione di Hida',
+    time: '1,5–2,5 ore',
+    photo: 'Hida Folk Village - HidaFolkVillage6459.jpg',
+    author: 'lumoplank',
+    description: 'Un museo all’aperto con abitazioni tradizionali trasferite e conservate per raccontare la vita contadina delle montagne. Non confonderlo con Shirakawa-go: qui le case sono riunite in un percorso museale, vicino alla città di Takayama.'
+  },
+  {
+    title: 'Tempio Hida Kokubun-ji',
+    area: 'Takayama',
+    detail: 'Pagoda, storia e un grande ginkgo',
+    time: '30–60 minuti',
+    photo: '2024-10-27 Takayama, Hida-kokubunji.jpg',
+    author: 'autore e licenza nella pagina Wikimedia Commons',
+    description: 'Il tempio conserva una storia millenaria e comprende una pagoda a tre piani e un grande albero di ginkgo. È una sosta comoda da combinare con una passeggiata tra la stazione e il centro storico.'
+  },
+  {
+    title: 'Ogimachi · Villaggio storico di Shirakawa-go',
+    area: 'Shirakawa-go',
+    detail: 'Le case dai tetti gasshō-zukuri',
+    time: '1,5–2,5 ore',
+    photo: 'Shirakawa-go Full view.jpg',
+    author: 'MaedaAkihiko',
+    description: 'Il villaggio di Ogimachi è conosciuto per le grandi abitazioni dai tetti di paglia molto inclinati, realizzati per affrontare inverni nevosi. Fa parte del sito UNESCO dei villaggi storici di Shirakawa-go e Gokayama: si tratta di un centro abitato, quindi rispetta proprietà e residenti.'
+  },
+  {
+    title: 'Belvedere Ogimachi Joseki',
+    area: 'Shirakawa-go',
+    detail: 'Il panorama classico sui tetti di paglia',
+    time: '30–60 minuti più il trasferimento',
+    photo: 'Overview of Ogimachi, Shirakawa, from the Ogimachi Castle observation point.jpg',
+    author: 'DimiTalen',
+    description: 'Dal belvedere si osserva l’intero disegno del villaggio tra campi, case e montagne. Le modalità di accesso possono cambiare per stagione, condizioni meteo o eventi: verifica i percorsi indicati sul posto.'
+  },
+  {
+    title: 'Casa Wada-ke',
+    area: 'Shirakawa-go',
+    detail: 'Una residenza storica gasshō-zukuri',
+    time: '30–60 minuti',
+    photo: 'Wada House (Shirakawa Village, Gifu Prefecture) 01.jpg',
+    author: 'autore e licenza nella pagina Wikimedia Commons',
+    description: 'Questa grande casa tradizionale è una delle testimonianze più importanti dell’architettura di Ogimachi. Dove consentito, la visita agli interni aiuta a comprendere la distribuzione degli spazi e le tecniche costruttive della regione.'
+  },
+  {
+    title: 'Interni di una casa gasshō-zukuri',
+    area: 'Shirakawa-go',
+    detail: 'La struttura lignea dei tetti tradizionali',
+    time: '30–45 minuti, secondo la casa visitabile',
+    photo: 'Shirakawa-go - Shirakawa156.jpg',
+    author: 'lumoplank',
+    description: 'Dentro le case visitabili si può osservare l’ossatura del tetto, con travi e legature tradizionali. Un’occasione per andare oltre la fotografia esterna e conoscere le soluzioni sviluppate dalle comunità montane.'
+  }
+];
+---
+<BaseLayout title="Takayama e Shirakawa-go: guida fotografica e itinerari | D. Fois Travel" description="Guida a Takayama e Shirakawa-go con 8 luoghi fotografati, centro storico Sanmachi, Takayama Jinya, Hida no Sato, villaggio UNESCO di Ogimachi, trasporti e itinerari.">
+  <section class="hero">
+    <div class="container tg-hero">
+      <div>
+        <p class="kicker"><a href={`${base}giappone/regioni/tokai/`}>Giappone · Tōkai</a> · Prefettura di Gifu</p>
+        <h1>Takayama e Shirakawa-go: il Giappone dei villaggi tradizionali</h1>
+        <p class="lead">Vicoli in legno, artigianato, antiche residenze e villaggi dai grandi tetti di paglia: un viaggio tra la cultura di Hida e i paesaggi montani del Giappone centrale.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#tg-luoghi">Cosa vedere</a>
+          <a class="button button-ghost" href="#tg-itinerari">Itinerari consigliati</a>
+        </div>
+      </div>
+      <figure>
+        <img src={image('Shirakawa-go Full view.jpg')} alt="Panorama del villaggio di Shirakawa-go e delle case tradizionali gassho-zukuri" loading="eager" decoding="async" />
+        <figcaption>Foto: MaedaAkihiko · <a href={source('Shirakawa-go Full view.jpg')} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="tg-luoghi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Guida fotografica</p>
+        <h2>Otto tappe tra Takayama e Shirakawa-go</h2>
+        <p>Fotografie specifiche per i singoli luoghi, descrizioni e tempi indicativi di visita. Le due località sono distinte: occorre prevedere uno spostamento in autobus per raggiungere Shirakawa-go.</p>
+      </div>
+      <div class="tg-grid">
+        {stops.map((stop, index) => (
+          <article class="card tg-card">
+            <figure>
+              <img src={image(stop.photo)} alt={`${stop.title} in Giappone`} loading="lazy" decoding="async" />
+              <figcaption>Foto: {stop.author} · <a href={source(stop.photo)} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+            </figure>
+            <div class="tg-cardbody">
+              <p class="kicker">{stop.area} · Tappa {index + 1} · {stop.time}</p>
+              <h3>{stop.title}</h3>
+              <p class="tg-subtitle">{stop.detail}</p>
+              <p>{stop.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="tg-itinerari">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Organizza il viaggio</p>
+        <h2>Itinerari di uno, due o tre giorni</h2>
+        <p>Programma le giornate in base ai collegamenti e alla stagione. Le durate riportate non includono il viaggio da città lontane.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>1 giorno · Takayama storica</h3>
+          <p>Passeggia nelle vie di Sanmachi, visita Takayama Jinya e raggiungi il tempio Hida Kokubun-ji. Con tempo aggiuntivo valuta il mercato mattutino, generalmente attivo nelle prime ore del giorno.</p>
+        </article>
+        <article class="card">
+          <h3>2 giorni · Takayama e Shirakawa-go</h3>
+          <p>Primo giorno nel centro storico di Takayama. Il secondo raggiungi Shirakawa-go in autobus, visita Ogimachi e Casa Wada, poi sali al belvedere se accessibile. Prenota il bus quando richiesto.</p>
+        </article>
+        <article class="card">
+          <h3>3 giorni · Hida più lentamente</h3>
+          <p>Aggiungi Hida no Sato per approfondire l’architettura rurale o una notte a Shirakawa-go, dove possibile, per vivere il villaggio nelle ore meno affollate.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="tg-practical">
+        <article class="card">
+          <h3>Come arrivare</h3>
+          <p>Takayama è raggiungibile in treno dalla direttrice di Nagoya, attraverso la linea Takayama, e con autobus da varie località. Tra Takayama e Shirakawa-go il bus impiega normalmente circa 50 minuti; alcune corse richiedono prenotazione.</p>
+        </article>
+        <article class="card">
+          <h3>Dove dormire</h3>
+          <p>Takayama è la base più pratica per esplorare centro storico e musei. A Shirakawa-go esistono alloggi tradizionali con disponibilità limitata: occorre organizzarsi con anticipo e rispettare la vita del villaggio.</p>
+        </article>
+        <article class="card">
+          <h3>Quando andare</h3>
+          <p>Primavera e autunno offrono piacevoli passeggiate; l’inverno porta paesaggi innevati ma anche possibili difficoltà nei trasporti e sentieri scivolosi. In alta stagione prenota per tempo.</p>
+        </article>
+      </div>
+      <div class="tg-info">
+        <h3>Informazioni utili e fonti ufficiali</h3>
+        <p><strong>Shirakawa-go è un villaggio abitato, non un museo a cielo aperto:</strong> resta sui percorsi consentiti, non entrare nei cortili privati e rispetta le indicazioni locali. Il villaggio di Ogimachi è compreso nel sito UNESCO «Historic Villages of Shirakawa-go and Gokayama».</p>
+        <p><a href="https://www.nouhibus.co.jp/route_bus/shirakawago_en/" target="_blank" rel="noopener noreferrer">Nōhi Bus: orari e prenotazioni</a> · <a href="https://kankou.shirakawa-go.org/1469.htm" target="_blank" rel="noopener noreferrer">Shirakawa-go: terminal autobus</a> · <a href="https://whc.unesco.org/en/list/734/" target="_blank" rel="noopener noreferrer">UNESCO: villaggi storici</a></p>
+      </div>
+      <div class="cta">
+        <div>
+          <p class="kicker">Il tuo Giappone su misura</p>
+          <h2>Vuoi aggiungere Takayama e Shirakawa-go al tuo itinerario?</h2>
+          <p>Possiamo combinarli con Kanazawa, Nagoya o altre città, rispettando i tempi di viaggio e le coincidenze.</p>
+        </div>
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a>
+      </div>
+      <p class="tg-back"><a href={`${base}giappone/regioni/tokai/`}>← Torna alla regione Tōkai</a></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.tg-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:34px;padding:62px 0}
+.tg-hero figure,.tg-card figure{margin:0}
+.tg-hero img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px}
+.tg-hero figcaption,.tg-card figcaption{font-size:.75rem;color:var(--muted);margin-top:8px}
+.tg-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.tg-card{padding:0;overflow:hidden}
+.tg-card figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.tg-card figcaption{padding:8px 18px 0}
+.tg-cardbody{padding:22px}
+.tg-cardbody .kicker{margin-bottom:9px}
+.tg-subtitle{font-weight:700}
+.tg-practical{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:28px}
+.tg-info{padding:26px 30px;border:1px solid #d9dfe5;border-radius:18px;margin-bottom:32px}
+.tg-back{margin-top:24px}
+@media(max-width:800px){.tg-hero,.tg-grid,.tg-practical{grid-template-columns:1fr}.tg-hero{padding:40px 0}}
+</style>
