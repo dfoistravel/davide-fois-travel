@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const commonsImage = (file: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=1280`;
+const commonsPage = (file: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}`;
+
+const luoghi = [
+  {
+    name: 'Ponte Kappa (Kappabashi)',
+    subtitle: 'Il simbolo di Kamikochi',
+    duration: '30–45 minuti',
+    file: 'Kamikochi - Kamikochi6538.jpg',
+    author: 'lumoplank',
+    description: 'Il ponte sospeso attraversa il fiume Azusa e offre una delle vedute più amate sulle Alpi giapponesi. È il punto ideale per orientarsi e iniziare una passeggiata lungo le rive, senza avere fretta di scattare fotografie.'
+  },
+  {
+    name: 'Stagno Taisho (Taisho-ike)',
+    subtitle: 'Riflessi, montagne e alberi sommersi',
+    duration: '45–75 minuti',
+    file: 'Kamikochi - Kamikochi6522.jpg',
+    author: 'lumoplank',
+    description: 'Uno specchio d’acqua formatosi dopo l’eruzione del monte Yakedake nel 1915. Le montagne possono riflettersi sull’acqua immobile; all’alba e nelle giornate limpide l’atmosfera è particolarmente suggestiva.'
+  },
+  {
+    name: 'Stagno Tashiro (Tashiro-ike)',
+    subtitle: 'Una sosta nella zona umida',
+    duration: '20–40 minuti',
+    file: 'Kamikochi Tashiro ike01n4272.jpg',
+    author: '663highland',
+    description: 'Un piccolo specchio d’acqua incorniciato da prati umidi, boschi e cime lontane. È una tappa naturale lungo la passeggiata tra Taisho-ike e il centro della valle: resta sui percorsi segnalati.'
+  },
+  {
+    name: 'Zona umida di Dakesawa',
+    subtitle: 'Foreste, acque limpide e passerelle',
+    duration: '30–60 minuti',
+    file: 'Kamikochi Marsh.jpg',
+    author: 'autore indicato sulla pagina Wikimedia Commons',
+    description: 'Un ambiente delicato di boschi e acqua, lungo il percorso che conduce verso Myojin. Camminando con calma si apprezzano vegetazione e piccoli corsi d’acqua: non uscire dai sentieri.'
+  },
+  {
+    name: 'Ponte Myojin',
+    subtitle: 'Una prospettiva diversa sulla valle',
+    duration: '20–40 minuti',
+    file: '150920 Myojin-bashi Kamikochi Japan01n.jpg',
+    author: '663highland',
+    description: 'Più tranquillo rispetto al ponte Kappa, attraversa il fiume Azusa vicino alla zona di Myojin. Puoi inserirlo in una camminata più lunga, verificando il percorso e i tempi per il ritorno.'
+  },
+  {
+    name: 'Stagno Myojin (Myojin-ike)',
+    subtitle: 'Natura e spiritualità',
+    duration: '30–60 minuti',
+    file: '150920 Myojin-ike Kamikochi Japan06n.jpg',
+    author: '663highland',
+    description: 'Uno stagno ai piedi delle montagne, in un contesto di forte valore naturalistico e spirituale legato al santuario Hotaka. Verifica l’eventuale ingresso a pagamento e gli orari della zona.'
+  }
+];
+---
+
+<BaseLayout
+  title="Kamikochi: cosa vedere, passeggiate e foto | D. Fois Travel"
+  description="Guida fotografica a Kamikochi: ponte Kappa, Taisho-ike, Tashiro-ike, Dakesawa e Myojin. Itinerari a piedi, trasporti, stagione e consigli pratici."
+>
+  <section class="hero">
+    <div class="container km-hero">
+      <div>
+        <p class="kicker"><a href={`${base}hokuriku-shinetsu/`}>Hokuriku–Shinetsu</a> · Prefettura di Nagano</p>
+        <h1>Kamikochi: la valle incantata delle Alpi giapponesi</h1>
+        <p class="lead">Acque cristalline, ponti di legno, stagni alpini e sentieri tra i boschi. Kamikochi è una delle esperienze naturalistiche più suggestive del Giappone, da esplorare con il passo giusto.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#km-luoghi">Cosa vedere</a>
+          <a class="button button-ghost" href="#km-itinerari">Passeggiate consigliate</a>
+        </div>
+      </div>
+      <figure>
+        <img src={commonsImage('Kamikochi - Kamikochi6538.jpg')} alt="Ponte Kappa e montagne di Kamikochi" loading="eager" decoding="async" />
+        <figcaption>Foto: lumoplank · <a href={commonsPage('Kamikochi - Kamikochi6538.jpg')} target="_blank" rel="noopener noreferrer">fonte e licenza Wikimedia Commons</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="km-luoghi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Guida fotografica della valle</p>
+        <h2>Sei luoghi da scoprire a Kamikochi</h2>
+        <p>Ogni scheda mostra una fotografia del luogo descritto. I tempi sono indicativi e non comprendono necessariamente il tragitto per raggiungerlo: scegli le tappe in base alle ore disponibili.</p>
+      </div>
+      <div class="km-grid">
+        {luoghi.map((item, i) => (
+          <article class="card km-card">
+            <figure>
+              <img src={commonsImage(item.file)} alt={`${item.name}, Kamikochi`} loading="lazy" decoding="async" />
+              <figcaption>Foto: {item.author} · <a href={commonsPage(item.file)} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+            </figure>
+            <div class="km-cardbody">
+              <p class="kicker">Tappa {i + 1} · {item.duration}</p>
+              <h3>{item.name}</h3>
+              <p class="km-subtitle">{item.subtitle}</p>
+              <p>{item.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="km-itinerari">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Come organizzare la giornata</p>
+        <h2>Tre modi per esplorare Kamikochi</h2>
+        <p>Le durate complessive includono un margine per fotografie e soste, ma non i trasferimenti da Matsumoto o Takayama. Verifica le condizioni aggiornate dei sentieri.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>2–3 ore · Passeggiata breve</h3>
+          <p>Parti dal terminal degli autobus, raggiungi il ponte Kappa e passeggia lungo le rive del fiume Azusa. Ideale per una visita breve, senza percorrere tutta la valle.</p>
+        </article>
+        <article class="card">
+          <h3>3–5 ore · Taisho e Tashiro</h3>
+          <p>Scendi, se il servizio lo consente, alla fermata di Taisho-ike. Cammina verso Tashiro-ike e prosegui fino al ponte Kappa: un percorso panoramico con soste fotografiche.</p>
+        </article>
+        <article class="card">
+          <h3>5–7 ore · Verso Myojin</h3>
+          <p>Dal ponte Kappa prosegui nel bosco verso Dakesawa, il ponte Myojin e lo stagno Myojin. Considera anche il cammino di ritorno e non sottovalutare l'orario dell'ultimo autobus.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="km-practical">
+        <article class="card">
+          <h3>Quando andare</h3>
+          <p>La normale stagione turistica va da metà aprile a metà novembre. In primavera trovi il verde fresco, in estate i sentieri sono frequentati, in autunno il foliage regala colori spettacolari. L'accesso invernale non è una normale escursione turistica.</p>
+        </article>
+        <article class="card">
+          <h3>Come arrivare</h3>
+          <p>Da Matsumoto si utilizzano trasporti pubblici in direzione Kamikochi; da Takayama si arriva passando per Hirayu. <strong>Le auto private non possono entrare</strong>: chi guida deve lasciare il veicolo nei parcheggi dedicati e proseguire in autobus o taxi.</p>
+        </article>
+        <article class="card">
+          <h3>Dove dormire</h3>
+          <p>Una notte nella valle permette di vivere ore più tranquille, ma strutture e servizi sono stagionali e i posti possono esaurirsi. Matsumoto e Hirayu sono alternative da valutare in base all'itinerario.</p>
+        </article>
+      </div>
+
+      <div class="km-reminder">
+        <h3>Consigli per una visita responsabile</h3>
+        <p>Porta scarpe adatte, uno strato caldo e protezione per pioggia e sole: il meteo montano cambia rapidamente. Non dare cibo agli animali, non raccogliere piante e porta via tutti i rifiuti. Controlla sempre gli avvisi ufficiali prima di partire.</p>
+        <p>Informazioni e aggiornamenti: <a href="https://www.kamikochi.org/" target="_blank" rel="noopener noreferrer">sito ufficiale di Kamikochi</a> e <a href="https://www.kamikochi-vc.or.jp/en/" target="_blank" rel="noopener noreferrer">Visitor Center</a>.</p>
+      </div>
+
+      <div class="cta">
+        <div>
+          <p class="kicker">Il tuo Giappone su misura</p>
+          <h2>Vuoi inserire Kamikochi nel viaggio?</h2>
+          <p>Organizziamo insieme il percorso tra Matsumoto, le Alpi giapponesi, Kanazawa e altre destinazioni, senza spostamenti inutili.</p>
+        </div>
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a>
+      </div>
+      <p class="km-back"><a href={`${base}hokuriku-shinetsu/`}>← Torna alle guide di Hokuriku–Shinetsu</a></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .km-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:34px;padding:62px 0}
+  .km-hero figure,.km-card figure{margin:0}
+  .km-hero img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px}
+  .km-hero figcaption,.km-card figcaption{font-size:.75rem;color:var(--muted);margin-top:8px}
+  .km-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .km-card{padding:0;overflow:hidden}
+  .km-card figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .km-card figcaption{padding:7px 18px 0}
+  .km-cardbody{padding:24px}
+  .km-cardbody .kicker{margin-bottom:10px}
+  .km-subtitle{font-weight:700}
+  .km-practical{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:26px}
+  .km-reminder{padding:26px 30px;border:1px solid var(--line);border-radius:20px;margin-bottom:32px}
+  .km-back{margin-top:25px}
+  @media(max-width:800px){.km-hero,.km-grid,.km-practical{grid-template-columns:1fr}.km-hero{padding:40px 0}}
+</style>
