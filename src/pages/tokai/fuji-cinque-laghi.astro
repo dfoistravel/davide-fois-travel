@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const photo = (file: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=1280`;
+const source = (file: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}`;
+
+const luoghi = [
+  {
+    name: 'Lago Kawaguchi (Kawaguchiko)',
+    time: '2–4 ore',
+    file: 'Mount Fuji from Lake Kawaguchi.jpg',
+    author: 'Subramaniam K V',
+    subtitle: 'Il classico panorama sul Monte Fuji',
+    description: 'Kawaguchiko è la base più utilizzata per esplorare i Cinque Laghi. Passeggia lungo il lago, scegli alcuni punti panoramici e programma le fotografie al mattino, quando spesso la visibilità è migliore. Le nuvole possono nascondere il Fuji anche nelle belle giornate.'
+  },
+  {
+    name: 'Pagoda Chūreitō e parco Arakurayama Sengen',
+    time: '1,5–2,5 ore',
+    file: 'Chureito Pagoda and Mount Fuji 2023-03-07.jpg',
+    author: 'Stjepko Krehula',
+    subtitle: 'La pagoda rossa davanti alla montagna',
+    description: 'A Fujiyoshida, il belvedere offre una delle immagini più celebri del Giappone. Per arrivare al punto panoramico bisogna affrontare una salita con numerosi gradini. In primavera e autunno è molto frequentato: parti presto ed evita di bloccare i passaggi.'
+  },
+  {
+    name: 'Oshino Hakkai',
+    time: '1–2 ore',
+    file: 'Oshino Hakkai 01.jpg',
+    author: 'Olaf2',
+    subtitle: 'Sorgenti limpide e paesaggio rurale',
+    description: 'Il villaggio di Oshino è noto per gli otto stagni alimentati da acque sorgive. Tra edifici tradizionali, mulini e piccoli ponti si alternano scorci suggestivi. Rispetta le aree private e scegli con cura i percorsi, soprattutto nei giorni di maggiore affluenza.'
+  },
+  {
+    name: 'Lago Saiko',
+    time: '1,5–3 ore',
+    file: 'Mt. Fuji with Saiko pictured from Lake Saiko Nenma-hama.jpg',
+    author: 'Osumi Akari',
+    subtitle: 'Il lato più tranquillo dei Cinque Laghi',
+    description: 'Saiko è circondato da boschi e paesaggi montani. È una tappa ideale per chi cerca natura e un ritmo più lento rispetto alle aree più visitate di Kawaguchiko. Pianifica gli spostamenti: alcuni collegamenti pubblici sono meno frequenti.'
+  },
+  {
+    name: 'Villaggio Saiko Iyashi-no-Sato Nenba',
+    time: '1–1,5 ore',
+    file: 'Aerial panorama of Mount Fuji with Saiko Iyashi-no-Sato Nenba in the foreground. June 2023.jpg',
+    author: 'Bob Tan',
+    subtitle: 'Case con tetti di paglia e artigianato',
+    description: 'Questo villaggio ricostruito ai piedi delle montagne racconta l’architettura rurale della zona. Puoi visitare piccole botteghe e spazi artigianali. Controlla orari e biglietto d’ingresso prima di partire.'
+  },
+  {
+    name: 'Lago Shōji (Shōjiko)',
+    time: '45–90 minuti',
+    file: 'Mt. Fuji and Lake Shoji.jpg',
+    author: 'autore indicato su Wikimedia Commons',
+    subtitle: 'Un piccolo lago, grandi panorami',
+    description: 'Shōjiko è il più piccolo dei Fuji Five Lakes. Offre punti panoramici più appartati e un’atmosfera tranquilla, particolarmente gradevole nelle giornate limpide. È comodo abbinarlo a Saiko o Motosuko con un mezzo adeguato.'
+  },
+  {
+    name: 'Lago Motosu (Motosuko)',
+    time: '1–2 ore',
+    file: 'Mount Fuji from Lake Motosu.jpg',
+    author: 'Alpsdake',
+    subtitle: 'La vista resa famosa dalla banconota da 1.000 yen',
+    description: 'Il lago Motosu è noto per le acque profonde e per il paesaggio che ha ispirato una delle raffigurazioni più celebri del Fuji sulle banconote giapponesi. Il punto panoramico effettivo dipende dal luogo e dalla stagione: non tutti i tratti di costa offrono la stessa vista.'
+  },
+  {
+    name: 'Lago Yamanaka (Yamanakako)',
+    time: '2–3 ore',
+    file: 'Lake Yamanaka and Mount Fuji.JPG',
+    author: 'Alpsdake',
+    subtitle: 'Passeggiate e paesaggi aperti',
+    description: 'Il più grande dei Cinque Laghi, con aree per passeggiare, andare in bicicletta e osservare il Fuji da diverse prospettive. È più distante dalle tappe occidentali: conviene dedicargli tempo specifico anziché aggiungerlo frettolosamente a una giornata piena.'
+  }
+];
+---
+<BaseLayout title="Monte Fuji e Cinque Laghi: guida fotografica | D. Fois Travel" description="Guida al Monte Fuji e ai Cinque Laghi: Kawaguchiko, Chureito, Oshino Hakkai, Saiko, Shoji, Motosu e Yamanakako. Foto, itinerari e trasporti.">
+  <section class="hero">
+    <div class="container fj-hero">
+      <div>
+        <p class="kicker"><a href={`${base}giappone/regioni/tokai/`}>Regione Tōkai</a> · Prefettura di Yamanashi</p>
+        <h1>Monte Fuji e Cinque Laghi: panorami, villaggi e natura</h1>
+        <p class="lead">Una guida fotografica per esplorare il versante settentrionale del Fuji: laghi, sorgenti, pagode e villaggi storici, con itinerari che rispettano le distanze reali.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#fj-luoghi">Le attrazioni</a>
+          <a class="button button-ghost" href="#fj-itinerari">Itinerari consigliati</a>
+        </div>
+      </div>
+      <figure>
+        <img src={photo('Mount Fuji from Lake Kawaguchi.jpg')} alt="Monte Fuji visto dal lago Kawaguchiko" loading="eager" decoding="async"/>
+        <figcaption>Foto: Subramaniam K V · <a href={source('Mount Fuji from Lake Kawaguchi.jpg')} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="fj-luoghi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Guida fotografica</p>
+        <h2>8 luoghi da scoprire attorno al Fuji</h2>
+        <p>Ogni fotografia corrisponde al luogo descritto. I tempi indicano la visita sul posto e non comprendono i trasferimenti tra i laghi.</p>
+      </div>
+      <div class="fj-grid">
+        {luoghi.map((item, index) => (
+          <article class="card fj-card">
+            <figure>
+              <img src={photo(item.file)} alt={`${item.name}, area del Monte Fuji`} loading="lazy" decoding="async"/>
+              <figcaption>Foto: {item.author} · <a href={source(item.file)} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+            </figure>
+            <div class="fj-body">
+              <p class="kicker">Tappa {index+1} · {item.time}</p>
+              <h3>{item.name}</h3>
+              <p class="fj-subtitle">{item.subtitle}</p>
+              <p>{item.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="fj-itinerari">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Organizzare il viaggio</p>
+        <h2>Tre itinerari da uno a tre giorni</h2>
+        <p>La visibilità del Fuji non è garantita. Conviene prevedere un margine nel programma, soprattutto per fotografie e panorami.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>1 giorno · Kawaguchiko</h3>
+          <p>Arrivo in mattinata, passeggiata lungo il lago Kawaguchi e una sola seconda tappa tra pagoda Chūreitō e Oshino Hakkai. Se rientri a Tokyo in giornata, considera gli orari degli ultimi collegamenti.</p>
+        </article>
+        <article class="card">
+          <h3>2 giorni · Panorami e villaggi</h3>
+          <p>Primo giorno al lago Kawaguchi e alla pagoda Chūreitō. Secondo giorno a Oshino Hakkai oppure al lago Saiko con il villaggio Iyashi-no-Sato. La scelta dipende dai trasporti disponibili.</p>
+        </article>
+        <article class="card">
+          <h3>3 giorni · I Cinque Laghi</h3>
+          <p>Dedica una giornata a Kawaguchiko e Fujiyoshida, una alla zona occidentale Saiko–Shōjiko–Motosuko e una a Yamanakako e Oshino. L’auto rende più semplici gli spostamenti, ma serve verificarne la disponibilità e le condizioni.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="fj-practical">
+        <article class="card">
+          <h3>Come arrivare</h3>
+          <p>Da Tokyo si raggiunge Kawaguchiko con treni e autobus secondo il punto di partenza. Autobus locali servono i laghi, ma frequenze e tratte variano: per le zone occidentali pianifica gli spostamenti prima della visita.</p>
+        </article>
+        <article class="card">
+          <h3>Dove soggiornare</h3>
+          <p>Kawaguchiko è una base pratica per un primo viaggio, mentre Yamanakako e la zona di Saiko offrono un ritmo più tranquillo. Scegli la struttura tenendo conto di trasporti, orari e distanza dai punti panoramici.</p>
+        </article>
+        <article class="card">
+          <h3>Quando andare</h3>
+          <p>Primavera e autunno sono molto richiesti, l’estate ha giornate lunghe ma può essere più nuvolosa, e l’inverno offre spesso aria limpida e temperature rigide. Alcune strade e sentieri hanno limitazioni stagionali.</p>
+        </article>
+      </div>
+
+      <div class="fj-note">
+        <h3>Fuji, Hakone e salita in vetta: tre esperienze diverse</h3>
+        <p>Questa guida riguarda la zona dei Cinque Laghi, nella prefettura di Yamanashi. <strong>Hakone</strong> è invece nella prefettura di Kanagawa, e raggiungere la vetta del Fuji è un’attività montana separata, con stagione e regole specifiche. Non confondere le tre esperienze nello stesso programma.</p>
+        <p>Approfondisci con la <a href={`${base}monte-fuji-hakone/`}>guida generale Fuji e Hakone</a>. Per accessi e trasporti consulta <a href="https://www.japan.travel/en/" target="_blank" rel="noopener noreferrer">JNTO</a> e le informazioni ufficiali locali prima della partenza.</p>
+      </div>
+
+      <div class="cta">
+        <div>
+          <p class="kicker">Il tuo Giappone su misura</p>
+          <h2>Vuoi vedere il Fuji durante il tuo viaggio?</h2>
+          <p>Possiamo combinare Tokyo, Kawaguchiko e altre destinazioni senza perdere giornate in trasferimenti inutili.</p>
+        </div>
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a>
+      </div>
+      <p class="fj-back"><a href={`${base}giappone/regioni/tokai/`}>← Torna alla regione Tōkai</a></p>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .fj-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:32px;padding:62px 0}
+  .fj-hero figure,.fj-card figure{margin:0}
+  .fj-hero figure img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px}
+  .fj-hero figcaption,.fj-card figcaption{font-size:.76rem;color:var(--muted);margin-top:8px}
+  .fj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .fj-card{overflow:hidden;padding:0}
+  .fj-card figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .fj-card figcaption{padding:0 18px}
+  .fj-body{padding:22px}
+  .fj-subtitle{font-weight:700}
+  .fj-practical{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:24px}
+  .fj-note{padding:26px 30px;border:1px solid var(--line);border-radius:18px;margin-bottom:32px}
+  .fj-back{margin-top:24px}
+  @media(max-width:800px){.fj-hero,.fj-grid,.fj-practical{grid-template-columns:1fr}.fj-hero{padding:40px 0}}
+</style>
