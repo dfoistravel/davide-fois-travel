@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const photoUrl = (filename: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=1280`;
+const sourceUrl = (filename: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(filename)}`;
+const stops = [
+  {name:'Tempio Zenko-ji', label:'Il cuore spirituale di Nagano', duration:'1–2 ore', photo:'Main Hall of Zenkō-ji.jpg', author:'Christophe95', detail:'Il grande tempio buddhista accoglie visitatori di ogni provenienza. Ammira la sala principale, esplora il recinto e, se aperto, valuta il passaggio sotterraneo sotto l’altare. Alcune sezioni richiedono un biglietto specifico.'},
+  {name:'Nakamise e Omotesando', label:'La passeggiata storica verso il tempio', duration:'45–90 minuti', photo:'View of Nakamise Street from the Sanmon of Zenkoji.jpg', author:'Christophe95', detail:'Una strada di botteghe, piccoli ristoranti e specialità locali accompagna la visita allo Zenko-ji. Fermati per provare dolci e prodotti regionali; la zona è piacevole anche senza programmi serrati.'},
+  {name:'Togakushi Okusha', label:'Il viale dei cedri secolari', duration:'2–3 ore incluse le camminate', photo:'Row of Japanese cedar to Togakushi Shrine Okusha.jpg', author:'TTTNIS', detail:'Il sentiero verso il santuario più interno di Togakushi attraversa una spettacolare fila di cedri. Scarpe adatte, tempo variabile e condizioni stagionali sono importanti: in inverno alcuni tratti e collegamenti cambiano.'},
+  {name:'Lago Kagami-ike', label:'I riflessi delle montagne di Togakushi', duration:'45–90 minuti sul posto', photo:'Kagami-ike Pond, Togakushi.jpg', author:'autore indicato su Wikimedia Commons', detail:'In una giornata limpida le montagne si riflettono nello specchio d’acqua. È una tappa da abbinare con attenzione a Togakushi, verificando l’accessibilità delle strade e dei sentieri in base alla stagione.'},
+  {name:'Obuse e Museo Hokusai', label:'Arte, castagne e piccole vie tradizionali', duration:'2–4 ore', photo:'Hokusai Museum.jpg', author:'キャンター', detail:'Obuse è una cittadina raccolta, celebre per le specialità a base di castagne e il legame con il pittore Katsushika Hokusai. Visita il museo dedicato all’artista e lascia tempo per una passeggiata nel centro.'},
+  {name:'Tempio Gansho-in a Obuse', label:'Un angolo culturale meno conosciuto', duration:'45–75 minuti', photo:'Ganshoin Hondo 01.jpg', author:'Tawashi2006', detail:'Un tempio poco lontano dal centro di Obuse, noto anche per il grande dipinto di una fenice sul soffitto attribuito a Hokusai. Informati su ingressi e regole fotografiche prima della visita.'},
+  {name:'Jigokudani Snow Monkey Park', label:'Macachi giapponesi nella natura', duration:'2–4 ore con percorso a piedi', photo:'Two snow monkeys at Jigokudani Monkey Park.jpg', author:'Ashley98lee', detail:'Il parco permette di osservare i macachi giapponesi nel loro ambiente, senza toccarli né nutrirli. Il celebre bagno termale non è uno spettacolo garantito: la presenza degli animali e il loro comportamento dipendono dalla natura.'}
+];
+---
+<BaseLayout title="Nagano: cosa vedere, foto e itinerari | D. Fois Travel" description="Guida fotografica a Nagano: Zenko-ji, Togakushi, Obuse, Kagami-ike e macachi di Jigokudani. Cosa visitare, quando andare e come organizzare gli spostamenti.">
+  <section class="hero">
+    <div class="container ng-hero">
+      <div>
+        <p class="kicker"><a href={`${base}hokuriku-shinetsu/`}>Hokuriku–Shinetsu</a> · Prefettura di Nagano</p>
+        <h1>Nagano: templi, foreste sacre e piccoli borghi</h1>
+        <p class="lead">Una città da scoprire oltre lo shinkansen: dall'antico Zenko-ji alle montagne di Togakushi, passando per Obuse e il parco dei macachi. Sette tappe con fotografie e consigli per costruire un percorso realistico.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#ng-luoghi">Cosa vedere</a>
+          <a class="button button-ghost" href="#ng-percorsi">Itinerari consigliati</a>
+        </div>
+      </div>
+      <figure>
+        <img src={photoUrl('Main Hall of Zenkō-ji.jpg')} alt="Sala principale del tempio Zenko-ji a Nagano" loading="eager" decoding="async" />
+        <figcaption>Zenko-ji · Foto: Christophe95 · <a href={sourceUrl('Main Hall of Zenkō-ji.jpg')} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="ng-luoghi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Guida fotografica di Nagano</p>
+        <h2>Sette esperienze da scoprire</h2>
+        <p>Le fotografie mostrano i luoghi indicati. I tempi sono orientativi e, soprattutto per le località fuori città, non includono sempre i trasferimenti dalla stazione di Nagano.</p>
+      </div>
+      <div class="ng-grid">
+        {stops.map((stop, i) => (
+          <article class="card ng-card">
+            <figure>
+              <img src={photoUrl(stop.photo)} alt={`${stop.name}, prefettura di Nagano`} loading="lazy" decoding="async" />
+              <figcaption>Foto: {stop.author} · <a href={sourceUrl(stop.photo)} target="_blank" rel="noopener noreferrer">fonte e licenza Wikimedia Commons</a></figcaption>
+            </figure>
+            <div class="ng-cardbody">
+              <p class="kicker">Tappa {i+1} · {stop.duration}</p>
+              <h3>{stop.name}</h3>
+              <p class="ng-subtitle">{stop.label}</p>
+              <p>{stop.detail}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="ng-percorsi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Organizzare le giornate</p>
+        <h2>Itinerari consigliati tra città e dintorni</h2>
+        <p>Le località intorno a Nagano non sono tutte raggiungibili nella stessa giornata. Una o due basi ben scelte rendono il viaggio più piacevole.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card"><h3>1 giorno · Nagano città</h3><p>Dedica la mattina al tempio Zenko-ji e alla porta Sanmon, poi passeggia lungo Nakamise e Omotesando. Completa la giornata con botteghe, gastronomia e un museo in centro.</p></article>
+        <article class="card"><h3>2 giorni · Nagano e Togakushi</h3><p>Primo giorno nel centro storico. Il secondo riservalo ai santuari di Togakushi e, se i collegamenti lo consentono, al lago Kagami-ike. Porta scarpe adatte e controlla gli orari dell’ultimo autobus.</p></article>
+        <article class="card"><h3>3–4 giorni · Obuse o Jigokudani</h3><p>Aggiungi una giornata a Obuse per Hokusai e le vie storiche; oppure dedica una giornata separata ai macachi di Jigokudani, con accesso attraverso Yudanaka o altre soluzioni locali.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="ng-practical">
+        <article class="card"><h3>Come arrivare e spostarsi</h3><p>Nagano è servita dall’Hokuriku Shinkansen. Zenko-ji si raggiunge in autobus o con una passeggiata dal centro. Per Togakushi utilizza autobus dedicati; Obuse è collegata dalla ferrovia Nagano Dentetsu. Jigokudani richiede un ulteriore trasferimento e un tratto a piedi.</p></article>
+        <article class="card"><h3>Quando andare</h3><p>Primavera e autunno sono ottime per città e boschi. In estate, le zone montane offrono aria più fresca. In inverno ci sono neve e strade scivolose: alcuni autobus per Togakushi seguono percorsi diversi e l’accesso ai sentieri richiede maggiore prudenza.</p></article>
+        <article class="card"><h3>Dove soggiornare</h3><p>La zona della stazione è pratica per chi si sposta in treno; vicino a Zenko-ji trovi un'atmosfera più tradizionale. Per un viaggio dedicato alle terme e ai macachi valuta anche una base nell’area di Yudanaka e Shibu Onsen.</p></article>
+      </div>
+      <div class="ng-note">
+        <h3>Prima di partire</h3>
+        <p>Verifica aperture, prezzi e orari sui siti ufficiali, soprattutto per Togakushi e il parco dei macachi. Gli animali selvatici non devono essere avvicinati o nutriti. Per gli spostamenti controlla <a href="https://visit-nagano.alpico.co.jp/" target="_blank" rel="noopener noreferrer">Alpico</a> e, per le destinazioni, <a href="https://www.go-nagano.net/en" target="_blank" rel="noopener noreferrer">Go! Nagano</a>.</p>
+      </div>
+      <div class="cta">
+        <div><p class="kicker">Il tuo viaggio in Giappone</p><h2>Vuoi inserire Nagano nel tuo itinerario?</h2><p>Possiamo collegare Nagano con Matsumoto, Kanazawa e altre destinazioni, scegliendo il percorso più adatto al periodo e ai giorni disponibili.</p></div>
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a>
+      </div>
+      <p class="ng-back"><a href={`${base}hokuriku-shinetsu/`}>← Torna alle guide di Hokuriku–Shinetsu</a></p>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .ng-hero{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;padding:62px 0}
+  .ng-hero figure,.ng-card figure{margin:0}
+  .ng-hero img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px}
+  .ng-hero figcaption,.ng-card figcaption{font-size:.76rem;color:var(--muted);margin-top:8px}
+  .ng-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .ng-card{padding:0;overflow:hidden}
+  .ng-card figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .ng-card figcaption{padding:7px 18px 0}
+  .ng-cardbody{padding:24px}
+  .ng-subtitle{font-weight:700}
+  .ng-practical{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:26px}
+  .ng-note{padding:25px 29px;border:1px solid var(--line);border-radius:20px;margin-bottom:32px}
+  .ng-back{margin-top:25px}
+  @media(max-width:800px){.ng-hero,.ng-grid,.ng-practical{grid-template-columns:1fr}.ng-hero{padding:40px 0}}
+</style>
