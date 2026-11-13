@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const commonsImage = (file: string) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}?width=1280`;
+const commonsPage = (file: string) => `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}`;
+
+const luoghi = [
+  {
+    name: 'Castello e parco di Toyama',
+    subtitle: 'Una passeggiata nel centro storico',
+    time: '45–75 minuti',
+    file: 'Toyama castle.jpg',
+    credit: 'Vgenecr',
+    description: 'Il parco del castello è una piacevole tappa per iniziare a conoscere Toyama. La torre oggi visibile è una ricostruzione: non va confusa con un mastio originale. Passeggia nei giardini e abbina la visita al centro città.'
+  },
+  {
+    name: 'Toyama Glass Art Museum',
+    subtitle: 'Architettura contemporanea e arte del vetro',
+    time: '1–1,5 ore',
+    file: 'TOYAMA KIRARI Toyama Glass Art Museum ac (1).jpg',
+    credit: 'Asturio Cantabrio',
+    description: 'Nel complesso Toyama Kirari, l’architettura luminosa e le collezioni artistiche mettono in dialogo vetro e design. Controlla le mostre, gli spazi effettivamente visitabili e gli orari prima di programmare la tappa.'
+  },
+  {
+    name: 'Cascate Shomyo',
+    subtitle: 'Una grande cascata ai piedi del Tateyama',
+    time: '1,5–3 ore, esclusi i trasferimenti principali',
+    file: 'Shomyo Falls.JPG',
+    credit: 'autore sulla scheda Wikimedia Commons',
+    description: 'La cascata si trova nella zona montana di Tateyama e merita una visita dedicata. I collegamenti locali, il sentiero di accesso e la stagione possono limitarne la visita: non considerarla una semplice sosta durante la traversata alpina.'
+  },
+  {
+    name: 'Murodo',
+    subtitle: 'Il cuore panoramico delle Alpi giapponesi',
+    time: '1–2 ore per una passeggiata facile',
+    file: 'Murodo.jpg',
+    credit: 'lumoplank',
+    description: 'L’altopiano di Murodo si trova ad alta quota, tra vedute sulle montagne, paesaggi vulcanici e sentieri. Anche nei mesi più miti il vento e le temperature possono essere rigidi: porta strati caldi e valuta il meteo.'
+  },
+  {
+    name: 'Mikurigaike',
+    subtitle: 'Lo stagno alpino dei riflessi',
+    time: '45–90 minuti dal settore di Murodo',
+    file: 'Mikuriga-ike 02.jpg',
+    credit: 'Kahusi',
+    description: 'Questo specchio d’acqua vulcanico è uno degli scorci più suggestivi nei pressi di Murodo. Quando il tempo è limpido riflette le montagne circostanti; neve e condizioni del sentiero cambiano l’esperienza nelle varie stagioni.'
+  },
+  {
+    name: 'Yuki-no-Otani: il corridoio di neve',
+    subtitle: 'L’esperienza iconica della primavera',
+    time: '45–90 minuti, quando accessibile',
+    file: 'Tateyama Snow Wall 立山雪壁 - panoramio.jpg',
+    credit: 'autore sulla scheda Wikimedia Commons',
+    description: 'La strada fiancheggiata da pareti di neve molto alte è una delle attrazioni più famose del percorso alpino. La passeggiata si svolge soltanto nel periodo e nelle condizioni autorizzate: non è un’esperienza disponibile per tutta la stagione.'
+  },
+  {
+    name: 'Diga di Kurobe',
+    subtitle: 'Una grande opera ingegneristica tra le montagne',
+    time: '1–2 ore, esclusi trasferimenti',
+    file: 'KurobeDam.JPG',
+    credit: 'Ippukucho',
+    description: 'La diga domina una valle spettacolare ed è una delle tappe simbolo della traversata verso Nagano. In alcuni periodi è possibile assistere allo scarico panoramico dell’acqua; le date variano, quindi non darlo per garantito.'
+  }
+];
+---
+<BaseLayout
+  title="Toyama e Tateyama Kurobe: guida fotografica | D. Fois Travel"
+  description="Cosa vedere a Toyama e sulla Tateyama Kurobe Alpine Route: castello, museo del vetro, Murodo, Mikurigaike, muri di neve e diga di Kurobe."
+>
+  <section class="hero">
+    <div class="container ty-hero">
+      <div>
+        <p class="kicker"><a href={`${base}hokuriku-shinetsu/`}>Hokuriku–Shinetsu</a> · Prefettura di Toyama</p>
+        <h1>Toyama e Tateyama Kurobe: dalla città alle Alpi giapponesi</h1>
+        <p class="lead">Una città tra cultura e modernità, poi montagne imponenti, laghi d'alta quota e il celebre corridoio di neve. Scopri cosa vedere e come organizzare le tappe in modo realistico.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#toyama-luoghi">Scopri i luoghi</a>
+          <a class="button button-ghost" href="#toyama-itinerari">Itinerari e trasporti</a>
+        </div>
+      </div>
+      <figure>
+        <img src={commonsImage('Murodo.jpg')} alt="Paesaggio montano di Murodo, Tateyama" decoding="async" loading="eager" />
+        <figcaption>Foto: lumoplank · <a href={commonsPage('Murodo.jpg')} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="toyama-luoghi">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Sette tappe fotografiche</p>
+        <h2>Cosa vedere tra Toyama e Tateyama Kurobe</h2>
+        <p>Le fotografie rappresentano le attrazioni descritte. I tempi sono indicativi per la singola tappa e non includono sempre i trasferimenti: non sommarle come se fossero tutte vicine.</p>
+      </div>
+      <div class="ty-grid">
+        {luoghi.map((luogo, i) => (
+          <article class="card ty-card">
+            <figure>
+              <img src={commonsImage(luogo.file)} alt={`${luogo.name}, Giappone`} loading="lazy" decoding="async" />
+              <figcaption>Foto: {luogo.credit} · <a href={commonsPage(luogo.file)} target="_blank" rel="noopener noreferrer">fonte e licenza</a></figcaption>
+            </figure>
+            <div class="ty-body">
+              <p class="kicker">Tappa {i + 1} · {luogo.time}</p>
+              <h3>{luogo.name}</h3>
+              <p class="ty-subtitle">{luogo.subtitle}</p>
+              <p>{luogo.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="toyama-itinerari">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Organizzare il percorso</p>
+        <h2>Tre proposte, secondo il tempo disponibile</h2>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Un giorno · Toyama città</h3>
+          <p>Castello e parco, quartieri centrali e museo del vetro. Una giornata tranquilla da abbinare a un pernottamento oppure a un viaggio ferroviario nel Giappone centrale.</p>
+        </article>
+        <article class="card">
+          <h3>Un giorno pieno · Traversata alpina</h3>
+          <p>Parti presto dal lato Toyama oppure Ogizawa e attraversa la Alpine Route. Scegli soste mirate, come Murodo e diga di Kurobe: considera coincidenze, code e ultimo collegamento.</p>
+        </article>
+        <article class="card">
+          <h3>Due o tre giorni · Città e montagna</h3>
+          <p>Una giornata a Toyama e una dedicata al percorso alpino; aggiungi un giorno extra solo se vuoi fermarti in quota o visitare le cascate Shomyo, quando raggiungibili.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="ty-practical">
+        <article class="card">
+          <h3>Come arrivare e muoversi</h3>
+          <p>Toyama è servita dall’Hokuriku Shinkansen. Per la traversata si arriva a Tateyama Station dal lato Toyama, oppure a Ogizawa dal lato Nagano. La tratta centrale utilizza funicolari, autobus e altri mezzi dedicati: <strong>le auto private non sono ammesse fra Tateyama e Ogizawa</strong>.</p>
+        </article>
+        <article class="card">
+          <h3>Quando andare</h3>
+          <p>Primavera per i muri di neve, estate per le passeggiate in quota, autunno per il foliage. <strong>Nel 2026</strong> la stagione ufficiale della Alpine Route è dal 15 aprile al 30 novembre; controlla il calendario dell’anno del viaggio, i meteo-alert e le eventuali restrizioni stagionali.</p>
+        </article>
+        <article class="card">
+          <h3>Dove soggiornare</h3>
+          <p>Toyama è pratica per esplorare la città e partire dal versante occidentale. Se il viaggio prevede una traversata completa, considera anche le basi sul lato Nagano. Le sistemazioni in quota sono stagionali e vanno prenotate con anticipo.</p>
+        </article>
+      </div>
+      <div class="ty-note">
+        <h3>Prima di partire</h3>
+        <p>La Tateyama Kurobe Alpine Route è un’esperienza montana: meteo, neve e vento possono modificare i servizi. Controlla gli orari delle coincidenze, i biglietti e l’ultimo mezzo utile. Le cascate Shomyo sono un’escursione a parte, con collegamenti e accesso stagionali.</p>
+        <p>Fonti ufficiali: <a href="https://www.alpen-route.com/en/" target="_blank" rel="noopener noreferrer">Tateyama Kurobe Alpine Route</a> · <a href="https://www.alpen-route.com/en/timetable/" target="_blank" rel="noopener noreferrer">orari e aggiornamenti</a> · <a href="https://www.toyamashi-kankoukyoukai.jp/en/spot/alpineroute/" target="_blank" rel="noopener noreferrer">Toyama Tourism</a>.</p>
+      </div>
+      <div class="cta">
+        <div>
+          <p class="kicker">Il tuo viaggio in Giappone</p>
+          <h2>Vuoi inserire Toyama e le Alpi giapponesi nel tuo itinerario?</h2>
+          <p>Costruiamo un percorso che unisca Kanazawa, Toyama, Nagano e Matsumoto, scegliendo tappe e trasferimenti in base ai tuoi giorni.</p>
+        </div>
+        <a class="button button-primary" href={`${base}preventivo/?destinazione=Giappone`}>Richiedi una proposta</a>
+      </div>
+      <p class="ty-back"><a href={`${base}hokuriku-shinetsu/`}>← Torna alle guide di Hokuriku–Shinetsu</a></p>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .ty-hero{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;padding:62px 0}
+  .ty-hero figure,.ty-card figure{margin:0}
+  .ty-hero img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:18px}
+  .ty-hero figcaption,.ty-card figcaption{font-size:.75rem;color:var(--muted);margin-top:8px}
+  .ty-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .ty-card{padding:0;overflow:hidden}
+  .ty-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .ty-card figcaption{padding:8px 18px 0}
+  .ty-body{padding:24px}
+  .ty-body .kicker{margin-bottom:8px}
+  .ty-subtitle{font-weight:700}
+  .ty-practical{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-bottom:26px}
+  .ty-note{padding:26px 30px;border:1px solid var(--line);border-radius:20px;margin-bottom:32px}
+  .ty-back{margin-top:25px}
+  @media(max-width:800px){.ty-hero,.ty-grid,.ty-practical{grid-template-columns:1fr}.ty-hero{padding:40px 0}}
+</style>
